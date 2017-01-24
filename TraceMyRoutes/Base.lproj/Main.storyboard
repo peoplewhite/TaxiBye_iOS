@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First Scene View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstSceneViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -36,12 +36,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975.20000000000005" y="37.331334332833585"/>
+            <point key="canvasLocation" x="839" y="36"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Trace View Controller-->
         <scene sceneID="fOV-uQ-9b3">
             <objects>
-                <viewController id="wDz-55-yk0" sceneMemberID="viewController">
+                <viewController id="wDz-55-yk0" customClass="StartTraceViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bfb-2O-5sv"/>
                         <viewControllerLayoutGuide type="bottom" id="eS8-uC-EQG"/>
@@ -64,12 +64,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKF-Tt-a1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.8" y="36.431784107946029"/>
+            <point key="canvasLocation" x="1572" y="36"/>
         </scene>
-        <!--View Controller-->
+        <!--Tracing View Controller-->
         <scene sceneID="HLQ-Oy-jwF">
             <objects>
-                <viewController id="0pi-dN-mra" sceneMemberID="viewController">
+                <viewController id="0pi-dN-mra" customClass="TracingViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uKe-DW-nbp"/>
                         <viewControllerLayoutGuide type="bottom" id="ctW-jw-4dv"/>
@@ -92,12 +92,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zus-tJ-ye6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2772" y="36.431784107946029"/>
+            <point key="canvasLocation" x="2324" y="36"/>
         </scene>
-        <!--View Controller-->
+        <!--Rating View Controller-->
         <scene sceneID="O3x-xO-7WT">
             <objects>
-                <viewController id="NE5-2S-xfX" sceneMemberID="viewController">
+                <viewController id="NE5-2S-xfX" customClass="RatingViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OfG-kY-Orr"/>
                         <viewControllerLayoutGuide type="bottom" id="nzm-9F-Aad"/>
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6M-fd-HcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3743.1999999999998" y="35.532233883058474"/>
+            <point key="canvasLocation" x="3034" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3lG-ez-cLg">

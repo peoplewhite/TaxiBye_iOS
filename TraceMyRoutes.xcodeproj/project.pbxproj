@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1448ED1C1E373FE700962E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED1B1E373FE700962E58 /* AppDelegate.swift */; };
-		1448ED1E1E373FE700962E58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED1D1E373FE700962E58 /* ViewController.swift */; };
 		1448ED211E373FE700962E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448ED1F1E373FE700962E58 /* Main.storyboard */; };
 		1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED221E373FE700962E58 /* TraceMyRoutes.xcdatamodeld */; };
 		1448ED261E373FE700962E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1448ED251E373FE700962E58 /* Assets.xcassets */; };
 		1448ED291E373FE700962E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448ED271E373FE700962E58 /* LaunchScreen.storyboard */; };
 		1448ED341E373FE700962E58 /* TraceMyRoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED331E373FE700962E58 /* TraceMyRoutesTests.swift */; };
 		1448ED3F1E373FE700962E58 /* TraceMyRoutesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED3E1E373FE700962E58 /* TraceMyRoutesUITests.swift */; };
+		1448ED4D1E3742BE00962E58 /* FirstSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED4C1E3742BE00962E58 /* FirstSceneViewController.swift */; };
+		1448ED4F1E3742D500962E58 /* StartTraceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED4E1E3742D500962E58 /* StartTraceViewController.swift */; };
+		1448ED511E3742E900962E58 /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED501E3742E900962E58 /* TracingViewController.swift */; };
+		1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED521E3742F600962E58 /* RatingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		1448ED181E373FE700962E58 /* TraceMyRoutes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraceMyRoutes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1448ED1B1E373FE700962E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1448ED1D1E373FE700962E58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1448ED201E373FE700962E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1448ED231E373FE700962E58 /* TraceMyRoutes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TraceMyRoutes.xcdatamodel; sourceTree = "<group>"; };
 		1448ED251E373FE700962E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		1448ED3A1E373FE700962E58 /* TraceMyRoutesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TraceMyRoutesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1448ED3E1E373FE700962E58 /* TraceMyRoutesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceMyRoutesUITests.swift; sourceTree = "<group>"; };
 		1448ED401E373FE700962E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1448ED4C1E3742BE00962E58 /* FirstSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstSceneViewController.swift; sourceTree = "<group>"; };
+		1448ED4E1E3742D500962E58 /* StartTraceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTraceViewController.swift; sourceTree = "<group>"; };
+		1448ED501E3742E900962E58 /* TracingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
+		1448ED521E3742F600962E58 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				1448ED1B1E373FE700962E58 /* AppDelegate.swift */,
-				1448ED1D1E373FE700962E58 /* ViewController.swift */,
 				1448ED1F1E373FE700962E58 /* Main.storyboard */,
+				1448ED4C1E3742BE00962E58 /* FirstSceneViewController.swift */,
+				1448ED4E1E3742D500962E58 /* StartTraceViewController.swift */,
+				1448ED501E3742E900962E58 /* TracingViewController.swift */,
+				1448ED521E3742F600962E58 /* RatingViewController.swift */,
 				1448ED251E373FE700962E58 /* Assets.xcassets */,
 				1448ED271E373FE700962E58 /* LaunchScreen.storyboard */,
 				1448ED2A1E373FE700962E58 /* Info.plist */,
@@ -265,8 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1448ED4D1E3742BE00962E58 /* FirstSceneViewController.swift in Sources */,
+				1448ED4F1E3742D500962E58 /* StartTraceViewController.swift in Sources */,
 				1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */,
-				1448ED1E1E373FE700962E58 /* ViewController.swift in Sources */,
+				1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */,
+				1448ED511E3742E900962E58 /* TracingViewController.swift in Sources */,
 				1448ED1C1E373FE700962E58 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
