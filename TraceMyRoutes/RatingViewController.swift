@@ -22,10 +22,6 @@ class RatingViewController: UIViewController {
     }
     
 
-    @IBAction func submitButtonPressed(_ sender: UIButton) {
-        callAPIToPostTraceRoutes()
-    }
-
     func backToInitFirstScene() {
         _ = navigationController?.popToRootViewController(animated: true)
     }
@@ -33,10 +29,27 @@ class RatingViewController: UIViewController {
 }
 
 extension RatingViewController {
+    // MARK: =================> button
+
+    @IBAction func submitButtonPressed(_ sender: UIButton) {
+        callAPIToPostTraceRoutes()
+    }
+}
+extension RatingViewController {
     // MARK: =================> API
 
     func callAPIToPostTraceRoutes() {
-       API.postTraceRoutes(withKML: KMLMachine.shared.kmlFile, andCarPlateNumber: "", andRatingNumber: 5)
+
+        API.postTraceRoutes(withKML: KMLMachine.shared.kmlFile,
+                            andCarPlateNumber: "",
+                            andRatingNumber: 5,
+                            success: { (message) in backToInitFirstScene()
+                                backToInitFirstScene()
+
+        },
+                            fail: { (errorMessage) in
+                                print("fail") //kimuranow
+
+        })
     }
-    
 }

@@ -16,6 +16,13 @@ class TraceRouteMachine {
         }
         return Static.instance
     }
-    
-    
+
+    var carPlateNumber = ""
+    var ratingNumber: Int = 0 //default
+
+    func initMachine() {
+        carPlateNumber = ""
+        ratingNumber = 0 //default
+    }
+
 }

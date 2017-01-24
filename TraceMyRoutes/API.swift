@@ -46,8 +46,9 @@ class API {
 extension API {
     // MARK: =================> comment
 
-    static func postTraceRoutes(withKML kml: KMLDocument, andCarPlateNumber carPlateNumber: String, andRatingNumber ratingNumber: Int) {
+    static func postTraceRoutes(withKML kml: KMLDocument, andCarPlateNumber carPlateNumber: String, andRatingNumber ratingNumber: Int, success:((String) -> Void), fail:((String) -> Void)) {
         
+        success("ok")
         
     }
 

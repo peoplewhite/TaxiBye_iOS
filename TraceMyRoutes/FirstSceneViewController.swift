@@ -21,20 +21,43 @@ class FirstSceneViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
 
-        typeCarPlateNumberTextfield.becomeFirstResponder()
-        
+        TraceRouteMachine.shared.initMachine()
+
+        makeTypeCarPlateNumberTextfieldShowKeyboard()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+
+}
+extension FirstSceneViewController {
+    // MARK: =================> textfield
+
     @IBAction func typeCarPlateNumberEditingChanged(_ sender: UITextField) {
-        
-        trackButton.isEnabled = (sender.text?.characters.count)! > 0
+
+        let trimmedString = sender.text!.trimmingCharacters(in: .whitespaces)
+
+        trackButton.isEnabled = trimmedString.characters.count > 0
+        TraceRouteMachine.shared.carPlateNumber = trackButton.isEnabled ? "" : trimmedString
 
     }
 
+    func makeTypeCarPlateNumberTextfieldEmpty() {
+        typeCarPlateNumberTextfield.text = ""
+    }
 
+    func makeTypeCarPlateNumberTextfieldShowKeyboard() {
+        typeCarPlateNumberTextfield.becomeFirstResponder()
+    }
+    
+}
+extension FirstSceneViewController {
+    // MARK: =================> button
 
+    @IBAction func trackButtonPressed(_ sender: UIButton) {
+        makeTypeCarPlateNumberTextfieldEmpty()
+    }
+    
 }
