@@ -20,6 +20,7 @@
 		1448ED511E3742E900962E58 /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED501E3742E900962E58 /* TracingViewController.swift */; };
 		1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED521E3742F600962E58 /* RatingViewController.swift */; };
 		1448ED551E3744A200962E58 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED541E3744A200962E58 /* AppConfig.swift */; };
+		1448EDE41E375F2500962E58 /* KMLMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448EDE31E375F2500962E58 /* KMLMachine.swift */; };
 		1915D083331B58255CFF461A /* Pods_TraceMyRoutesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA027445141768B33870049 /* Pods_TraceMyRoutesTests.framework */; };
 		7104F1618724CABD3911A21A /* Pods_TraceMyRoutesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F11F26A93E017698662454D /* Pods_TraceMyRoutesUITests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		1448ED521E3742F600962E58 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		1448ED541E3744A200962E58 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		1448EDE21E37563400962E58 /* TraceMyRoutes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TraceMyRoutes-Bridging-Header.h"; sourceTree = "<group>"; };
+		1448EDE31E375F2500962E58 /* KMLMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLMachine.swift; sourceTree = "<group>"; };
 		28E8A01E28F7C4D4B0E8E78A /* Pods-TraceMyRoutesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2F11F26A93E017698662454D /* Pods_TraceMyRoutesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraceMyRoutesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4638FFEA84464068CC030735 /* Pods-TraceMyRoutesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesTests/Pods-TraceMyRoutesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				1448ED2A1E373FE700962E58 /* Info.plist */,
 				1448ED221E373FE700962E58 /* TraceMyRoutes.xcdatamodeld */,
 				1448EDE21E37563400962E58 /* TraceMyRoutes-Bridging-Header.h */,
+				1448EDE31E375F2500962E58 /* KMLMachine.swift */,
 			);
 			path = TraceMyRoutes;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				1448ED4F1E3742D500962E58 /* StartTraceViewController.swift in Sources */,
 				1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */,
 				1448ED551E3744A200962E58 /* AppConfig.swift in Sources */,
+				1448EDE41E375F2500962E58 /* KMLMachine.swift in Sources */,
 				1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */,
 				1448ED511E3742E900962E58 /* TracingViewController.swift in Sources */,
 				1448ED1C1E373FE700962E58 /* AppDelegate.swift in Sources */,
