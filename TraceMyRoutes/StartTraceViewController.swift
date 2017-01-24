@@ -1,5 +1,5 @@
 //
-//  FirstSceneViewController.swift
+//  StartTraceViewController.swift
 //  TraceMyRoutes
 //
 //  Created by sean on 2017/1/24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstSceneViewController: UIViewController {
+class StartTraceViewController: UIViewController {
     
     @IBOutlet weak var trackButton: UIButton!
     @IBOutlet weak var typeCarPlateNumberTextfield: UITextField!
@@ -16,7 +16,6 @@ class FirstSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.setNavigationBarHidden(true, animated: false)
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +31,7 @@ class FirstSceneViewController: UIViewController {
 
 
 }
-extension FirstSceneViewController {
+extension StartTraceViewController {
     // MARK: =================> textfield
 
     @IBAction func typeCarPlateNumberEditingChanged(_ sender: UITextField) {
@@ -53,7 +52,7 @@ extension FirstSceneViewController {
     }
     
 }
-extension FirstSceneViewController {
+extension StartTraceViewController {
     // MARK: =================> button
 
     @IBAction func trackButtonPressed(_ sender: UIButton) {
