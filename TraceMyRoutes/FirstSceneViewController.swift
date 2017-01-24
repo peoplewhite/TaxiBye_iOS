@@ -11,7 +11,6 @@ import UIKit
 class FirstSceneViewController: UIViewController {
     
     @IBOutlet weak var trackButton: UIButton!
-
     @IBOutlet weak var typeCarPlateNumberTextfield: UITextField!
 
     override func viewDidLoad() {
@@ -31,8 +30,8 @@ class FirstSceneViewController: UIViewController {
     }
 
     @IBAction func typeCarPlateNumberEditingChanged(_ sender: UITextField) {
+        
         trackButton.isEnabled = (sender.text?.characters.count)! > 0
-
 
     }
 

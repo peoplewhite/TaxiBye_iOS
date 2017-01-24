@@ -55,6 +55,11 @@ class KMLMachine {
     }
 
 
+    var kmlFile: KMLDocument {
+        return doc
+    }
+
+
 
 
 }

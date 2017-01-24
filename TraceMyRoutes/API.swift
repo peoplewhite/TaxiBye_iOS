@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
+import iOS_KML_Framework
 
 
 class API {
@@ -45,6 +46,10 @@ class API {
 extension API {
     // MARK: =================> comment
 
+    static func postTraceRoutes(withKML kml: KMLDocument, andCarPlateNumber carPlateNumber: String, andRatingNumber ratingNumber: Int) {
+        
+        
+    }
 
 //    func createComment(withTagID tagID: Int, andItemPhotoID itemPhotoID: Int, andContent content: String, success: @escaping (() -> Void), fail: @escaping ((String) -> Void)) {
 //

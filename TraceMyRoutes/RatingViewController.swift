@@ -23,7 +23,20 @@ class RatingViewController: UIViewController {
     
 
     @IBAction func submitButtonPressed(_ sender: UIButton) {
+        callAPIToPostTraceRoutes()
+    }
+
+    func backToInitFirstScene() {
         _ = navigationController?.popToRootViewController(animated: true)
     }
 
+}
+
+extension RatingViewController {
+    // MARK: =================> API
+
+    func callAPIToPostTraceRoutes() {
+       API.postTraceRoutes(withKML: KMLMachine.shared.kmlFile, andCarPlateNumber: "", andRatingNumber: 5)
+    }
+    
 }
