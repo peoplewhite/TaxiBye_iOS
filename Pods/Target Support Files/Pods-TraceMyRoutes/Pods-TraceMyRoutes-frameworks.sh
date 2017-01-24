@@ -89,12 +89,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AEXML/AEXML.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Kml.swift/Kml_swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TBXML/TBXML.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/iOS-KML-Framework/iOS_KML_Framework.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AEXML/AEXML.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Kml.swift/Kml_swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TBXML/TBXML.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/iOS-KML-Framework/iOS_KML_Framework.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
