@@ -12,6 +12,6 @@ import Foundation
 struct AppConfig {
 
 
-    
+
     
 }

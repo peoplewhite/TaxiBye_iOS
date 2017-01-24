@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import CoreLocation
 
-class TracingViewController: UIViewController {
+class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
+    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        checkCoreLocationPermission()
 
     }
 
@@ -24,5 +29,25 @@ class TracingViewController: UIViewController {
         
     }
 
+    func checkCoreLocationPermission() {
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+            break
+        default:
+            locationManager.requestWhenInUseAuthorization()
+            break;
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        print(" = \(locations)") //kimuranow
+//        print(" = \(locations.)") //kimuranow
+        let currentLocation: CLLocation = locations[0]
+        print(" = \(currentLocation.coordinate.latitude), \(currentLocation.coordinate.longitude)") //kimuranow
+        
+        
+    }
 
 }
