@@ -9,6 +9,8 @@ target 'TraceMyRoutes' do
   pod 'iOS-KML-Framework', :git => 'https://github.com/FLCLjp/iOS-KML-Framework.git'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'SVProgressHUD'
+
 
 
   target 'TraceMyRoutesTests' do

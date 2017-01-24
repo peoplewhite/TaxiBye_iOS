@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class FirstViewController: UIViewController {
 
@@ -14,6 +15,8 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(true, animated: false)
+
+        SVProgressHUD.setMinimumDismissTimeInterval(2)
     }
 
     override func didReceiveMemoryWarning() {
