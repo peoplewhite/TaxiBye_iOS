@@ -6,7 +6,8 @@ target 'TraceMyRoutes' do
   use_frameworks!
 
   # Pods for TraceMyRoutes
-  pod 'Kml.swift'
+  pod 'iOS-KML-Framework', :git => 'https://github.com/FLCLjp/iOS-KML-Framework.git'
+
 
   target 'TraceMyRoutesTests' do
     inherit! :search_paths
