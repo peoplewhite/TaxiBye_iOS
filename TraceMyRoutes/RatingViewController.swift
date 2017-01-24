@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class RatingViewController: UIViewController {
 
@@ -72,6 +73,8 @@ extension RatingViewController {
                             andRatingNumber: TraceRouteMachine.shared.ratingNumber,
                             success: { (message) in backToInitFirstScene()
                                 backToInitFirstScene()
+                                SVProgressHUD.showSuccess(withStatus: "Submit 成功")
+                                
 
         },
                             fail: { (errorMessage) in
