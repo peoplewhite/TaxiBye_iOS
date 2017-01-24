@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09EFF0AAE00ABB392E887F06 /* Pods_TraceMyRoutes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED2CDAE9A42C3585250192E /* Pods_TraceMyRoutes.framework */; };
 		1448ED1C1E373FE700962E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED1B1E373FE700962E58 /* AppDelegate.swift */; };
 		1448ED211E373FE700962E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448ED1F1E373FE700962E58 /* Main.storyboard */; };
 		1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED221E373FE700962E58 /* TraceMyRoutes.xcdatamodeld */; };
@@ -19,6 +20,8 @@
 		1448ED511E3742E900962E58 /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED501E3742E900962E58 /* TracingViewController.swift */; };
 		1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED521E3742F600962E58 /* RatingViewController.swift */; };
 		1448ED551E3744A200962E58 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED541E3744A200962E58 /* AppConfig.swift */; };
+		1915D083331B58255CFF461A /* Pods_TraceMyRoutesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA027445141768B33870049 /* Pods_TraceMyRoutesTests.framework */; };
+		7104F1618724CABD3911A21A /* Pods_TraceMyRoutesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F11F26A93E017698662454D /* Pods_TraceMyRoutesUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0210D704EECE570278557C71 /* Pods-TraceMyRoutesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesTests/Pods-TraceMyRoutesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0ED2CDAE9A42C3585250192E /* Pods_TraceMyRoutes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraceMyRoutes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1448ED181E373FE700962E58 /* TraceMyRoutes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraceMyRoutes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1448ED1B1E373FE700962E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1448ED201E373FE700962E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +62,13 @@
 		1448ED501E3742E900962E58 /* TracingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
 		1448ED521E3742F600962E58 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		1448ED541E3744A200962E58 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		28E8A01E28F7C4D4B0E8E78A /* Pods-TraceMyRoutesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F11F26A93E017698662454D /* Pods_TraceMyRoutesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraceMyRoutesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4638FFEA84464068CC030735 /* Pods-TraceMyRoutesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesTests/Pods-TraceMyRoutesTests.release.xcconfig"; sourceTree = "<group>"; };
+		8AA027445141768B33870049 /* Pods_TraceMyRoutesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraceMyRoutesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC22E0276ACE5B3CB3ED155 /* Pods-TraceMyRoutes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutes/Pods-TraceMyRoutes.debug.xcconfig"; sourceTree = "<group>"; };
+		B30D661D48F90D10B5BCF92F /* Pods-TraceMyRoutesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D2CE7C500955B82EFC4E7FBB /* Pods-TraceMyRoutes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutes.release.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutes/Pods-TraceMyRoutes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09EFF0AAE00ABB392E887F06 /* Pods_TraceMyRoutes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1915D083331B58255CFF461A /* Pods_TraceMyRoutesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7104F1618724CABD3911A21A /* Pods_TraceMyRoutesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +106,8 @@
 				1448ED321E373FE700962E58 /* TraceMyRoutesTests */,
 				1448ED3D1E373FE700962E58 /* TraceMyRoutesUITests */,
 				1448ED191E373FE700962E58 /* Products */,
+				BAF21C100A58C20AF657C86A /* Pods */,
+				DCF0DC9510BA6724850C956E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +157,29 @@
 			path = TraceMyRoutesUITests;
 			sourceTree = "<group>";
 		};
+		BAF21C100A58C20AF657C86A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CC22E0276ACE5B3CB3ED155 /* Pods-TraceMyRoutes.debug.xcconfig */,
+				D2CE7C500955B82EFC4E7FBB /* Pods-TraceMyRoutes.release.xcconfig */,
+				0210D704EECE570278557C71 /* Pods-TraceMyRoutesTests.debug.xcconfig */,
+				4638FFEA84464068CC030735 /* Pods-TraceMyRoutesTests.release.xcconfig */,
+				28E8A01E28F7C4D4B0E8E78A /* Pods-TraceMyRoutesUITests.debug.xcconfig */,
+				B30D661D48F90D10B5BCF92F /* Pods-TraceMyRoutesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DCF0DC9510BA6724850C956E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0ED2CDAE9A42C3585250192E /* Pods_TraceMyRoutes.framework */,
+				8AA027445141768B33870049 /* Pods_TraceMyRoutesTests.framework */,
+				2F11F26A93E017698662454D /* Pods_TraceMyRoutesUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1448ED431E373FE700962E58 /* Build configuration list for PBXNativeTarget "TraceMyRoutes" */;
 			buildPhases = (
+				3B15093448992F6C31903263 /* [CP] Check Pods Manifest.lock */,
 				1448ED141E373FE700962E58 /* Sources */,
 				1448ED151E373FE700962E58 /* Frameworks */,
 				1448ED161E373FE700962E58 /* Resources */,
+				564B87A85129FCAA8EB73BCB /* [CP] Embed Pods Frameworks */,
+				F5A912B17A7E256B2368E998 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1448ED461E373FE700962E58 /* Build configuration list for PBXNativeTarget "TraceMyRoutesTests" */;
 			buildPhases = (
+				181FBD6B0DB2EB928DB1F4E5 /* [CP] Check Pods Manifest.lock */,
 				1448ED2B1E373FE700962E58 /* Sources */,
 				1448ED2C1E373FE700962E58 /* Frameworks */,
 				1448ED2D1E373FE700962E58 /* Resources */,
+				1FAC28945B04921FDB79E683 /* [CP] Embed Pods Frameworks */,
+				8460A14FD879E1D659CAE435 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1448ED491E373FE700962E58 /* Build configuration list for PBXNativeTarget "TraceMyRoutesUITests" */;
 			buildPhases = (
+				ECDCC36D52BE117D71AA59BF /* [CP] Check Pods Manifest.lock */,
 				1448ED361E373FE700962E58 /* Sources */,
 				1448ED371E373FE700962E58 /* Frameworks */,
 				1448ED381E373FE700962E58 /* Resources */,
+				8FD2C5FE6092A40ADECDEAB8 /* [CP] Embed Pods Frameworks */,
+				E33C6F1BA2365C7FE9565459 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,6 +320,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		181FBD6B0DB2EB928DB1F4E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1FAC28945B04921FDB79E683 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TraceMyRoutesTests/Pods-TraceMyRoutesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B15093448992F6C31903263 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		564B87A85129FCAA8EB73BCB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TraceMyRoutes/Pods-TraceMyRoutes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8460A14FD879E1D659CAE435 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TraceMyRoutesTests/Pods-TraceMyRoutesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FD2C5FE6092A40ADECDEAB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E33C6F1BA2365C7FE9565459 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECDCC36D52BE117D71AA59BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5A912B17A7E256B2368E998 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TraceMyRoutes/Pods-TraceMyRoutes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1448ED141E373FE700962E58 /* Sources */ = {
@@ -433,6 +620,7 @@
 		};
 		1448ED441E373FE700962E58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CC22E0276ACE5B3CB3ED155 /* Pods-TraceMyRoutes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6ETQBL4GH5;
@@ -446,6 +634,7 @@
 		};
 		1448ED451E373FE700962E58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2CE7C500955B82EFC4E7FBB /* Pods-TraceMyRoutes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6ETQBL4GH5;
@@ -459,6 +648,7 @@
 		};
 		1448ED471E373FE700962E58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0210D704EECE570278557C71 /* Pods-TraceMyRoutesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -474,6 +664,7 @@
 		};
 		1448ED481E373FE700962E58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4638FFEA84464068CC030735 /* Pods-TraceMyRoutesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +680,7 @@
 		};
 		1448ED4A1E373FE700962E58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28E8A01E28F7C4D4B0E8E78A /* Pods-TraceMyRoutesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6ETQBL4GH5;
@@ -503,6 +695,7 @@
 		};
 		1448ED4B1E373FE700962E58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B30D661D48F90D10B5BCF92F /* Pods-TraceMyRoutesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 6ETQBL4GH5;

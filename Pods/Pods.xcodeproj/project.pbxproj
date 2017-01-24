@@ -1,0 +1,1047 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00F037EDEB5D5DC8A2443CB56C6538B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4788F6D1BA3DDD75338844DDDEC179F /* Foundation.framework */; };
+		059B7D7A0970B83A1002E35282290B41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4788F6D1BA3DDD75338844DDDEC179F /* Foundation.framework */; };
+		10BB4C4711E2C4C47FA9CFEB2915C92D /* Pods-TraceMyRoutesUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 688B665362660BD193075501BE7AB660 /* Pods-TraceMyRoutesUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14C6239F686582508AEA4A58F5F66E56 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3239A40E8A8D9363F5BF9895C7D3161 /* Element.swift */; };
+		20D84C143269E60FBCDFCC30FFB2D6DB /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8036C0B49EBA146CB4A4061F727D9776 /* Error.swift */; };
+		2175C682802857371AD80E401D814C08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4788F6D1BA3DDD75338844DDDEC179F /* Foundation.framework */; };
+		2758CD107D81A4B5951A58608D939FEF /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789DDFAB37B79E16318B4FB658529C9E /* Options.swift */; };
+		310DAAE417957E6FF97B503D3CF85827 /* Kml.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AB78A7B5D67B62AB21154771D37D27 /* Kml.swift-dummy.m */; };
+		3F32E4E755ACB30B8701F53C3B8917B5 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D92A2877D6AEE913961D1E681EB9B5 /* Parser.swift */; };
+		54C8A3FDE9DB92153E65093688BE0B99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4788F6D1BA3DDD75338844DDDEC179F /* Foundation.framework */; };
+		5C67BD33BEAD1A739CEC2A825F38C257 /* AEXML-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E713920D4AA556F13BD177C923DDE8D1 /* AEXML-dummy.m */; };
+		5DD1C9E300865986CBCBC18E90F5D79D /* AEXML-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D8EAE02A4E747998FE8B39D0467C47E9 /* AEXML-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63B13493792CC7957925BD15C70A38E5 /* Pods-TraceMyRoutes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6856F3F7FBC0E7A9F01B267D6B9AC95 /* Pods-TraceMyRoutes-dummy.m */; };
+		6E4E7C06A1B9C35408BECAEFEA3C3AD5 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008B6F541DB59E87BF74AEFBEA3D35D /* Document.swift */; };
+		6E6CF3B0289FBCDAE03247F855F2251A /* Pods-TraceMyRoutes-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3FC7A0D373473928FB030A15CBEE821 /* Pods-TraceMyRoutes-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757524D96C5300D2451F8A4395683D42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4788F6D1BA3DDD75338844DDDEC179F /* Foundation.framework */; };
+		77E9589425EB82E35AEA42998C62F56F /* Kml.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 39AFBD74A304AAEE6DC28A9AD785C7D4 /* Kml.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C54B95E6BE4630F0F3BDE7FEE0D55D6 /* Pods-TraceMyRoutesUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C38462388979C55D87DCF568F9CEBF /* Pods-TraceMyRoutesUITests-dummy.m */; };
+		9CDA31EB6D1391017404217EEDD297F3 /* KML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CF10B901B3B04206B1B74AF24245F /* KML.swift */; };
+		A0DC7C7A532877D828B51BCABDFDD359 /* Pods-TraceMyRoutesTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F38172AA03320E7BABF4DD702E77BD5 /* Pods-TraceMyRoutesTests-dummy.m */; };
+		E1DA3924280DEDA67936A9C52DE285C7 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C0EF99C3D3A40281E142248A7345C8 /* AEXML.framework */; };
+		E8D88AE57456C2C4521C32E4E000B84A /* Pods-TraceMyRoutesTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 373C4A8E671C61C1EC1F7A5CA6DC3189 /* Pods-TraceMyRoutesTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C981C328F0448B2C76C535E3FF3C31C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88C257C954247EE49E09C66A8B19E56A;
+			remoteInfo = AEXML;
+		};
+		D465765EE5F03E94524AB296E7DAC557 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88C257C954247EE49E09C66A8B19E56A;
+			remoteInfo = AEXML;
+		};
+		E4F4BDF663BE242E8B8F4B7390879A25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14970642DB4661619E6CCA5BD2385F21;
+			remoteInfo = Kml.swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		023A9099AD611086E8308DA3FE86611E /* AEXML.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AEXML.modulemap; sourceTree = "<group>"; };
+		0513867F23EE048EB12BCC7BFBF36363 /* Kml.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Kml.swift.modulemap; sourceTree = "<group>"; };
+		0E69531BE362C5290FE93E7F355FAA95 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		143260D2846C6CEF1B5BD4DCB991956C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15530AA52BCF45134766FBCCC7C41959 /* Pods-TraceMyRoutesUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TraceMyRoutesUITests-resources.sh"; sourceTree = "<group>"; };
+		1CA5C32D3DE029E66CDCB6C5C478FF84 /* AEXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AEXML.framework; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D4464644B818D18EAB77C6B791D9626 /* Pods-TraceMyRoutes.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TraceMyRoutes.modulemap"; sourceTree = "<group>"; };
+		20402DD3C4CE5B581D6C9EE91D00C40A /* Pods_TraceMyRoutes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TraceMyRoutes.framework; path = "Pods-TraceMyRoutes.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24691D1DD92D5A7659DF31C0050D0179 /* Pods-TraceMyRoutesUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TraceMyRoutesUITests.modulemap"; sourceTree = "<group>"; };
+		24AE259956BC85ED66E5B77D17310319 /* AEXML.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AEXML.xcconfig; sourceTree = "<group>"; };
+		29FB5081F15BB93D12D958565B75D240 /* Pods_TraceMyRoutesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TraceMyRoutesTests.framework; path = "Pods-TraceMyRoutesTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		321CF10B901B3B04206B1B74AF24245F /* KML.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KML.swift; path = Source/KML.swift; sourceTree = "<group>"; };
+		33ED3A531B1B001D77511E6FE8B3AEBA /* Pods-TraceMyRoutesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TraceMyRoutesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		365CD730C166D18D34FA792F458B7BAF /* Pods-TraceMyRoutes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TraceMyRoutes.debug.xcconfig"; sourceTree = "<group>"; };
+		373C4A8E671C61C1EC1F7A5CA6DC3189 /* Pods-TraceMyRoutesTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TraceMyRoutesTests-umbrella.h"; sourceTree = "<group>"; };
+		39AFBD74A304AAEE6DC28A9AD785C7D4 /* Kml.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kml.swift-umbrella.h"; sourceTree = "<group>"; };
+		4012AE55D12DE56E430CA3244E8BFB76 /* Pods-TraceMyRoutesTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TraceMyRoutesTests.modulemap"; sourceTree = "<group>"; };
+		46D92A2877D6AEE913961D1E681EB9B5 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Parser.swift; sourceTree = "<group>"; };
+		58A1B2395BCD3AD956B702E9B1AE5E89 /* Pods-TraceMyRoutes-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TraceMyRoutes-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5BFF5CA31A535DB5B78FC721DE9DB191 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE72B64CB66FEA01F2FC89C49A79773 /* Pods-TraceMyRoutesUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TraceMyRoutesUITests-frameworks.sh"; sourceTree = "<group>"; };
+		688B665362660BD193075501BE7AB660 /* Pods-TraceMyRoutesUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TraceMyRoutesUITests-umbrella.h"; sourceTree = "<group>"; };
+		6A86E79AEBD9CEB8ECCE6CF7C8A16691 /* Kml_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kml_swift.framework; path = Kml.swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E5DE9BB0ADA361A31AE71FD9B21D3E1 /* Pods-TraceMyRoutesUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TraceMyRoutesUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		789DDFAB37B79E16318B4FB658529C9E /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Options.swift; path = Sources/Options.swift; sourceTree = "<group>"; };
+		7A199AEC88C7F69A9BFE224D7247300E /* Pods-TraceMyRoutes-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TraceMyRoutes-frameworks.sh"; sourceTree = "<group>"; };
+		7E97648C7B5C6C846B48D55793FE3C28 /* Pods-TraceMyRoutesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TraceMyRoutesTests.release.xcconfig"; sourceTree = "<group>"; };
+		8008B6F541DB59E87BF74AEFBEA3D35D /* Document.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Document.swift; path = Sources/Document.swift; sourceTree = "<group>"; };
+		8036C0B49EBA146CB4A4061F727D9776 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
+		83C0EF99C3D3A40281E142248A7345C8 /* AEXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A7163EE47A16521A27A0FBD306E2C8E /* Pods-TraceMyRoutes-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TraceMyRoutes-acknowledgements.plist"; sourceTree = "<group>"; };
+		8CAFEA1F7EB5B33F3F98A8A14E0FE5E5 /* Pods_TraceMyRoutesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TraceMyRoutesUITests.framework; path = "Pods-TraceMyRoutesUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F38172AA03320E7BABF4DD702E77BD5 /* Pods-TraceMyRoutesTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TraceMyRoutesTests-dummy.m"; sourceTree = "<group>"; };
+		929866D07ED85233E0B3A81AD90FEB57 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9452612CB07C3DB0EFCD5B9A8EA646CD /* Pods-TraceMyRoutesTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TraceMyRoutesTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		94C38462388979C55D87DCF568F9CEBF /* Pods-TraceMyRoutesUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TraceMyRoutesUITests-dummy.m"; sourceTree = "<group>"; };
+		97DEC5AD35513A0A13F40A11394B0E27 /* AEXML-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AEXML-prefix.pch"; sourceTree = "<group>"; };
+		9C4D66F155C6512BBD9EE9F0E58E9EEB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D8D7142F0678B5DD06C32CC8FCADA24 /* Pods-TraceMyRoutesTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TraceMyRoutesTests-resources.sh"; sourceTree = "<group>"; };
+		A3AB78A7B5D67B62AB21154771D37D27 /* Kml.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kml.swift-dummy.m"; sourceTree = "<group>"; };
+		A4788F6D1BA3DDD75338844DDDEC179F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		AAAE301E13FA97C99F15D7B02B92775E /* Kml.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kml.swift.xcconfig; sourceTree = "<group>"; };
+		B3A1BBB4BCC57C4C6698CC111DAFDFEC /* Pods-TraceMyRoutes-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TraceMyRoutes-resources.sh"; sourceTree = "<group>"; };
+		B3FC7A0D373473928FB030A15CBEE821 /* Pods-TraceMyRoutes-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TraceMyRoutes-umbrella.h"; sourceTree = "<group>"; };
+		B6856F3F7FBC0E7A9F01B267D6B9AC95 /* Pods-TraceMyRoutes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TraceMyRoutes-dummy.m"; sourceTree = "<group>"; };
+		B7CA157E664015A4C6E37B2A4803031D /* Pods-TraceMyRoutesTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TraceMyRoutesTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CC61BE9157A177C7337C683E78FD86D2 /* Pods-TraceMyRoutesUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TraceMyRoutesUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D8EAE02A4E747998FE8B39D0467C47E9 /* AEXML-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AEXML-umbrella.h"; sourceTree = "<group>"; };
+		E3239A40E8A8D9363F5BF9895C7D3161 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Element.swift; path = Sources/Element.swift; sourceTree = "<group>"; };
+		E713920D4AA556F13BD177C923DDE8D1 /* AEXML-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AEXML-dummy.m"; sourceTree = "<group>"; };
+		E84B41C155F5C6C2609A13DB6769B562 /* Kml.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kml.swift-prefix.pch"; sourceTree = "<group>"; };
+		ED3EA7D33425C29BF761A50F865D35AA /* Pods-TraceMyRoutesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TraceMyRoutesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF637E36EEFF3C94E8D37904B33698C9 /* Pods-TraceMyRoutes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TraceMyRoutes.release.xcconfig"; sourceTree = "<group>"; };
+		F2521C5CA5B242857ADAA1715915CBA0 /* Pods-TraceMyRoutesTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TraceMyRoutesTests-frameworks.sh"; sourceTree = "<group>"; };
+		F547AF56CABF29C23EC36EBE20218ED9 /* Pods-TraceMyRoutesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TraceMyRoutesTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		006C3D1BB1682C96C8B3449B71C4A701 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54C8A3FDE9DB92153E65093688BE0B99 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		967F04863502AEC54BFCAC882BD2415A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00F037EDEB5D5DC8A2443CB56C6538B0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC09A9C627949FB275C957AFB3D4BACD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757524D96C5300D2451F8A4395683D42 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B77613F7B9236540A8900208F72202A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1DA3924280DEDA67936A9C52DE285C7 /* AEXML.framework in Frameworks */,
+				059B7D7A0970B83A1002E35282290B41 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF7CB01163E74AB4FD16EE8852E12424 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2175C682802857371AD80E401D814C08 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2576E039C005A29FB89B2D23988E9FB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CA5C32D3DE029E66CDCB6C5C478FF84 /* AEXML.framework */,
+				6A86E79AEBD9CEB8ECCE6CF7C8A16691 /* Kml_swift.framework */,
+				20402DD3C4CE5B581D6C9EE91D00C40A /* Pods_TraceMyRoutes.framework */,
+				29FB5081F15BB93D12D958565B75D240 /* Pods_TraceMyRoutesTests.framework */,
+				8CAFEA1F7EB5B33F3F98A8A14E0FE5E5 /* Pods_TraceMyRoutesUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D51B2BD679CD2C3F06030DBFA3D866B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83C0EF99C3D3A40281E142248A7345C8 /* AEXML.framework */,
+				93A89F4D40BB8FEAD92F89C0253C5A7A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DAEACA4054A9C9716547471F5F413A8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				929866D07ED85233E0B3A81AD90FEB57 /* Info.plist */,
+				0513867F23EE048EB12BCC7BFBF36363 /* Kml.swift.modulemap */,
+				AAAE301E13FA97C99F15D7B02B92775E /* Kml.swift.xcconfig */,
+				A3AB78A7B5D67B62AB21154771D37D27 /* Kml.swift-dummy.m */,
+				E84B41C155F5C6C2609A13DB6769B562 /* Kml.swift-prefix.pch */,
+				39AFBD74A304AAEE6DC28A9AD785C7D4 /* Kml.swift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Kml.swift";
+			sourceTree = "<group>";
+		};
+		3B01C4817A3E854F15979ED76B2A51D6 /* Kml.swift */ = {
+			isa = PBXGroup;
+			children = (
+				321CF10B901B3B04206B1B74AF24245F /* KML.swift */,
+				2DAEACA4054A9C9716547471F5F413A8 /* Support Files */,
+			);
+			name = Kml.swift;
+			path = Kml.swift;
+			sourceTree = "<group>";
+		};
+		5B37D555A265EB001FC530DE1829818D /* Pods-TraceMyRoutesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BFF5CA31A535DB5B78FC721DE9DB191 /* Info.plist */,
+				24691D1DD92D5A7659DF31C0050D0179 /* Pods-TraceMyRoutesUITests.modulemap */,
+				6E5DE9BB0ADA361A31AE71FD9B21D3E1 /* Pods-TraceMyRoutesUITests-acknowledgements.markdown */,
+				CC61BE9157A177C7337C683E78FD86D2 /* Pods-TraceMyRoutesUITests-acknowledgements.plist */,
+				94C38462388979C55D87DCF568F9CEBF /* Pods-TraceMyRoutesUITests-dummy.m */,
+				5CE72B64CB66FEA01F2FC89C49A79773 /* Pods-TraceMyRoutesUITests-frameworks.sh */,
+				15530AA52BCF45134766FBCCC7C41959 /* Pods-TraceMyRoutesUITests-resources.sh */,
+				688B665362660BD193075501BE7AB660 /* Pods-TraceMyRoutesUITests-umbrella.h */,
+				ED3EA7D33425C29BF761A50F865D35AA /* Pods-TraceMyRoutesUITests.debug.xcconfig */,
+				33ED3A531B1B001D77511E6FE8B3AEBA /* Pods-TraceMyRoutesUITests.release.xcconfig */,
+			);
+			name = "Pods-TraceMyRoutesUITests";
+			path = "Target Support Files/Pods-TraceMyRoutesUITests";
+			sourceTree = "<group>";
+		};
+		76519B33C08D1E2FC88532CF3D0AC4CE /* AEXML */ = {
+			isa = PBXGroup;
+			children = (
+				8008B6F541DB59E87BF74AEFBEA3D35D /* Document.swift */,
+				E3239A40E8A8D9363F5BF9895C7D3161 /* Element.swift */,
+				8036C0B49EBA146CB4A4061F727D9776 /* Error.swift */,
+				789DDFAB37B79E16318B4FB658529C9E /* Options.swift */,
+				46D92A2877D6AEE913961D1E681EB9B5 /* Parser.swift */,
+				B34512E50B1C6C72A7A831AE0AA73A60 /* Support Files */,
+			);
+			name = AEXML;
+			path = AEXML;
+			sourceTree = "<group>";
+		};
+		77DAE653EE07FB66780B0183DD82F0FC /* Pods-TraceMyRoutes */ = {
+			isa = PBXGroup;
+			children = (
+				9C4D66F155C6512BBD9EE9F0E58E9EEB /* Info.plist */,
+				1D4464644B818D18EAB77C6B791D9626 /* Pods-TraceMyRoutes.modulemap */,
+				58A1B2395BCD3AD956B702E9B1AE5E89 /* Pods-TraceMyRoutes-acknowledgements.markdown */,
+				8A7163EE47A16521A27A0FBD306E2C8E /* Pods-TraceMyRoutes-acknowledgements.plist */,
+				B6856F3F7FBC0E7A9F01B267D6B9AC95 /* Pods-TraceMyRoutes-dummy.m */,
+				7A199AEC88C7F69A9BFE224D7247300E /* Pods-TraceMyRoutes-frameworks.sh */,
+				B3A1BBB4BCC57C4C6698CC111DAFDFEC /* Pods-TraceMyRoutes-resources.sh */,
+				B3FC7A0D373473928FB030A15CBEE821 /* Pods-TraceMyRoutes-umbrella.h */,
+				365CD730C166D18D34FA792F458B7BAF /* Pods-TraceMyRoutes.debug.xcconfig */,
+				EF637E36EEFF3C94E8D37904B33698C9 /* Pods-TraceMyRoutes.release.xcconfig */,
+			);
+			name = "Pods-TraceMyRoutes";
+			path = "Target Support Files/Pods-TraceMyRoutes";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				2D51B2BD679CD2C3F06030DBFA3D866B /* Frameworks */,
+				A733AD666F2B5C0BC69EA9E54BFE19BF /* Pods */,
+				2576E039C005A29FB89B2D23988E9FB7 /* Products */,
+				E4B46D1A2FD5B18B554E649F8FA2B3FF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		93A89F4D40BB8FEAD92F89C0253C5A7A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A4788F6D1BA3DDD75338844DDDEC179F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A733AD666F2B5C0BC69EA9E54BFE19BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76519B33C08D1E2FC88532CF3D0AC4CE /* AEXML */,
+				3B01C4817A3E854F15979ED76B2A51D6 /* Kml.swift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B34512E50B1C6C72A7A831AE0AA73A60 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				023A9099AD611086E8308DA3FE86611E /* AEXML.modulemap */,
+				24AE259956BC85ED66E5B77D17310319 /* AEXML.xcconfig */,
+				E713920D4AA556F13BD177C923DDE8D1 /* AEXML-dummy.m */,
+				97DEC5AD35513A0A13F40A11394B0E27 /* AEXML-prefix.pch */,
+				D8EAE02A4E747998FE8B39D0467C47E9 /* AEXML-umbrella.h */,
+				0E69531BE362C5290FE93E7F355FAA95 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AEXML";
+			sourceTree = "<group>";
+		};
+		D055E261693E02504BCF81DB3735CAC1 /* Pods-TraceMyRoutesTests */ = {
+			isa = PBXGroup;
+			children = (
+				143260D2846C6CEF1B5BD4DCB991956C /* Info.plist */,
+				4012AE55D12DE56E430CA3244E8BFB76 /* Pods-TraceMyRoutesTests.modulemap */,
+				B7CA157E664015A4C6E37B2A4803031D /* Pods-TraceMyRoutesTests-acknowledgements.markdown */,
+				9452612CB07C3DB0EFCD5B9A8EA646CD /* Pods-TraceMyRoutesTests-acknowledgements.plist */,
+				8F38172AA03320E7BABF4DD702E77BD5 /* Pods-TraceMyRoutesTests-dummy.m */,
+				F2521C5CA5B242857ADAA1715915CBA0 /* Pods-TraceMyRoutesTests-frameworks.sh */,
+				9D8D7142F0678B5DD06C32CC8FCADA24 /* Pods-TraceMyRoutesTests-resources.sh */,
+				373C4A8E671C61C1EC1F7A5CA6DC3189 /* Pods-TraceMyRoutesTests-umbrella.h */,
+				F547AF56CABF29C23EC36EBE20218ED9 /* Pods-TraceMyRoutesTests.debug.xcconfig */,
+				7E97648C7B5C6C846B48D55793FE3C28 /* Pods-TraceMyRoutesTests.release.xcconfig */,
+			);
+			name = "Pods-TraceMyRoutesTests";
+			path = "Target Support Files/Pods-TraceMyRoutesTests";
+			sourceTree = "<group>";
+		};
+		E4B46D1A2FD5B18B554E649F8FA2B3FF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				77DAE653EE07FB66780B0183DD82F0FC /* Pods-TraceMyRoutes */,
+				D055E261693E02504BCF81DB3735CAC1 /* Pods-TraceMyRoutesTests */,
+				5B37D555A265EB001FC530DE1829818D /* Pods-TraceMyRoutesUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8CCA325C028C0B175EA85E049782302D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E6CF3B0289FBCDAE03247F855F2251A /* Pods-TraceMyRoutes-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A374DE02CB305FAF9F079420D2AE59EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D88AE57456C2C4521C32E4E000B84A /* Pods-TraceMyRoutesTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFFE8E971C49F577391F569025BA776D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10BB4C4711E2C4C47FA9CFEB2915C92D /* Pods-TraceMyRoutesUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0613CA45FA3570375BCF0AD7364E7F9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DD1C9E300865986CBCBC18E90F5D79D /* AEXML-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45EA9D045D17190C7CCB4C615C40FE6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77E9589425EB82E35AEA42998C62F56F /* Kml.swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0C8B9178337E64AB585433D238F68D34 /* Pods-TraceMyRoutesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70A6A8639C647BD8C45C105450D54B3E /* Build configuration list for PBXNativeTarget "Pods-TraceMyRoutesTests" */;
+			buildPhases = (
+				B7EF973F3C4F06D69E2461E33A232016 /* Sources */,
+				967F04863502AEC54BFCAC882BD2415A /* Frameworks */,
+				A374DE02CB305FAF9F079420D2AE59EF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-TraceMyRoutesTests";
+			productName = "Pods-TraceMyRoutesTests";
+			productReference = 29FB5081F15BB93D12D958565B75D240 /* Pods_TraceMyRoutesTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		14970642DB4661619E6CCA5BD2385F21 /* Kml.swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73112C9C0EF98843D67EA212D1B320C2 /* Build configuration list for PBXNativeTarget "Kml.swift" */;
+			buildPhases = (
+				0AD642DA644AE201FEB3515277650989 /* Sources */,
+				B77613F7B9236540A8900208F72202A7 /* Frameworks */,
+				E45EA9D045D17190C7CCB4C615C40FE6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0441446214CA080F4F53C7494DB156A /* PBXTargetDependency */,
+			);
+			name = Kml.swift;
+			productName = Kml.swift;
+			productReference = 6A86E79AEBD9CEB8ECCE6CF7C8A16691 /* Kml_swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		88C257C954247EE49E09C66A8B19E56A /* AEXML */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3C4627B7E11408E0460F1F8F976E2F4 /* Build configuration list for PBXNativeTarget "AEXML" */;
+			buildPhases = (
+				747A9DA0F6886F738BFD444632081895 /* Sources */,
+				006C3D1BB1682C96C8B3449B71C4A701 /* Frameworks */,
+				D0613CA45FA3570375BCF0AD7364E7F9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AEXML;
+			productName = AEXML;
+			productReference = 1CA5C32D3DE029E66CDCB6C5C478FF84 /* AEXML.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A87C8008A00ABD2BE33C460F88B914ED /* Pods-TraceMyRoutes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E817D03DCB3A57450058747105F4328 /* Build configuration list for PBXNativeTarget "Pods-TraceMyRoutes" */;
+			buildPhases = (
+				B6B42E72BEE2DA1CF92BC69B9F87B08C /* Sources */,
+				EF7CB01163E74AB4FD16EE8852E12424 /* Frameworks */,
+				8CCA325C028C0B175EA85E049782302D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70780609AC11207B5165DADDA17A7F22 /* PBXTargetDependency */,
+				54A225550987F54C9C6F4FBAC13FF363 /* PBXTargetDependency */,
+			);
+			name = "Pods-TraceMyRoutes";
+			productName = "Pods-TraceMyRoutes";
+			productReference = 20402DD3C4CE5B581D6C9EE91D00C40A /* Pods_TraceMyRoutes.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C3AB66035B025899327E4CDC2569EF75 /* Pods-TraceMyRoutesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43F883E9943690EE8BA8347C159AF96F /* Build configuration list for PBXNativeTarget "Pods-TraceMyRoutesUITests" */;
+			buildPhases = (
+				AD4A5BC5CD0539F45211AF68BA093854 /* Sources */,
+				AC09A9C627949FB275C957AFB3D4BACD /* Frameworks */,
+				BFFE8E971C49F577391F569025BA776D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-TraceMyRoutesUITests";
+			productName = "Pods-TraceMyRoutesUITests";
+			productReference = 8CAFEA1F7EB5B33F3F98A8A14E0FE5E5 /* Pods_TraceMyRoutesUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 2576E039C005A29FB89B2D23988E9FB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88C257C954247EE49E09C66A8B19E56A /* AEXML */,
+				14970642DB4661619E6CCA5BD2385F21 /* Kml.swift */,
+				A87C8008A00ABD2BE33C460F88B914ED /* Pods-TraceMyRoutes */,
+				0C8B9178337E64AB585433D238F68D34 /* Pods-TraceMyRoutesTests */,
+				C3AB66035B025899327E4CDC2569EF75 /* Pods-TraceMyRoutesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0AD642DA644AE201FEB3515277650989 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CDA31EB6D1391017404217EEDD297F3 /* KML.swift in Sources */,
+				310DAAE417957E6FF97B503D3CF85827 /* Kml.swift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		747A9DA0F6886F738BFD444632081895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C67BD33BEAD1A739CEC2A825F38C257 /* AEXML-dummy.m in Sources */,
+				6E4E7C06A1B9C35408BECAEFEA3C3AD5 /* Document.swift in Sources */,
+				14C6239F686582508AEA4A58F5F66E56 /* Element.swift in Sources */,
+				20D84C143269E60FBCDFCC30FFB2D6DB /* Error.swift in Sources */,
+				2758CD107D81A4B5951A58608D939FEF /* Options.swift in Sources */,
+				3F32E4E755ACB30B8701F53C3B8917B5 /* Parser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD4A5BC5CD0539F45211AF68BA093854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C54B95E6BE4630F0F3BDE7FEE0D55D6 /* Pods-TraceMyRoutesUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6B42E72BEE2DA1CF92BC69B9F87B08C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B13493792CC7957925BD15C70A38E5 /* Pods-TraceMyRoutes-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7EF973F3C4F06D69E2461E33A232016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0DC7C7A532877D828B51BCABDFDD359 /* Pods-TraceMyRoutesTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		54A225550987F54C9C6F4FBAC13FF363 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kml.swift;
+			target = 14970642DB4661619E6CCA5BD2385F21 /* Kml.swift */;
+			targetProxy = E4F4BDF663BE242E8B8F4B7390879A25 /* PBXContainerItemProxy */;
+		};
+		70780609AC11207B5165DADDA17A7F22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AEXML;
+			target = 88C257C954247EE49E09C66A8B19E56A /* AEXML */;
+			targetProxy = 2C981C328F0448B2C76C535E3FF3C31C /* PBXContainerItemProxy */;
+		};
+		F0441446214CA080F4F53C7494DB156A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AEXML;
+			target = 88C257C954247EE49E09C66A8B19E56A /* AEXML */;
+			targetProxy = D465765EE5F03E94524AB296E7DAC557 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4719566A8092D613A79800463C2CCF35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAAE301E13FA97C99F15D7B02B92775E /* Kml.swift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Kml.swift/Kml.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Kml.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Kml.swift/Kml.swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Kml_swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5BF9BFAACF0A2800B57D3527AA3B3B76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E97648C7B5C6C846B48D55793FE3C28 /* Pods-TraceMyRoutesTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TraceMyRoutesTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TraceMyRoutesTests/Pods-TraceMyRoutesTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TraceMyRoutesTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5EF9FC3BEADDEAD8D1268F62E35BFEAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24AE259956BC85ED66E5B77D17310319 /* AEXML.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AEXML/AEXML-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AEXML/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AEXML/AEXML.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AEXML;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		769968DCF20EB59E2B456175F656F678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24AE259956BC85ED66E5B77D17310319 /* AEXML.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AEXML/AEXML-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AEXML/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AEXML/AEXML.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AEXML;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		79EBBAEEC8B0B17A41D5AC6058E91D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED3EA7D33425C29BF761A50F865D35AA /* Pods-TraceMyRoutesUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TraceMyRoutesUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TraceMyRoutesUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8635C5631606AF04F1A8F86F536B87A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF637E36EEFF3C94E8D37904B33698C9 /* Pods-TraceMyRoutes.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TraceMyRoutes/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TraceMyRoutes/Pods-TraceMyRoutes.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TraceMyRoutes;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9B32FE9E33A7F9A5265AF3B24BDE57F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33ED3A531B1B001D77511E6FE8B3AEBA /* Pods-TraceMyRoutesUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TraceMyRoutesUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TraceMyRoutesUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A34A512E0D113BB33BD5627C94576E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAAE301E13FA97C99F15D7B02B92775E /* Kml.swift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Kml.swift/Kml.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Kml.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Kml.swift/Kml.swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Kml_swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C5734BCEDCBE81E25D6EBC07C2F364FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F547AF56CABF29C23EC36EBE20218ED9 /* Pods-TraceMyRoutesTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TraceMyRoutesTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TraceMyRoutesTests/Pods-TraceMyRoutesTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TraceMyRoutesTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E8A749911BA843D6DBEC64EC59C900C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 365CD730C166D18D34FA792F458B7BAF /* Pods-TraceMyRoutes.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TraceMyRoutes/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TraceMyRoutes/Pods-TraceMyRoutes.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TraceMyRoutes;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
+				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43F883E9943690EE8BA8347C159AF96F /* Build configuration list for PBXNativeTarget "Pods-TraceMyRoutesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79EBBAEEC8B0B17A41D5AC6058E91D56 /* Debug */,
+				9B32FE9E33A7F9A5265AF3B24BDE57F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70A6A8639C647BD8C45C105450D54B3E /* Build configuration list for PBXNativeTarget "Pods-TraceMyRoutesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5734BCEDCBE81E25D6EBC07C2F364FC /* Debug */,
+				5BF9BFAACF0A2800B57D3527AA3B3B76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73112C9C0EF98843D67EA212D1B320C2 /* Build configuration list for PBXNativeTarget "Kml.swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4719566A8092D613A79800463C2CCF35 /* Debug */,
+				A34A512E0D113BB33BD5627C94576E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E817D03DCB3A57450058747105F4328 /* Build configuration list for PBXNativeTarget "Pods-TraceMyRoutes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8A749911BA843D6DBEC64EC59C900C1 /* Debug */,
+				8635C5631606AF04F1A8F86F536B87A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3C4627B7E11408E0460F1F8F976E2F4 /* Build configuration list for PBXNativeTarget "AEXML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EF9FC3BEADDEAD8D1268F62E35BFEAC /* Debug */,
+				769968DCF20EB59E2B456175F656F678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
