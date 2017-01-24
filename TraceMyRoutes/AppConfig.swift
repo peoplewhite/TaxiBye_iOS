@@ -12,6 +12,7 @@ import Foundation
 struct AppConfig {
 
 
+    static let isShowAPILog = false
 
     
 }

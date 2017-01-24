@@ -9,27 +9,55 @@
 import UIKit
 
 class FirstSceneViewController: UIViewController {
+    
+    @IBOutlet weak var trackButton: UIButton!
+    @IBOutlet weak var typeCarPlateNumberTextfield: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+
+        TraceRouteMachine.shared.initMachine()
+
+        makeTypeCarPlateNumberTextfieldShowKeyboard()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+extension FirstSceneViewController {
+    // MARK: =================> textfield
+
+    @IBAction func typeCarPlateNumberEditingChanged(_ sender: UITextField) {
+
+        let trimmedString = sender.text!.trimmingCharacters(in: .whitespaces)
+
+        trackButton.isEnabled = trimmedString.characters.count > 0
+        TraceRouteMachine.shared.carPlateNumber = trackButton.isEnabled ? "" : trimmedString
+
+    }
+
+    func makeTypeCarPlateNumberTextfieldEmpty() {
+        typeCarPlateNumberTextfield.text = ""
+    }
+
+    func makeTypeCarPlateNumberTextfieldShowKeyboard() {
+        typeCarPlateNumberTextfield.becomeFirstResponder()
     }
     
+}
+extension FirstSceneViewController {
+    // MARK: =================> button
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func trackButtonPressed(_ sender: UIButton) {
+        makeTypeCarPlateNumberTextfieldEmpty()
     }
-    */
-
+    
 }

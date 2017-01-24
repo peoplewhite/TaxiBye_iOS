@@ -1,10 +1,14 @@
 PODS:
+  - Alamofire (4.2.0)
   - iOS-KML-Framework (1.0.0):
     - TBXML (~> 1.5)
+  - SwiftyJSON (3.1.3)
   - TBXML (1.5)
 
 DEPENDENCIES:
+  - Alamofire
   - iOS-KML-Framework (from `https://github.com/FLCLjp/iOS-KML-Framework.git`)
+  - SwiftyJSON
 
 EXTERNAL SOURCES:
   iOS-KML-Framework:
@@ -16,9 +20,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/FLCLjp/iOS-KML-Framework.git
 
 SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   iOS-KML-Framework: c16f4605bc290b769a13f2645840211e31f8d92a
+  SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   TBXML: 9f9dadb239f2f2af1dadb87fe43a0ce6e479379a
 
-PODFILE CHECKSUM: 3aa13f3b0085b39587f07f74a0e442c962ce5adb
+PODFILE CHECKSUM: aaa0d54f1a9372c611f3e0f86593887f7070127c
 
 COCOAPODS: 1.2.0.beta.1
