@@ -1,0 +1,15 @@
+PODS:
+  - AEXML (4.0.1)
+  - Kml.swift (0.3.0):
+    - AEXML
+
+DEPENDENCIES:
+  - Kml.swift
+
+SPEC CHECKSUMS:
+  AEXML: 905e50474c0a261d335aa8be4ee32d22d69b6fd5
+  Kml.swift: 723e4dfa1ea36f91c145e43a30a2bc1fdc2d2da1
+
+PODFILE CHECKSUM: b8ededd19b3107250cb169f5c6ea670e2db77a73
+
+COCOAPODS: 1.2.0.beta.1
