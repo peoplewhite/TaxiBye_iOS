@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="EzJ-1E-aqS">
             <objects>
-                <viewController id="1Dz-fb-muQ" sceneMemberID="viewController">
+                <viewController id="1Dz-fb-muQ" customClass="FirstViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FVy-a0-AYC"/>
                         <viewControllerLayoutGuide type="bottom" id="3x1-8P-sVI"/>
@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="839" y="36"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="Wsb-8I-Dbh">
             <objects>
-                <viewController id="UTc-ui-9Wd" sceneMemberID="viewController">
+                <viewController id="UTc-ui-9Wd" customClass="SearchViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Bb-Si-rfD"/>
                         <viewControllerLayoutGuide type="bottom" id="lyz-6z-PNX"/>
@@ -122,6 +122,9 @@
                                 <rect key="frame" x="38" y="57" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="UTc-ui-9Wd" eventType="touchUpInside" id="6tQ-rY-GPc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
