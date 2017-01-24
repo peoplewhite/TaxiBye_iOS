@@ -207,6 +207,7 @@
 				1448ED161E373FE700962E58 /* Resources */,
 				564B87A85129FCAA8EB73BCB /* [CP] Embed Pods Frameworks */,
 				F5A912B17A7E256B2368E998 /* [CP] Copy Pods Resources */,
+				14EE4FCF1E37A287001306DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -336,6 +337,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		14EE4FCF1E37A287001306DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" bdd8c1f28dc6e623c4f8d98450954fa4984566a1 df2b998d56f644e165493e3da5b56f5c9b12768898f40f7c89b40bfcd1ad18cf";
+		};
 		181FBD6B0DB2EB928DB1F4E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -643,10 +657,11 @@
 			baseConfigurationReference = 8CC22E0276ACE5B3CB3ED155 /* Pods-TraceMyRoutes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6ETQBL4GH5;
 				INFOPLIST_FILE = TraceMyRoutes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oddesign.TraceMyRoutes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oddesign.Taxibye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -657,10 +672,11 @@
 			baseConfigurationReference = D2CE7C500955B82EFC4E7FBB /* Pods-TraceMyRoutes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6ETQBL4GH5;
 				INFOPLIST_FILE = TraceMyRoutes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oddesign.TraceMyRoutes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oddesign.Taxibye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
