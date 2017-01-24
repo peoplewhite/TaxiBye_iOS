@@ -26,7 +26,7 @@
                                 <rect key="frame" x="167.5" y="244" width="39" height="30"/>
                                 <state key="normal" title="Track"/>
                                 <connections>
-                                    <segue destination="wDz-55-yk0" kind="show" id="baO-h6-GOs"/>
+                                    <segue destination="0pi-dN-mra" kind="show" id="ksi-mQ-3uZ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入車牌號碼" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-Ig-az0" userLabel="typeCarPlateNumber">
@@ -58,34 +58,6 @@
             </objects>
             <point key="canvasLocation" x="839" y="36"/>
         </scene>
-        <!--Start Trace View Controller-->
-        <scene sceneID="fOV-uQ-9b3">
-            <objects>
-                <viewController id="wDz-55-yk0" customClass="StartTraceViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bfb-2O-5sv"/>
-                        <viewControllerLayoutGuide type="bottom" id="eS8-uC-EQG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3N3-Y4-zWJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I0-9Z-dhI">
-                                <rect key="frame" x="164" y="481" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <segue destination="0pi-dN-mra" kind="show" id="uj9-i9-A3o"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JKF-Tt-a1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1572" y="36"/>
-        </scene>
         <!--Tracing View Controller-->
         <scene sceneID="HLQ-Oy-jwF">
             <objects>
@@ -112,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zus-tJ-ye6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2324" y="36"/>
+            <point key="canvasLocation" x="1586" y="36"/>
         </scene>
         <!--Rating View Controller-->
         <scene sceneID="O3x-xO-7WT">
@@ -140,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6M-fd-HcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3034" y="36"/>
+            <point key="canvasLocation" x="2292" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3lG-ez-cLg">
