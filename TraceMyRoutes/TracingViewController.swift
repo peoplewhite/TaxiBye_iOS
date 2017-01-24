@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-import iOS_KML_Framework
+
 
 class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -20,26 +20,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
         checkCoreLocationPermission()
 
 
-
-
-        let root = KMLRoot()
-        let doc = KMLDocument()
-        root.feature = doc
-
-        let placemark = KMLPlacemark()
-        placemark.name = ""
-        placemark.descriptionValue = ""
-        doc.addFeature(placemark)
-
-        let point = KMLPoint()
-        placemark.geometry = point
-
-        let coordinate = KMLCoordinate()
-        coordinate.latitude = 0.0
-        coordinate.longitude = 0.0
-        point.coordinate = coordinate
-
-        
+        KMLMachine.shared.initMachine()
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,12 +45,9 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        print(" = \(locations)") //kimuranow
-//        print(" = \(locations.)") //kimuranow
         let currentLocation: CLLocation = locations[0]
         print(" = \(currentLocation.coordinate.latitude), \(currentLocation.coordinate.longitude)") //kimuranow
-        
-        
+        KMLMachine.shared.save(currentLocation)
     }
 
 }
