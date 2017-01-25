@@ -10,6 +10,8 @@ target 'TraceMyRoutes' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'SVProgressHUD'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 
 
