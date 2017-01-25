@@ -17,6 +17,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var plateNumberTextfield: UITextField!
 
     @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchButtonHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ class FirstViewController: UIViewController {
         settingUIForTrackButton()
         settingUIForLine()
         settingUIForPlateNumberTextfield()
+        settingUIForSearchButtonHeight()
 
         
     }
@@ -54,6 +56,9 @@ class FirstViewController: UIViewController {
     }
     func settingUIForPlateNumberTextfield() {
 
+    }
+    func settingUIForSearchButtonHeight() {
+        searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
 
 

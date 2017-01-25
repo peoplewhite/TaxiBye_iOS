@@ -25,5 +25,14 @@ struct AppConfig {
             return 65.0
         }
     }
+    static var searchbuttonInFirstSceneHeight: CGFloat {
+        if UIScreen.main.bounds.size.width == 320.0 {
+            return 45.0
+        } else if UIScreen.main.bounds.size.width == 375.0 {//iPhone 6
+            return 53.0
+        } else {//iPhone 6 plus
+            return 59.0
+        }
+    }
     
 }

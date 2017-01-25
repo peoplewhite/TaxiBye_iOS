@@ -103,6 +103,7 @@
                         <outlet property="line" destination="QyE-Ac-15t" id="CxG-xr-Q97"/>
                         <outlet property="plateNumberTextfield" destination="IZi-LZ-qRZ" id="CXk-qD-Qnd"/>
                         <outlet property="searchButton" destination="bNF-MT-wiv" id="C2Q-ZC-TbO"/>
+                        <outlet property="searchButtonHeightConstraint" destination="C1P-sX-t7e" id="6Z8-kJ-5Kl"/>
                         <outlet property="trackButton" destination="rAv-57-klq" id="MGx-Nn-tTE"/>
                         <outlet property="trackButtonHeightConstraint" destination="A8C-qA-pVu" id="bat-ph-8Zf"/>
                     </connections>
