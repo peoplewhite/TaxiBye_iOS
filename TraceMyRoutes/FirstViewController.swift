@@ -11,6 +11,13 @@ import SVProgressHUD
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var trackButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var line: UIView!
+    @IBOutlet weak var plateNumberTextfield: UITextField!
+
+    @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,20 +26,35 @@ class FirstViewController: UIViewController {
         SVProgressHUD.setMinimumDismissTimeInterval(2)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+
+        initUI()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+    func initUI() {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+        settingUIForTrackButton()
+        settingUIForLine()
+        settingUIForPlateNumberTextfield()
+
+        
     }
-    */
+    func settingUIForTrackButton() {
+        trackButtonHeightConstraint.constant = AppConfig.buttonHeight
+        trackButton.layer.cornerRadius = AppConfig.buttonHeight / 2.0
+    }
+    func settingUIForLine() {
+
+    }
+    func settingUIForPlateNumberTextfield() {
+
+    }
+
 
 }
