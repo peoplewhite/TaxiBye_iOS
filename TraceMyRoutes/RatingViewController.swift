@@ -28,6 +28,7 @@ class RatingViewController: UIViewController {
     @IBOutlet weak var option3: UIButton!
     @IBOutlet weak var option4: UIButton!
 
+    @IBOutlet weak var optionButtonHeightConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var submitButtonHeightConstraint: NSLayoutConstraint!
 
@@ -132,6 +133,9 @@ class RatingViewController: UIViewController {
     }
 
     func settingUIForOptions() {
+        optionButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
+        view.layoutIfNeeded()
+        
         settingButton(option1)
         settingButton(option2)
         settingButton(option3)
