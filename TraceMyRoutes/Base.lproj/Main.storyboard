@@ -186,12 +186,25 @@
                                     <segue destination="NE5-2S-xfX" kind="show" id="UtR-jM-jww"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taxi" translatesAutoresizingMaskIntoConstraints="NO" id="Y03-02-pu8">
+                                <rect key="frame" x="261" y="77.5" width="44" height="28"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-Nx-rVR">
+                                <rect key="frame" x="240" y="79" width="21" height="25.5"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Tcw-zp-l1j" firstAttribute="top" secondItem="uKe-DW-nbp" secondAttribute="bottom" id="40K-80-Wbg"/>
+                            <constraint firstItem="Y03-02-pu8" firstAttribute="centerY" secondItem="Tcw-zp-l1j" secondAttribute="centerY" id="EDU-U0-BeJ"/>
+                            <constraint firstItem="Y03-02-pu8" firstAttribute="trailing" secondItem="Tcw-zp-l1j" secondAttribute="trailing" constant="-15" id="LJu-g2-HNs"/>
                             <constraint firstItem="Tcw-zp-l1j" firstAttribute="centerX" secondItem="wT2-ZM-hNW" secondAttribute="centerX" id="muh-KK-mPw"/>
+                            <constraint firstItem="Xcs-Nx-rVR" firstAttribute="centerY" secondItem="Y03-02-pu8" secondAttribute="centerY" id="vVl-nO-TLN"/>
                             <constraint firstItem="Tcw-zp-l1j" firstAttribute="width" secondItem="wT2-ZM-hNW" secondAttribute="width" id="xBB-rV-Ze0"/>
+                            <constraint firstItem="Y03-02-pu8" firstAttribute="leading" secondItem="Xcs-Nx-rVR" secondAttribute="trailing" id="xft-e0-t0t"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -513,5 +526,6 @@
         <image name="blackEmptyStar" width="40" height="38"/>
         <image name="firstSceneBackground" width="320" height="190"/>
         <image name="list" width="19" height="11"/>
+        <image name="taxi" width="44" height="28"/>
     </resources>
 </document>
