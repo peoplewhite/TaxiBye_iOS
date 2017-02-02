@@ -34,5 +34,14 @@ struct AppConfig {
             return 59.0
         }
     }
+    static var buttonInWarningSceneSize: CGSize {
+        if UIScreen.main.bounds.size.width == 320.0 {
+            return CGSize(width: 136.0, height: 50.0)
+        } else if UIScreen.main.bounds.size.width == 375.0 {//iPhone 6
+            return CGSize(width: 160.0, height: 59.0)
+        } else {//iPhone 6 plus
+            return CGSize(width: 176.0, height: 60.0)
+        }
+    }
     
 }

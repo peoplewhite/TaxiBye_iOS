@@ -31,6 +31,11 @@ class FirstViewController: UIViewController {
 
 //    [self.placeholder drawInRect:rect withFont:self.font lineBreakMode:UILineBreakModeTailTruncation alignment:self.textAlignment];
         initUI()
+
+        let chooseTagBrandScene: WarningScene = Bundle.main.loadNibNamed("WarningScene", owner: self, options: nil)![0] as! WarningScene
+        chooseTagBrandScene.frame = UIScreen.main.bounds
+        UIApplication.shared.keyWindow?.addSubview(chooseTagBrandScene)
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -60,7 +60,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaxiBye" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnO-CO-uSy" userLabel="title">
-                                        <rect key="frame" x="0.0" y="40" width="320" height="38.5"/>
+                                        <rect key="frame" x="0.0" y="40" width="320" height="39"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="33"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

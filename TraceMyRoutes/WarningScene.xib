@@ -23,13 +23,13 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSJ-pV-7Y8">
-                    <rect key="frame" x="-0.5" y="110" width="375" height="107.5"/>
+                    <rect key="frame" x="-0.5" y="110" width="375" height="108"/>
                     <fontDescription key="fontDescription" type="system" pointSize="90"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFm-sN-Hnw">
-                    <rect key="frame" x="-0.5" y="269" width="375" height="44"/>
+                    <rect key="frame" x="-0.5" y="270" width="375" height="44"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMg-fe-DYz" userLabel="car">
                             <rect key="frame" x="67.5" y="-42" width="240" height="128"/>
@@ -62,29 +62,31 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="警告" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVF-sE-onz" userLabel="warningTitle">
-                    <rect key="frame" x="0.0" y="419" width="375" height="53"/>
+                    <rect key="frame" x="0.0" y="420" width="375" height="53"/>
                     <fontDescription key="fontDescription" type="system" pointSize="44"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="此車輛的評價低於平均分數！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm1-rL-lca" userLabel="warningDescription">
-                    <rect key="frame" x="0.0" y="472" width="375" height="21"/>
+                    <rect key="frame" x="0.0" y="473" width="375" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2K-Nc-O9V" userLabel="no">
-                    <rect key="frame" x="48" y="546" width="60" height="50"/>
+                    <rect key="frame" x="117" y="546" width="60" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="Syf-da-HU7"/>
                         <constraint firstAttribute="height" constant="50" id="p9c-YK-Jbx"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                     <state key="normal" title="NO">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP7-fY-MU4" userLabel="yes">
-                    <rect key="frame" x="267" y="546" width="60" height="50"/>
+                    <rect key="frame" x="197" y="546" width="60" height="50"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                     <state key="normal" title="YES">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -95,10 +97,10 @@
                 <constraint firstItem="CVF-sE-onz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Oy-t4-zlW"/>
                 <constraint firstItem="Pgl-Bb-aFX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3jV-HL-vvC"/>
                 <constraint firstItem="CVF-sE-onz" firstAttribute="top" secondItem="oFm-sN-Hnw" secondAttribute="bottom" constant="106" id="52k-Y3-h6g"/>
-                <constraint firstItem="Pgl-Bb-aFX" firstAttribute="leading" secondItem="u2K-Nc-O9V" secondAttribute="trailing" constant="79" id="6Yb-A9-hEa"/>
+                <constraint firstItem="Pgl-Bb-aFX" firstAttribute="leading" secondItem="u2K-Nc-O9V" secondAttribute="trailing" constant="10" id="6Yb-A9-hEa"/>
                 <constraint firstItem="CVF-sE-onz" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="A7r-bq-7xX"/>
                 <constraint firstItem="dP7-fY-MU4" firstAttribute="centerY" secondItem="u2K-Nc-O9V" secondAttribute="centerY" id="AkB-8D-AtY"/>
-                <constraint firstItem="dP7-fY-MU4" firstAttribute="leading" secondItem="Pgl-Bb-aFX" secondAttribute="trailing" constant="80" id="G9S-he-IbX"/>
+                <constraint firstItem="dP7-fY-MU4" firstAttribute="leading" secondItem="Pgl-Bb-aFX" secondAttribute="trailing" constant="10" id="G9S-he-IbX"/>
                 <constraint firstItem="Qm1-rL-lca" firstAttribute="top" secondItem="CVF-sE-onz" secondAttribute="bottom" id="GMf-IW-Ja9"/>
                 <constraint firstAttribute="bottom" secondItem="u2K-Nc-O9V" secondAttribute="bottom" constant="71" id="MXp-D3-Zgu"/>
                 <constraint firstItem="Qm1-rL-lca" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OxF-Ht-BiJ"/>
@@ -116,6 +118,12 @@
                 <constraint firstItem="dP7-fY-MU4" firstAttribute="height" secondItem="u2K-Nc-O9V" secondAttribute="height" id="y5Z-Lm-0aj"/>
                 <constraint firstItem="Pgl-Bb-aFX" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="ynf-eS-N9t"/>
             </constraints>
+            <connections>
+                <outlet property="actionButtonHeightConstraint" destination="p9c-YK-Jbx" id="wki-hS-UWb"/>
+                <outlet property="actionButtonWidthConstraint" destination="Syf-da-HU7" id="oVv-wk-Epo"/>
+                <outlet property="noButton" destination="u2K-Nc-O9V" id="60Z-yO-sa5"/>
+                <outlet property="yesButton" destination="dP7-fY-MU4" id="TOZ-fn-emD"/>
+            </connections>
         </view>
     </objects>
 </document>
