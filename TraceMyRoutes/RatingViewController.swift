@@ -17,8 +17,10 @@ class RatingViewController: UIViewController {
 
 
 
-
-
+    @IBOutlet weak var option1: UIButton!
+    @IBOutlet weak var option2: UIButton!
+    @IBOutlet weak var option3: UIButton!
+    @IBOutlet weak var option4: UIButton!
 
 
 
@@ -52,6 +54,7 @@ class RatingViewController: UIViewController {
 
     func initUI() {
         settingUIForCommentLabel()
+        settingUIForOptions()
 
     }
 
@@ -74,6 +77,68 @@ class RatingViewController: UIViewController {
 
     }
 
+    func settingUIForOptions() {
+        settingButton(option1)
+        settingButton(option2)
+        settingButton(option3)
+        settingButton(option4)
+
+        option1.setTitle("還好", for: .normal)
+        option2.setTitle("車速過快", for: .normal)
+        option3.setTitle("態度不佳", for: .normal)
+        option4.setTitle("爛透了", for: .normal)
+    }
+    func settingButton(_ b: UIButton) {
+
+        b.clipsToBounds = true
+        b.layer.cornerRadius = b.frame.size.height / 2.0
+        b.layer.borderWidth = 2.0
+        b.layer.borderColor = UIColor.black.cgColor
+        b.setTitleColor(UIColor.black, for: .normal)
+        b.backgroundColor = UIColor.clear
+    }
+
+    @IBAction func option1ButtonPressed(_ sender: UIButton) {
+        if sender.backgroundColor == UIColor.clear {
+            sender.backgroundColor = UIColor.black
+            sender.setTitleColor(UIColor.white, for: .normal)
+        } else {
+            sender.backgroundColor = UIColor.clear
+            sender.setTitleColor(UIColor.black, for: .normal)
+        }
+    }
+    @IBAction func option2ButtonPressed(_ sender: UIButton) {
+        if sender.backgroundColor == UIColor.clear {
+            sender.backgroundColor = UIColor.black
+            sender.setTitleColor(UIColor.white, for: .normal)
+        } else {
+            sender.backgroundColor = UIColor.clear
+            sender.setTitleColor(UIColor.black, for: .normal)
+        }
+    }
+    @IBAction func option3ButtonPressed(_ sender: UIButton) {
+        if sender.backgroundColor == UIColor.clear {
+            sender.backgroundColor = UIColor.black
+            sender.setTitleColor(UIColor.white, for: .normal)
+        } else {
+            sender.backgroundColor = UIColor.clear
+            sender.setTitleColor(UIColor.black, for: .normal)
+        }
+
+    }
+    @IBAction func option4ButtonPressed(_ sender: UIButton) {
+        if sender.backgroundColor == UIColor.clear {
+            sender.backgroundColor = UIColor.black
+            sender.setTitleColor(UIColor.white, for: .normal)
+        } else {
+            sender.backgroundColor = UIColor.clear
+            sender.setTitleColor(UIColor.black, for: .normal)
+        }
+
+    }
+
+
+    
 
 }
 
