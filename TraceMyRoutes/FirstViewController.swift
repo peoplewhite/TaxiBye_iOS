@@ -47,7 +47,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
     func goTraceScene() {
         performSegue(withIdentifier: "goTraceScene", sender: nil)
-        
+
     }
     
     func settingUIForSearchButtonHeight() {
@@ -55,9 +55,31 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     }
     @IBAction func trackButtonPressed(_ sender: UIButton) {
 //        showWarningScene()
-        goTraceScene()
+        
+        let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
+        if trimmedString.characters.count > 0 {
+            goTraceScene()
+        } else {
+
+            showAlertViewWith(msg: "請輸入車牌號碼")
+
+        }
+
+        
 
     }
+    func showAlertViewWith(msg: String) {
+
+        // swift 3.0
+        let alert:UIAlertController = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            alert.dismiss(animated: false, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+
+    }
+
+
     func showWarningScene() {
 
         let chooseTagBrandScene: WarningScene = Bundle.main.loadNibNamed("WarningScene", owner: self, options: nil)![0] as! WarningScene
