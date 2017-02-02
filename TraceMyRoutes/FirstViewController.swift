@@ -31,6 +31,8 @@ class FirstViewController: UIViewController {
 
 //    [self.placeholder drawInRect:rect withFont:self.font lineBreakMode:UILineBreakModeTailTruncation alignment:self.textAlignment];
         initUI()
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +62,25 @@ class FirstViewController: UIViewController {
     }
     func settingUIForSearchButtonHeight() {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
+    }
+    @IBAction func trackButtonPressed(_ sender: UIButton) {
+        showWarningScene()
+        
+    }
+    func showWarningScene() {
+
+        let chooseTagBrandScene: WarningScene = Bundle.main.loadNibNamed("WarningScene", owner: self, options: nil)![0] as! WarningScene
+        chooseTagBrandScene.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        UIApplication.shared.keyWindow?.addSubview(chooseTagBrandScene)
+
+        let kAnimationDuration: Double = 0.3
+
+        UIView.animate(withDuration: kAnimationDuration, animations: {() -> Void in
+            chooseTagBrandScene.frame = UIScreen.main.bounds
+        }, completion: {(finished: Bool) -> Void in
+            
+        })
+
     }
 
 //    - (void) drawPlaceholderInRect:(CGRect)rect {
