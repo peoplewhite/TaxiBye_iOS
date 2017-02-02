@@ -12,6 +12,7 @@ class CommentViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var textview: UITextView!
     @IBOutlet weak var fakePlaceholder: UILabel!
+    var comment = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,11 @@ class CommentViewController: UIViewController, UITextViewDelegate {
 
     }
     override func viewWillAppear(_ animated: Bool) {
+        if comment != "" {
+            textview.text = comment
+            fakePlaceholder.isHidden = true
+            
+        }
         
         initUI()
     }
@@ -59,4 +65,13 @@ class CommentViewController: UIViewController, UITextViewDelegate {
         let trimmedString = textView.text!.trimmingCharacters(in: .whitespaces)
         fakePlaceholder.isHidden = trimmedString.characters.count > 0
     }
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        let vc: RatingViewController = segue.destination as! RatingViewController
+        vc.comment = textview.text!
+
+    }
+    
 }
