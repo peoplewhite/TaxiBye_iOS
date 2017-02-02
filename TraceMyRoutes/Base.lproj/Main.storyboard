@@ -378,6 +378,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2d-om-6cC">
                                 <rect key="frame" x="30" y="523" width="260" height="30"/>
                                 <color key="backgroundColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pCY-Em-51T"/>
+                                </constraints>
                                 <state key="normal" title="送出">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -414,6 +417,8 @@
                         <outlet property="star3" destination="u6n-w5-mac" id="c71-Du-7kf"/>
                         <outlet property="star4" destination="Sje-Nu-MdX" id="n8p-a2-Iet"/>
                         <outlet property="star5" destination="Rq0-x1-UQK" id="sos-Yv-vTJ"/>
+                        <outlet property="submitButton" destination="h2d-om-6cC" id="oVh-Yy-iBT"/>
+                        <outlet property="submitButtonHeightConstraint" destination="pCY-Em-51T" id="kZg-sT-djQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6M-fd-HcS" userLabel="First Responder" sceneMemberID="firstResponder"/>

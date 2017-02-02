@@ -12,6 +12,7 @@ import SVProgressHUD
 class RatingViewController: UIViewController {
 
 
+    @IBOutlet weak var submitButton: UIButton!
 
     @IBOutlet weak var commentTextView: UITextView!
 
@@ -28,6 +29,7 @@ class RatingViewController: UIViewController {
     @IBOutlet weak var option4: UIButton!
 
 
+    @IBOutlet weak var submitButtonHeightConstraint: NSLayoutConstraint!
 
 
     override func viewDidLoad() {
@@ -103,7 +105,14 @@ class RatingViewController: UIViewController {
     func initUI() {
         settingUIForCommentLabel()
         settingUIForOptions()
+        settingUIForSubmitButton()
 
+    }
+    func settingUIForSubmitButton() {
+        submitButtonHeightConstraint.constant = AppConfig.buttonHeight
+        view.layoutIfNeeded()
+        submitButton.clipsToBounds = true
+        submitButton.layer.cornerRadius = submitButton.frame.size.height / 2.0
     }
 
     func settingUIForCommentLabel() {
