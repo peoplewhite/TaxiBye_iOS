@@ -69,7 +69,8 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
     @IBAction func trackButtonPressed(_ sender: UIButton) {
-        showWarningScene()
+//        showWarningScene()
+        goTraceScene()
         
     }
     func showWarningScene() {

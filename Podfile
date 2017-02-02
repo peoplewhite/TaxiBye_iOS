@@ -12,7 +12,7 @@ target 'TraceMyRoutes' do
   pod 'SVProgressHUD'
   pod 'Fabric'
   pod 'Crashlytics'
-
+  pod 'GoogleMaps'
 
 
   target 'TraceMyRoutesTests' do
