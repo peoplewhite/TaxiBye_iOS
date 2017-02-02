@@ -432,7 +432,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IDU-8M-Ovr" userLabel="textview">
-                                <rect key="frame" x="15" y="35" width="290" height="518"/>
+                                <rect key="frame" x="15" y="35" width="290" height="233"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -443,7 +443,7 @@
                             <constraint firstItem="IDU-8M-Ovr" firstAttribute="leading" secondItem="Mcm-bu-WKI" secondAttribute="leading" constant="15" id="Feo-ma-qk9"/>
                             <constraint firstItem="IDU-8M-Ovr" firstAttribute="top" secondItem="xXX-xj-BNE" secondAttribute="bottom" constant="15" id="P51-zp-Sa3"/>
                             <constraint firstAttribute="trailing" secondItem="IDU-8M-Ovr" secondAttribute="trailing" constant="15" id="dKI-Fc-ue8"/>
-                            <constraint firstItem="JPK-be-aFU" firstAttribute="top" secondItem="IDU-8M-Ovr" secondAttribute="bottom" constant="15" id="nEq-b4-ngD"/>
+                            <constraint firstItem="JPK-be-aFU" firstAttribute="top" secondItem="IDU-8M-Ovr" secondAttribute="bottom" constant="300" id="nEq-b4-ngD"/>
                         </constraints>
                     </view>
                     <connections>
