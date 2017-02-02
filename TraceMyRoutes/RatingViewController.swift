@@ -15,6 +15,11 @@ class RatingViewController: UIViewController {
 
     @IBOutlet weak var commentLabel: UILabel!
 
+    @IBOutlet weak var star1: UIButton!
+    @IBOutlet weak var star2: UIButton!
+    @IBOutlet weak var star3: UIButton!
+    @IBOutlet weak var star4: UIButton!
+    @IBOutlet weak var star5: UIButton!
 
 
     @IBOutlet weak var option1: UIButton!
@@ -48,7 +53,44 @@ class RatingViewController: UIViewController {
 
 
     func settingRatingNumber(_ ratingNumber: Int) {
+        star1.setImage(AppConfig.blackEmptyStarImage, for: .normal)
+        star2.setImage(AppConfig.blackEmptyStarImage, for: .normal)
+        star3.setImage(AppConfig.blackEmptyStarImage, for: .normal)
+        star4.setImage(AppConfig.blackEmptyStarImage, for: .normal)
+        star5.setImage(AppConfig.blackEmptyStarImage, for: .normal)
 
+
+        switch ratingNumber {
+        case 1:
+            star1.setImage(AppConfig.blackFullStarImage, for: .normal)
+            break
+        case 2:
+            star1.setImage(AppConfig.blackFullStarImage, for: .normal)
+            star2.setImage(AppConfig.blackFullStarImage, for: .normal)
+            break
+        case 3:
+            star1.setImage(AppConfig.blackFullStarImage, for: .normal)
+            star2.setImage(AppConfig.blackFullStarImage, for: .normal)
+            star3.setImage(AppConfig.blackFullStarImage, for: .normal)
+            break
+        case 4:
+            star1.setImage(AppConfig.blackFullStarImage, for: .normal)
+            star2.setImage(AppConfig.blackFullStarImage, for: .normal)
+            star3.setImage(AppConfig.blackFullStarImage, for: .normal)
+            star4.setImage(AppConfig.blackFullStarImage, for: .normal)
+            break
+        case 5:
+            star1.setImage(AppConfig.blackFullStarImage, for: .normal)
+            star2.setImage(AppConfig.blackFullStarImage, for: .normal)
+            star3.setImage(AppConfig.blackFullStarImage, for: .normal)
+            star4.setImage(AppConfig.blackFullStarImage, for: .normal)
+            star5.setImage(AppConfig.blackFullStarImage, for: .normal)
+            break
+        default:
+            break
+        }
+
+        
     }
 
 
@@ -138,6 +180,7 @@ class RatingViewController: UIViewController {
     }
 
 
+
     
 
 }
@@ -150,7 +193,7 @@ extension RatingViewController {
     @IBAction func submitButtonPressed(_ sender: UIButton) {
         callAPIToPostTraceRoutes()
     }
-    
+
     @IBAction func star1ButtonPressed(_ sender: UIButton) {
         settingRatingNumber(1)
     }

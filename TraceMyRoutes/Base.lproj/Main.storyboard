@@ -196,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFC-Nh-lF4" userLabel="starContainer">
-                                <rect key="frame" x="30" y="20" width="260" height="44"/>
+                                <rect key="frame" x="30" y="20" width="260" height="88"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tty-vT-3Gw">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
@@ -207,17 +207,62 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utY-mD-4kY" userLabel="star1">
+                                        <rect key="frame" x="0.0" y="40" width="40" height="38"/>
+                                        <state key="normal" image="blackEmptyStar"/>
+                                        <connections>
+                                            <action selector="star1ButtonPressed:" destination="NE5-2S-xfX" eventType="touchUpInside" id="55M-3p-mLr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-Tp-9v9" userLabel="star2">
+                                        <rect key="frame" x="55" y="40" width="40" height="38"/>
+                                        <state key="normal" image="blackEmptyStar"/>
+                                        <connections>
+                                            <action selector="star2ButtonPressed:" destination="NE5-2S-xfX" eventType="touchUpInside" id="QLG-xc-JUD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6n-w5-mac" userLabel="star3">
+                                        <rect key="frame" x="110" y="40" width="40" height="38"/>
+                                        <state key="normal" image="blackEmptyStar"/>
+                                        <connections>
+                                            <action selector="star3ButtonPressed:" destination="NE5-2S-xfX" eventType="touchUpInside" id="tLs-Jt-VlM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sje-Nu-MdX" userLabel="star4">
+                                        <rect key="frame" x="165" y="40" width="40" height="38"/>
+                                        <state key="normal" image="blackEmptyStar"/>
+                                        <connections>
+                                            <action selector="star4ButtonPressed:" destination="NE5-2S-xfX" eventType="touchUpInside" id="YqJ-Q5-8Tn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rq0-x1-UQK" userLabel="star5">
+                                        <rect key="frame" x="220" y="40" width="40" height="38"/>
+                                        <state key="normal" image="blackEmptyStar"/>
+                                        <connections>
+                                            <action selector="star5ButtonPressed:" destination="NE5-2S-xfX" eventType="touchUpInside" id="MAW-hM-mVR"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Tty-vT-3Gw" firstAttribute="top" secondItem="eFC-Nh-lF4" secondAttribute="top" id="77x-Vy-JXd"/>
+                                    <constraint firstItem="Rq0-x1-UQK" firstAttribute="centerY" secondItem="u6n-w5-mac" secondAttribute="centerY" id="9Yd-Ua-AgW"/>
+                                    <constraint firstItem="utY-mD-4kY" firstAttribute="centerY" secondItem="u6n-w5-mac" secondAttribute="centerY" id="AVC-S9-oRZ"/>
                                     <constraint firstItem="Tty-vT-3Gw" firstAttribute="width" secondItem="eFC-Nh-lF4" secondAttribute="width" id="Fsc-iY-YCI"/>
-                                    <constraint firstAttribute="height" constant="44" id="N3z-Le-bQe"/>
+                                    <constraint firstItem="Sje-Nu-MdX" firstAttribute="leading" secondItem="u6n-w5-mac" secondAttribute="trailing" constant="15" id="Gnu-WM-LGd"/>
+                                    <constraint firstItem="u6n-w5-mac" firstAttribute="leading" secondItem="Iav-Tp-9v9" secondAttribute="trailing" constant="15" id="Hdn-rl-SXB"/>
+                                    <constraint firstItem="Rq0-x1-UQK" firstAttribute="leading" secondItem="Sje-Nu-MdX" secondAttribute="trailing" constant="15" id="bNQ-fK-aYk"/>
+                                    <constraint firstItem="u6n-w5-mac" firstAttribute="top" secondItem="Tty-vT-3Gw" secondAttribute="bottom" constant="10" id="eeT-PA-Mac"/>
                                     <constraint firstItem="Tty-vT-3Gw" firstAttribute="centerX" secondItem="eFC-Nh-lF4" secondAttribute="centerX" id="fi5-mD-6DW"/>
+                                    <constraint firstAttribute="bottom" secondItem="u6n-w5-mac" secondAttribute="bottom" constant="10" id="l8P-rU-o5K"/>
+                                    <constraint firstItem="Iav-Tp-9v9" firstAttribute="leading" secondItem="utY-mD-4kY" secondAttribute="trailing" constant="15" id="lOH-bd-NaJ"/>
+                                    <constraint firstItem="u6n-w5-mac" firstAttribute="centerX" secondItem="eFC-Nh-lF4" secondAttribute="centerX" id="nFN-Rc-17u"/>
+                                    <constraint firstItem="Sje-Nu-MdX" firstAttribute="centerY" secondItem="u6n-w5-mac" secondAttribute="centerY" id="nKj-hC-ENd"/>
+                                    <constraint firstItem="Iav-Tp-9v9" firstAttribute="centerY" secondItem="u6n-w5-mac" secondAttribute="centerY" id="wNH-oi-8rw"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vh-WK-0TM" userLabel="selectionContainer">
-                                <rect key="frame" x="30" y="64" width="260" height="230"/>
+                                <rect key="frame" x="30" y="108" width="260" height="230"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評論" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5A-Am-oL0">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
@@ -288,7 +333,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQE-Sl-d7i" userLabel="commentContainer">
-                                <rect key="frame" x="30" y="294" width="260" height="100"/>
+                                <rect key="frame" x="30" y="338" width="260" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="留言" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-Q4-bXy">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
@@ -362,6 +407,11 @@
                         <outlet property="option2" destination="TMU-Ly-OUG" id="Vj6-ka-xBF"/>
                         <outlet property="option3" destination="O5P-QP-Jck" id="okL-1a-hi0"/>
                         <outlet property="option4" destination="PvU-f9-kG1" id="PgY-zQ-rQN"/>
+                        <outlet property="star1" destination="utY-mD-4kY" id="cw7-bY-ve5"/>
+                        <outlet property="star2" destination="Iav-Tp-9v9" id="TVm-EH-QcT"/>
+                        <outlet property="star3" destination="u6n-w5-mac" id="c71-Du-7kf"/>
+                        <outlet property="star4" destination="Sje-Nu-MdX" id="n8p-a2-Iet"/>
+                        <outlet property="star5" destination="Rq0-x1-UQK" id="sos-Yv-vTJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6M-fd-HcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -388,6 +438,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blackEmptyStar" width="40" height="38"/>
         <image name="firstSceneBackground" width="320" height="190"/>
         <image name="list" width="19" height="11"/>
     </resources>
