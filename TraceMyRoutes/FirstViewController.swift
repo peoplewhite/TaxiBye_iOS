@@ -29,6 +29,7 @@ class FirstViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
 
+//    [self.placeholder drawInRect:rect withFont:self.font lineBreakMode:UILineBreakModeTailTruncation alignment:self.textAlignment];
         initUI()
     }
 
@@ -61,5 +62,9 @@ class FirstViewController: UIViewController {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
 
+//    - (void) drawPlaceholderInRect:(CGRect)rect {
+//    [[UIColor blueColor] setFill];
+//    [[self placeholder] drawInRect:rect withFont:[UIFont systemFontOfSize:16]];
+//    }
 
 }
