@@ -21,12 +21,28 @@ class CommentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
 
     }
     override func viewWillAppear(_ animated: Bool) {
         initUI()
         textview.becomeFirstResponder()
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationItem.title = "留言"
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName:UIColor.white
+        ]
+
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.isTranslucent = false
+//        [self.navigationItem.backBarButtonItem setTitle:@"Title here"];
+        navigationItem.backBarButtonItem?.title
+
+
+
+
     }
 
     override func didReceiveMemoryWarning() {
