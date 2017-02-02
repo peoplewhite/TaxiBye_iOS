@@ -16,9 +16,14 @@ class WarningScene: UIView {
     @IBOutlet weak var actionButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var actionButtonHeightConstraint: NSLayoutConstraint!
 
+    @IBOutlet weak var star1: UIImageView!
+    @IBOutlet weak var star2: UIImageView!
+    @IBOutlet weak var star3: UIImageView!
+    @IBOutlet weak var star4: UIImageView!
+    @IBOutlet weak var star5: UIImageView!
 
 
-    
+
 
     let screenSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
 
@@ -41,6 +46,7 @@ class WarningScene: UIView {
 
     func initUI() {
         settingUIForActionButton()
+        settingStar(2.5)
     }
 
     func settingUIForActionButton() {
@@ -96,4 +102,71 @@ class WarningScene: UIView {
         goTraceScene()
     }
 
+
+    func settingStar(_ startNumber: Float) {
+
+        star1.image = AppConfig.emptyStarImage
+        star2.image = AppConfig.emptyStarImage
+        star3.image = AppConfig.emptyStarImage
+        star4.image = AppConfig.emptyStarImage
+        star5.image = AppConfig.emptyStarImage
+
+        switch startNumber {
+        case 0.0:
+            break
+        case 0.5:
+            star1.image = AppConfig.halfStarImage
+            break
+        case 1.0:
+            star1.image = AppConfig.fullStarImage
+            break
+        case 1.5:
+            star1.image = AppConfig.fullStarImage
+            star2.image = AppConfig.halfStarImage
+            break
+        case 2.0:
+            star1.image = AppConfig.fullStarImage
+            star2.image = AppConfig.fullStarImage
+            break
+        case 2.5:
+            star1.image = AppConfig.fullStarImage
+            star2.image = AppConfig.fullStarImage
+            star3.image = AppConfig.halfStarImage
+            break
+        case 3.0:
+            star1.image = AppConfig.fullStarImage
+            star2.image = AppConfig.fullStarImage
+            star3.image = AppConfig.fullStarImage
+            break
+        case 3.5:
+            star1.image = AppConfig.fullStarImage
+            star2.image = AppConfig.fullStarImage
+            star3.image = AppConfig.fullStarImage
+            star4.image = AppConfig.halfStarImage
+            break
+        case 4.0:
+            star1.image = AppConfig.fullStarImage
+            star2.image = AppConfig.fullStarImage
+            star3.image = AppConfig.fullStarImage
+            star4.image = AppConfig.fullStarImage
+            break
+        case 4.5:
+            star1.image = AppConfig.fullStarImage
+            star2.image = AppConfig.fullStarImage
+            star3.image = AppConfig.fullStarImage
+            star4.image = AppConfig.fullStarImage
+            star5.image = AppConfig.halfStarImage
+            break
+        case 5.0:
+            star1.image = AppConfig.fullStarImage
+            star2.image = AppConfig.fullStarImage
+            star3.image = AppConfig.fullStarImage
+            star4.image = AppConfig.fullStarImage
+            star5.image = AppConfig.fullStarImage
+            break
+        default:
+            break
+        }
+        
+    }
 }

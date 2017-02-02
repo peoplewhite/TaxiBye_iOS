@@ -16,6 +16,12 @@ struct AppConfig {
     static let isShowAPILog = false
 
 
+
+    static let fullStarImage = UIImage(named: "fullStar")
+    static let halfStarImage = UIImage(named: "halfStar")
+    static let emptyStarImage = UIImage(named: "emptyStar")
+    
+
     static var buttonHeight: CGFloat {
         if UIScreen.main.bounds.size.width == 320.0 {
             return 50.0
