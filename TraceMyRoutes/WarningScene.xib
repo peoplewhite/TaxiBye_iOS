@@ -16,20 +16,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgl-Bb-aFX" userLabel="middleLine">
-                    <rect key="frame" x="187" y="-0.5" width="0.0" height="667"/>
+                    <rect key="frame" x="187" y="-1" width="0.0" height="668"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" id="EKh-lJ-Igr"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSJ-pV-7Y8">
-                    <rect key="frame" x="-0.5" y="110" width="375" height="108"/>
+                    <rect key="frame" x="-1" y="110" width="376" height="108"/>
                     <fontDescription key="fontDescription" type="system" pointSize="90"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFm-sN-Hnw">
-                    <rect key="frame" x="-0.5" y="270" width="375" height="44"/>
+                    <rect key="frame" x="-1" y="270" width="376" height="44"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMg-fe-DYz" userLabel="car">
                             <rect key="frame" x="67.5" y="-42" width="240" height="128"/>
@@ -83,6 +83,9 @@
                     <state key="normal" title="NO">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="noButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="pdU-fG-U5c"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP7-fY-MU4" userLabel="yes">
                     <rect key="frame" x="197" y="546" width="60" height="50"/>
@@ -90,6 +93,9 @@
                     <state key="normal" title="YES">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="yesButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="KyX-bQ-4wD"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.81568627450980391" green="0.0078431372549019607" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

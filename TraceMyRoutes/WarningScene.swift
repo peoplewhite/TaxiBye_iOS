@@ -48,6 +48,7 @@ class WarningScene: UIView {
         settingButtonUI(yesButton)
         settingButtonUI(noButton)
     }
+
     func settingButtonUI(_ button: UIButton) {
         button.clipsToBounds = true
         button.layer.cornerRadius = button.frame.size.height / 2.0
@@ -55,27 +56,40 @@ class WarningScene: UIView {
         button.layer.borderWidth = 2.0
     }
 
-//    func exitScene() {
-//
-//        let kDoubleAnimationDuration: Double = 0.3
-//
-//        UIView.animateWithDuration(kDoubleAnimationDuration, animations: {() -> Void in
-//
-//            self.frame = self.frame.offsetBy(dx: self.screenSize.width, dy: 0.0)
-//
-//
-//        }, completion: {(finished: Bool) -> Void in
-//
-//            self.removeFromSuperview()
-//
-//        })
-//        
-//    }
-    
-    
+    func exitScene() {
+
+        let kAnimationDuration: Double = 0.3
+
+        UIView.animate(withDuration: kAnimationDuration, animations: {() -> Void in
+            self.frame = self.frame.offsetBy(dx: 0.0 , dy: self.screenSize.height)
+
+        }, completion: {(finished: Bool) -> Void in
+            self.removeFromSuperview()
+            
+        })
+    }
+
+
     // MARK: - set UI
     
-    
+
     // MARK: - set value
+
+
+
+    func goTraceScene() {
+
+    }
+    func backToFirstScene() {
+        exitScene()
+    }
+
+    @IBAction func noButtonPressed(_ sender: UIButton) {
+        backToFirstScene()
+    }
+
+    @IBAction func yesButtonPressed(_ sender: UIButton) {
+        goTraceScene()
+    }
 
 }
