@@ -29,7 +29,6 @@ class RatingViewController: UIViewController {
 
 
 
-    var comment = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +45,8 @@ class RatingViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
 
 
-        if comment != "" {
-            commentLabel.text = comment
-            
+        if TraceRouteMachine.shared.comment != "" {
+            commentLabel.text = TraceRouteMachine.shared.comment
         }
         
         initUI()
@@ -190,11 +188,6 @@ class RatingViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
-
-        if commentLabel.text! != "" {
-            let vc: CommentViewController = segue.destination as! CommentViewController
-            vc.comment = commentLabel.text!
-        }
     }
     
 

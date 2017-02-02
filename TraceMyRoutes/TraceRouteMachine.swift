@@ -19,11 +19,14 @@ class TraceRouteMachine {
 
     var carPlateNumber = ""
     var ratingNumber: Int = 0 //default
+
+    var comment = ""
     var isLocationTraceDone = false
 
     func initMachine() {
         carPlateNumber = ""
         ratingNumber = 0 //default
+        comment = ""
     }
     func startTraceLocation() {
         isLocationTraceDone = false
