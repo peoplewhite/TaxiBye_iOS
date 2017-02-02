@@ -14,6 +14,7 @@ import GoogleMaps
 class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
 
+    @IBOutlet weak var carPlateNumberLabel: UILabel!
     @IBOutlet weak var endButton: UIButton!
     @IBOutlet weak var endButtonWidthConstraint: NSLayoutConstraint!
 
@@ -48,6 +49,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
 
+        carPlateNumberLabel.text = carPlateNumber.description
         initUI()
 
        print("carPlateNumber = \(carPlateNumber)") //kimuranow
