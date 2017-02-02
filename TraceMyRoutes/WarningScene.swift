@@ -7,9 +7,14 @@
 //
 
 import UIKit
+protocol WarningSceneDelegate {
+    func goTraceScene()
+}
 
 class WarningScene: UIView {
 
+    var delegate:WarningSceneDelegate?
+    
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
 
@@ -92,7 +97,7 @@ class WarningScene: UIView {
 
 
     func goTraceScene() {
-
+        delegate?.goTraceScene()
     }
     func backToFirstScene() {
         exitScene()
@@ -103,6 +108,7 @@ class WarningScene: UIView {
     }
 
     @IBAction func yesButtonPressed(_ sender: UIButton) {
+        backToFirstScene()
         goTraceScene()
     }
 

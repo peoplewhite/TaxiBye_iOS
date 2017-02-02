@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, WarningSceneDelegate {
 
     @IBOutlet weak var trackButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
@@ -60,6 +60,11 @@ class FirstViewController: UIViewController {
     func settingUIForPlateNumberTextfield() {
 
     }
+
+    func goTraceScene() {
+        performSegue(withIdentifier: "goTraceScene", sender: nil)
+    }
+    
     func settingUIForSearchButtonHeight() {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
@@ -72,6 +77,8 @@ class FirstViewController: UIViewController {
         let chooseTagBrandScene: WarningScene = Bundle.main.loadNibNamed("WarningScene", owner: self, options: nil)![0] as! WarningScene
         chooseTagBrandScene.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         UIApplication.shared.keyWindow?.addSubview(chooseTagBrandScene)
+        chooseTagBrandScene.delegate = self
+        
 
         let kAnimationDuration: Double = 0.3
 
