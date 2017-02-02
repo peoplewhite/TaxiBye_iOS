@@ -344,12 +344,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fi-1C-aa5" userLabel="comment">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4n-zk-lH7" userLabel="comment">
                                         <rect key="frame" x="0.0" y="30" width="260" height="70"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a00-0q-S1T" userLabel="enterCommentScene">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -363,16 +363,16 @@
                                 <constraints>
                                     <constraint firstItem="a00-0q-S1T" firstAttribute="centerY" secondItem="GQE-Sl-d7i" secondAttribute="centerY" id="8MF-5Q-1h4"/>
                                     <constraint firstAttribute="height" constant="100" id="GBu-V5-a6U"/>
-                                    <constraint firstItem="8Fi-1C-aa5" firstAttribute="leading" secondItem="GQE-Sl-d7i" secondAttribute="leading" id="IOI-XK-7o3"/>
+                                    <constraint firstAttribute="bottom" secondItem="p4n-zk-lH7" secondAttribute="bottom" id="Ntx-Lj-MRW"/>
                                     <constraint firstItem="a00-0q-S1T" firstAttribute="centerX" secondItem="GQE-Sl-d7i" secondAttribute="centerX" id="PAV-g9-gAc"/>
+                                    <constraint firstAttribute="trailing" secondItem="p4n-zk-lH7" secondAttribute="trailing" id="PhN-sI-mQ4"/>
                                     <constraint firstItem="b8J-Q4-bXy" firstAttribute="centerX" secondItem="GQE-Sl-d7i" secondAttribute="centerX" id="Qfg-io-2p1"/>
                                     <constraint firstItem="a00-0q-S1T" firstAttribute="width" secondItem="GQE-Sl-d7i" secondAttribute="width" id="SCW-qH-0QL"/>
                                     <constraint firstItem="a00-0q-S1T" firstAttribute="height" secondItem="GQE-Sl-d7i" secondAttribute="height" id="Tei-8H-kWg"/>
                                     <constraint firstItem="b8J-Q4-bXy" firstAttribute="width" secondItem="GQE-Sl-d7i" secondAttribute="width" id="Urd-dK-ntN"/>
-                                    <constraint firstItem="8Fi-1C-aa5" firstAttribute="top" secondItem="b8J-Q4-bXy" secondAttribute="bottom" id="efH-6z-4Wp"/>
-                                    <constraint firstAttribute="bottom" secondItem="8Fi-1C-aa5" secondAttribute="bottom" id="f0E-zv-t4J"/>
+                                    <constraint firstItem="p4n-zk-lH7" firstAttribute="top" secondItem="b8J-Q4-bXy" secondAttribute="bottom" id="aoy-h3-KtS"/>
                                     <constraint firstItem="b8J-Q4-bXy" firstAttribute="top" secondItem="GQE-Sl-d7i" secondAttribute="top" id="hP7-H7-6gq"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Fi-1C-aa5" secondAttribute="trailing" id="k8u-Wg-ISq"/>
+                                    <constraint firstItem="p4n-zk-lH7" firstAttribute="leading" secondItem="GQE-Sl-d7i" secondAttribute="leading" id="xS8-Ji-zML"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2d-om-6cC">
@@ -404,7 +404,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="O90-P5-atp"/>
                     <connections>
-                        <outlet property="commentLabel" destination="8Fi-1C-aa5" id="5X1-KN-9mS"/>
+                        <outlet property="commentTextView" destination="p4n-zk-lH7" id="GVy-FT-4E2"/>
                         <outlet property="option1" destination="Fmy-JQ-Tyr" id="QPv-mV-Xgs"/>
                         <outlet property="option2" destination="TMU-Ly-OUG" id="Vj6-ka-xBF"/>
                         <outlet property="option3" destination="O5P-QP-Jck" id="okL-1a-hi0"/>
@@ -418,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6M-fd-HcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2292" y="36"/>
+            <point key="canvasLocation" x="2291.25" y="35.91549295774648"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="rFt-a5-RV0">
@@ -439,7 +439,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最多輸入120個字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afZ-ap-nVJ" userLabel="fakePlaceholder">
-                                <rect key="frame" x="15" y="79" width="290" height="23"/>
+                                <rect key="frame" x="20" y="84" width="290" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -447,10 +447,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.82352941180000006" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="afZ-ap-nVJ" firstAttribute="centerX" secondItem="IDU-8M-Ovr" secondAttribute="centerX" id="4Pv-zR-ltY"/>
+                            <constraint firstItem="afZ-ap-nVJ" firstAttribute="centerX" secondItem="IDU-8M-Ovr" secondAttribute="centerX" constant="5" id="4Pv-zR-ltY"/>
                             <constraint firstItem="IDU-8M-Ovr" firstAttribute="leading" secondItem="Mcm-bu-WKI" secondAttribute="leading" constant="15" id="Feo-ma-qk9"/>
                             <constraint firstItem="IDU-8M-Ovr" firstAttribute="top" secondItem="xXX-xj-BNE" secondAttribute="bottom" constant="15" id="P51-zp-Sa3"/>
-                            <constraint firstItem="afZ-ap-nVJ" firstAttribute="top" secondItem="IDU-8M-Ovr" secondAttribute="top" id="dFv-ca-dei"/>
+                            <constraint firstItem="afZ-ap-nVJ" firstAttribute="top" secondItem="IDU-8M-Ovr" secondAttribute="top" constant="5" id="dFv-ca-dei"/>
                             <constraint firstAttribute="trailing" secondItem="IDU-8M-Ovr" secondAttribute="trailing" constant="15" id="dKI-Fc-ue8"/>
                             <constraint firstItem="JPK-be-aFU" firstAttribute="top" secondItem="IDU-8M-Ovr" secondAttribute="bottom" constant="300" id="nEq-b4-ngD"/>
                             <constraint firstItem="afZ-ap-nVJ" firstAttribute="width" secondItem="IDU-8M-Ovr" secondAttribute="width" id="ujK-hh-HL6"/>

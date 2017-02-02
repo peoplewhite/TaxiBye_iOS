@@ -13,7 +13,7 @@ class RatingViewController: UIViewController {
 
 
 
-    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var commentTextView: UITextView!
 
     @IBOutlet weak var star1: UIButton!
     @IBOutlet weak var star2: UIButton!
@@ -46,7 +46,7 @@ class RatingViewController: UIViewController {
 
 
         if TraceRouteMachine.shared.comment != "" {
-            commentLabel.text = TraceRouteMachine.shared.comment
+            commentTextView.text = TraceRouteMachine.shared.comment
         }
         
         initUI()
@@ -107,10 +107,10 @@ class RatingViewController: UIViewController {
     }
 
     func settingUIForCommentLabel() {
-        commentLabel.clipsToBounds = true
-        commentLabel.layer.cornerRadius = 6.0
-        commentLabel.layer.borderColor = UIColor.black.cgColor
-        commentLabel.layer.borderWidth = 2.0
+        commentTextView.clipsToBounds = true
+        commentTextView.layer.cornerRadius = 6.0
+        commentTextView.layer.borderColor = UIColor.black.cgColor
+        commentTextView.layer.borderWidth = 2.0
 
     }
 
