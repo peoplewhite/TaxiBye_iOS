@@ -56,7 +56,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="B0k-g5-fOP"/>
+                                            <action selector="trackButtonPressed:" destination="1Dz-fb-muQ" eventType="touchUpInside" id="SJg-b8-OPG"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaxiBye" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnO-CO-uSy" userLabel="title">
@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDA-Ep-DaC">
-                                <rect key="frame" x="143" y="244" width="34" height="30"/>
+                                <rect key="frame" x="143" y="200" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="trackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AgE-Gr-op6"/>
@@ -148,7 +148,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入車牌號碼" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-Ig-az0" userLabel="typeCarPlateNumber">
-                                <rect key="frame" x="66" y="164" width="188" height="30"/>
+                                <rect key="frame" x="66" y="120" width="188" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
