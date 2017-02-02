@@ -17,6 +17,7 @@ struct AppConfig {
 
 
 
+
     static let blackFullStarImage = UIImage(named: "blackFullStar")
     static let blackEmptyStarImage = UIImage(named: "blackEmptyStar")
     static let fullStarImage = UIImage(named: "fullStar")

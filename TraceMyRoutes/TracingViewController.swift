@@ -8,12 +8,20 @@
 
 import UIKit
 import CoreLocation
+import GoogleMaps
 
 
 class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
+
+    @IBOutlet weak var carPlateNumberLabel: UILabel!
     @IBOutlet weak var endButton: UIButton!
     @IBOutlet weak var endButtonWidthConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var mapContainer: GMSMapView!
+
+
+    var carPlateNumber = ""
 
     let locationManager = CLLocationManager()
     
@@ -41,7 +49,10 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
 
+        carPlateNumberLabel.text = carPlateNumber.description
         initUI()
+
+       print("carPlateNumber = \(carPlateNumber)") //kimuranow
     }
 
     func initUI() {
@@ -70,6 +81,20 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
 
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+
+        guard status == .authorizedWhenInUse else {
+            return
+        }
+
+        print("hello world") //kimuranow
+        // 4
+        locationManager.startUpdatingLocation()
+
+        //5
+        mapContainer.isMyLocationEnabled = true
+        mapContainer.settings.myLocationButton = true
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
         guard !TraceRouteMachine.shared.isLocationTraceDone else {
@@ -77,8 +102,12 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
         }
 
         let currentLocation: CLLocation = locations[0]
-        print(" = \(currentLocation.coordinate.latitude), \(currentLocation.coordinate.longitude)") //kimuranow
+        print("currentLocation = \(currentLocation.coordinate.latitude), \(currentLocation.coordinate.longitude)") //kimuranow
         KMLMachine.shared.save(currentLocation)
+
+
+        mapContainer.camera = GMSCameraPosition(target: currentLocation.coordinate, zoom: 18, bearing: 0, viewingAngle: 0)
+
     }
 
 }
