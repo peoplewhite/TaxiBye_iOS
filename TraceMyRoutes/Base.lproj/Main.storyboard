@@ -355,6 +355,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="enterCommentSceneButtonPressed:" destination="NE5-2S-xfX" eventType="touchUpInside" id="jy1-UQ-4kK"/>
+                                            <segue destination="7f3-ko-cDF" kind="show" id="3fE-3t-MML"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -417,6 +418,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6M-fd-HcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2292" y="36"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rFt-a5-RV0">
+            <objects>
+                <viewController id="7f3-ko-cDF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xXX-xj-BNE"/>
+                        <viewControllerLayoutGuide type="bottom" id="JPK-be-aFU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mcm-bu-WKI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNO-qQ-on8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3338" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3lG-ez-cLg">
