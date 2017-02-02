@@ -12,8 +12,9 @@ import SVProgressHUD
 class RatingViewController: UIViewController {
 
 
+    @IBOutlet weak var submitButton: UIButton!
 
-    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var commentTextView: UITextView!
 
     @IBOutlet weak var star1: UIButton!
     @IBOutlet weak var star2: UIButton!
@@ -27,7 +28,9 @@ class RatingViewController: UIViewController {
     @IBOutlet weak var option3: UIButton!
     @IBOutlet weak var option4: UIButton!
 
-
+    @IBOutlet weak var optionButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var commentTextViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var submitButtonHeightConstraint: NSLayoutConstraint!
 
 
     override func viewDidLoad() {
@@ -42,7 +45,13 @@ class RatingViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
 
+
+        if TraceRouteMachine.shared.comment != "" {
+            commentTextView.text = TraceRouteMachine.shared.comment
+        }
+        
         initUI()
     }
 
@@ -95,16 +104,26 @@ class RatingViewController: UIViewController {
 
 
     func initUI() {
-        settingUIForCommentLabel()
+        settingUIForCommentTextView()
         settingUIForOptions()
+        settingUIForSubmitButton()
 
     }
+    func settingUIForSubmitButton() {
+        submitButtonHeightConstraint.constant = AppConfig.buttonHeight
+        view.layoutIfNeeded()
+        submitButton.clipsToBounds = true
+        submitButton.layer.cornerRadius = submitButton.frame.size.height / 2.0
+    }
 
-    func settingUIForCommentLabel() {
-        commentLabel.clipsToBounds = true
-        commentLabel.layer.cornerRadius = 6.0
-        commentLabel.layer.borderColor = UIColor.black.cgColor
-        commentLabel.layer.borderWidth = 2.0
+    func settingUIForCommentTextView() {
+        commentTextView.clipsToBounds = true
+        commentTextView.layer.cornerRadius = 6.0
+        commentTextView.layer.borderColor = UIColor.black.cgColor
+        commentTextView.layer.borderWidth = 2.0
+
+        commentTextViewHeightConstraint.constant = AppConfig.commentTextViewSize
+        view.layoutIfNeeded()
 
     }
 
@@ -114,12 +133,12 @@ class RatingViewController: UIViewController {
     }
 
     func goCommentScene() {
-        print("goCommentScene") //kimuranow
-        
-
     }
 
     func settingUIForOptions() {
+        optionButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
+        view.layoutIfNeeded()
+        
         settingButton(option1)
         settingButton(option2)
         settingButton(option3)
@@ -181,6 +200,11 @@ class RatingViewController: UIViewController {
 
 
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+    }
     
 
 }

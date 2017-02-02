@@ -51,5 +51,15 @@ struct AppConfig {
             return CGSize(width: 176.0, height: 60.0)
         }
     }
-    
+
+    static var commentTextViewSize: CGFloat {
+        if UIScreen.main.bounds.size.width == 320.0 {
+            return 108.0
+        } else if UIScreen.main.bounds.size.width == 375.0 {//iPhone 6
+            return 127.0
+        } else {//iPhone 6 plus
+            return 140.0
+        }
+    }
+
 }
