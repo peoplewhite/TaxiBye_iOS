@@ -11,6 +11,7 @@ import CoreData
 import Fabric
 import Crashlytics
 import GoogleMaps
+import IQKeyboardManagerSwift
 
 
 
@@ -25,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
 
 
-//        GMSServices.provideAPIKey("AIzaSyACDlQuDKKTT0QS3WMPVbL7yHBEsE3DTt8")
         GMSServices.provideAPIKey("AIzaSyDOSZ9w67ObAWA8G8--jFCLFH7Xg-YaHU8")
-        
+        IQKeyboardManager.sharedManager().enable = true
+
 
         return true
     }
