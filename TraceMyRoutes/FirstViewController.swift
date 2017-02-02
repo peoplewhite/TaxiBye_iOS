@@ -28,11 +28,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-
-//    [self.placeholder drawInRect:rect withFont:self.font lineBreakMode:UILineBreakModeTailTruncation alignment:self.textAlignment];
         initUI()
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,28 +37,17 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     }
 
     func initUI() {
-
-
         settingUIForTrackButton()
-        settingUIForLine()
-        settingUIForPlateNumberTextfield()
         settingUIForSearchButtonHeight()
-
-        
     }
     func settingUIForTrackButton() {
         trackButtonHeightConstraint.constant = AppConfig.buttonHeight
         trackButton.layer.cornerRadius = AppConfig.buttonHeight / 2.0
     }
-    func settingUIForLine() {
-
-    }
-    func settingUIForPlateNumberTextfield() {
-
-    }
 
     func goTraceScene() {
         performSegue(withIdentifier: "goTraceScene", sender: nil)
+
     }
     
     func settingUIForSearchButtonHeight() {
@@ -70,9 +55,31 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     }
     @IBAction func trackButtonPressed(_ sender: UIButton) {
 //        showWarningScene()
-        goTraceScene()
         
+        let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
+        if trimmedString.characters.count > 0 {
+            goTraceScene()
+        } else {
+
+            showAlertViewWith(msg: "請輸入車牌號碼")
+
+        }
+
+        
+
     }
+    func showAlertViewWith(msg: String) {
+
+        // swift 3.0
+        let alert:UIAlertController = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            alert.dismiss(animated: false, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+
+    }
+
+
     func showWarningScene() {
 
         let chooseTagBrandScene: WarningScene = Bundle.main.loadNibNamed("WarningScene", owner: self, options: nil)![0] as! WarningScene
