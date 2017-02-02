@@ -199,7 +199,10 @@
                                 <rect key="frame" x="30" y="20" width="260" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tty-vT-3Gw">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="axN-kO-0Wh"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -217,7 +220,10 @@
                                 <rect key="frame" x="30" y="64" width="260" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評論" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5A-Am-oL0">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="vK0-Pq-ra5"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -235,18 +241,42 @@
                                 <rect key="frame" x="30" y="164" width="260" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="留言" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-Q4-bXy">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="WEg-cu-I7g"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fi-1C-aa5" userLabel="comment">
+                                        <rect key="frame" x="0.0" y="30" width="260" height="70"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a00-0q-S1T" userLabel="enterCommentScene">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="enterCommentSceneButtonPressed:" destination="NE5-2S-xfX" eventType="touchUpInside" id="jy1-UQ-4kK"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="a00-0q-S1T" firstAttribute="centerY" secondItem="GQE-Sl-d7i" secondAttribute="centerY" id="8MF-5Q-1h4"/>
                                     <constraint firstAttribute="height" constant="100" id="GBu-V5-a6U"/>
+                                    <constraint firstItem="8Fi-1C-aa5" firstAttribute="leading" secondItem="GQE-Sl-d7i" secondAttribute="leading" id="IOI-XK-7o3"/>
+                                    <constraint firstItem="a00-0q-S1T" firstAttribute="centerX" secondItem="GQE-Sl-d7i" secondAttribute="centerX" id="PAV-g9-gAc"/>
                                     <constraint firstItem="b8J-Q4-bXy" firstAttribute="centerX" secondItem="GQE-Sl-d7i" secondAttribute="centerX" id="Qfg-io-2p1"/>
+                                    <constraint firstItem="a00-0q-S1T" firstAttribute="width" secondItem="GQE-Sl-d7i" secondAttribute="width" id="SCW-qH-0QL"/>
+                                    <constraint firstItem="a00-0q-S1T" firstAttribute="height" secondItem="GQE-Sl-d7i" secondAttribute="height" id="Tei-8H-kWg"/>
                                     <constraint firstItem="b8J-Q4-bXy" firstAttribute="width" secondItem="GQE-Sl-d7i" secondAttribute="width" id="Urd-dK-ntN"/>
+                                    <constraint firstItem="8Fi-1C-aa5" firstAttribute="top" secondItem="b8J-Q4-bXy" secondAttribute="bottom" id="efH-6z-4Wp"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Fi-1C-aa5" secondAttribute="bottom" id="f0E-zv-t4J"/>
                                     <constraint firstItem="b8J-Q4-bXy" firstAttribute="top" secondItem="GQE-Sl-d7i" secondAttribute="top" id="hP7-H7-6gq"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Fi-1C-aa5" secondAttribute="trailing" id="k8u-Wg-ISq"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2d-om-6cC">
@@ -276,6 +306,9 @@
                             <constraint firstItem="GQE-Sl-d7i" firstAttribute="width" secondItem="eFC-Nh-lF4" secondAttribute="width" id="z89-qi-bXn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="commentLabel" destination="8Fi-1C-aa5" id="5X1-KN-9mS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6M-fd-HcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

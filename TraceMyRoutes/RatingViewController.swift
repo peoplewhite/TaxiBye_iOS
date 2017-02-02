@@ -11,7 +11,17 @@ import SVProgressHUD
 
 class RatingViewController: UIViewController {
 
-    @IBOutlet weak var ratingNumberLabel: UILabel!
+
+
+    @IBOutlet weak var commentLabel: UILabel!
+
+
+
+
+
+
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +33,11 @@ class RatingViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+
+        initUI()
+    }
 
     func backToInitFirstScene() {
         _ = navigationController?.popToRootViewController(animated: true)
@@ -32,9 +46,33 @@ class RatingViewController: UIViewController {
 
 
     func settingRatingNumber(_ ratingNumber: Int) {
-        ratingNumberLabel.text = ratingNumber.description
+
     }
 
+
+    func initUI() {
+        settingUIForCommentLabel()
+
+    }
+
+    func settingUIForCommentLabel() {
+        commentLabel.clipsToBounds = true
+        commentLabel.layer.cornerRadius = 6.0
+        commentLabel.layer.borderColor = UIColor.black.cgColor
+        commentLabel.layer.borderWidth = 2.0
+
+    }
+
+    @IBAction func enterCommentSceneButtonPressed(_ sender: UIButton) {
+        goCommentScene()
+
+    }
+
+    func goCommentScene() {
+        print("goCommentScene") //kimuranow
+        
+
+    }
 
 
 }
