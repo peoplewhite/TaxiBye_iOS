@@ -28,11 +28,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-
-//    [self.placeholder drawInRect:rect withFont:self.font lineBreakMode:UILineBreakModeTailTruncation alignment:self.textAlignment];
         initUI()
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,28 +37,17 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     }
 
     func initUI() {
-
-
         settingUIForTrackButton()
-        settingUIForLine()
-        settingUIForPlateNumberTextfield()
         settingUIForSearchButtonHeight()
-
-        
     }
     func settingUIForTrackButton() {
         trackButtonHeightConstraint.constant = AppConfig.buttonHeight
         trackButton.layer.cornerRadius = AppConfig.buttonHeight / 2.0
     }
-    func settingUIForLine() {
-
-    }
-    func settingUIForPlateNumberTextfield() {
-
-    }
 
     func goTraceScene() {
         performSegue(withIdentifier: "goTraceScene", sender: nil)
+        
     }
     
     func settingUIForSearchButtonHeight() {
@@ -71,7 +56,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     @IBAction func trackButtonPressed(_ sender: UIButton) {
 //        showWarningScene()
         goTraceScene()
-        
+
     }
     func showWarningScene() {
 
