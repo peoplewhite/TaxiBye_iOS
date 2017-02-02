@@ -12,7 +12,11 @@ import CoreLocation
 
 class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var endButton: UIButton!
+    @IBOutlet weak var endButtonWidthConstraint: NSLayoutConstraint!
+
     let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,8 +41,23 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
 
+        initUI()
     }
 
+    func initUI() {
+        settingEndButtonUI()
+
+    }
+    func settingEndButtonUI() {
+
+        endButtonWidthConstraint.constant = AppConfig.buttonHeight
+        view.layoutIfNeeded()
+        
+        endButton.clipsToBounds = true
+        endButton.layer.cornerRadius = endButton.frame.size.height / 2.0
+
+        
+    }
     func checkCoreLocationPermission() {
         
         switch CLLocationManager.authorizationStatus() {
