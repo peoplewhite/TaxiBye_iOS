@@ -8,26 +8,42 @@
 
 import UIKit
 
-class CommentViewController: UIViewController {
-
-
+class CommentViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var textview: UITextView!
-
-
-
-
+    @IBOutlet weak var fakePlaceholder: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         // Do any additional setup after loading the view.
+        textview.delegate = self
 
     }
     override func viewWillAppear(_ animated: Bool) {
+        
         initUI()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+    
+    func initUI() {
         textview.becomeFirstResponder()
+        settingUIForNavigationBar()
+        
+        textview.clipsToBounds = true
+        textview.layer.cornerRadius = 6.0
+        textview.layer.borderColor = UIColor.black.cgColor
+        textview.layer.borderWidth = 2.0
+    }
+
+    func settingUIForNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationItem.title = "留言"
@@ -37,26 +53,10 @@ class CommentViewController: UIViewController {
 
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.isTranslucent = false
-//        [self.navigationItem.backBarButtonItem setTitle:@"Title here"];
-        navigationItem.backBarButtonItem?.title
-
-
-
-
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func textViewDidChange(_ textView: UITextView) {
+        let trimmedString = textView.text!.trimmingCharacters(in: .whitespaces)
+        fakePlaceholder.isHidden = trimmedString.characters.count > 0
     }
-
-
-    func initUI() {
-        textview.clipsToBounds = true
-        textview.layer.cornerRadius = 6.0
-        textview.layer.borderColor = UIColor.black.cgColor
-        textview.layer.borderWidth = 2.0
-    }
-
-
 }

@@ -438,16 +438,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最多輸入120個字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afZ-ap-nVJ" userLabel="fakePlaceholder">
+                                <rect key="frame" x="15" y="79" width="290" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.82352941180000006" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="afZ-ap-nVJ" firstAttribute="centerX" secondItem="IDU-8M-Ovr" secondAttribute="centerX" id="4Pv-zR-ltY"/>
                             <constraint firstItem="IDU-8M-Ovr" firstAttribute="leading" secondItem="Mcm-bu-WKI" secondAttribute="leading" constant="15" id="Feo-ma-qk9"/>
                             <constraint firstItem="IDU-8M-Ovr" firstAttribute="top" secondItem="xXX-xj-BNE" secondAttribute="bottom" constant="15" id="P51-zp-Sa3"/>
+                            <constraint firstItem="afZ-ap-nVJ" firstAttribute="top" secondItem="IDU-8M-Ovr" secondAttribute="top" id="dFv-ca-dei"/>
                             <constraint firstAttribute="trailing" secondItem="IDU-8M-Ovr" secondAttribute="trailing" constant="15" id="dKI-Fc-ue8"/>
                             <constraint firstItem="JPK-be-aFU" firstAttribute="top" secondItem="IDU-8M-Ovr" secondAttribute="bottom" constant="300" id="nEq-b4-ngD"/>
+                            <constraint firstItem="afZ-ap-nVJ" firstAttribute="width" secondItem="IDU-8M-Ovr" secondAttribute="width" id="ujK-hh-HL6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fakePlaceholder" destination="afZ-ap-nVJ" id="Sjg-sn-ELo"/>
                         <outlet property="textview" destination="IDU-8M-Ovr" id="8yY-oS-6mI"/>
                     </connections>
                 </viewController>
