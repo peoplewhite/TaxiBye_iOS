@@ -22,6 +22,7 @@ class WarningScene: UIView {
     @IBOutlet weak var star4: UIImageView!
     @IBOutlet weak var star5: UIImageView!
 
+    @IBOutlet weak var starNumberLabel: UILabel!
 
 
 
@@ -103,7 +104,9 @@ class WarningScene: UIView {
     }
 
 
-    func settingStar(_ startNumber: Float) {
+    func settingStar(_ starNumber: Float) {
+
+        starNumberLabel.text = starNumber.description
 
         star1.image = AppConfig.emptyStarImage
         star2.image = AppConfig.emptyStarImage
@@ -111,7 +114,7 @@ class WarningScene: UIView {
         star4.image = AppConfig.emptyStarImage
         star5.image = AppConfig.emptyStarImage
 
-        switch startNumber {
+        switch starNumber {
         case 0.0:
             break
         case 0.5:
