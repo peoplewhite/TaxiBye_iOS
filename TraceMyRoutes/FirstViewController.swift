@@ -91,9 +91,11 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
     }
 
-//    - (void) drawPlaceholderInRect:(CGRect)rect {
-//    [[UIColor blueColor] setFill];
-//    [[self placeholder] drawInRect:rect withFont:[UIFont systemFontOfSize:16]];
-//    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goTraceScene" {
+            let vc: TracingViewController = segue.destination as! TracingViewController
+            vc.carPlateNumber = plateNumberTextfield.text!
+        }
+    }
 }

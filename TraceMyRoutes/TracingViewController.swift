@@ -20,6 +20,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapContainer: GMSMapView!
 
 
+    var carPlateNumber = ""
 
     let locationManager = CLLocationManager()
     
@@ -35,28 +36,6 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
         KMLMachine.shared.initMachine()
 
         TraceRouteMachine.shared.startTraceLocation()
-
-
-//        print("111") //kimuranow
-//        let camera = GMSCameraPosition.camera(withLatitude: 25.033671, longitude: 121.564427, zoom: 6)
-//        print("222") //kimuranow
-//        mapContainer = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-
-        print("333") //kimuranow
-//        mapContainer.isMyLocationEnabled = true
-//        print("444") //kimuranow
-
-//        let camera = GMSCameraPosition.camera(withLatitude: 25.033671, longitude: 121.564427, zoom: 6)
-//        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-//        mapView.isMyLocationEnabled = true
-//        self.mapContainer = mapView
-//
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
-//        marker.title = "Sydney"
-//        marker.snippet = "Australia"
-//        marker.map = mapView
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,7 +50,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
         initUI()
 
-        
+       print("carPlateNumber = \(carPlateNumber)") //kimuranow
     }
 
     func initUI() {

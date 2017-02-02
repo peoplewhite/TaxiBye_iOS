@@ -13,6 +13,8 @@ target 'TraceMyRoutes' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'GoogleMaps'
+  pod 'IQKeyboardManagerSwift'
+
 
 
   target 'TraceMyRoutesTests' do
