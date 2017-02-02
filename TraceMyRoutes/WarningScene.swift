@@ -24,6 +24,7 @@ class WarningScene: UIView {
 
     @IBOutlet weak var starNumberLabel: UILabel!
 
+    @IBOutlet weak var warningDescription: UILabel!
 
 
     let screenSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
@@ -38,6 +39,8 @@ class WarningScene: UIView {
         initValue()
 
         initUI()
+
+        warningDescription.text = "此車輛的評價低於\n平均分數！"
 
     }
 
