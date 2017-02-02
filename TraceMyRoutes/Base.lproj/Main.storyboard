@@ -196,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFC-Nh-lF4" userLabel="starContainer">
-                                <rect key="frame" x="30" y="64" width="260" height="78"/>
+                                <rect key="frame" x="30" y="84" width="260" height="78"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tty-vT-3Gw">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
@@ -262,7 +262,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vh-WK-0TM" userLabel="selectionContainer">
-                                <rect key="frame" x="30" y="142" width="260" height="230"/>
+                                <rect key="frame" x="30" y="162" width="260" height="230"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評論" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5A-Am-oL0">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
@@ -333,7 +333,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQE-Sl-d7i" userLabel="commentContainer">
-                                <rect key="frame" x="30" y="372" width="260" height="160"/>
+                                <rect key="frame" x="30" y="392" width="260" height="130"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="留言" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-Q4-bXy">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
@@ -345,13 +345,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4n-zk-lH7" userLabel="comment">
-                                        <rect key="frame" x="0.0" y="30" width="260" height="130"/>
+                                        <rect key="frame" x="0.0" y="30" width="260" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="cHo-o1-eZW"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a00-0q-S1T" userLabel="enterCommentScene">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="160"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="130"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="enterCommentSceneButtonPressed:" destination="NE5-2S-xfX" eventType="touchUpInside" id="jy1-UQ-4kK"/>
@@ -362,7 +365,6 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="a00-0q-S1T" firstAttribute="centerY" secondItem="GQE-Sl-d7i" secondAttribute="centerY" id="8MF-5Q-1h4"/>
-                                    <constraint firstAttribute="height" constant="160" id="GBu-V5-a6U"/>
                                     <constraint firstAttribute="bottom" secondItem="p4n-zk-lH7" secondAttribute="bottom" id="Ntx-Lj-MRW"/>
                                     <constraint firstItem="a00-0q-S1T" firstAttribute="centerX" secondItem="GQE-Sl-d7i" secondAttribute="centerX" id="PAV-g9-gAc"/>
                                     <constraint firstAttribute="trailing" secondItem="p4n-zk-lH7" secondAttribute="trailing" id="PhN-sI-mQ4"/>
@@ -400,7 +402,7 @@
                             <constraint firstItem="4vh-WK-0TM" firstAttribute="centerX" secondItem="eFC-Nh-lF4" secondAttribute="centerX" id="KuE-Oh-BG1"/>
                             <constraint firstItem="eFC-Nh-lF4" firstAttribute="leading" secondItem="sjg-ll-UHk" secondAttribute="leading" constant="30" id="Nzi-gU-rYv"/>
                             <constraint firstItem="h2d-om-6cC" firstAttribute="centerX" secondItem="eFC-Nh-lF4" secondAttribute="centerX" id="uln-fJ-7rM"/>
-                            <constraint firstItem="eFC-Nh-lF4" firstAttribute="top" secondItem="OfG-kY-Orr" secondAttribute="bottom" id="v8a-6B-uTz"/>
+                            <constraint firstItem="eFC-Nh-lF4" firstAttribute="top" secondItem="OfG-kY-Orr" secondAttribute="bottom" constant="20" id="v8a-6B-uTz"/>
                             <constraint firstItem="nzm-9F-Aad" firstAttribute="top" secondItem="h2d-om-6cC" secondAttribute="bottom" constant="15" id="whB-kC-R9A"/>
                             <constraint firstItem="GQE-Sl-d7i" firstAttribute="width" secondItem="eFC-Nh-lF4" secondAttribute="width" id="z89-qi-bXn"/>
                         </constraints>
@@ -408,6 +410,7 @@
                     <navigationItem key="navigationItem" id="O90-P5-atp"/>
                     <connections>
                         <outlet property="commentTextView" destination="p4n-zk-lH7" id="GVy-FT-4E2"/>
+                        <outlet property="commentTextViewHeightConstraint" destination="cHo-o1-eZW" id="0ae-Wg-mwc"/>
                         <outlet property="option1" destination="Fmy-JQ-Tyr" id="QPv-mV-Xgs"/>
                         <outlet property="option2" destination="TMU-Ly-OUG" id="Vj6-ka-xBF"/>
                         <outlet property="option3" destination="O5P-QP-Jck" id="okL-1a-hi0"/>

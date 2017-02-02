@@ -29,7 +29,7 @@ class RatingViewController: UIViewController {
     @IBOutlet weak var option4: UIButton!
 
     @IBOutlet weak var optionButtonHeightConstraint: NSLayoutConstraint!
-
+    @IBOutlet weak var commentTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var submitButtonHeightConstraint: NSLayoutConstraint!
 
 
@@ -104,7 +104,7 @@ class RatingViewController: UIViewController {
 
 
     func initUI() {
-        settingUIForCommentLabel()
+        settingUIForCommentTextView()
         settingUIForOptions()
         settingUIForSubmitButton()
 
@@ -116,11 +116,14 @@ class RatingViewController: UIViewController {
         submitButton.layer.cornerRadius = submitButton.frame.size.height / 2.0
     }
 
-    func settingUIForCommentLabel() {
+    func settingUIForCommentTextView() {
         commentTextView.clipsToBounds = true
         commentTextView.layer.cornerRadius = 6.0
         commentTextView.layer.borderColor = UIColor.black.cgColor
         commentTextView.layer.borderWidth = 2.0
+
+        commentTextViewHeightConstraint.constant = AppConfig.commentTextViewSize
+        view.layoutIfNeeded()
 
     }
 
