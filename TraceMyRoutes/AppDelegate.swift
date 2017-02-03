@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDOSZ9w67ObAWA8G8--jFCLFH7Xg-YaHU8")
         IQKeyboardManager.sharedManager().enable = true
 
+        print("id for vender = \(UIDevice.current.identifierForVendor!.uuidString)") //kimuranow
 
         return true
     }
