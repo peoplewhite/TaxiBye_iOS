@@ -9,6 +9,7 @@
 import Foundation
 
 class RealmMachine {
+    
 
     func save() {
         

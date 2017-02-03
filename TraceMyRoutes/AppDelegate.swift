@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
 
 //        print("id for vender = \(UIDevice.current.identifierForVendor!.uuidString)") //kimuranow
-//        print("fileURL = \(Realm.Configuration.defaultConfiguration.fileURL!)") //kimuranow
+        print("fileURL = \(Realm.Configuration.defaultConfiguration.fileURL!)") //kimuranow
 
         return true
     }

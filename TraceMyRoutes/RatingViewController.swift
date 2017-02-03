@@ -8,6 +8,8 @@
 
 import UIKit
 import SVProgressHUD
+import RealmSwift
+import Realm
 
 class RatingViewController: UIViewController {
 
@@ -31,6 +33,7 @@ class RatingViewController: UIViewController {
     @IBOutlet weak var commentTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var submitButtonHeightConstraint: NSLayoutConstraint!
 
+    var currentRating = Rating()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,8 @@ class RatingViewController: UIViewController {
         }
         
         initUI()
+        currentRating = Rating()
+        currentRating.message = TraceRouteMachine.shared.comment
     }
 
     func backToInitFirstScene() {
@@ -101,6 +106,9 @@ extension RatingViewController {
         submitButton.layer.cornerRadius = submitButton.frame.size.height / 2.0
     }
     func settingRatingNumber(_ ratingNumber: Int) {
+
+        currentRating.score = Double(ratingNumber)
+        
         star1.setImage(AppConfig.blackEmptyStarImage, for: .normal)
         star2.setImage(AppConfig.blackEmptyStarImage, for: .normal)
         star3.setImage(AppConfig.blackEmptyStarImage, for: .normal)
@@ -156,6 +164,7 @@ extension RatingViewController {
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
         callAPIToPostTraceRoutes()
+        saveTraceRoutesToDatabase()
     }
 }
 extension RatingViewController {
@@ -238,5 +247,39 @@ extension RatingViewController {
                                 print("fail") //kimuranow
 
         })
+    }
+
+}
+extension RatingViewController {
+    // MARK: =================> database
+
+    func saveTraceRoutesToDatabase() {
+
+        /*
+        Article *article = [[Article alloc] init];
+        article.num      = @"1";
+        article.title    = @"iOS開發中集成Reveal";
+        article.link     = @"http://blog.devzeng.com/blog/ios-reveal-integrating.html";
+        article.tag      = @"iOS";
+        存儲數據：
+
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        [realm beginWriteTransaction];
+        [realm addObject:article];
+        [realm commitWriteTransaction];
+ */
+
+        let trip = Trip()
+
+        trip.taxi_plate_number = TraceRouteMachine.shared.carPlateNumber
+        trip.rating = currentRating
+
+
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(trip)
+            print("add successfully") //kimuranow
+        }
+        
     }
 }

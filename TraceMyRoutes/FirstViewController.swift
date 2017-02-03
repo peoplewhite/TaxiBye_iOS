@@ -8,6 +8,8 @@
 
 import UIKit
 import SVProgressHUD
+import RealmSwift
+import Realm
 
 class FirstViewController: UIViewController, WarningSceneDelegate {
 
@@ -29,6 +31,14 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         initUI()
+
+        let realm = try! Realm()
+        print("feeling = \(realm.objects(Feeling.self))") //kimuranow
+        print("taxi = \(realm.objects(Taxi.self))") //kimuranow
+        print("rating = \(realm.objects(Rating.self))") //kimuranow
+        print("trip = \(realm.objects(Trip.self))") //kimuranow
+
+        
     }
 
     override func didReceiveMemoryWarning() {
