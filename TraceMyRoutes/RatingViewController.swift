@@ -13,7 +13,7 @@ class RatingViewController: UIViewController {
 
 
     @IBOutlet weak var commentTextView: UITextView!
-    
+
     @IBOutlet weak var submitButton: UIButton!
     
     @IBOutlet weak var star1: UIButton!

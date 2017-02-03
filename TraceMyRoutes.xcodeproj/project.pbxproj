@@ -14,6 +14,7 @@
 		141FFFC31E444ED000F0FD92 /* Taxi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FFFC21E444ED000F0FD92 /* Taxi.swift */; };
 		141FFFC51E444EDB00F0FD92 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FFFC41E444EDB00F0FD92 /* Rating.swift */; };
 		141FFFC71E44553300F0FD92 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FFFC61E44553300F0FD92 /* Feeling.swift */; };
+		141FFFC91E44676A00F0FD92 /* RealmMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FFFC81E44676A00F0FD92 /* RealmMachine.swift */; };
 		1448ED1C1E373FE700962E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED1B1E373FE700962E58 /* AppDelegate.swift */; };
 		1448ED211E373FE700962E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448ED1F1E373FE700962E58 /* Main.storyboard */; };
 		1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED221E373FE700962E58 /* TraceMyRoutes.xcdatamodeld */; };
@@ -61,6 +62,7 @@
 		141FFFC21E444ED000F0FD92 /* Taxi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Taxi.swift; sourceTree = "<group>"; };
 		141FFFC41E444EDB00F0FD92 /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		141FFFC61E44553300F0FD92 /* Feeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
+		141FFFC81E44676A00F0FD92 /* RealmMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMachine.swift; sourceTree = "<group>"; };
 		1448ED181E373FE700962E58 /* TraceMyRoutes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraceMyRoutes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1448ED1B1E373FE700962E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1448ED201E373FE700962E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		141FFFBF1E444C9B00F0FD92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				141FFFC81E44676A00F0FD92 /* RealmMachine.swift */,
 				1448EDE31E375F2500962E58 /* KMLMachine.swift */,
 				14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */,
 				141FFFC01E444EC400F0FD92 /* Trip.swift */,
@@ -569,6 +572,7 @@
 				14AF1CD01E3795A2005F4BE2 /* SearchViewController.swift in Sources */,
 				1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */,
 				1448ED551E3744A200962E58 /* AppConfig.swift in Sources */,
+				141FFFC91E44676A00F0FD92 /* RealmMachine.swift in Sources */,
 				141FFFC31E444ED000F0FD92 /* Taxi.swift in Sources */,
 				1448EDE41E375F2500962E58 /* KMLMachine.swift in Sources */,
 				14AF1CCE1E3794B3005F4BE2 /* FirstViewController.swift in Sources */,
