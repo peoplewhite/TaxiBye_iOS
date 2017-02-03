@@ -12,6 +12,8 @@ import Fabric
 import Crashlytics
 import GoogleMaps
 import IQKeyboardManagerSwift
+import RealmSwift
+import Realm
 
 
 
@@ -30,9 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
 
         print("id for vender = \(UIDevice.current.identifierForVendor!.uuidString)") //kimuranow
+        print("fileURL = \(Realm.Configuration.defaultConfiguration.fileURL!)") //kimuranow
+
 
         return true
     }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

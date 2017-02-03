@@ -17,12 +17,10 @@
 		1448ED291E373FE700962E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448ED271E373FE700962E58 /* LaunchScreen.storyboard */; };
 		1448ED341E373FE700962E58 /* TraceMyRoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED331E373FE700962E58 /* TraceMyRoutesTests.swift */; };
 		1448ED3F1E373FE700962E58 /* TraceMyRoutesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED3E1E373FE700962E58 /* TraceMyRoutesUITests.swift */; };
-		1448ED4D1E3742BE00962E58 /* StartTraceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED4C1E3742BE00962E58 /* StartTraceViewController.swift */; };
 		1448ED511E3742E900962E58 /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED501E3742E900962E58 /* TracingViewController.swift */; };
 		1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED521E3742F600962E58 /* RatingViewController.swift */; };
 		1448ED551E3744A200962E58 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED541E3744A200962E58 /* AppConfig.swift */; };
 		1448EDE41E375F2500962E58 /* KMLMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448EDE31E375F2500962E58 /* KMLMachine.swift */; };
-		149DBFD11E4342AA00FC923B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149DBFD01E4342AA00FC923B /* TestViewController.swift */; };
 		14AF1CCA1E37703F005F4BE2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CC91E37703F005F4BE2 /* API.swift */; };
 		14AF1CCC1E3786BD005F4BE2 /* TraceRouteMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */; };
 		14AF1CCE1E3794B3005F4BE2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CCD1E3794B3005F4BE2 /* FirstViewController.swift */; };
@@ -68,13 +66,11 @@
 		1448ED3A1E373FE700962E58 /* TraceMyRoutesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TraceMyRoutesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1448ED3E1E373FE700962E58 /* TraceMyRoutesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceMyRoutesUITests.swift; sourceTree = "<group>"; };
 		1448ED401E373FE700962E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1448ED4C1E3742BE00962E58 /* StartTraceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTraceViewController.swift; sourceTree = "<group>"; };
 		1448ED501E3742E900962E58 /* TracingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
 		1448ED521E3742F600962E58 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		1448ED541E3744A200962E58 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		1448EDE21E37563400962E58 /* TraceMyRoutes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TraceMyRoutes-Bridging-Header.h"; sourceTree = "<group>"; };
 		1448EDE31E375F2500962E58 /* KMLMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLMachine.swift; sourceTree = "<group>"; };
-		149DBFD01E4342AA00FC923B /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		14AF1CC91E37703F005F4BE2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceRouteMachine.swift; sourceTree = "<group>"; };
 		14AF1CCD1E3794B3005F4BE2 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +123,50 @@
 			name = Warning;
 			sourceTree = "<group>";
 		};
+		141FFFBB1E44487D00F0FD92 /* 1. First Scene */ = {
+			isa = PBXGroup;
+			children = (
+				1410252C1E42DD32002856B9 /* Warning */,
+				14AF1CCD1E3794B3005F4BE2 /* FirstViewController.swift */,
+			);
+			name = "1. First Scene";
+			sourceTree = "<group>";
+		};
+		141FFFBC1E44489600F0FD92 /* 2. Trace */ = {
+			isa = PBXGroup;
+			children = (
+				1448ED501E3742E900962E58 /* TracingViewController.swift */,
+			);
+			name = "2. Trace";
+			sourceTree = "<group>";
+		};
+		141FFFBD1E444B7E00F0FD92 /* 3. Rating */ = {
+			isa = PBXGroup;
+			children = (
+				1448ED521E3742F600962E58 /* RatingViewController.swift */,
+				14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */,
+			);
+			name = "3. Rating";
+			sourceTree = "<group>";
+		};
+		141FFFBE1E444C7B00F0FD92 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1448ED271E373FE700962E58 /* LaunchScreen.storyboard */,
+				1448ED1F1E373FE700962E58 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		141FFFBF1E444C9B00F0FD92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1448EDE31E375F2500962E58 /* KMLMachine.swift */,
+				14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1448ED0F1E373FE700962E58 = {
 			isa = PBXGroup;
 			children = (
@@ -153,25 +193,19 @@
 			isa = PBXGroup;
 			children = (
 				1448ED1B1E373FE700962E58 /* AppDelegate.swift */,
-				1448ED1F1E373FE700962E58 /* Main.storyboard */,
 				1448ED541E3744A200962E58 /* AppConfig.swift */,
-				14AF1CCD1E3794B3005F4BE2 /* FirstViewController.swift */,
-				149DBFD01E4342AA00FC923B /* TestViewController.swift */,
-				1410252C1E42DD32002856B9 /* Warning */,
-				1448ED4C1E3742BE00962E58 /* StartTraceViewController.swift */,
-				1448ED501E3742E900962E58 /* TracingViewController.swift */,
-				1448ED521E3742F600962E58 /* RatingViewController.swift */,
+				141FFFBE1E444C7B00F0FD92 /* Storyboard */,
+				141FFFBB1E44487D00F0FD92 /* 1. First Scene */,
+				141FFFBC1E44489600F0FD92 /* 2. Trace */,
+				141FFFBD1E444B7E00F0FD92 /* 3. Rating */,
 				14E6F89E1E4316FB00ED3A06 /* Utils.swift */,
-				14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */,
 				14AF1CCF1E3795A2005F4BE2 /* SearchViewController.swift */,
+				14AF1CC91E37703F005F4BE2 /* API.swift */,
+				141FFFBF1E444C9B00F0FD92 /* Model */,
 				1448ED251E373FE700962E58 /* Assets.xcassets */,
-				1448ED271E373FE700962E58 /* LaunchScreen.storyboard */,
 				1448ED2A1E373FE700962E58 /* Info.plist */,
 				1448ED221E373FE700962E58 /* TraceMyRoutes.xcdatamodeld */,
 				1448EDE21E37563400962E58 /* TraceMyRoutes-Bridging-Header.h */,
-				1448EDE31E375F2500962E58 /* KMLMachine.swift */,
-				14AF1CC91E37703F005F4BE2 /* API.swift */,
-				14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */,
 			);
 			path = TraceMyRoutes;
 			sourceTree = "<group>";
@@ -518,11 +552,9 @@
 			files = (
 				14E6F89D1E4300B600ED3A06 /* CommentViewController.swift in Sources */,
 				14AF1CCC1E3786BD005F4BE2 /* TraceRouteMachine.swift in Sources */,
-				149DBFD11E4342AA00FC923B /* TestViewController.swift in Sources */,
 				1410252B1E42DD2C002856B9 /* WarningScene.swift in Sources */,
 				14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */,
 				14AF1CD01E3795A2005F4BE2 /* SearchViewController.swift in Sources */,
-				1448ED4D1E3742BE00962E58 /* StartTraceViewController.swift in Sources */,
 				1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */,
 				1448ED551E3744A200962E58 /* AppConfig.swift in Sources */,
 				1448EDE41E375F2500962E58 /* KMLMachine.swift in Sources */,
