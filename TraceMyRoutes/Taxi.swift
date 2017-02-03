@@ -10,4 +10,11 @@ import Foundation
 import RealmSwift
 
 class Taxi: Object {
+    
+    dynamic var  plate_number :String = ""
+    dynamic var  driver       :String = ""
+    dynamic var  avg_rating   :Double = 0.0
+    dynamic var  created_at   = NSDate()
+    dynamic var  updated_at   = NSDate()
+    
 }
