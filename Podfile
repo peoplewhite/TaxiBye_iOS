@@ -14,6 +14,7 @@ target 'TraceMyRoutes' do
   pod 'Crashlytics'
   pod 'GoogleMaps'
   pod 'IQKeyboardManagerSwift'
+  pod 'RealmSwift'
 
 
 
