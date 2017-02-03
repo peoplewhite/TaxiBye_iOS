@@ -52,7 +52,6 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
         carPlateNumberLabel.text = carPlateNumber.description
         initUI()
 
-       print("carPlateNumber = \(carPlateNumber)") //kimuranow
     }
 
     func initUI() {
@@ -87,11 +86,8 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
             return
         }
 
-        print("hello world") //kimuranow
-        // 4
         locationManager.startUpdatingLocation()
 
-        //5
         mapContainer.isMyLocationEnabled = true
         mapContainer.settings.myLocationButton = true
     }

@@ -22,18 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
 
-
         GMSServices.provideAPIKey("AIzaSyDOSZ9w67ObAWA8G8--jFCLFH7Xg-YaHU8")
         IQKeyboardManager.sharedManager().enable = true
 
-        print("id for vender = \(UIDevice.current.identifierForVendor!.uuidString)") //kimuranow
-        print("fileURL = \(Realm.Configuration.defaultConfiguration.fileURL!)") //kimuranow
-
+//        print("id for vender = \(UIDevice.current.identifierForVendor!.uuidString)") //kimuranow
+//        print("fileURL = \(Realm.Configuration.defaultConfiguration.fileURL!)") //kimuranow
 
         return true
     }
