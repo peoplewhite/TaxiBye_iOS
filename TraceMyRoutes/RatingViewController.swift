@@ -12,16 +12,15 @@ import SVProgressHUD
 class RatingViewController: UIViewController {
 
 
-    @IBOutlet weak var submitButton: UIButton!
-
     @IBOutlet weak var commentTextView: UITextView!
-
+    
+    @IBOutlet weak var submitButton: UIButton!
+    
     @IBOutlet weak var star1: UIButton!
     @IBOutlet weak var star2: UIButton!
     @IBOutlet weak var star3: UIButton!
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
-
 
     @IBOutlet weak var option1: UIButton!
     @IBOutlet weak var option2: UIButton!
@@ -35,18 +34,14 @@ class RatingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
-
 
         if TraceRouteMachine.shared.comment != "" {
             commentTextView.text = TraceRouteMachine.shared.comment
@@ -59,8 +54,52 @@ class RatingViewController: UIViewController {
         _ = navigationController?.popToRootViewController(animated: true)
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+    }
+}
 
+extension RatingViewController {
+    // MARK: =================> UI
 
+    func initUI() {
+        settingUIForCommentTextView()
+        settingUIForOptions()
+        settingUIForSubmitButton()
+    }
+    func settingUIForCommentTextView() {
+        commentTextView.clipsToBounds = true
+        commentTextView.layer.cornerRadius = 6.0
+        commentTextView.layer.borderColor = UIColor.black.cgColor
+        commentTextView.layer.borderWidth = 2.0
+
+        commentTextViewHeightConstraint.constant = AppConfig.commentTextViewSize
+        view.layoutIfNeeded()
+
+    }
+    func settingUIForOptions() {
+        optionButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
+        view.layoutIfNeeded()
+        
+        settingButton(option1)
+        settingButton(option2)
+        settingButton(option3)
+        settingButton(option4)
+
+        option1.setTitle("還好", for: .normal)
+        option2.setTitle("車速過快", for: .normal)
+        option3.setTitle("態度不佳", for: .normal)
+        option4.setTitle("爛透了", for: .normal)
+    }
+    func settingUIForSubmitButton() {
+        submitButtonHeightConstraint.constant = AppConfig.buttonHeight
+        view.layoutIfNeeded()
+        submitButton.clipsToBounds = true
+        submitButton.layer.cornerRadius = submitButton.frame.size.height / 2.0
+    }
     func settingRatingNumber(_ ratingNumber: Int) {
         star1.setImage(AppConfig.blackEmptyStarImage, for: .normal)
         star2.setImage(AppConfig.blackEmptyStarImage, for: .normal)
@@ -101,54 +140,7 @@ class RatingViewController: UIViewController {
 
         
     }
-
-
-    func initUI() {
-        settingUIForCommentTextView()
-        settingUIForOptions()
-        settingUIForSubmitButton()
-
-    }
-    func settingUIForSubmitButton() {
-        submitButtonHeightConstraint.constant = AppConfig.buttonHeight
-        view.layoutIfNeeded()
-        submitButton.clipsToBounds = true
-        submitButton.layer.cornerRadius = submitButton.frame.size.height / 2.0
-    }
-
-    func settingUIForCommentTextView() {
-        commentTextView.clipsToBounds = true
-        commentTextView.layer.cornerRadius = 6.0
-        commentTextView.layer.borderColor = UIColor.black.cgColor
-        commentTextView.layer.borderWidth = 2.0
-
-        commentTextViewHeightConstraint.constant = AppConfig.commentTextViewSize
-        view.layoutIfNeeded()
-
-    }
-
-    @IBAction func enterCommentSceneButtonPressed(_ sender: UIButton) {
-        goCommentScene()
-
-    }
-
-    func goCommentScene() {
-    }
-
-    func settingUIForOptions() {
-        optionButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
-        view.layoutIfNeeded()
-        
-        settingButton(option1)
-        settingButton(option2)
-        settingButton(option3)
-        settingButton(option4)
-
-        option1.setTitle("還好", for: .normal)
-        option2.setTitle("車速過快", for: .normal)
-        option3.setTitle("態度不佳", for: .normal)
-        option4.setTitle("爛透了", for: .normal)
-    }
+    
     func settingButton(_ b: UIButton) {
 
         b.clipsToBounds = true
@@ -158,6 +150,16 @@ class RatingViewController: UIViewController {
         b.setTitleColor(UIColor.black, for: .normal)
         b.backgroundColor = UIColor.clear
     }
+}
+extension RatingViewController {
+    // MARK: =================> button
+    
+    @IBAction func submitButtonPressed(_ sender: UIButton) {
+        callAPIToPostTraceRoutes()
+    }
+}
+extension RatingViewController {
+    // MARK: =================> button (option)
 
     @IBAction func option1ButtonPressed(_ sender: UIButton) {
         if sender.backgroundColor == UIColor.clear {
@@ -197,26 +199,9 @@ class RatingViewController: UIViewController {
         }
 
     }
-
-
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let backItem = UIBarButtonItem()
-        backItem.title = ""
-        navigationItem.backBarButtonItem = backItem
-    }
-    
-
 }
-
 extension RatingViewController {
-
-     
-    // MARK: =================> button
-
-    @IBAction func submitButtonPressed(_ sender: UIButton) {
-        callAPIToPostTraceRoutes()
-    }
+    // MARK: =================> button (star)
 
     @IBAction func star1ButtonPressed(_ sender: UIButton) {
         settingRatingNumber(1)
