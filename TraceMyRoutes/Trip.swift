@@ -18,5 +18,15 @@ class Trip: Object {
     dynamic var created_at = NSDate()
     dynamic var updated_at = NSDate() 
     dynamic var taxi_plate_number = ""
-    
+
+    dynamic var rating: Rating?
+
+
+    override static func primaryKey() -> String {
+        return "id"
+    }
+//    override static func indexedProperties() -> > {
+//        return
+//    }
+
 }

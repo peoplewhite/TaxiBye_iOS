@@ -18,5 +18,9 @@ class Rating: Object {
     dynamic var created_at = NSDate()
     dynamic var updated_at = NSDate()
     dynamic var trip_feeling_id: Int = 0
+
     
+    override static func primaryKey() -> String {
+        return "id"
+    }
 }
