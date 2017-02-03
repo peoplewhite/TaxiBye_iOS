@@ -10,10 +10,13 @@ import Foundation
 import RealmSwift
 
 class Trip: Object {
+
+    dynamic var id:Int = 0
+    dynamic var route = ""
+    dynamic var started_at = NSDate()
+    dynamic var ended_at = NSDate()
+    dynamic var created_at = NSDate()
+    dynamic var updated_at = NSDate() 
+    dynamic var taxi_plate_number = ""
     
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
 }
