@@ -33,8 +33,12 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
         checkCoreLocationPermission()
 
         // TODO: refactor this
-        
-        KMLMachine.shared.initMachine()
+
+        if AppConfig.isUsingGPX {
+            GPXMachine.shared.initMachine(withTitle: carPlateNumber)
+        } else {
+            KMLMachine.shared.initMachine()
+        }
 
         TraceRouteMachine.shared.startTraceLocation()
     }
@@ -100,7 +104,12 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
         let currentLocation: CLLocation = locations[0]
         print("currentLocation = \(currentLocation.coordinate.latitude), \(currentLocation.coordinate.longitude)") //kimuranow
-        KMLMachine.shared.save(currentLocation)
+
+        if AppConfig.isUsingGPX {
+            GPXMachine.shared.save(currentLocation)
+        } else {
+            KMLMachine.shared.save(currentLocation)
+        }
 
 
         mapContainer.camera = GMSCameraPosition(target: currentLocation.coordinate, zoom: 18, bearing: 0, viewingAngle: 0)

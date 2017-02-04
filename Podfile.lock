@@ -8,6 +8,8 @@ PODS:
   - GoogleMaps/Base (2.1.1)
   - GoogleMaps/Maps (2.1.1):
     - GoogleMaps/Base
+  - iOS-GPX-Framework (0.0.4):
+    - TBXML (~> 1.5)
   - iOS-KML-Framework (1.0.0):
     - TBXML (~> 1.5)
   - IQKeyboardManagerSwift (4.0.8)
@@ -25,6 +27,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - GoogleMaps
+  - iOS-GPX-Framework (from `http://github.com/merlos/iOS-GPX-Framework`)
   - iOS-KML-Framework (from `https://github.com/FLCLjp/iOS-KML-Framework.git`)
   - IQKeyboardManagerSwift
   - RealmSwift
@@ -32,10 +35,15 @@ DEPENDENCIES:
   - SwiftyJSON
 
 EXTERNAL SOURCES:
+  iOS-GPX-Framework:
+    :git: http://github.com/merlos/iOS-GPX-Framework
   iOS-KML-Framework:
     :git: https://github.com/FLCLjp/iOS-KML-Framework.git
 
 CHECKOUT OPTIONS:
+  iOS-GPX-Framework:
+    :commit: 9ac7b6ca3d1ab9b28007d3e88c9888a2f78099db
+    :git: http://github.com/merlos/iOS-GPX-Framework
   iOS-KML-Framework:
     :commit: dc38d7c2e80e0d4c077a63e7cce4c3b34ac25d08
     :git: https://github.com/FLCLjp/iOS-KML-Framework.git
@@ -45,6 +53,7 @@ SPEC CHECKSUMS:
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  iOS-GPX-Framework: 38b56820461b99cd7f1fb6cf1e0621f72d63e872
   iOS-KML-Framework: c16f4605bc290b769a13f2645840211e31f8d92a
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
   Realm: 69d7de9aa569a11eed490aaabc8f2109e3985ecf
@@ -53,6 +62,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   TBXML: 9f9dadb239f2f2af1dadb87fe43a0ce6e479379a
 
-PODFILE CHECKSUM: 8b6fdabc2a7ddd02a85d5f761e6f9891c7126ac7
+PODFILE CHECKSUM: 01422b7a53ab3d27ac52a1f2cc5d5f9754b37ca9
 
 COCOAPODS: 1.2.0.beta.1

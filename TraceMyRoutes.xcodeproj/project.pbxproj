@@ -15,6 +15,7 @@
 		141FFFC51E444EDB00F0FD92 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FFFC41E444EDB00F0FD92 /* Rating.swift */; };
 		141FFFC71E44553300F0FD92 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FFFC61E44553300F0FD92 /* Feeling.swift */; };
 		141FFFC91E44676A00F0FD92 /* RealmMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FFFC81E44676A00F0FD92 /* RealmMachine.swift */; };
+		143D45E81E45B41C000AF402 /* GPXMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D45E71E45B41C000AF402 /* GPXMachine.swift */; };
 		1448ED1C1E373FE700962E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED1B1E373FE700962E58 /* AppDelegate.swift */; };
 		1448ED211E373FE700962E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1448ED1F1E373FE700962E58 /* Main.storyboard */; };
 		1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED221E373FE700962E58 /* TraceMyRoutes.xcdatamodeld */; };
@@ -63,6 +64,7 @@
 		141FFFC41E444EDB00F0FD92 /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		141FFFC61E44553300F0FD92 /* Feeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 		141FFFC81E44676A00F0FD92 /* RealmMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMachine.swift; sourceTree = "<group>"; };
+		143D45E71E45B41C000AF402 /* GPXMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPXMachine.swift; sourceTree = "<group>"; };
 		1448ED181E373FE700962E58 /* TraceMyRoutes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraceMyRoutes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1448ED1B1E373FE700962E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1448ED201E373FE700962E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				141FFFC81E44676A00F0FD92 /* RealmMachine.swift */,
+				143D45E71E45B41C000AF402 /* GPXMachine.swift */,
 				1448EDE31E375F2500962E58 /* KMLMachine.swift */,
 				14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */,
 				141FFFC01E444EC400F0FD92 /* Trip.swift */,
@@ -567,6 +570,7 @@
 			files = (
 				14E6F89D1E4300B600ED3A06 /* CommentViewController.swift in Sources */,
 				14AF1CCC1E3786BD005F4BE2 /* TraceRouteMachine.swift in Sources */,
+				143D45E81E45B41C000AF402 /* GPXMachine.swift in Sources */,
 				1410252B1E42DD2C002856B9 /* WarningScene.swift in Sources */,
 				14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */,
 				14AF1CD01E3795A2005F4BE2 /* SearchViewController.swift in Sources */,
@@ -745,6 +749,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oddesign.Taxibye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TraceMyRoutes/TraceMyRoutes-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -760,6 +765,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oddesign.Taxibye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TraceMyRoutes/TraceMyRoutes-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

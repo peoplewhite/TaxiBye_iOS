@@ -38,6 +38,8 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         print("rating = \(realm.objects(Rating.self))") //kimuranow
         print("trip = \(realm.objects(Trip.self))") //kimuranow
 
+        let root = GPXRoot()
+
         
     }
 
