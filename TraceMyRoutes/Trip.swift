@@ -25,8 +25,8 @@ class Trip: Object {
     override static func primaryKey() -> String {
         return "id"
     }
-//    override static func indexedProperties() -> > {
-//        return
-//    }
+    override static func indexedProperties() -> [String] {
+        return ["id"]
+    }
 
 }

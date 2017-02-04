@@ -108,6 +108,7 @@ extension RatingViewController {
     func settingRatingNumber(_ ratingNumber: Int) {
 
         currentRating.score = Double(ratingNumber)
+        print("currentRating.score = \(currentRating.score)") //kimuranow
         
         star1.setImage(AppConfig.blackEmptyStarImage, for: .normal)
         star2.setImage(AppConfig.blackEmptyStarImage, for: .normal)
@@ -164,7 +165,7 @@ extension RatingViewController {
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
         callAPIToPostTraceRoutes()
-        saveTraceRoutesToDatabase()
+//        saveTraceRoutesToDatabase()
     }
 }
 extension RatingViewController {
@@ -255,25 +256,12 @@ extension RatingViewController {
 
     func saveTraceRoutesToDatabase() {
 
-        /*
-        Article *article = [[Article alloc] init];
-        article.num      = @"1";
-        article.title    = @"iOS開發中集成Reveal";
-        article.link     = @"http://blog.devzeng.com/blog/ios-reveal-integrating.html";
-        article.tag      = @"iOS";
-        存儲數據：
-
-        RLMRealm *realm = [RLMRealm defaultRealm];
-        [realm beginWriteTransaction];
-        [realm addObject:article];
-        [realm commitWriteTransaction];
- */
-
         let trip = Trip()
 
         trip.taxi_plate_number = TraceRouteMachine.shared.carPlateNumber
         trip.rating = currentRating
 
+        print("trip.rating = \(trip.rating)") //kimuranow
 
         let realm = try! Realm()
         try! realm.write {

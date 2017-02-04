@@ -64,18 +64,17 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
     @IBAction func trackButtonPressed(_ sender: UIButton) {
-//        showWarningScene()
+        
         
         let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
-        if trimmedString.characters.count > 0 {
-            goTraceScene()
-        } else {
 
+        guard trimmedString.characters.count > 0 else {
             showAlertViewWith(msg: "請輸入車牌號碼")
-
+            return
         }
 
-        
+        showWarningScene()
+//        goTraceScene()
 
     }
     func showAlertViewWith(msg: String) {
