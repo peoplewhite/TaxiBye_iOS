@@ -8,6 +8,8 @@
 
 import UIKit
 import SVProgressHUD
+import RealmSwift
+import Realm
 
 class FirstViewController: UIViewController, WarningSceneDelegate {
 
@@ -29,6 +31,14 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         initUI()
+
+        let realm = try! Realm()
+        print("feeling = \(realm.objects(Feeling.self))") //kimuranow
+        print("taxi = \(realm.objects(Taxi.self))") //kimuranow
+        print("rating = \(realm.objects(Rating.self))") //kimuranow
+        print("trip = \(realm.objects(Trip.self))") //kimuranow
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,18 +64,17 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
     @IBAction func trackButtonPressed(_ sender: UIButton) {
-//        showWarningScene()
+        
         
         let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
-        if trimmedString.characters.count > 0 {
-            goTraceScene()
-        } else {
 
+        guard trimmedString.characters.count > 0 else {
             showAlertViewWith(msg: "請輸入車牌號碼")
-
+            return
         }
 
-        
+        showWarningScene()
+//        goTraceScene()
 
     }
     func showAlertViewWith(msg: String) {
