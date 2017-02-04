@@ -22,14 +22,10 @@ class GPXMachine {
     var track = GPXTrack()
 
 
-    func initMachine(withTitle title: String, andInitPosition initPosition: CLLocation) {
+    func initMachine(withTitle title: String) {
         gpx = GPXRoot(creator: title)
         track = gpx.newTrack()
         track.name = title
-        track.newTrackpoint(
-            withLatitude: CGFloat(initPosition.coordinate.latitude),
-            longitude: CGFloat(initPosition.coordinate.longitude)
-        )
     }
 
     func save(_ currentLocation: CLLocation) {

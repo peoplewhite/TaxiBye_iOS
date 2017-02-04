@@ -166,6 +166,7 @@ extension RatingViewController {
     @IBAction func submitButtonPressed(_ sender: UIButton) {
         callAPIToPostTraceRoutes()
 //        saveTraceRoutesToDatabase()
+        print("gpxString = \(GPXMachine.shared.gpxString)") //kimuranow
     }
 }
 extension RatingViewController {
