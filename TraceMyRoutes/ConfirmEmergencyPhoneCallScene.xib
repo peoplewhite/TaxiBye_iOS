@@ -73,6 +73,7 @@
                 <constraint firstItem="4iY-P8-eNi" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="yAI-qQ-ECU"/>
             </constraints>
             <connections>
+                <outlet property="noButtonHeightConstraint" destination="A7f-T4-TUT" id="15T-57-Lpm"/>
                 <outlet property="phoneNumberLabel" destination="tWb-0c-VMe" id="dIK-ir-XTp"/>
             </connections>
         </view>
