@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="-129" y="36"/>
         </scene>
-        <!--View Controller-->
+        <!--Black List View Controller-->
         <scene sceneID="Wsb-8I-Dbh">
             <objects>
-                <viewController id="UTc-ui-9Wd" sceneMemberID="viewController">
+                <viewController id="UTc-ui-9Wd" customClass="BlackListViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Bb-Si-rfD"/>
                         <viewControllerLayoutGuide type="bottom" id="lyz-6z-PNX"/>
@@ -140,17 +140,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSe-SE-9mZ">
-                                <rect key="frame" x="38" y="57" width="46" height="30"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0mG-uN-gUU">
+                                <rect key="frame" x="52" y="258" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="UTc-ui-9Wd" eventType="touchUpInside" id="6tQ-rY-GPc"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGe-QP-v9M" userLabel="topView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黑名單" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJb-cx-csQ" userLabel="title">
+                                        <rect key="frame" x="129" y="20" width="62" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHT-aO-pO6" userLabel="exit">
+                                        <rect key="frame" x="260" y="0.0" width="60" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="8Ao-aD-nDz"/>
+                                        </constraints>
+                                        <state key="normal" image="closeButtonIcon"/>
+                                        <connections>
+                                            <action selector="exitButtonPressed:" destination="UTc-ui-9Wd" eventType="touchUpInside" id="A3a-l4-AEc"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list_white" translatesAutoresizingMaskIntoConstraints="NO" id="rOY-IK-cQJ">
+                                        <rect key="frame" x="101" y="27" width="18" height="10"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FJb-cx-csQ" firstAttribute="leading" secondItem="rOY-IK-cQJ" secondAttribute="trailing" constant="10" id="4sm-yx-sw9"/>
+                                    <constraint firstAttribute="trailing" secondItem="KHT-aO-pO6" secondAttribute="trailing" id="8bi-a9-eHp"/>
+                                    <constraint firstItem="rOY-IK-cQJ" firstAttribute="centerY" secondItem="mGe-QP-v9M" secondAttribute="centerY" id="RGT-TM-pqU"/>
+                                    <constraint firstItem="KHT-aO-pO6" firstAttribute="height" secondItem="mGe-QP-v9M" secondAttribute="height" id="TvB-VJ-PeT"/>
+                                    <constraint firstItem="KHT-aO-pO6" firstAttribute="centerY" secondItem="mGe-QP-v9M" secondAttribute="centerY" id="dO6-g1-yPY"/>
+                                    <constraint firstItem="FJb-cx-csQ" firstAttribute="centerX" secondItem="mGe-QP-v9M" secondAttribute="centerX" id="eF5-xL-wN4"/>
+                                    <constraint firstAttribute="height" constant="64" id="r5R-aC-QBc"/>
+                                    <constraint firstItem="FJb-cx-csQ" firstAttribute="centerY" secondItem="mGe-QP-v9M" secondAttribute="centerY" id="zQg-MH-xBq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mGe-QP-v9M" firstAttribute="top" secondItem="4Bb-Si-rfD" secondAttribute="bottom" id="3Kl-B2-Mdd"/>
+                            <constraint firstItem="mGe-QP-v9M" firstAttribute="width" secondItem="bIG-Km-0du" secondAttribute="width" id="XxS-Hp-px3"/>
+                            <constraint firstItem="mGe-QP-v9M" firstAttribute="centerX" secondItem="bIG-Km-0du" secondAttribute="centerX" id="knG-yy-4By"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="FJb-cx-csQ" id="ybJ-kf-o6s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s17-dc-5Kz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -572,8 +612,10 @@
     </scenes>
     <resources>
         <image name="blackEmptyStar" width="40" height="38"/>
+        <image name="closeButtonIcon" width="16" height="16"/>
         <image name="firstSceneBackground" width="320" height="190"/>
         <image name="list" width="19" height="11"/>
+        <image name="list_white" width="18" height="10"/>
         <image name="phone" width="24" height="24"/>
         <image name="taxi" width="44" height="28"/>
     </resources>

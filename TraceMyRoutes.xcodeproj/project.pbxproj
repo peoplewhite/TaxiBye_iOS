@@ -10,6 +10,7 @@
 		09EFF0AAE00ABB392E887F06 /* Pods_TraceMyRoutes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED2CDAE9A42C3585250192E /* Pods_TraceMyRoutes.framework */; };
 		14015E491E48851F004EADC4 /* ConfirmEmergencyPhoneCallScene.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14015E481E48851F004EADC4 /* ConfirmEmergencyPhoneCallScene.xib */; };
 		14015E4B1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14015E4A1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift */; };
+		14015E4D1E488B4E004EADC4 /* BlackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14015E4C1E488B4E004EADC4 /* BlackListViewController.swift */; };
 		141025291E42DD1A002856B9 /* WarningScene.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141025281E42DD1A002856B9 /* WarningScene.xib */; };
 		1410252B1E42DD2C002856B9 /* WarningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1410252A1E42DD2C002856B9 /* WarningScene.swift */; };
 		141FFFC11E444EC400F0FD92 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FFFC01E444EC400F0FD92 /* Trip.swift */; };
@@ -60,6 +61,7 @@
 		0ED2CDAE9A42C3585250192E /* Pods_TraceMyRoutes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraceMyRoutes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14015E481E48851F004EADC4 /* ConfirmEmergencyPhoneCallScene.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmEmergencyPhoneCallScene.xib; sourceTree = "<group>"; };
 		14015E4A1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmEmergencyPhoneCallScene.swift; sourceTree = "<group>"; };
+		14015E4C1E488B4E004EADC4 /* BlackListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackListViewController.swift; sourceTree = "<group>"; };
 		141025281E42DD1A002856B9 /* WarningScene.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WarningScene.xib; sourceTree = "<group>"; };
 		1410252A1E42DD2C002856B9 /* WarningScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningScene.swift; sourceTree = "<group>"; };
 		141FFFC01E444EC400F0FD92 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				141FFFBC1E44489600F0FD92 /* 2. Trace */,
 				141FFFBD1E444B7E00F0FD92 /* 3. Rating */,
 				14E6F89E1E4316FB00ED3A06 /* Utils.swift */,
+				14015E4C1E488B4E004EADC4 /* BlackListViewController.swift */,
 				14AF1CC91E37703F005F4BE2 /* API.swift */,
 				141FFFBF1E444C9B00F0FD92 /* Model */,
 				1448ED251E373FE700962E58 /* Assets.xcassets */,
@@ -576,6 +579,7 @@
 				14AF1CCC1E3786BD005F4BE2 /* TraceRouteMachine.swift in Sources */,
 				143D45E81E45B41C000AF402 /* GPXMachine.swift in Sources */,
 				1410252B1E42DD2C002856B9 /* WarningScene.swift in Sources */,
+				14015E4D1E488B4E004EADC4 /* BlackListViewController.swift in Sources */,
 				14015E4B1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift in Sources */,
 				14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */,
 				1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */,
