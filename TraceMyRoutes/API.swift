@@ -37,7 +37,7 @@ class API {
 
 }
 extension API {
-    // MARK: =================> comment
+    // MARK: =================>
 
     static func fetchRankingList(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
@@ -98,47 +98,6 @@ extension API {
         }
 
     }
-
-    static func postTraceRoutes(withKML kml: KMLDocument, andCarPlateNumber carPlateNumber: String, andRatingNumber ratingNumber: Int, success:((String) -> Void), fail:((String) -> Void)) {
-        
-        success("ok")
-
-    }
-
-//    func createComment(withTagID tagID: Int, andItemPhotoID itemPhotoID: Int, andContent content: String, success: @escaping (() -> Void), fail: @escaping ((String) -> Void)) {
-//
-//        DataDecorator.sharedInstance.showTitle("create comment")
-//
-//        let dictParams: [String : String] = [
-//            "email": MyUser.sharedInstance.email,
-//            "token": MyUser.sharedInstance.token,
-//            // TODO: 沒針對單張tag留comment
-//            //      "price_tag_id": "\(tagID)",
-//            "content": content
-//        ]
-//
-//        let strPostsEndPoint = baseURL + version + "/item_photo/\(itemPhotoID)/comments"
-//
-//        DataDecorator.sharedInstance.showParams(dictParams.description)
-//
-//        Alamofire.request(strPostsEndPoint, method: .post, parameters: dictParams , encoding: JSONEncoding.default)
-//            .responseJSON { response in
-//                guard response.result.error == nil else {
-//                    fail(response.result.error.debugDescription)
-//                    return
-//                }
-//
-//                if let value: AnyObject = response.result.value as AnyObject? {
-//                    let result = DataDecorator.sharedInstance.handleActionResult(JSON(value), andActionTitle: #function)
-//                    if result.isSuccess {
-//                        success()
-//                    } else {
-//                        fail(result.errorMessage)
-//                    }
-//                }
-//        }
-//
-//    }
 }
 
 extension API {
