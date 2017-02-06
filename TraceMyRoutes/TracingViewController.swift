@@ -125,10 +125,31 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
     }
     @IBAction func emergencyButtonPressed(_ sender: UIButton) {
-        print("emergencyButtonPressed") //kimuranow
-        let phone = URL(string: "tel://0932453801")
+
+        showAlertViewBeforeCallEmergencyPhoneCall()
+    }
+    func callEmergencyPhoneCall() {
+        
+        let phone = URL(string: "tel://\(AppConfig.emergencyPhoneNumber)")
         UIApplication.shared.open(phone!, options: [:], completionHandler: nil)
     }
+    func showAlertViewBeforeCallEmergencyPhoneCall() {
+
+        let msg = "確定要撥打緊急電話到\n\(AppConfig.emergencyPhoneNumber)"
+        
+        let alert:UIAlertController = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "取消", style: .default, handler: { action in
+            alert.dismiss(animated: false, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "撥打", style: .default, handler: { action in
+            self.callEmergencyPhoneCall()
+        }))
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+
 
 
 
