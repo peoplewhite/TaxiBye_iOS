@@ -15,7 +15,7 @@ import iOS_KML_Framework
 
 class API {
 
-    let hostURL = "http://pt.oddesign.expert"
+    let hostURL = "http://taxibye.oddesign.expert"
 
     var baseURL: String {
         return "\(hostURL)/api"
@@ -27,7 +27,7 @@ class API {
         return "\(hostURL)/policy"
     }
 
-    let version = "/v2"
+    let version = "/v1"
     let strEndPointCreateItemPhoto = "/user/item_photos"
 
 //    var headers: [String: String] {
@@ -45,6 +45,16 @@ class API {
 }
 extension API {
     // MARK: =================> comment
+
+    static func fetchRankingList() {
+
+    }
+    static func queryTaxiByLicensePlateNumber() {
+        
+    }
+    static func createTripRecord() {
+        
+    }
 
     static func postTraceRoutes(withKML kml: KMLDocument, andCarPlateNumber carPlateNumber: String, andRatingNumber ratingNumber: Int, success:((String) -> Void), fail:((String) -> Void)) {
         
@@ -91,18 +101,9 @@ extension API {
 extension API {
 
     enum APIMethod {
-        case facebookLogin
-        case normalLogin
-        case postNewItemPhoto
-        case getMyItemPhoto
-        case validateToken
-        case logout
-        case getAllItemPhoto
-        case reportItemPhoto
-        case deleteItemPhoto
-        case homeSceneTimeline
-        case fetchFollowerList
-        case fetchFollowingList
+        case fetchRankingList
+        case queryTaxiByLicensePlateNumber
+        case createTripRecord
     }
 
     func getEndPoint(with method: APIMethod) -> String {
@@ -111,41 +112,14 @@ extension API {
 
         switch method {
 
-        case .facebookLogin:
-            endPoint = "/fb_login"
+        case .fetchRankingList:
+            endPoint = "/taxis/ranking?number="
             break
-        case .normalLogin:
-            endPoint = "/login"
+        case .queryTaxiByLicensePlateNumber:
+            endPoint = "/taxis/license_plate_number"
             break
-        case .postNewItemPhoto:
-            endPoint = "/user/item_photos"
-            break
-        case .getMyItemPhoto:
-            endPoint = "/dashboard/profile"
-            break
-        case .validateToken:
-            endPoint = "/validate_token"
-            break
-        case .logout:
-            endPoint = "/logout"
-            break
-        case .getAllItemPhoto:
-            endPoint = "/item_photo/all"
-            break
-        case .reportItemPhoto:
-            endPoint = "/item_photo/"
-            break
-        case .deleteItemPhoto:
-            endPoint = "/item_photo/"
-            break
-        case .homeSceneTimeline:
-            endPoint = "/timeline"
-            break
-        case .fetchFollowerList:
-            endPoint = "/followers"
-            break
-        case .fetchFollowingList:
-            endPoint = "/following_users"
+        case .createTripRecord:
+            endPoint = "/taxis/license_plate_number/trips"
             break
         }
         
