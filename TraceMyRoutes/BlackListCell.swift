@@ -10,6 +10,13 @@ import UIKit
 
 class BlackListCell: UITableViewCell {
 
+
+    @IBOutlet weak var ratingNumber: UILabel!
+    @IBOutlet weak var carPlateNumber: UILabel!
+
+
+    var taxiModel = Taxi()
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +27,13 @@ class BlackListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setupTaxi(_ taxi: Taxi) {
 
+        taxiModel = taxi
+
+        ratingNumber.text = taxiModel.avg_rating.description
+        carPlateNumber.text = taxiModel.plate_number
+
+    }
 }
