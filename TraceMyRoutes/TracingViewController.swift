@@ -125,7 +125,9 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
     }
     @IBAction func emergencyButtonPressed(_ sender: UIButton) {
-
+        print("emergencyButtonPressed") //kimuranow
+        let phone = URL(string: "tel://0932453801")
+        UIApplication.shared.open(phone!, options: [:], completionHandler: nil)
     }
 
 
