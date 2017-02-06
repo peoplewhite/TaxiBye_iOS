@@ -115,5 +115,8 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
         mapContainer.camera = GMSCameraPosition(target: currentLocation.coordinate, zoom: 18, bearing: 0, viewingAngle: 0)
 
     }
+    @IBAction func emergencyButtonPressed(_ sender: UIButton) {
+
+    }
 
 }

@@ -188,12 +188,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP4-Q3-YUt" userLabel="mapContainer" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="119" width="320" height="449"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RA-FM-2Ks">
-                                <rect key="frame" x="135" y="468" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="135" y="449" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="AKA-ce-cc0"/>
                                     <constraint firstAttribute="width" secondItem="6RA-FM-2Ks" secondAttribute="height" multiplier="1:1" id="vQO-fl-Mcu"/>
@@ -207,16 +207,38 @@
                                     <segue destination="NE5-2S-xfX" kind="push" id="UtR-jM-jww"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hw-Fa-uvV" userLabel="emergencyButton">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9xg-8t-5kR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="緊急求救電話">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="emergencyButtonPressed:" destination="0pi-dN-mra" eventType="touchUpInside" id="NmP-ZT-ONA"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="zHO-xE-OIt">
+                                <rect key="frame" x="78" y="534" width="24" height="24"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Tcw-zp-l1j" firstAttribute="top" secondItem="uKe-DW-nbp" secondAttribute="bottom" id="40K-80-Wbg"/>
                             <constraint firstItem="HP4-Q3-YUt" firstAttribute="top" secondItem="Tcw-zp-l1j" secondAttribute="bottom" id="4xm-Qw-snC"/>
                             <constraint firstItem="6RA-FM-2Ks" firstAttribute="centerX" secondItem="wT2-ZM-hNW" secondAttribute="centerX" id="8ny-S2-rJ4"/>
+                            <constraint firstItem="ctW-jw-4dv" firstAttribute="top" secondItem="8hw-Fa-uvV" secondAttribute="bottom" id="8sW-ic-1RG"/>
+                            <constraint firstItem="zHO-xE-OIt" firstAttribute="centerY" secondItem="8hw-Fa-uvV" secondAttribute="centerY" id="8z0-of-Ggd"/>
                             <constraint firstItem="Y03-02-pu8" firstAttribute="centerY" secondItem="Tcw-zp-l1j" secondAttribute="centerY" id="EDU-U0-BeJ"/>
-                            <constraint firstItem="ctW-jw-4dv" firstAttribute="top" secondItem="6RA-FM-2Ks" secondAttribute="bottom" constant="50" id="Fsp-F8-5gh"/>
+                            <constraint firstItem="8hw-Fa-uvV" firstAttribute="width" secondItem="wT2-ZM-hNW" secondAttribute="width" id="F4b-eN-Luu"/>
                             <constraint firstItem="Y03-02-pu8" firstAttribute="trailing" secondItem="Tcw-zp-l1j" secondAttribute="trailing" constant="-15" id="LJu-g2-HNs"/>
-                            <constraint firstItem="ctW-jw-4dv" firstAttribute="top" secondItem="HP4-Q3-YUt" secondAttribute="bottom" id="Vjt-PO-IHN"/>
+                            <constraint firstItem="8hw-Fa-uvV" firstAttribute="centerX" secondItem="wT2-ZM-hNW" secondAttribute="centerX" id="RNf-X6-g7j"/>
+                            <constraint firstItem="8hw-Fa-uvV" firstAttribute="top" secondItem="6RA-FM-2Ks" secondAttribute="bottom" constant="25" id="WqM-wf-wDa"/>
+                            <constraint firstItem="zHO-xE-OIt" firstAttribute="centerX" secondItem="8hw-Fa-uvV" secondAttribute="centerX" constant="-70" id="Y9E-um-auB"/>
+                            <constraint firstItem="8hw-Fa-uvV" firstAttribute="top" secondItem="HP4-Q3-YUt" secondAttribute="bottom" id="jAv-aV-y3D"/>
                             <constraint firstItem="HP4-Q3-YUt" firstAttribute="leading" secondItem="wT2-ZM-hNW" secondAttribute="leading" id="kjj-j8-rqQ"/>
                             <constraint firstItem="Tcw-zp-l1j" firstAttribute="centerX" secondItem="wT2-ZM-hNW" secondAttribute="centerX" id="muh-KK-mPw"/>
                             <constraint firstAttribute="trailing" secondItem="HP4-Q3-YUt" secondAttribute="trailing" id="npe-Me-mmv"/>
@@ -551,6 +573,7 @@
         <image name="blackEmptyStar" width="40" height="38"/>
         <image name="firstSceneBackground" width="320" height="190"/>
         <image name="list" width="19" height="11"/>
+        <image name="phone" width="24" height="24"/>
         <image name="taxi" width="44" height="28"/>
     </resources>
 </document>
