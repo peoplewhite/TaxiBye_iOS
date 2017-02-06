@@ -222,7 +222,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="zHO-xE-OIt">
-                                <rect key="frame" x="78" y="534" width="24" height="24"/>
+                                <rect key="frame" x="68" y="534" width="24" height="24"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -237,7 +237,7 @@
                             <constraint firstItem="Y03-02-pu8" firstAttribute="trailing" secondItem="Tcw-zp-l1j" secondAttribute="trailing" constant="-15" id="LJu-g2-HNs"/>
                             <constraint firstItem="8hw-Fa-uvV" firstAttribute="centerX" secondItem="wT2-ZM-hNW" secondAttribute="centerX" id="RNf-X6-g7j"/>
                             <constraint firstItem="8hw-Fa-uvV" firstAttribute="top" secondItem="6RA-FM-2Ks" secondAttribute="bottom" constant="25" id="WqM-wf-wDa"/>
-                            <constraint firstItem="zHO-xE-OIt" firstAttribute="centerX" secondItem="8hw-Fa-uvV" secondAttribute="centerX" constant="-70" id="Y9E-um-auB"/>
+                            <constraint firstItem="zHO-xE-OIt" firstAttribute="centerX" secondItem="8hw-Fa-uvV" secondAttribute="centerX" constant="-80" id="Y9E-um-auB"/>
                             <constraint firstItem="8hw-Fa-uvV" firstAttribute="top" secondItem="HP4-Q3-YUt" secondAttribute="bottom" id="jAv-aV-y3D"/>
                             <constraint firstItem="HP4-Q3-YUt" firstAttribute="leading" secondItem="wT2-ZM-hNW" secondAttribute="leading" id="kjj-j8-rqQ"/>
                             <constraint firstItem="Tcw-zp-l1j" firstAttribute="centerX" secondItem="wT2-ZM-hNW" secondAttribute="centerX" id="muh-KK-mPw"/>
@@ -250,6 +250,7 @@
                     <navigationItem key="navigationItem" id="jHa-Gf-ssb"/>
                     <connections>
                         <outlet property="carPlateNumberLabel" destination="Tcw-zp-l1j" id="vSp-tu-ivi"/>
+                        <outlet property="emergencyButtonheightConstraint" destination="9xg-8t-5kR" id="DU1-Xe-YFV"/>
                         <outlet property="endButton" destination="6RA-FM-2Ks" id="mYR-9I-GJh"/>
                         <outlet property="endButtonWidthConstraint" destination="AKA-ce-cc0" id="ay9-Wn-eHW"/>
                         <outlet property="mapContainer" destination="HP4-Q3-YUt" id="JmF-QQ-kHy"/>

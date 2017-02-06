@@ -17,6 +17,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var carPlateNumberLabel: UILabel!
     @IBOutlet weak var endButton: UIButton!
     @IBOutlet weak var endButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emergencyButtonheightConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var mapContainer: GMSMapView!
 
@@ -61,8 +62,16 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
     func initUI() {
         settingEndButtonUI()
-
+        settingEmergencyButtonUI()
     }
+
+    func settingEmergencyButtonUI() {
+
+        emergencyButtonheightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
+        view.layoutIfNeeded()
+        
+    }
+    
     func settingEndButtonUI() {
 
         endButtonWidthConstraint.constant = AppConfig.buttonHeight
@@ -118,5 +127,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func emergencyButtonPressed(_ sender: UIButton) {
 
     }
+
+
 
 }
