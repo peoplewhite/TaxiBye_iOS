@@ -15,7 +15,7 @@ import iOS_KML_Framework
 
 class API {
 
-    let hostURL = "http://pt.oddesign.expert"
+    let hostURL = "http://taxibye.oddesign.expert"
 
     var baseURL: String {
         return "\(hostURL)/api"
@@ -27,82 +27,85 @@ class API {
         return "\(hostURL)/policy"
     }
 
-    let version = "/v2"
-    let strEndPointCreateItemPhoto = "/user/item_photos"
+    let version = "/v1"
 
 //    var headers: [String: String] {
 //        return ["Email": MyUser.sharedInstance.email, "Token": MyUser.sharedInstance.token]
 //    }
 
 
-    class var sharedInstance : API {
-        struct Static {
-            static let instance : API = API()
-        }
-        return Static.instance
-    }
 
 }
 extension API {
-    // MARK: =================> comment
+    // MARK: =================>
 
-    static func postTraceRoutes(withKML kml: KMLDocument, andCarPlateNumber carPlateNumber: String, andRatingNumber ratingNumber: Int, success:((String) -> Void), fail:((String) -> Void)) {
+    static func fetchRankingList(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+
+        let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking?number=5"
+
+//        printParams(andURL: url, andFunctionName: #function)
+
+        Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+                    print("value = \(value)") //kimuranow
+//                    completion()
+                }
+        }
+    }
+
+    static func queryTaxiByLicensePlateNumber(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+
+        let url = "http://taxibye.oddesign.expert/api/v1/taxis/license_plate_number"
         
-        success("ok")
+        Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+                    print("value = \(value)") //kimuranow
+//                    completion()
+                }
+        }
         
     }
 
-//    func createComment(withTagID tagID: Int, andItemPhotoID itemPhotoID: Int, andContent content: String, success: @escaping (() -> Void), fail: @escaping ((String) -> Void)) {
-//
-//        DataDecorator.sharedInstance.showTitle("create comment")
-//
-//        let dictParams: [String : String] = [
-//            "email": MyUser.sharedInstance.email,
-//            "token": MyUser.sharedInstance.token,
-//            // TODO: 沒針對單張tag留comment
-//            //      "price_tag_id": "\(tagID)",
-//            "content": content
-//        ]
-//
-//        let strPostsEndPoint = baseURL + version + "/item_photo/\(itemPhotoID)/comments"
-//
-//        DataDecorator.sharedInstance.showParams(dictParams.description)
-//
-//        Alamofire.request(strPostsEndPoint, method: .post, parameters: dictParams , encoding: JSONEncoding.default)
-//            .responseJSON { response in
-//                guard response.result.error == nil else {
-//                    fail(response.result.error.debugDescription)
-//                    return
-//                }
-//
-//                if let value: AnyObject = response.result.value as AnyObject? {
-//                    let result = DataDecorator.sharedInstance.handleActionResult(JSON(value), andActionTitle: #function)
-//                    if result.isSuccess {
-//                        success()
-//                    } else {
-//                        fail(result.errorMessage)
-//                    }
-//                }
-//        }
-//
-//    }
+
+    static func createTripRecord(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+
+        let url = "http://taxibye.oddesign.expert/api/v1/taxis/license_plate_number/trips"
+        
+        Alamofire.request( url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+                    print("value = \(value)") //kimuranow
+//                    completion()
+                }
+        }
+
+    }
 }
 
 extension API {
 
     enum APIMethod {
-        case facebookLogin
-        case normalLogin
-        case postNewItemPhoto
-        case getMyItemPhoto
-        case validateToken
-        case logout
-        case getAllItemPhoto
-        case reportItemPhoto
-        case deleteItemPhoto
-        case homeSceneTimeline
-        case fetchFollowerList
-        case fetchFollowingList
+        case fetchRankingList
+        case queryTaxiByLicensePlateNumber
+        case createTripRecord
     }
 
     func getEndPoint(with method: APIMethod) -> String {
@@ -111,41 +114,14 @@ extension API {
 
         switch method {
 
-        case .facebookLogin:
-            endPoint = "/fb_login"
+        case .fetchRankingList:
+            endPoint = "/taxis/ranking?number="
             break
-        case .normalLogin:
-            endPoint = "/login"
+        case .queryTaxiByLicensePlateNumber:
+            endPoint = "/taxis/license_plate_number"
             break
-        case .postNewItemPhoto:
-            endPoint = "/user/item_photos"
-            break
-        case .getMyItemPhoto:
-            endPoint = "/dashboard/profile"
-            break
-        case .validateToken:
-            endPoint = "/validate_token"
-            break
-        case .logout:
-            endPoint = "/logout"
-            break
-        case .getAllItemPhoto:
-            endPoint = "/item_photo/all"
-            break
-        case .reportItemPhoto:
-            endPoint = "/item_photo/"
-            break
-        case .deleteItemPhoto:
-            endPoint = "/item_photo/"
-            break
-        case .homeSceneTimeline:
-            endPoint = "/timeline"
-            break
-        case .fetchFollowerList:
-            endPoint = "/followers"
-            break
-        case .fetchFollowingList:
-            endPoint = "/following_users"
+        case .createTripRecord:
+            endPoint = "/taxis/license_plate_number/trips"
             break
         }
         
