@@ -11,7 +11,7 @@ import CoreLocation
 import GoogleMaps
 
 
-class TracingViewController: UIViewController, CLLocationManagerDelegate {
+class TracingViewController: UIViewController, CLLocationManagerDelegate, ConfirmEmergencyPhoneCallSceneDelegate {
 
 
     @IBOutlet weak var carPlateNumberLabel: UILabel!
@@ -135,17 +135,12 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
     }
     func showAlertViewBeforeCallEmergencyPhoneCall() {
 
-        let msg = "確定要撥打緊急電話到\n\(AppConfig.emergencyPhoneNumber)"
+        let confirmEmergencyPhoneCallScene: ConfirmEmergencyPhoneCallScene = Bundle.main.loadNibNamed("ConfirmEmergencyPhoneCallScene", owner: self, options: nil)![0] as! ConfirmEmergencyPhoneCallScene
+        confirmEmergencyPhoneCallScene.frame = UIScreen.main.bounds
+        confirmEmergencyPhoneCallScene.delegate = self
+        UIApplication.shared.keyWindow?.addSubview(confirmEmergencyPhoneCallScene)
         
-        let alert:UIAlertController = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "取消", style: .default, handler: { action in
-            alert.dismiss(animated: false, completion: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "撥打", style: .default, handler: { action in
-            self.callEmergencyPhoneCall()
-        }))
-        
-        present(alert, animated: true, completion: nil)
+
         
     }
     

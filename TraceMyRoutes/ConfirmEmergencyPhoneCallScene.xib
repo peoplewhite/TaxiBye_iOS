@@ -25,7 +25,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="緊急求救電話" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tN9-fB-uxk" userLabel="title">
-                    <rect key="frame" x="0.0" y="321" width="375" height="25.5"/>
+                    <rect key="frame" x="0.0" y="321" width="375" height="26"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -39,6 +39,9 @@
                     <state key="normal" title="NO">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="noButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="D5a-ql-4oZ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ5-wb-rHi" userLabel="YES">
                     <rect key="frame" x="0.0" y="461" width="375" height="206"/>
@@ -46,6 +49,9 @@
                     <state key="normal" title="YES">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="yesButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="mmN-k0-BQf"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,6 +72,9 @@
                 <constraint firstItem="EQ5-wb-rHi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hP0-fz-dmT"/>
                 <constraint firstItem="4iY-P8-eNi" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="yAI-qQ-ECU"/>
             </constraints>
+            <connections>
+                <outlet property="phoneNumberLabel" destination="tWb-0c-VMe" id="dIK-ir-XTp"/>
+            </connections>
         </view>
     </objects>
     <resources>
