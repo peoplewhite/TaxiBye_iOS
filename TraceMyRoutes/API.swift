@@ -77,7 +77,25 @@ extension API {
         }
         
     }
-    static func createTripRecord() {
+
+
+    static func createTripRecord(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+
+        let url = "http://taxibye.oddesign.expert/api/v1/taxis/license_plate_number/trips"
+        
+        Alamofire.request( url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+                    print("value = \(value)") //kimuranow
+//                    completion()
+                }
+        }
 
     }
 
