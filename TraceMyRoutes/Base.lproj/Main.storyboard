@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="-129" y="36"/>
         </scene>
-        <!--Search View Controller-->
+        <!--View Controller-->
         <scene sceneID="Wsb-8I-Dbh">
             <objects>
-                <viewController id="UTc-ui-9Wd" customClass="SearchViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UTc-ui-9Wd" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Bb-Si-rfD"/>
                         <viewControllerLayoutGuide type="bottom" id="lyz-6z-PNX"/>

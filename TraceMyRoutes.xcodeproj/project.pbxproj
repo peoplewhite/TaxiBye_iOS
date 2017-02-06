@@ -32,7 +32,6 @@
 		14AF1CCA1E37703F005F4BE2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CC91E37703F005F4BE2 /* API.swift */; };
 		14AF1CCC1E3786BD005F4BE2 /* TraceRouteMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */; };
 		14AF1CCE1E3794B3005F4BE2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CCD1E3794B3005F4BE2 /* FirstViewController.swift */; };
-		14AF1CD01E3795A2005F4BE2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CCF1E3795A2005F4BE2 /* SearchViewController.swift */; };
 		14E6F89D1E4300B600ED3A06 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */; };
 		14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6F89E1E4316FB00ED3A06 /* Utils.swift */; };
 		1915D083331B58255CFF461A /* Pods_TraceMyRoutesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA027445141768B33870049 /* Pods_TraceMyRoutesTests.framework */; };
@@ -90,7 +89,6 @@
 		14AF1CC91E37703F005F4BE2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceRouteMachine.swift; sourceTree = "<group>"; };
 		14AF1CCD1E3794B3005F4BE2 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		14AF1CCF1E3795A2005F4BE2 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		14E6F89E1E4316FB00ED3A06 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		28E8A01E28F7C4D4B0E8E78A /* Pods-TraceMyRoutesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				141FFFBC1E44489600F0FD92 /* 2. Trace */,
 				141FFFBD1E444B7E00F0FD92 /* 3. Rating */,
 				14E6F89E1E4316FB00ED3A06 /* Utils.swift */,
-				14AF1CCF1E3795A2005F4BE2 /* SearchViewController.swift */,
 				14AF1CC91E37703F005F4BE2 /* API.swift */,
 				141FFFBF1E444C9B00F0FD92 /* Model */,
 				1448ED251E373FE700962E58 /* Assets.xcassets */,
@@ -581,7 +578,6 @@
 				1410252B1E42DD2C002856B9 /* WarningScene.swift in Sources */,
 				14015E4B1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift in Sources */,
 				14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */,
-				14AF1CD01E3795A2005F4BE2 /* SearchViewController.swift in Sources */,
 				1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */,
 				1448ED551E3744A200962E58 /* AppConfig.swift in Sources */,
 				141FFFC91E44676A00F0FD92 /* RealmMachine.swift in Sources */,
