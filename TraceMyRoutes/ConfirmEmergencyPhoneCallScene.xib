@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ConfirmEmergencyPhoneCallScene" customModule="TraceMyRoutes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone_big" translatesAutoresizingMaskIntoConstraints="NO" id="6La-Vf-7MK">
+                    <rect key="frame" x="158" y="100" width="59" height="59"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWb-0c-VMe" userLabel="phoneNumber">
+                    <rect key="frame" x="0.0" y="230" width="375" height="60"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="緊急求救電話" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tN9-fB-uxk" userLabel="title">
+                    <rect key="frame" x="0.0" y="321" width="375" height="26"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iY-P8-eNi">
+                    <rect key="frame" x="0.0" y="417" width="375" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="A7f-T4-TUT"/>
+                    </constraints>
+                    <state key="normal" title="NO">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="noButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="D5a-ql-4oZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ5-wb-rHi" userLabel="YES">
+                    <rect key="frame" x="0.0" y="461" width="375" height="206"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="56"/>
+                    <state key="normal" title="YES">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="yesButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="mmN-k0-BQf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="tWb-0c-VMe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="01a-rR-nrr"/>
+                <constraint firstItem="4iY-P8-eNi" firstAttribute="top" secondItem="tN9-fB-uxk" secondAttribute="bottom" constant="70.5" id="0Ku-7E-CyO"/>
+                <constraint firstItem="6La-Vf-7MK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3jF-L8-SvP"/>
+                <constraint firstAttribute="bottom" secondItem="EQ5-wb-rHi" secondAttribute="bottom" id="BmB-zg-9Tb"/>
+                <constraint firstItem="4iY-P8-eNi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CMl-jY-uPg"/>
+                <constraint firstItem="tWb-0c-VMe" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="QRm-2c-doc"/>
+                <constraint firstItem="EQ5-wb-rHi" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="ZAN-mV-VkL"/>
+                <constraint firstItem="tN9-fB-uxk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="am7-jT-m3e"/>
+                <constraint firstItem="tN9-fB-uxk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cJM-DV-6oP"/>
+                <constraint firstItem="tN9-fB-uxk" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="dBh-Dy-WFE"/>
+                <constraint firstItem="tWb-0c-VMe" firstAttribute="top" secondItem="6La-Vf-7MK" secondAttribute="bottom" constant="71" id="dRF-O8-d4V"/>
+                <constraint firstItem="6La-Vf-7MK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="fwO-QQ-kih"/>
+                <constraint firstItem="EQ5-wb-rHi" firstAttribute="top" secondItem="4iY-P8-eNi" secondAttribute="bottom" id="hAy-yd-s9X"/>
+                <constraint firstItem="EQ5-wb-rHi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hP0-fz-dmT"/>
+                <constraint firstItem="4iY-P8-eNi" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="yAI-qQ-ECU"/>
+            </constraints>
+            <connections>
+                <outlet property="noButtonHeightConstraint" destination="A7f-T4-TUT" id="15T-57-Lpm"/>
+                <outlet property="phoneNumberLabel" destination="tWb-0c-VMe" id="dIK-ir-XTp"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="phone_big" width="59" height="59"/>
+    </resources>
+</document>

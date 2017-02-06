@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		09EFF0AAE00ABB392E887F06 /* Pods_TraceMyRoutes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED2CDAE9A42C3585250192E /* Pods_TraceMyRoutes.framework */; };
+		14015E491E48851F004EADC4 /* ConfirmEmergencyPhoneCallScene.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14015E481E48851F004EADC4 /* ConfirmEmergencyPhoneCallScene.xib */; };
+		14015E4B1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14015E4A1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift */; };
 		141025291E42DD1A002856B9 /* WarningScene.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141025281E42DD1A002856B9 /* WarningScene.xib */; };
 		1410252B1E42DD2C002856B9 /* WarningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1410252A1E42DD2C002856B9 /* WarningScene.swift */; };
 		141FFFC11E444EC400F0FD92 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FFFC01E444EC400F0FD92 /* Trip.swift */; };
@@ -57,6 +59,8 @@
 /* Begin PBXFileReference section */
 		0210D704EECE570278557C71 /* Pods-TraceMyRoutesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesTests/Pods-TraceMyRoutesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0ED2CDAE9A42C3585250192E /* Pods_TraceMyRoutes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraceMyRoutes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14015E481E48851F004EADC4 /* ConfirmEmergencyPhoneCallScene.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmEmergencyPhoneCallScene.xib; sourceTree = "<group>"; };
+		14015E4A1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmEmergencyPhoneCallScene.swift; sourceTree = "<group>"; };
 		141025281E42DD1A002856B9 /* WarningScene.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WarningScene.xib; sourceTree = "<group>"; };
 		1410252A1E42DD2C002856B9 /* WarningScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningScene.swift; sourceTree = "<group>"; };
 		141FFFC01E444EC400F0FD92 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				1448ED501E3742E900962E58 /* TracingViewController.swift */,
+				14015E481E48851F004EADC4 /* ConfirmEmergencyPhoneCallScene.xib */,
+				14015E4A1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift */,
 			);
 			name = "2. Trace";
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 				141025291E42DD1A002856B9 /* WarningScene.xib in Resources */,
 				1448ED261E373FE700962E58 /* Assets.xcassets in Resources */,
 				1448ED211E373FE700962E58 /* Main.storyboard in Resources */,
+				14015E491E48851F004EADC4 /* ConfirmEmergencyPhoneCallScene.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +579,7 @@
 				14AF1CCC1E3786BD005F4BE2 /* TraceRouteMachine.swift in Sources */,
 				143D45E81E45B41C000AF402 /* GPXMachine.swift in Sources */,
 				1410252B1E42DD2C002856B9 /* WarningScene.swift in Sources */,
+				14015E4B1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift in Sources */,
 				14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */,
 				14AF1CD01E3795A2005F4BE2 /* SearchViewController.swift in Sources */,
 				1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */,

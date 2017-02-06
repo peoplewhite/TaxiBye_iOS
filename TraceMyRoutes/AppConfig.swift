@@ -64,5 +64,14 @@ struct AppConfig {
             return 140.0
         }
     }
+    static var noButtonInConfirmEmergencyPhoneCallSceneHeight: CGFloat {
+        if UIScreen.main.bounds.size.width == 320.0 {
+            return 44.0
+        } else if UIScreen.main.bounds.size.width == 375.0 {//iPhone 6
+            return 52.0
+        } else {//iPhone 6 plus
+            return 57.0
+        }
+    }
 
 }

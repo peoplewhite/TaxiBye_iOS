@@ -236,19 +236,19 @@ extension RatingViewController {
 
     func callAPIToPostTraceRoutes() {
 
-        API.postTraceRoutes(withKML: KMLMachine.shared.kmlFile,
-                            andCarPlateNumber: TraceRouteMachine.shared.carPlateNumber,
-                            andRatingNumber: TraceRouteMachine.shared.ratingNumber,
-                            success: { (message) in backToInitFirstScene()
-                                backToInitFirstScene()
-                                SVProgressHUD.showSuccess(withStatus: "Submit 成功")
-                                
-
-        },
-                            fail: { (errorMessage) in
-                                print("fail") //kimuranow
-
-        })
+//        API.postTraceRoutes(withKML: KMLMachine.shared.kmlFile,
+//                            andCarPlateNumber: TraceRouteMachine.shared.carPlateNumber,
+//                            andRatingNumber: TraceRouteMachine.shared.ratingNumber,
+//                            success: { (message) in backToInitFirstScene()
+//                                backToInitFirstScene()
+//                                SVProgressHUD.showSuccess(withStatus: "Submit 成功")
+//                                
+//
+//        },
+//                            fail: { (errorMessage) in
+//                                print("fail") //kimuranow
+//
+//        })
     }
 
 }
