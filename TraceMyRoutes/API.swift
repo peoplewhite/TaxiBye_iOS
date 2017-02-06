@@ -28,26 +28,35 @@ class API {
     }
 
     let version = "/v1"
-    let strEndPointCreateItemPhoto = "/user/item_photos"
 
 //    var headers: [String: String] {
 //        return ["Email": MyUser.sharedInstance.email, "Token": MyUser.sharedInstance.token]
 //    }
 
 
-    class var sharedInstance : API {
-        struct Static {
-            static let instance : API = API()
-        }
-        return Static.instance
-    }
 
 }
 extension API {
     // MARK: =================> comment
 
-    static func fetchRankingList() {
+    static func fetchRankingList(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
+        let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking?number=5"
+
+//        printParams(andURL: url, andFunctionName: #function)
+
+        Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+                    print("value = \(value)") //kimuranow
+//                    completion()
+                }
+        }
     }
     static func queryTaxiByLicensePlateNumber() {
         
@@ -59,7 +68,7 @@ extension API {
     static func postTraceRoutes(withKML kml: KMLDocument, andCarPlateNumber carPlateNumber: String, andRatingNumber ratingNumber: Int, success:((String) -> Void), fail:((String) -> Void)) {
         
         success("ok")
-        
+
     }
 
 //    func createComment(withTagID tagID: Int, andItemPhotoID itemPhotoID: Int, andContent content: String, success: @escaping (() -> Void), fail: @escaping ((String) -> Void)) {
