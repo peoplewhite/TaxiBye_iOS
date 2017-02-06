@@ -58,11 +58,27 @@ extension API {
                 }
         }
     }
-    static func queryTaxiByLicensePlateNumber() {
+
+    static func queryTaxiByLicensePlateNumber(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+
+        let url = "http://taxibye.oddesign.expert/api/v1/taxis/license_plate_number"
+        
+        Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+                    print("value = \(value)") //kimuranow
+//                    completion()
+                }
+        }
         
     }
     static func createTripRecord() {
-        
+
     }
 
     static func postTraceRoutes(withKML kml: KMLDocument, andCarPlateNumber carPlateNumber: String, andRatingNumber ratingNumber: Int, success:((String) -> Void), fail:((String) -> Void)) {
