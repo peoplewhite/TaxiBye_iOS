@@ -17,6 +17,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var carPlateNumberLabel: UILabel!
     @IBOutlet weak var endButton: UIButton!
     @IBOutlet weak var endButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emergencyButtonheightConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var mapContainer: GMSMapView!
 
@@ -61,8 +62,16 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
 
     func initUI() {
         settingEndButtonUI()
-
+        settingEmergencyButtonUI()
     }
+
+    func settingEmergencyButtonUI() {
+
+        emergencyButtonheightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
+        view.layoutIfNeeded()
+        
+    }
+    
     func settingEndButtonUI() {
 
         endButtonWidthConstraint.constant = AppConfig.buttonHeight
@@ -115,5 +124,33 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate {
         mapContainer.camera = GMSCameraPosition(target: currentLocation.coordinate, zoom: 18, bearing: 0, viewingAngle: 0)
 
     }
+    @IBAction func emergencyButtonPressed(_ sender: UIButton) {
+
+        showAlertViewBeforeCallEmergencyPhoneCall()
+    }
+    func callEmergencyPhoneCall() {
+        
+        let phone = URL(string: "tel://\(AppConfig.emergencyPhoneNumber)")
+        UIApplication.shared.open(phone!, options: [:], completionHandler: nil)
+    }
+    func showAlertViewBeforeCallEmergencyPhoneCall() {
+
+        let msg = "確定要撥打緊急電話到\n\(AppConfig.emergencyPhoneNumber)"
+        
+        let alert:UIAlertController = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "取消", style: .default, handler: { action in
+            alert.dismiss(animated: false, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "撥打", style: .default, handler: { action in
+            self.callEmergencyPhoneCall()
+        }))
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+
+
+
 
 }
