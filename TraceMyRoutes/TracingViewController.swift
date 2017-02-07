@@ -13,21 +13,22 @@ import GoogleMaps
 
 class TracingViewController: UIViewController, CLLocationManagerDelegate, ConfirmEmergencyPhoneCallSceneDelegate {
 
-
     @IBOutlet weak var carPlateNumberLabel: UILabel!
     @IBOutlet weak var endButton: UIButton!
     @IBOutlet weak var endButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var emergencyButtonheightConstraint: NSLayoutConstraint!
-
     @IBOutlet weak var mapContainer: GMSMapView!
 
-
     var carPlateNumber = ""
-
     let locationManager = CLLocationManager()
+
+
+    var locations = [CLLocation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//        path = GMSMutablePath()
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -58,6 +59,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
         carPlateNumberLabel.text = carPlateNumber.description
         initUI()
 
+        drawLine(with: CLLocation())
     }
 
     func initUI() {
@@ -122,6 +124,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
 
 
         mapContainer.camera = GMSCameraPosition(target: currentLocation.coordinate, zoom: 18, bearing: 0, viewingAngle: 0)
+        drawLine(with: currentLocation)
 
     }
     @IBAction func emergencyButtonPressed(_ sender: UIButton) {
@@ -139,13 +142,27 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
         confirmEmergencyPhoneCallScene.frame = UIScreen.main.bounds
         confirmEmergencyPhoneCallScene.delegate = self
         UIApplication.shared.keyWindow?.addSubview(confirmEmergencyPhoneCallScene)
-        
-
-        
     }
-    
+    func drawLine(with point: CLLocation) {
 
+        locations.append(point)
+        print("kimura check latitude = \(point.coordinate.latitude)") //kimuranow
 
+        if locations.first?.coordinate.latitude == 0 {
+            locations.remove(at: 0)
+        }
 
+        let path = GMSMutablePath()
 
+        locations.forEach { l in
+            path.add(l.coordinate)
+        }
+
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeColor = UIColor.red
+        polyline.strokeWidth = 10.0
+        polyline.geodesic = true
+        polyline.map = mapContainer
+
+    }
 }

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Realm
+import RealmSwift
 
 
 class RealmMachine {
@@ -14,6 +16,13 @@ class RealmMachine {
 
     func save() {
         
+    }
+
+    func saveTaxi(_ taxi: Taxi) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(taxi, update: true)
+        }
     }
     
     func read() {
