@@ -22,6 +22,9 @@ class Utils {
 
     var tempComment = ""
     
-    
+
+    func getCurrentTimeByUnixTimeFormat() -> String {
+       return Date().timeIntervalSince1970.description.components(separatedBy: ".").first!
+    }
     
 }
