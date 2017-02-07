@@ -178,7 +178,20 @@ extension RatingViewController {
 extension RatingViewController {
     // MARK: =================> button (option)
 
+    func settingAllOptionDefaultStatus() {
+        
+        option1.backgroundColor = UIColor.clear
+        option1.setTitleColor(UIColor.black, for: .normal)
+        option2.backgroundColor = UIColor.clear
+        option2.setTitleColor(UIColor.black, for: .normal)
+        option3.backgroundColor = UIColor.clear
+        option3.setTitleColor(UIColor.black, for: .normal)
+        option4.backgroundColor = UIColor.clear
+        option4.setTitleColor(UIColor.black, for: .normal)
+        
+    }
     @IBAction func option1ButtonPressed(_ sender: UIButton) {
+        settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
             sender.setTitleColor(UIColor.white, for: .normal)
@@ -188,6 +201,7 @@ extension RatingViewController {
         }
     }
     @IBAction func option2ButtonPressed(_ sender: UIButton) {
+        settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
             sender.setTitleColor(UIColor.white, for: .normal)
@@ -197,6 +211,7 @@ extension RatingViewController {
         }
     }
     @IBAction func option3ButtonPressed(_ sender: UIButton) {
+        settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
             sender.setTitleColor(UIColor.white, for: .normal)
@@ -207,6 +222,7 @@ extension RatingViewController {
 
     }
     @IBAction func option4ButtonPressed(_ sender: UIButton) {
+        settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
             sender.setTitleColor(UIColor.white, for: .normal)
