@@ -37,6 +37,7 @@ class RatingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentRating = Rating()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,9 +50,8 @@ class RatingViewController: UIViewController {
         if TraceRouteMachine.shared.comment != "" {
             commentTextView.text = TraceRouteMachine.shared.comment
         }
-        
+
         initUI()
-        currentRating = Rating()
         currentRating.message = TraceRouteMachine.shared.comment
     }
 
@@ -164,9 +164,15 @@ extension RatingViewController {
     // MARK: =================> button
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
+
+        print("kimura check currentRating.score = \(currentRating.score)") //kimuranow
+        TraceRouteMachine.shared.ratingNumber = Int(currentRating.score)
+        print("kimura check currentRating.score = \(TraceRouteMachine.shared.ratingNumber)") //kimuranow
+
+
         callAPIToPostTraceRoutes()
 //        saveTraceRoutesToDatabase()
-        print("gpxString = \(GPXMachine.shared.gpxString)") //kimuranow
+//        print("gpxString = \(GPXMachine.shared.gpxString)") //kimuranow
     }
 }
 extension RatingViewController {
@@ -236,6 +242,11 @@ extension RatingViewController {
 
     func callAPIToPostTraceRoutes() {
 
+        API.createTripRecord(completion: {
+
+        }) { (errorMessage) in
+
+        }
 //        API.postTraceRoutes(withKML: KMLMachine.shared.kmlFile,
 //                            andCarPlateNumber: TraceRouteMachine.shared.carPlateNumber,
 //                            andRatingNumber: TraceRouteMachine.shared.ratingNumber,

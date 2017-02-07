@@ -61,8 +61,10 @@ extension API {
 
     static func queryTaxi(by licensePlateNumber: String, completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
-        let carPlateNumberByURLEncoded = licensePlateNumber.stringByAddingPercentEncodingForRFC3986()
-        let url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)/query"
+        var url = ""
+        if let carPlateNumberByURLEncoded = licensePlateNumber.stringByAddingPercentEncodingForRFC3986() {
+            url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)/query"
+        }
         
         Alamofire.request( url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .responseJSON { response in
@@ -82,8 +84,10 @@ extension API {
 
     static func createTripRecord(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
-        let carPlateNumberByURLEncoded = TraceRouteMachine.shared.carPlateNumber.stringByAddingPercentEncodingForRFC3986()
-        let url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)/trips"
+        var url = ""
+        if let carPlateNumberByURLEncoded = TraceRouteMachine.shared.carPlateNumber.stringByAddingPercentEncodingForRFC3986() {
+            url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)/trips"
+        }
 
         let header = [
 //            "Authorization": "",
@@ -99,22 +103,48 @@ extension API {
                 "tripFeelingId": TraceRouteMachine.shared.traceFeelingID
             ]
         ] as [String : Any]
-        
-        Alamofire.request( url, method: .post, parameters: body, encoding: URLEncoding.default, headers: header)
-            .responseJSON { response in
 
-                guard response.result.error == nil else {
-                    fail(response.result.error.debugDescription)
-                    return
-                }
+        print("url = \(url)") //kimuranow
+        print("header = \(header.description)") //kimuranow
+        print("body = \(body.description)") //kimuranow
+//        printParams(
+//            withParameter: body.description,
+//            andHeader: "",
+//            andURL: url,
+//            andFunctionName: #function
+//        )
 
-                if let value: AnyObject = response.result.value as AnyObject? {
-                    print("value = \(value)") //kimuranow
-                    //                    completion()
-                }
-        }
+        return
+
+//        Alamofire.request( url, method: .post, parameters: body, encoding: URLEncoding.default, headers: header)
+//            .responseJSON { response in
+//
+//                guard response.result.error == nil else {
+//                    fail(response.result.error.debugDescription)
+//                    return
+//                }
+//
+//                if let value: AnyObject = response.result.value as AnyObject? {
+//                    print("value = \(value)") //kimuranow
+//                    //                    completion()
+//                }
+//        }
 
     }
+    
+//    func printParams(withParameter params: String, andHeader headers: String = "", andURL url: String, andFunctionName functionName: String) {
+//        
+//        guard AppConfig.isShowAPILog else {
+//            return
+//        }
+//        
+//        var content = "\n[API][\(functionName)] Parameters"
+//        content += "\n - parameters = \(params != "" ? params : "no value")"
+//        content += "\n - headers    = \(headers != "" ? headers : "no value")"
+//        content += "\n - url        = \(url)"
+//        
+//        print(content)
+//    }
 }
 
 extension API {
@@ -174,19 +204,6 @@ extension API {
         
     }
     
-    func printParams(withParameters params: String = "", andHeaders headers: String = "", andURL url: String, andFunctionName functionName: String) {
-        
-        guard AppConfig.isShowAPILog else {
-            return
-        }
-        
-        var content = "\n[API][\(functionName)] Parameters"
-        content += "\n - parameters = \(params != "" ? params : "no value")"
-        content += "\n - headers    = \(headers != "" ? headers : "no value")"
-        content += "\n - url        = \(url)"
-        
-        print(content)
-    }
     
 }
 
