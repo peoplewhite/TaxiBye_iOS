@@ -52,7 +52,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
     }
 
     @IBAction func endButtonPressed(_ sender: UIButton) {
-        TraceRouteMachine.shared.isLocationTraceDone = true
+        TraceRouteMachine.shared.endTraceLocation()
         TraceRouteMachine.shared.carPlateNumber = self.carPlateNumber
     }
 

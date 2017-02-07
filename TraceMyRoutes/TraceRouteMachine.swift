@@ -35,9 +35,12 @@ class TraceRouteMachine {
     }
     func startTraceLocation() {
         isLocationTraceDone = false
-//        NSString * timestamp = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
         traceStartTime = Utils.sharedInstance.getCurrentTimeByUnixTimeFormat()
         print("traceStartTime = \(traceStartTime)") //kimuranow
+    }
+    func endTraceLocation() {
+        traceEndTime = Utils.sharedInstance.getCurrentTimeByUnixTimeFormat()
+        print("traceEndTime = \(traceEndTime)") //kimuranow
     }
 
 
