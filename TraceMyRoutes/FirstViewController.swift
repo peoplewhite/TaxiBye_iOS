@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 import RealmSwift
 import Realm
+import JSONAPI
 
 class FirstViewController: UIViewController, WarningSceneDelegate {
 
@@ -40,7 +41,62 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
         let root = GPXRoot()
 
-        
+
+
+        /*
+       let json = [
+
+        "data": [
+            "id": "24",
+            "type": "trips",
+            "attributes": [
+                "startedAt": 1486453039,
+                "endedAt": 1486453039,
+                "route": "abcdefg",
+                "updatedAt": 1486453039
+            ],
+            "relationships": [
+                "rating": [
+                    "data": [
+                        "id": "24",
+                        "type": "ratings"
+                    ]
+                ],
+                "taxi": [
+                    "data": [
+                        "id": "1234-XD",
+                        "type": "taxis"
+                    ]]]
+        ],
+        "included": [
+            [
+                "id": "24",
+                "type": "ratings",
+                "attributes": [
+                    "score": "5.0",
+                    "message": "還可以",
+                    "tripFeeling": "fine",
+                    "updatedAt": 1486453039
+                ]
+            ],
+            [
+                "id": "1234-XD",
+                "type": "taxis",
+                "attributes": [
+                    "plateNumber": "1234-XD",
+                    "driver": "",
+                    "avgRating": "4.6",
+                    "updatedAt": 1486453018
+                ]]
+        ]
+        ] as [String : Any]
+
+        let jsonAPI = JSONAPI(dictionary: json)
+        print("jsonAPI = \(jsonAPI?.resource)") //kimuranow
+
+         */
+
+
     }
 
     override func didReceiveMemoryWarning() {
