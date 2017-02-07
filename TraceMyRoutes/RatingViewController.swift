@@ -165,10 +165,7 @@ extension RatingViewController {
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
 
-        print("kimura check currentRating.score = \(currentRating.score)") //kimuranow
         TraceRouteMachine.shared.ratingNumber = Int(currentRating.score)
-        print("kimura check currentRating.score = \(TraceRouteMachine.shared.ratingNumber)") //kimuranow
-
 
         callAPIToPostTraceRoutes()
 //        saveTraceRoutesToDatabase()
@@ -179,7 +176,7 @@ extension RatingViewController {
     // MARK: =================> button (option)
 
     func settingAllOptionDefaultStatus() {
-        
+
         option1.backgroundColor = UIColor.clear
         option1.setTitleColor(UIColor.black, for: .normal)
         option2.backgroundColor = UIColor.clear
@@ -188,7 +185,7 @@ extension RatingViewController {
         option3.setTitleColor(UIColor.black, for: .normal)
         option4.backgroundColor = UIColor.clear
         option4.setTitleColor(UIColor.black, for: .normal)
-        
+
     }
     @IBAction func option1ButtonPressed(_ sender: UIButton) {
         settingAllOptionDefaultStatus()
