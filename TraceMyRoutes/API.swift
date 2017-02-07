@@ -39,7 +39,7 @@ class API {
 extension API {
     // MARK: =================>
 
-    static func fetchRankingList(completion: ((_ taxiCompany: TaxiCompany)-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+    static func fetchRankingList(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
         let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking?number="
 
