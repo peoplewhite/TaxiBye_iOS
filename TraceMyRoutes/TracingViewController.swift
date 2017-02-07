@@ -13,21 +13,24 @@ import GoogleMaps
 
 class TracingViewController: UIViewController, CLLocationManagerDelegate, ConfirmEmergencyPhoneCallSceneDelegate {
 
-
     @IBOutlet weak var carPlateNumberLabel: UILabel!
     @IBOutlet weak var endButton: UIButton!
     @IBOutlet weak var endButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var emergencyButtonheightConstraint: NSLayoutConstraint!
-
     @IBOutlet weak var mapContainer: GMSMapView!
 
+    @IBOutlet weak var endButtonShadowContainer: UIView!
 
     var carPlateNumber = ""
-
     let locationManager = CLLocationManager()
+
+
+    var locations = [CLLocation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//        path = GMSMutablePath()
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -57,7 +60,6 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
 
         carPlateNumberLabel.text = carPlateNumber.description
         initUI()
-
     }
 
     func initUI() {
@@ -76,11 +78,18 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
 
         endButtonWidthConstraint.constant = AppConfig.buttonHeight
         view.layoutIfNeeded()
-        
+
+        // TODO: add shadow fail..
+        endButtonShadowContainer.layer.shadowColor   = UIColor.blue.cgColor
+        endButtonShadowContainer.layer.shadowRadius  = 5.0
+        endButtonShadowContainer.layer.shadowOpacity = 0.5
+        endButtonShadowContainer.layer.shadowOffset  = CGSize(width: 0.0, height: 3.0)
+        endButtonShadowContainer.layer.masksToBounds = false
+
         endButton.clipsToBounds = true
         endButton.layer.cornerRadius = endButton.frame.size.height / 2.0
 
-        
+
     }
     func checkCoreLocationPermission() {
         
@@ -103,7 +112,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
         locationManager.startUpdatingLocation()
 
         mapContainer.isMyLocationEnabled = true
-        mapContainer.settings.myLocationButton = true
+//        mapContainer.settings.myLocationButton = true
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
@@ -123,6 +132,12 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
 
         mapContainer.camera = GMSCameraPosition(target: currentLocation.coordinate, zoom: 18, bearing: 0, viewingAngle: 0)
 
+        if self.locations.count == 0 {
+            setMarkerPointForInitPoint(with: currentLocation)
+        }
+
+        drawLine(with: currentLocation)
+
     }
     @IBAction func emergencyButtonPressed(_ sender: UIButton) {
 
@@ -139,13 +154,32 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
         confirmEmergencyPhoneCallScene.frame = UIScreen.main.bounds
         confirmEmergencyPhoneCallScene.delegate = self
         UIApplication.shared.keyWindow?.addSubview(confirmEmergencyPhoneCallScene)
-        
-
-        
     }
-    
+    func drawLine(with point: CLLocation) {
 
+        locations.append(point)
+        print("kimura check latitude = \(point.coordinate.latitude)") //kimuranow
 
+        let path = GMSMutablePath()
 
+        locations.forEach { l in
+            path.add(l.coordinate)
+        }
 
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeColor = UIColor.red
+        polyline.strokeWidth = 10.0
+        polyline.geodesic = true
+        polyline.map = mapContainer
+
+    }
+    func setMarkerPointForInitPoint(with initPoint: CLLocation) {
+        print("kimura check setMarkerPointForInitPoint = \(initPoint)") //kimuranow
+
+        let startPoint = GMSMarker(position: initPoint.coordinate)
+        startPoint.title = "起點"
+        startPoint.icon = UIImage(named: "mapMarker")
+        startPoint.map = mapContainer
+
+    }
 }

@@ -74,4 +74,14 @@ struct AppConfig {
         }
     }
 
+    static var titleInBlackListSceneFontSize: CGFloat {
+        if UIScreen.main.bounds.size.width == 320.0 {
+            return 20.0
+        } else if UIScreen.main.bounds.size.width == 375.0 {//iPhone 6
+            return 24.0
+        } else {//iPhone 6 plus
+            return 26.0
+        }
+    }
+
 }
