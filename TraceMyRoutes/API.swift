@@ -81,7 +81,9 @@ extension API {
 
     static func createTripRecord(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
-        let url = "http://taxibye.oddesign.expert/api/v1/taxis/license_plate_number/trips"
+        let carPlateNumberByURLEncoded = TraceRouteMachine.shared.carPlateNumber.stringByAddingPercentEncodingForRFC3986()
+
+        let url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)/trips"
 
         let header = [
 //            "Authorization": "",
@@ -100,7 +102,7 @@ extension API {
         
         Alamofire.request( url, method: .post, parameters: body, encoding: URLEncoding.default, headers: header)
             .responseJSON { response in
-                
+
                 guard response.result.error == nil else {
                     fail(response.result.error.debugDescription)
                     return
@@ -108,7 +110,7 @@ extension API {
 
                 if let value: AnyObject = response.result.value as AnyObject? {
                     print("value = \(value)") //kimuranow
-//                    completion()
+                    //                    completion()
                 }
         }
 
@@ -196,3 +198,14 @@ struct APIActionResult {
 
 
 
+extension String {
+
+    func stringByAddingPercentEncodingForRFC3986() -> String? {
+        let unreserved = "-._~/?"
+        let allowed = NSMutableCharacterSet.alphanumeric()
+        allowed.addCharacters(in: unreserved)
+        return addingPercentEncoding(withAllowedCharacters: allowed as CharacterSet)
+    }
+
+
+}
