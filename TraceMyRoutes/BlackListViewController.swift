@@ -37,6 +37,16 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
 
         setupTitleLabel()
         setupTableview()
+        callAPIToGetBlackList() 
+        
+    }
+    func callAPIToGetBlackList() {
+
+        API.fetchRankingList(completion: {
+            
+        }) { (errorMessage) in
+                
+        }
         
     }
     func setupTitleLabel() {

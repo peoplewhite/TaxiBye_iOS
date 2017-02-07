@@ -41,10 +41,17 @@ extension API {
 
     static func fetchRankingList(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
-        let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking?number="
+//        let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking?number="
+        let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking"
 
 //        printParams(andURL: url, andFunctionName: #function)
 
+
+        print("function = \(#function)") //kimuranow
+        print("url = \(url)") //kimuranow
+//        print("header = \(header.description)") //kimuranow
+//        print("body = \(body.description)") //kimuranow
+        
         Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .responseJSON { response in
                 guard response.result.error == nil else {
