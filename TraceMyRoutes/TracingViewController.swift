@@ -105,7 +105,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
         locationManager.startUpdatingLocation()
 
         mapContainer.isMyLocationEnabled = true
-        mapContainer.settings.myLocationButton = true
+//        mapContainer.settings.myLocationButton = true
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
