@@ -17,10 +17,15 @@ class TraceRouteMachine {
         return Static.instance
     }
 
+
+    var traceStartTime = ""
+    var traceEndTime = ""
+
     var carPlateNumber = ""
     var ratingNumber: Int = 0 //default
 
     var comment = ""
+    var traceFeelingID = ""
     var isLocationTraceDone = false
 
     func initMachine() {

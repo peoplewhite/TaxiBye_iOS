@@ -82,8 +82,23 @@ extension API {
     static func createTripRecord(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
         let url = "http://taxibye.oddesign.expert/api/v1/taxis/license_plate_number/trips"
+
+        let header = [
+//            "Authorization": "",
+            "DeviceID": UIDevice.current.identifierForVendor!.uuidString
+        ]
+        let body = [
+            "startedAt": TraceRouteMachine.shared.traceStartTime,
+            "endedAt": TraceRouteMachine.shared.traceEndTime,
+            "route": GPXMachine.shared.gpxString,
+            "ratingAttributes": [
+                "score": TraceRouteMachine.shared.ratingNumber,
+                "message": TraceRouteMachine.shared.comment,
+                "tripFeelingId": TraceRouteMachine.shared.traceFeelingID
+            ]
+        ] as [String : Any]
         
-        Alamofire.request( url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil)
+        Alamofire.request( url, method: .post, parameters: body, encoding: URLEncoding.default, headers: header)
             .responseJSON { response in
                 
                 guard response.result.error == nil else {
