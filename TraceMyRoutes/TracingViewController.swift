@@ -131,6 +131,11 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
 
 
         mapContainer.camera = GMSCameraPosition(target: currentLocation.coordinate, zoom: 18, bearing: 0, viewingAngle: 0)
+
+        if self.locations.count == 0 {
+            setMarkerPointForInitPoint(with: currentLocation)
+        }
+
         drawLine(with: currentLocation)
 
     }
@@ -166,6 +171,15 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
         polyline.strokeWidth = 10.0
         polyline.geodesic = true
         polyline.map = mapContainer
+
+    }
+    func setMarkerPointForInitPoint(with initPoint: CLLocation) {
+        print("kimura check setMarkerPointForInitPoint = \(initPoint)") //kimuranow
+
+        let startPoint = GMSMarker(position: initPoint.coordinate)
+        startPoint.title = "起點"
+        startPoint.icon = UIImage(named: "mapMarker")
+        startPoint.map = mapContainer
 
     }
 }
