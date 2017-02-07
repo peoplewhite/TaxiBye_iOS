@@ -58,8 +58,6 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
 
         carPlateNumberLabel.text = carPlateNumber.description
         initUI()
-
-        drawLine(with: CLLocation())
     }
 
     func initUI() {
@@ -147,10 +145,6 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
 
         locations.append(point)
         print("kimura check latitude = \(point.coordinate.latitude)") //kimuranow
-
-        if locations.first?.coordinate.latitude == 0 {
-            locations.remove(at: 0)
-        }
 
         let path = GMSMutablePath()
 
