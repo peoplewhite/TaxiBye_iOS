@@ -59,11 +59,12 @@ extension API {
         }
     }
 
-    static func queryTaxiByLicensePlateNumber(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+    static func queryTaxi(by licensePlateNumber: String, completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
-        let url = "http://taxibye.oddesign.expert/api/v1/taxis/license_plate_number"
+        let carPlateNumberByURLEncoded = licensePlateNumber.stringByAddingPercentEncodingForRFC3986()
+        let url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)/query"
         
-        Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+        Alamofire.request( url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .responseJSON { response in
                 guard response.result.error == nil else {
                     fail(response.result.error.debugDescription)
@@ -82,7 +83,6 @@ extension API {
     static func createTripRecord(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
         let carPlateNumberByURLEncoded = TraceRouteMachine.shared.carPlateNumber.stringByAddingPercentEncodingForRFC3986()
-
         let url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)/trips"
 
         let header = [
