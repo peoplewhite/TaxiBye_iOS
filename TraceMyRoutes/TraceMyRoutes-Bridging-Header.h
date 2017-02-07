@@ -9,3 +9,5 @@
 //#import <iOS-KML-Framework/KML.h>
 #import <TBXML/TBXML.h>
 #import "GPX.h"
+
+#import <JSONAPI/JSONAPI.h>
