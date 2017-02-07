@@ -19,6 +19,8 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
     @IBOutlet weak var emergencyButtonheightConstraint: NSLayoutConstraint!
     @IBOutlet weak var mapContainer: GMSMapView!
 
+    @IBOutlet weak var endButtonShadowContainer: UIView!
+
     var carPlateNumber = ""
     let locationManager = CLLocationManager()
 
@@ -76,11 +78,18 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
 
         endButtonWidthConstraint.constant = AppConfig.buttonHeight
         view.layoutIfNeeded()
-        
+
+        // TODO: add shadow fail..
+        endButtonShadowContainer.layer.shadowColor   = UIColor.blue.cgColor
+        endButtonShadowContainer.layer.shadowRadius  = 5.0
+        endButtonShadowContainer.layer.shadowOpacity = 0.5
+        endButtonShadowContainer.layer.shadowOffset  = CGSize(width: 0.0, height: 3.0)
+        endButtonShadowContainer.layer.masksToBounds = false
+
         endButton.clipsToBounds = true
         endButton.layer.cornerRadius = endButton.frame.size.height / 2.0
 
-        
+
     }
     func checkCoreLocationPermission() {
         

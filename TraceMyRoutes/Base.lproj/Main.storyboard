@@ -236,6 +236,10 @@
                                 <rect key="frame" x="0.0" y="119" width="320" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSl-gm-Bj5" userLabel="endButtonShadowContainer">
+                                <rect key="frame" x="239" y="449" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RA-FM-2Ks">
                                 <rect key="frame" x="239" y="449" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -280,13 +284,17 @@
                             <constraint firstItem="8hw-Fa-uvV" firstAttribute="width" secondItem="wT2-ZM-hNW" secondAttribute="width" id="F4b-eN-Luu"/>
                             <constraint firstItem="Y03-02-pu8" firstAttribute="trailing" secondItem="Tcw-zp-l1j" secondAttribute="trailing" constant="-15" id="LJu-g2-HNs"/>
                             <constraint firstItem="8hw-Fa-uvV" firstAttribute="centerX" secondItem="wT2-ZM-hNW" secondAttribute="centerX" id="RNf-X6-g7j"/>
+                            <constraint firstItem="PSl-gm-Bj5" firstAttribute="centerX" secondItem="6RA-FM-2Ks" secondAttribute="centerX" id="UcZ-5Z-aAn"/>
                             <constraint firstItem="8hw-Fa-uvV" firstAttribute="top" secondItem="6RA-FM-2Ks" secondAttribute="bottom" constant="25" id="WqM-wf-wDa"/>
                             <constraint firstItem="zHO-xE-OIt" firstAttribute="centerX" secondItem="8hw-Fa-uvV" secondAttribute="centerX" constant="-80" id="Y9E-um-auB"/>
+                            <constraint firstItem="PSl-gm-Bj5" firstAttribute="width" secondItem="6RA-FM-2Ks" secondAttribute="width" id="j9b-Pa-Xwb"/>
                             <constraint firstItem="8hw-Fa-uvV" firstAttribute="top" secondItem="HP4-Q3-YUt" secondAttribute="bottom" id="jAv-aV-y3D"/>
                             <constraint firstItem="HP4-Q3-YUt" firstAttribute="leading" secondItem="wT2-ZM-hNW" secondAttribute="leading" id="kjj-j8-rqQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6RA-FM-2Ks" secondAttribute="trailing" constant="15" id="kvD-Qe-dyJ"/>
+                            <constraint firstItem="PSl-gm-Bj5" firstAttribute="centerY" secondItem="6RA-FM-2Ks" secondAttribute="centerY" id="m4k-57-EgZ"/>
                             <constraint firstItem="Tcw-zp-l1j" firstAttribute="centerX" secondItem="wT2-ZM-hNW" secondAttribute="centerX" id="muh-KK-mPw"/>
                             <constraint firstAttribute="trailing" secondItem="HP4-Q3-YUt" secondAttribute="trailing" id="npe-Me-mmv"/>
+                            <constraint firstItem="PSl-gm-Bj5" firstAttribute="height" secondItem="6RA-FM-2Ks" secondAttribute="height" id="rxE-ZO-Jm5"/>
                             <constraint firstItem="Xcs-Nx-rVR" firstAttribute="centerY" secondItem="Y03-02-pu8" secondAttribute="centerY" id="vVl-nO-TLN"/>
                             <constraint firstItem="Tcw-zp-l1j" firstAttribute="width" secondItem="wT2-ZM-hNW" secondAttribute="width" id="xBB-rV-Ze0"/>
                             <constraint firstItem="Y03-02-pu8" firstAttribute="leading" secondItem="Xcs-Nx-rVR" secondAttribute="trailing" id="xft-e0-t0t"/>
@@ -297,6 +305,7 @@
                         <outlet property="carPlateNumberLabel" destination="Tcw-zp-l1j" id="vSp-tu-ivi"/>
                         <outlet property="emergencyButtonheightConstraint" destination="9xg-8t-5kR" id="DU1-Xe-YFV"/>
                         <outlet property="endButton" destination="6RA-FM-2Ks" id="mYR-9I-GJh"/>
+                        <outlet property="endButtonShadowContainer" destination="PSl-gm-Bj5" id="i3y-xB-QvF"/>
                         <outlet property="endButtonWidthConstraint" destination="AKA-ce-cc0" id="ay9-Wn-eHW"/>
                         <outlet property="mapContainer" destination="HP4-Q3-YUt" id="JmF-QQ-kHy"/>
                     </connections>
