@@ -8,8 +8,6 @@
 
 import UIKit
 import SVProgressHUD
-import RealmSwift
-import Realm
 
 class RatingViewController: UIViewController {
 
@@ -284,19 +282,6 @@ extension RatingViewController {
 
     func saveTraceRoutesToDatabase() {
 
-        //kimuranowmodel
-//        let trip = Trip()
-//
-//        trip.taxi_plate_number = TraceRouteMachine.shared.carPlateNumber
-//        trip.rating = currentRating
-//
-//        print("trip.rating = \(trip.rating)") //kimuranow
-//
-//        let realm = try! Realm()
-//        try! realm.write {
-//            realm.add(trip)
-//            print("add successfully") //kimuranow
-//        }
         
     }
 }

@@ -12,8 +12,6 @@ import Fabric
 import Crashlytics
 import GoogleMaps
 import IQKeyboardManagerSwift
-import RealmSwift
-import Realm
 
 import CoreData
 
@@ -32,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
 
 //        print("id for vender = \(UIDevice.current.identifierForVendor!.uuidString)") //kimuranow
-//        print("fileURL = \(Realm.Configuration.defaultConfiguration.fileURL!)") //kimuranow
 
         return true
     }

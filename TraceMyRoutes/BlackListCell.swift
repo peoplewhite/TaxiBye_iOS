@@ -28,12 +28,12 @@ class BlackListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupTaxi(_ taxi: Taxi) {
+//    func setupTaxi(_ taxi: Taxi) {
 
-        taxiModel = taxi
+//        taxiModel = taxi
+//
+//        ratingNumber.text = taxiModel.avg_rating.description
+//        carPlateNumber.text = taxiModel.plate_number
 
-        ratingNumber.text = taxiModel.avg_rating.description
-        carPlateNumber.text = taxiModel.plate_number
-
-    }
+//    }
 }

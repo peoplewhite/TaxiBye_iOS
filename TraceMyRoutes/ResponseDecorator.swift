@@ -33,7 +33,6 @@ class ResponseDecorator {
         }
          */
 
-        return Taxi()
 
     }
     static func fetchRankingList(_ response: JSON, completion: (() -> Void)) -> Void {
