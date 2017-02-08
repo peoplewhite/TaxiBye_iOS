@@ -14,6 +14,7 @@ import GoogleMaps
 import IQKeyboardManagerSwift
 
 import CoreData
+import MagicalRecord
 
 
 
@@ -31,6 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        print("id for vender = \(UIDevice.current.identifierForVendor!.uuidString)") //kimuranow
 
+
+
+        MagicalRecord.setupAutoMigratingCoreDataStack()
+
+
+
+
+        
         return true
     }
 
@@ -57,6 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+        MagicalRecord.cleanUp()
+        
     }
 
     // MARK: - Core Data stack
