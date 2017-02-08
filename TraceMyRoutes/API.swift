@@ -39,7 +39,7 @@ class API {
 extension API {
     // MARK: =================>
 
-    static func fetchRankingList(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+    static func fetchRankingList(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
 //        let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking?number="
         let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking"
@@ -60,8 +60,10 @@ extension API {
                 }
 
                 if let value: AnyObject = response.result.value as AnyObject? {
-                    print("value = \(value)") //kimuranow
-//                    completion()
+
+                    ResponseDecorator.fetchRankingList(JSON(value)) {
+                        completion()
+                    }
                 }
         }
     }

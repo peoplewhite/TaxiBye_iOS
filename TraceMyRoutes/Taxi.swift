@@ -23,5 +23,10 @@ class Taxi: Object {
 
     var trips = List<Trip>()
     var ratings = List<Rating>()
+
+
+//    func all() -> [Taxi] {
+//
+//    }
     
 }
