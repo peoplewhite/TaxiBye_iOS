@@ -30,6 +30,7 @@
 		1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED521E3742F600962E58 /* RatingViewController.swift */; };
 		1448ED551E3744A200962E58 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED541E3744A200962E58 /* AppConfig.swift */; };
 		1448EDE41E375F2500962E58 /* KMLMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448EDE31E375F2500962E58 /* KMLMachine.swift */; };
+		1495D0EE1E4B03B100298CD6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1495D0ED1E4B03B100298CD6 /* CoreData.framework */; };
 		14AF1CCA1E37703F005F4BE2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CC91E37703F005F4BE2 /* API.swift */; };
 		14AF1CCC1E3786BD005F4BE2 /* TraceRouteMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */; };
 		14AF1CCE1E3794B3005F4BE2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CCD1E3794B3005F4BE2 /* FirstViewController.swift */; };
@@ -92,6 +93,7 @@
 		1448ED541E3744A200962E58 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		1448EDE21E37563400962E58 /* TraceMyRoutes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TraceMyRoutes-Bridging-Header.h"; sourceTree = "<group>"; };
 		1448EDE31E375F2500962E58 /* KMLMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLMachine.swift; sourceTree = "<group>"; };
+		1495D0ED1E4B03B100298CD6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		14AF1CC91E37703F005F4BE2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceRouteMachine.swift; sourceTree = "<group>"; };
 		14AF1CCD1E3794B3005F4BE2 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1495D0EE1E4B03B100298CD6 /* CoreData.framework in Frameworks */,
 				09EFF0AAE00ABB392E887F06 /* Pods_TraceMyRoutes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +283,7 @@
 		DCF0DC9510BA6724850C956E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1495D0ED1E4B03B100298CD6 /* CoreData.framework */,
 				0ED2CDAE9A42C3585250192E /* Pods_TraceMyRoutes.framework */,
 				8AA027445141768B33870049 /* Pods_TraceMyRoutesTests.framework */,
 				2F11F26A93E017698662454D /* Pods_TraceMyRoutesUITests.framework */,
