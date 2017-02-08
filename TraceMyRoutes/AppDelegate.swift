@@ -34,8 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
-        MagicalRecord.setupAutoMigratingCoreDataStack()
 
+        // initialize Core Data stack
+//        MagicalRecord.setupCoreDataStack(withStoreNamed: "Taxibye")
+        MagicalRecord.setupAutoMigratingCoreDataStack()
 
 
 

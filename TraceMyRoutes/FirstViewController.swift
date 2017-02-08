@@ -28,10 +28,36 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         SVProgressHUD.setMinimumDismissTimeInterval(2)
     }
 
+    var currentTrip: Trip!
+
     override func viewWillAppear(_ animated: Bool) {
         initUI()
         
         let root = GPXRoot()
+
+
+
+
+//        if let trip = currentTrip {
+//
+//        } else {
+//
+//            currentTrip = Trip.mr_createEntity()! as Trip
+//            currentTrip.route = "route"
+//            NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+//        }
+
+//        Taxi.mr_truncateAll()
+
+        let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
+        print("taxis = \(taxis)") //kimuranow
+        taxis.forEach { taxi in
+            print("taxi = \(taxi.plate_number)\(taxi.driver)") //kimuranow
+        }
+
+
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
