@@ -13,6 +13,12 @@ import UIKit
 
 class ResponseDecorator {
 
+
+    static func createTripRecord(_ response: JSON) {
+        
+
+    }
+    
     static func queryTaxiByLicensePlateNumber(_ response: JSON) -> Taxi {
         /*
         {
@@ -29,38 +35,45 @@ class ResponseDecorator {
         return Taxi()
 
     }
-    static func fetchRankingList(_ response: JSON) -> TaxiCompany {
+    static func fetchRankingList(_ response: JSON, completion: (() -> Void)) -> Void {
 
         /*
-        {
-            "data": {
-                "taxis": [
-                {
-                "plateNumber": "7788-KM",
-                "driver": "木村",
-                "avgRating": 1.8
-                }
-                ]
-            },
-            "errors": [],
-            "meta": {}
-        }
+         {
+             "data": [
+                 {
+                     "id": "1234-XD",
+                     "type": "taxis",
+                     "attributes": {
+                         "plateNumber": "1234-XD",
+                         "driver": "",
+                         "avgRating": "0.0",
+                         "updatedAt": 1486470782
+                     }
+                 }
+             ],
+             "meta": {
+                 "limit": 10,
+                 "count": 1
+             }
+         }
         */
 
 
-        let taxiCompany = TaxiCompany()
-//        let taxis = [Taxi]()
-//
-//        response["data", "taxis"].arrayValue.forEach { taxi in
-//
-//            let taxiModel = Taxi()
-//
-//
-//            taxiCompany.append(taxiModel)
-//        }
 
+        response["data"].arrayValue.forEach { taxi in
 
-        return taxiCompany
+            let taxiModel = Taxi()
+            taxiModel.plate_number = taxi["attributes", "plateNumber"].stringValue
+            taxiModel.driver = taxi["attributes", "driver"].stringValue
+            taxiModel.avg_rating = taxi["attributes", "avgRating"].doubleValue
+            taxiModel.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
+
+            RealmMachine.saveTaxi(taxiModel)
+
+        }
+
+        completion()
+
     }
     
     

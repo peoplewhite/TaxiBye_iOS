@@ -52,7 +52,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
     }
 
     @IBAction func endButtonPressed(_ sender: UIButton) {
-        TraceRouteMachine.shared.isLocationTraceDone = true
+        TraceRouteMachine.shared.endTraceLocation()
         TraceRouteMachine.shared.carPlateNumber = self.carPlateNumber
     }
 
@@ -158,7 +158,6 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
     func drawLine(with point: CLLocation) {
 
         locations.append(point)
-        print("kimura check latitude = \(point.coordinate.latitude)") //kimuranow
 
         let path = GMSMutablePath()
 
@@ -174,7 +173,6 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
 
     }
     func setMarkerPointForInitPoint(with initPoint: CLLocation) {
-        print("kimura check setMarkerPointForInitPoint = \(initPoint)") //kimuranow
 
         let startPoint = GMSMarker(position: initPoint.coordinate)
         startPoint.title = "起點"

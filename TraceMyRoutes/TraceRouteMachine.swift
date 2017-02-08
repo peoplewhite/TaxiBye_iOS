@@ -17,11 +17,17 @@ class TraceRouteMachine {
         return Static.instance
     }
 
+
+    var isLocationTraceDone = false
+    
+    var traceStartTime = ""
+    var traceEndTime = ""
+
+    
     var carPlateNumber = ""
     var ratingNumber: Int = 0 //default
-
     var comment = ""
-    var isLocationTraceDone = false
+    var traceFeelingID = ""
 
     func initMachine() {
         carPlateNumber = ""
@@ -30,6 +36,12 @@ class TraceRouteMachine {
     }
     func startTraceLocation() {
         isLocationTraceDone = false
+        traceStartTime = Utils.sharedInstance.getCurrentTimeByUnixTimeFormat()
     }
+    func endTraceLocation() {
+        isLocationTraceDone = true
+        traceEndTime = Utils.sharedInstance.getCurrentTimeByUnixTimeFormat()
+    }
+
 
 }

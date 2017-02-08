@@ -16,7 +16,8 @@ target 'TraceMyRoutes' do
   pod 'IQKeyboardManagerSwift'
   pod 'RealmSwift'
   pod 'iOS-GPX-Framework', git: ‘http://github.com/merlos/iOS-GPX-Framework’
-
+  pod 'JSONAPI', '~> 1.0.7'
+  #pod "MagicalRecord"
 
   target 'TraceMyRoutesTests' do
     inherit! :search_paths

@@ -13,6 +13,7 @@ PODS:
   - iOS-KML-Framework (1.0.0):
     - TBXML (~> 1.5)
   - IQKeyboardManagerSwift (4.0.8)
+  - JSONAPI (1.0.7)
   - Realm (2.3.0):
     - Realm/Headers (= 2.3.0)
   - Realm/Headers (2.3.0)
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - iOS-GPX-Framework (from `http://github.com/merlos/iOS-GPX-Framework`)
   - iOS-KML-Framework (from `https://github.com/FLCLjp/iOS-KML-Framework.git`)
   - IQKeyboardManagerSwift
+  - JSONAPI (~> 1.0.7)
   - RealmSwift
   - SVProgressHUD
   - SwiftyJSON
@@ -56,12 +58,13 @@ SPEC CHECKSUMS:
   iOS-GPX-Framework: 38b56820461b99cd7f1fb6cf1e0621f72d63e872
   iOS-KML-Framework: c16f4605bc290b769a13f2645840211e31f8d92a
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
+  JSONAPI: 8fed55fcfa08ee662674cd4f1bd03c37d8b34e03
   Realm: 69d7de9aa569a11eed490aaabc8f2109e3985ecf
   RealmSwift: dc6f99ea55e59490cec69c860f91932b6bf7efb6
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   TBXML: 9f9dadb239f2f2af1dadb87fe43a0ce6e479379a
 
-PODFILE CHECKSUM: 01422b7a53ab3d27ac52a1f2cc5d5f9754b37ca9
+PODFILE CHECKSUM: 8c4f16704883a159e7d3ff054542f26b7315bbca
 
 COCOAPODS: 1.2.0.beta.1

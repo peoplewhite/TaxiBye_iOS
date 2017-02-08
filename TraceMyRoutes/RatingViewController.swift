@@ -37,6 +37,7 @@ class RatingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentRating = Rating()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,9 +50,8 @@ class RatingViewController: UIViewController {
         if TraceRouteMachine.shared.comment != "" {
             commentTextView.text = TraceRouteMachine.shared.comment
         }
-        
+
         initUI()
-        currentRating = Rating()
         currentRating.message = TraceRouteMachine.shared.comment
     }
 
@@ -164,15 +164,31 @@ extension RatingViewController {
     // MARK: =================> button
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
+
+        TraceRouteMachine.shared.ratingNumber = Int(currentRating.score)
+
         callAPIToPostTraceRoutes()
 //        saveTraceRoutesToDatabase()
-        print("gpxString = \(GPXMachine.shared.gpxString)") //kimuranow
+//        print("gpxString = \(GPXMachine.shared.gpxString)") //kimuranow
     }
 }
 extension RatingViewController {
     // MARK: =================> button (option)
 
+    func settingAllOptionDefaultStatus() {
+
+        option1.backgroundColor = UIColor.clear
+        option1.setTitleColor(UIColor.black, for: .normal)
+        option2.backgroundColor = UIColor.clear
+        option2.setTitleColor(UIColor.black, for: .normal)
+        option3.backgroundColor = UIColor.clear
+        option3.setTitleColor(UIColor.black, for: .normal)
+        option4.backgroundColor = UIColor.clear
+        option4.setTitleColor(UIColor.black, for: .normal)
+
+    }
     @IBAction func option1ButtonPressed(_ sender: UIButton) {
+        settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
             sender.setTitleColor(UIColor.white, for: .normal)
@@ -182,6 +198,7 @@ extension RatingViewController {
         }
     }
     @IBAction func option2ButtonPressed(_ sender: UIButton) {
+        settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
             sender.setTitleColor(UIColor.white, for: .normal)
@@ -191,6 +208,7 @@ extension RatingViewController {
         }
     }
     @IBAction func option3ButtonPressed(_ sender: UIButton) {
+        settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
             sender.setTitleColor(UIColor.white, for: .normal)
@@ -201,6 +219,7 @@ extension RatingViewController {
 
     }
     @IBAction func option4ButtonPressed(_ sender: UIButton) {
+        settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
             sender.setTitleColor(UIColor.white, for: .normal)
@@ -236,6 +255,11 @@ extension RatingViewController {
 
     func callAPIToPostTraceRoutes() {
 
+        API.createTripRecord(completion: {
+
+        }) { (errorMessage) in
+
+        }
 //        API.postTraceRoutes(withKML: KMLMachine.shared.kmlFile,
 //                            andCarPlateNumber: TraceRouteMachine.shared.carPlateNumber,
 //                            andRatingNumber: TraceRouteMachine.shared.ratingNumber,
