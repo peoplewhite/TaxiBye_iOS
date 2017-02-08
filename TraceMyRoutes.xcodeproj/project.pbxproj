@@ -38,6 +38,14 @@
 		14C012BF1E488F3E0018A37A /* BlackListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C012BE1E488F3E0018A37A /* BlackListCell.swift */; };
 		14C012C11E48A4080018A37A /* TaxiCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C012C01E48A4080018A37A /* TaxiCompany.swift */; };
 		14C012C31E48A5200018A37A /* ResponseDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C012C21E48A5200018A37A /* ResponseDecorator.swift */; };
+		14CDD26B1E4B19FB00F20AE5 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CDD2631E4B19FB00F20AE5 /* Trip+CoreDataClass.swift */; };
+		14CDD26C1E4B19FB00F20AE5 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CDD2641E4B19FB00F20AE5 /* Trip+CoreDataProperties.swift */; };
+		14CDD26D1E4B19FB00F20AE5 /* Feeling+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CDD2651E4B19FB00F20AE5 /* Feeling+CoreDataClass.swift */; };
+		14CDD26E1E4B19FB00F20AE5 /* Feeling+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CDD2661E4B19FB00F20AE5 /* Feeling+CoreDataProperties.swift */; };
+		14CDD26F1E4B19FB00F20AE5 /* Rating+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CDD2671E4B19FB00F20AE5 /* Rating+CoreDataClass.swift */; };
+		14CDD2701E4B19FB00F20AE5 /* Rating+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CDD2681E4B19FB00F20AE5 /* Rating+CoreDataProperties.swift */; };
+		14CDD2711E4B19FB00F20AE5 /* Taxi+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CDD2691E4B19FB00F20AE5 /* Taxi+CoreDataClass.swift */; };
+		14CDD2721E4B19FB00F20AE5 /* Taxi+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CDD26A1E4B19FB00F20AE5 /* Taxi+CoreDataProperties.swift */; };
 		14E6F89D1E4300B600ED3A06 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */; };
 		14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6F89E1E4316FB00ED3A06 /* Utils.swift */; };
 		1915D083331B58255CFF461A /* Pods_TraceMyRoutesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA027445141768B33870049 /* Pods_TraceMyRoutesTests.framework */; };
@@ -101,6 +109,14 @@
 		14C012BE1E488F3E0018A37A /* BlackListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackListCell.swift; sourceTree = "<group>"; };
 		14C012C01E48A4080018A37A /* TaxiCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxiCompany.swift; sourceTree = "<group>"; };
 		14C012C21E48A5200018A37A /* ResponseDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDecorator.swift; sourceTree = "<group>"; };
+		14CDD2631E4B19FB00F20AE5 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		14CDD2641E4B19FB00F20AE5 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		14CDD2651E4B19FB00F20AE5 /* Feeling+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Feeling+CoreDataClass.swift"; sourceTree = "<group>"; };
+		14CDD2661E4B19FB00F20AE5 /* Feeling+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Feeling+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		14CDD2671E4B19FB00F20AE5 /* Rating+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rating+CoreDataClass.swift"; sourceTree = "<group>"; };
+		14CDD2681E4B19FB00F20AE5 /* Rating+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rating+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		14CDD2691E4B19FB00F20AE5 /* Taxi+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Taxi+CoreDataClass.swift"; sourceTree = "<group>"; };
+		14CDD26A1E4B19FB00F20AE5 /* Taxi+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Taxi+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		14E6F89E1E4316FB00ED3A06 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		28E8A01E28F7C4D4B0E8E78A /* Pods-TraceMyRoutesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +221,7 @@
 		1448ED0F1E373FE700962E58 = {
 			isa = PBXGroup;
 			children = (
+				14CDD2731E4B1A1100F20AE5 /* CoreData Model */,
 				1448ED1A1E373FE700962E58 /* TraceMyRoutes */,
 				1448ED321E373FE700962E58 /* TraceMyRoutesTests */,
 				1448ED3D1E373FE700962E58 /* TraceMyRoutesUITests */,
@@ -265,6 +282,21 @@
 				1448ED401E373FE700962E58 /* Info.plist */,
 			);
 			path = TraceMyRoutesUITests;
+			sourceTree = "<group>";
+		};
+		14CDD2731E4B1A1100F20AE5 /* CoreData Model */ = {
+			isa = PBXGroup;
+			children = (
+				14CDD2631E4B19FB00F20AE5 /* Trip+CoreDataClass.swift */,
+				14CDD2641E4B19FB00F20AE5 /* Trip+CoreDataProperties.swift */,
+				14CDD2651E4B19FB00F20AE5 /* Feeling+CoreDataClass.swift */,
+				14CDD2661E4B19FB00F20AE5 /* Feeling+CoreDataProperties.swift */,
+				14CDD2671E4B19FB00F20AE5 /* Rating+CoreDataClass.swift */,
+				14CDD2681E4B19FB00F20AE5 /* Rating+CoreDataProperties.swift */,
+				14CDD2691E4B19FB00F20AE5 /* Taxi+CoreDataClass.swift */,
+				14CDD26A1E4B19FB00F20AE5 /* Taxi+CoreDataProperties.swift */,
+			);
+			name = "CoreData Model";
 			sourceTree = "<group>";
 		};
 		BAF21C100A58C20AF657C86A /* Pods */ = {
@@ -593,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14E6F89D1E4300B600ED3A06 /* CommentViewController.swift in Sources */,
+				14CDD2711E4B19FB00F20AE5 /* Taxi+CoreDataClass.swift in Sources */,
 				14AF1CCC1E3786BD005F4BE2 /* TraceRouteMachine.swift in Sources */,
 				143D45E81E45B41C000AF402 /* GPXMachine.swift in Sources */,
 				1410252B1E42DD2C002856B9 /* WarningScene.swift in Sources */,
@@ -602,18 +635,25 @@
 				14015E4B1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift in Sources */,
 				14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */,
 				1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */,
+				14CDD26D1E4B19FB00F20AE5 /* Feeling+CoreDataClass.swift in Sources */,
 				1448ED551E3744A200962E58 /* AppConfig.swift in Sources */,
 				141FFFC91E44676A00F0FD92 /* RealmMachine.swift in Sources */,
 				141FFFC31E444ED000F0FD92 /* Taxi.swift in Sources */,
+				14CDD26C1E4B19FB00F20AE5 /* Trip+CoreDataProperties.swift in Sources */,
+				14CDD26E1E4B19FB00F20AE5 /* Feeling+CoreDataProperties.swift in Sources */,
+				14CDD2701E4B19FB00F20AE5 /* Rating+CoreDataProperties.swift in Sources */,
 				1448EDE41E375F2500962E58 /* KMLMachine.swift in Sources */,
 				14AF1CCE1E3794B3005F4BE2 /* FirstViewController.swift in Sources */,
 				141FFFC71E44553300F0FD92 /* Feeling.swift in Sources */,
 				1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */,
 				1448ED511E3742E900962E58 /* TracingViewController.swift in Sources */,
 				141FFFC51E444EDB00F0FD92 /* Rating.swift in Sources */,
+				14CDD26F1E4B19FB00F20AE5 /* Rating+CoreDataClass.swift in Sources */,
 				14AF1CCA1E37703F005F4BE2 /* API.swift in Sources */,
+				14CDD2721E4B19FB00F20AE5 /* Taxi+CoreDataProperties.swift in Sources */,
 				141FFFC11E444EC400F0FD92 /* Trip.swift in Sources */,
 				14C012BF1E488F3E0018A37A /* BlackListCell.swift in Sources */,
+				14CDD26B1E4B19FB00F20AE5 /* Trip+CoreDataClass.swift in Sources */,
 				1448ED1C1E373FE700962E58 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
