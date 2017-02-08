@@ -39,12 +39,19 @@ class API {
 extension API {
     // MARK: =================>
 
-    static func fetchRankingList(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+    static func fetchRankingList(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
-        let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking?number="
+//        let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking?number="
+        let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking"
 
 //        printParams(andURL: url, andFunctionName: #function)
 
+
+        print("function = \(#function)") //kimuranow
+        print("url = \(url)") //kimuranow
+//        print("header = \(header.description)") //kimuranow
+//        print("body = \(body.description)") //kimuranow
+        
         Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .responseJSON { response in
                 guard response.result.error == nil else {
@@ -53,8 +60,10 @@ extension API {
                 }
 
                 if let value: AnyObject = response.result.value as AnyObject? {
-                    print("value = \(value)") //kimuranow
-//                    completion()
+
+                    ResponseDecorator.fetchRankingList(JSON(value)) {
+                        completion()
+                    }
                 }
         }
     }
