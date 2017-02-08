@@ -32,11 +32,12 @@
         <attribute name="started_at" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="taxi_plate_number" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="rating" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rating" syncable="YES"/>
     </entity>
     <elements>
         <element name="Feeling" positionX="-470" positionY="-216" width="128" height="103"/>
         <element name="Rating" positionX="-245" positionY="-243" width="128" height="148"/>
         <element name="Taxi" positionX="-666" positionY="9" width="128" height="150"/>
-        <element name="Trip" positionX="-720" positionY="-225" width="153" height="148"/>
+        <element name="Trip" positionX="-720" positionY="-225" width="153" height="165"/>
     </elements>
 </model>
