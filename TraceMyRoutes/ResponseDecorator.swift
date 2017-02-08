@@ -19,7 +19,8 @@ class ResponseDecorator {
 
     }
     
-    static func queryTaxiByLicensePlateNumber(_ response: JSON) -> Taxi {
+//    static func queryTaxiByLicensePlateNumber(_ response: JSON) -> Taxi {
+    static func queryTaxiByLicensePlateNumber(_ response: JSON) {
         /*
         {
             "data": {
@@ -60,17 +61,17 @@ class ResponseDecorator {
 
 
 
-        response["data"].arrayValue.forEach { taxi in
-
-            let taxiModel = Taxi()
-            taxiModel.plate_number = taxi["attributes", "plateNumber"].stringValue
-            taxiModel.driver = taxi["attributes", "driver"].stringValue
-            taxiModel.avg_rating = taxi["attributes", "avgRating"].doubleValue
-            taxiModel.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
-
-            RealmMachine.saveTaxi(taxiModel)
-
-        }
+//        response["data"].arrayValue.forEach { taxi in
+//
+//            let taxiModel = Taxi()
+//            taxiModel.plate_number = taxi["attributes", "plateNumber"].stringValue
+//            taxiModel.driver = taxi["attributes", "driver"].stringValue
+//            taxiModel.avg_rating = taxi["attributes", "avgRating"].doubleValue
+//            taxiModel.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
+//
+//            RealmMachine.saveTaxi(taxiModel)
+//
+//        }
 
         completion()
 

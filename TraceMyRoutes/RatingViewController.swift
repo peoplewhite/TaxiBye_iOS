@@ -52,7 +52,8 @@ class RatingViewController: UIViewController {
         }
 
         initUI()
-        currentRating.message = TraceRouteMachine.shared.comment
+        //kimuranowmodel
+//        currentRating.message = TraceRouteMachine.shared.comment
     }
 
     func backToInitFirstScene() {
@@ -107,8 +108,9 @@ extension RatingViewController {
     }
     func settingRatingNumber(_ ratingNumber: Int) {
 
-        currentRating.score = Double(ratingNumber)
-        print("currentRating.score = \(currentRating.score)") //kimuranow
+        //kimuranowmodel
+//        currentRating.score = Double(ratingNumber)
+//        print("currentRating.score = \(currentRating.score)") //kimuranow
         
         star1.setImage(AppConfig.blackEmptyStarImage, for: .normal)
         star2.setImage(AppConfig.blackEmptyStarImage, for: .normal)
@@ -165,7 +167,8 @@ extension RatingViewController {
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
 
-        TraceRouteMachine.shared.ratingNumber = Int(currentRating.score)
+        //kimuranowmodel
+//        TraceRouteMachine.shared.ratingNumber = Int(currentRating.score)
 
         callAPIToPostTraceRoutes()
 //        saveTraceRoutesToDatabase()
@@ -281,18 +284,19 @@ extension RatingViewController {
 
     func saveTraceRoutesToDatabase() {
 
-        let trip = Trip()
-
-        trip.taxi_plate_number = TraceRouteMachine.shared.carPlateNumber
-        trip.rating = currentRating
-
-        print("trip.rating = \(trip.rating)") //kimuranow
-
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(trip)
-            print("add successfully") //kimuranow
-        }
+        //kimuranowmodel
+//        let trip = Trip()
+//
+//        trip.taxi_plate_number = TraceRouteMachine.shared.carPlateNumber
+//        trip.rating = currentRating
+//
+//        print("trip.rating = \(trip.rating)") //kimuranow
+//
+//        let realm = try! Realm()
+//        try! realm.write {
+//            realm.add(trip)
+//            print("add successfully") //kimuranow
+//        }
         
     }
 }
