@@ -33,7 +33,13 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         }) { (errorMessage) in
 
         }
-        
+
+
+        API.fetchFeelingList(completion: { 
+            //
+        }) { (errorMessage) in
+            //
+        }
     }
 
     var currentTrip: Trip!

@@ -42,6 +42,34 @@ class API {
 extension API {
     // MARK: =================>
 
+    static func fetchFeelingList(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+
+        let url = "http://taxibye.oddesign.expert/api/v1/trips/feelings"
+
+
+        print("function = \(#function)") //kimuranow
+        print("url = \(url)") //kimuranow
+
+        Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+
+
+                    ResponseDecorator.fetchFeelingList(JSON(value), completion: {
+                        completion()
+                    })
+                    
+//                    ResponseDecorator.fetchRankingList(JSON(value)) {
+//                        completion()
+//                    }
+                }
+        }
+    }
     static func authenticate(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
         let url = "http://taxibye.oddesign.expert/api/v1/authenticate"

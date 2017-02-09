@@ -32,6 +32,10 @@ class ResponseDecorator {
         
     }
 
+    static func fetchFeelingList(_ response: JSON, completion: (() -> Void)) -> Void {
+        print("[\(#function)] response = \(response)") //kimuranow
+
+    }
     static func fetchRankingList(_ response: JSON, completion: (() -> Void)) -> Void {
 
         print("[\(#function)] response = \(response)") //kimuranow
