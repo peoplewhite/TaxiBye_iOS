@@ -37,6 +37,13 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
         API.fetchFeelingList(completion: { 
             //
+
+            let feelings: [Feeling] = Feeling.mr_findAll() as! [Feeling]
+            print("feelings = \(feelings)") //kimuranow
+            feelings.forEach { feeling in
+                print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
+            }
+
         }) { (errorMessage) in
             //
         }

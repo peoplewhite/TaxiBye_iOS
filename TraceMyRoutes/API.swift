@@ -63,10 +63,7 @@ extension API {
                     ResponseDecorator.fetchFeelingList(JSON(value), completion: {
                         completion()
                     })
-                    
-//                    ResponseDecorator.fetchRankingList(JSON(value)) {
-//                        completion()
-//                    }
+
                 }
         }
     }
