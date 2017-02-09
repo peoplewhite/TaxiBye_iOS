@@ -46,7 +46,7 @@ class ResponseDecorator {
             if let _taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: plateNumber) {
 
                 _taxiModel.plate_number = plateNumber
-                _taxiModel.driver = "kimura"
+                _taxiModel.driver = taxi["attributes", "driver"].stringValue 
                 _taxiModel.avg_rating = NSDecimalNumber(floatLiteral: taxi["attributes", "avgRating"].doubleValue)
                 _taxiModel.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
 

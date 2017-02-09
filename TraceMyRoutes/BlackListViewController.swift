@@ -50,19 +50,16 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
             print("foobar") //kimuranow
 
 
-            for ratingLevel in 0..<self.ratingTaxis.count {
+            let taxis = Taxi.mr_findAll()
+            print("taxis = \(taxis)") //kimuranow
 
-//                let taxiFilter = NSPredicate(format: "avg_rating BETWEEN {}", argumentArray: [ratingLevel, ratingLevel + 1])
-//                let taxiFilter = NSPredicate(for)
-//                NSPredicate *filter = [NSPredicate predicateWithFormat:@"scored_count > %d AND score/scored_count > %f", 500, 8.0];
-                let taxiFilter = NSPredicate(format: "avg_rating > %d AND avg_rating < %d ", ratingLevel, ratingLevel + 1)
-                let taxis = Taxi.mr_findAll(with: taxiFilter)
-                print("taxis = \(taxis)") //kimuranow
-
-                taxis?.forEach { taxi in
-                    self.ratingTaxis[ratingLevel].append(taxi as! Taxi)
+            taxis?.forEach { taxi in
+                let taxiModel: Taxi = taxi as! Taxi
+                if let avgRating = taxiModel.avg_rating?.doubleValue {
+                    let ratingLevelInteger = Int(floor(avgRating))
+                    self.ratingTaxis[ratingLevelInteger].append(taxiModel)
                 }
-                print("count = \(self.ratingTaxis[ratingLevel].count)") //kimuranow
+
             }
 
             self.tableView.reloadData()
