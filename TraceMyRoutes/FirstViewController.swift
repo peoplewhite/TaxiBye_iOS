@@ -101,14 +101,13 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         }
 
         callAPIToQueryTaxiRating(withPlateNumber: trimmedString)
-//        showWarningScene()
-//        goTraceScene()
     }
     
     func callAPIToQueryTaxiRating(withPlateNumber plateNumber: String) {
+        SVProgressHUD.show()
         API.queryTaxi(by: plateNumber, completion: { (taxi) in
-            print("rating = \(taxi.avg_rating)") //kimuranow
 
+            SVProgressHUD.dismiss()
 
             let isNeedToShowWarning = ((taxi.avg_rating?.doubleValue)! < AppConfig.lowerRatingForWarning)
 
@@ -117,11 +116,12 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
             } else {
                 self.goTraceScene()
             }
-
             
-            //
         }) { (errorMessage) in
-            //
+            
+            SVProgressHUD.dismiss()
+            self.showAlertViewWith(msg: errorMessage)
+            
         }
     }
     
