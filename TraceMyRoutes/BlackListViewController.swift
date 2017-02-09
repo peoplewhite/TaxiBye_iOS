@@ -47,11 +47,9 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
     func callAPIToGetBlackList() {
 
         API.fetchRankingList(completion: {
-            print("foobar") //kimuranow
 
 
             let taxis = Taxi.mr_findAll()
-            print("taxis = \(taxis)") //kimuranow
 
             taxis?.forEach { taxi in
                 let taxiModel: Taxi = taxi as! Taxi
@@ -118,8 +116,13 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifierForTableView, for: indexPath as IndexPath)
+        let cell: BlackListCell  = tableView.dequeueReusableCell(withIdentifier: kCellIdentifierForTableView, for: indexPath as IndexPath) as! BlackListCell
         cell.selectionStyle = .none
+
+
+        cell.carPlateNumber.text = ratingTaxis[indexPath.section][indexPath.row].plate_number
+        cell.ratingNumber.text = ratingTaxis[indexPath.section][indexPath.row].avg_rating?.description
+
 
         return cell
 
