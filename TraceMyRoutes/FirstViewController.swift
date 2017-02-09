@@ -100,6 +100,10 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
             return
         }
 
+        // TODO: check valid plate number format
+        // ref: https://zh.wikipedia.org/wiki/臺灣車輛牌照
+        
+
         callAPIToQueryTaxiRating(withPlateNumber: trimmedString)
     }
     
@@ -127,7 +131,6 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     
     func showAlertViewWith(msg: String) {
 
-        // swift 3.0
         let alert:UIAlertController = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             alert.dismiss(animated: false, completion: nil)
