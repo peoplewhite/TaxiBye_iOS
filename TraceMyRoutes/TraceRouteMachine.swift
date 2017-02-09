@@ -27,7 +27,7 @@ class TraceRouteMachine {
     var carPlateNumber = ""
     var ratingNumber: Int = 0 //default
     var comment = ""
-    var traceFeelingID = ""
+    var traceFeelingID: Int = 0 //default
 
     func initMachine() {
         carPlateNumber = ""

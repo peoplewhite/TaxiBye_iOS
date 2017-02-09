@@ -33,7 +33,20 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         }) { (errorMessage) in
 
         }
-        
+
+
+        API.fetchFeelingList(completion: { 
+            //
+
+            let feelings: [Feeling] = Feeling.mr_findAll() as! [Feeling]
+            print("feelings = \(feelings)") //kimuranow
+            feelings.forEach { feeling in
+                print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
+            }
+
+        }) { (errorMessage) in
+            //
+        }
     }
 
     var currentTrip: Trip!
@@ -44,28 +57,18 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         let root = GPXRoot()
 
 
-
-
-//        if let trip = currentTrip {
-//
-//        } else {
-//
-//            currentTrip = Trip.mr_createEntity()! as Trip
-//            currentTrip.route = "route"
-//            NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
-//        }
-
-//        Taxi.mr_truncateAll()
-
         let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
         print("taxis = \(taxis)") //kimuranow
         taxis.forEach { taxi in
             print("taxi = \(taxi.plate_number)\(taxi.driver)") //kimuranow
         }
 
+        let feelings = Feeling.mr_findAll() as! [Feeling]
+        feelings.forEach { feeling in
+            print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
+        }
 
-        
-        
+        plateNumberTextfield.text = ""
     }
 
     override func didReceiveMemoryWarning() {
