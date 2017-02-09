@@ -42,7 +42,7 @@ class ResponseDecorator {
         response["data"].arrayValue.forEach { taxi in
 
             let plateNumber = taxi["attributes", "plateNumber"].stringValue
-            
+
             if let _taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: plateNumber) {
 
                 _taxiModel.plate_number = plateNumber
@@ -51,7 +51,7 @@ class ResponseDecorator {
                 _taxiModel.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
 
             } else {
-                
+
                 let taxiModel = Taxi.mr_createEntity()
                 taxiModel?.plate_number = plateNumber
                 taxiModel?.driver = taxi["attributes", "driver"].stringValue

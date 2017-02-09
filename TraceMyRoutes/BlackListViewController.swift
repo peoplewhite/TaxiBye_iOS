@@ -21,6 +21,10 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         "0分", "1分", "2分", "3分","4分", "5分"
     ]
 
+    var ratingTaxis = [
+        [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]()
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -43,12 +47,27 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
     func callAPIToGetBlackList() {
 
         API.fetchRankingList(completion: {
+            print("foobar") //kimuranow
 
-//            let realm = try Realm()
-//            var taxis = realm.objects(Taxi.self)
 
+            for ratingLevel in 0..<self.ratingTaxis.count {
+
+//                let taxiFilter = NSPredicate(format: "avg_rating BETWEEN {}", argumentArray: [ratingLevel, ratingLevel + 1])
+//                let taxiFilter = NSPredicate(for)
+//                NSPredicate *filter = [NSPredicate predicateWithFormat:@"scored_count > %d AND score/scored_count > %f", 500, 8.0];
+                let taxiFilter = NSPredicate(format: "avg_rating > %d AND avg_rating < %d ", ratingLevel, ratingLevel + 1)
+                let taxis = Taxi.mr_findAll(with: taxiFilter)
+                print("taxis = \(taxis)") //kimuranow
+
+                taxis?.forEach { taxi in
+                    self.ratingTaxis[ratingLevel].append(taxi as! Taxi)
+                }
+                print("count = \(self.ratingTaxis[ratingLevel].count)") //kimuranow
+            }
+
+            self.tableView.reloadData()
             
-
+            
         }) { (errorMessage) in
 
         }
@@ -80,7 +99,7 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         return ratingLavelTitle.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return ratingTaxis[section].count
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
