@@ -29,9 +29,11 @@ class API {
 
     let version = "/v1"
 
-//    var headers: [String: String] {
-//        return ["Email": MyUser.sharedInstance.email, "Token": MyUser.sharedInstance.token]
-//    }
+    var headers: [String: String] {
+        return [
+            "Authorization": MyUser.shared.authToken
+        ]
+    }
 
 
 
@@ -57,6 +59,7 @@ extension API {
         print("url = \(url)") //kimuranow
         print("header = \(header.description)") //kimuranow
         print("body = \(body.description)") //kimuranow
+
 
         Alamofire.request( url, method: .post, parameters: body, encoding: URLEncoding.default, headers: header)
             .responseJSON { response in

@@ -30,9 +30,9 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
         API.authenticate(completion: {
             print("ok") //kimuranow
-            
+
         }) { (errorMessage) in
-            
+
         }
         
     }
@@ -91,8 +91,8 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     func settingUIForSearchButtonHeight() {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
+    
     @IBAction func trackButtonPressed(_ sender: UIButton) {
-        
         
         let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
 
