@@ -29,9 +29,10 @@ class API {
 
     let version = "/v1"
 
-    var headers: [String: String] {
+    static var headers: [String: String] {
         return [
-            "Authorization": MyUser.shared.authToken
+            "Authorization": MyUser.shared.authToken,
+            "DeviceID": UIDevice.current.identifierForVendor!.uuidString
         ]
     }
 
@@ -134,10 +135,6 @@ extension API {
             url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)/trips"
         }
 
-        let header = [
-//            "Authorization": "",
-            "DeviceID": UIDevice.current.identifierForVendor!.uuidString
-        ]
         let body = [
             "startedAt": TraceRouteMachine.shared.traceStartTime,
             "endedAt": TraceRouteMachine.shared.traceEndTime,
@@ -149,31 +146,26 @@ extension API {
             ]
         ] as [String : Any]
 
-        print("url = \(url)") //kimuranow
-        print("header = \(header.description)") //kimuranow
+
+        print("url = \(url)")
+        print("function = \(#function)") //kimuranow
+        print("header = \(self.headers.description)") //kimuranow
         print("body = \(body.description)") //kimuranow
-//        printParams(
-//            withParameter: body.description,
-//            andHeader: "",
-//            andURL: url,
-//            andFunctionName: #function
-//        )
+        
 
-        return
+        Alamofire.request( url, method: .post, parameters: body, encoding: URLEncoding.default, headers: self.headers)
+            .responseJSON { response in
 
-//        Alamofire.request( url, method: .post, parameters: body, encoding: URLEncoding.default, headers: header)
-//            .responseJSON { response in
-//
-//                guard response.result.error == nil else {
-//                    fail(response.result.error.debugDescription)
-//                    return
-//                }
-//
-//                if let value: AnyObject = response.result.value as AnyObject? {
-//                    print("value = \(value)") //kimuranow
-//                    //                    completion()
-//                }
-//        }
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+                    print("value = \(value)") //kimuranow
+                    //                    completion()
+                }
+        }
 
     }
     

@@ -13,28 +13,13 @@ import UIKit
 
 class ResponseDecorator {
 
-
     static func createTripRecord(_ response: JSON) {
-        
+        print("[\(#function)] response = \(response)") //kimuranow
+
 
     }
     
-//    static func queryTaxiByLicensePlateNumber(_ response: JSON) -> Taxi {
     static func queryTaxiByLicensePlateNumber(_ response: JSON) -> Taxi {
-        /*
-         [queryTaxiByLicensePlateNumber] response = {
-         "data" : {
-         "id" : "t",
-         "type" : "taxis",
-         "attributes" : {
-         "plateNumber" : "t",
-         "avgRating" : "0.0",
-         "updatedAt" : 1486636484,
-         "driver" : ""
-         }
-         }
-         }
-         */
 
         print("[\(#function)] response = \(response)") //kimuranow
 
@@ -46,6 +31,7 @@ class ResponseDecorator {
         return taxi!
         
     }
+
     static func fetchRankingList(_ response: JSON, completion: (() -> Void)) -> Void {
 
         print("[\(#function)] response = \(response)") //kimuranow
@@ -78,7 +64,4 @@ class ResponseDecorator {
         completion()
 
     }
-    
-    
-    
 }
