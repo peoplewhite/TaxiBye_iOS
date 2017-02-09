@@ -20,20 +20,31 @@ class ResponseDecorator {
     }
     
 //    static func queryTaxiByLicensePlateNumber(_ response: JSON) -> Taxi {
-    static func queryTaxiByLicensePlateNumber(_ response: JSON) {
+    static func queryTaxiByLicensePlateNumber(_ response: JSON) -> Taxi {
         /*
-        {
-            "data": {
-                "plateNumber": "7788-KM",
-                "driver": "木村",
-                "avgRating": 1.8
-            },
-            "errors": [],
-            "meta": {}
-        }
+         [queryTaxiByLicensePlateNumber] response = {
+         "data" : {
+         "id" : "t",
+         "type" : "taxis",
+         "attributes" : {
+         "plateNumber" : "t",
+         "avgRating" : "0.0",
+         "updatedAt" : 1486636484,
+         "driver" : ""
+         }
+         }
+         }
          */
 
+        print("[\(#function)] response = \(response)") //kimuranow
 
+        let taxi = Taxi.mr_createEntity()
+        taxi?.plate_number = response["data", "attributes", "plateNumber"].stringValue
+        taxi?.driver = response["data", "attributes", "driver"].stringValue
+        taxi?.avg_rating = NSDecimalNumber(floatLiteral: response["data", "attributes", "avgRating"].doubleValue)
+
+        return taxi!
+        
     }
     static func fetchRankingList(_ response: JSON, completion: (() -> Void)) -> Void {
 

@@ -105,7 +105,7 @@ extension API {
         }
     }
 
-    static func queryTaxi(by licensePlateNumber: String, completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+    static func queryTaxi(by licensePlateNumber: String, completion: @escaping ((_ taxi: Taxi)-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
         var url = ""
         if let carPlateNumberByURLEncoded = licensePlateNumber.stringByAddingPercentEncodingForRFC3986() {
@@ -120,8 +120,7 @@ extension API {
                 }
 
                 if let value: AnyObject = response.result.value as AnyObject? {
-                    print("value = \(value)") //kimuranow
-//                    completion()
+                    completion(ResponseDecorator.queryTaxiByLicensePlateNumber(JSON(value)))
                 }
         }
         

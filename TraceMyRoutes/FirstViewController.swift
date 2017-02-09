@@ -29,7 +29,6 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
 
         API.authenticate(completion: {
-            print("ok") //kimuranow
 
         }) { (errorMessage) in
 
@@ -101,10 +100,31 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
             return
         }
 
-        showWarningScene()
+        callAPIToQueryTaxiRating(withPlateNumber: trimmedString)
+//        showWarningScene()
 //        goTraceScene()
-
     }
+    
+    func callAPIToQueryTaxiRating(withPlateNumber plateNumber: String) {
+        API.queryTaxi(by: plateNumber, completion: { (taxi) in
+            print("rating = \(taxi.avg_rating)") //kimuranow
+
+
+            let isNeedToShowWarning = ((taxi.avg_rating?.doubleValue)! < AppConfig.lowerRatingForWarning)
+
+            if isNeedToShowWarning {
+                self.showWarningScene(withTaxi: taxi)
+            } else {
+                self.goTraceScene()
+            }
+
+            
+            //
+        }) { (errorMessage) in
+            //
+        }
+    }
+    
     func showAlertViewWith(msg: String) {
 
         // swift 3.0
@@ -117,13 +137,14 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     }
 
 
-    func showWarningScene() {
+    func showWarningScene(withTaxi taxi: Taxi) {
 
         let chooseTagBrandScene: WarningScene = Bundle.main.loadNibNamed("WarningScene", owner: self, options: nil)![0] as! WarningScene
         chooseTagBrandScene.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         UIApplication.shared.keyWindow?.addSubview(chooseTagBrandScene)
         chooseTagBrandScene.delegate = self
-        
+
+        chooseTagBrandScene.setupTaxiData(with: taxi)
 
         let kAnimationDuration: Double = 0.3
 

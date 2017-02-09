@@ -17,6 +17,7 @@ struct AppConfig {
     static let isUsingGPX = true
 
     static let emergencyPhoneNumber = "0932453801"
+    static let lowerRatingForWarning: Double = 3.0
 
 
 
