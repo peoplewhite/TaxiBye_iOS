@@ -39,6 +39,39 @@ class API {
 extension API {
     // MARK: =================>
 
+    static func authenticate(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+
+        let url = "http://taxibye.oddesign.expert/api/v1/authenticate"
+
+        let header: [String: String] = [
+            "ApiKey": "kimura",
+            "DeviceID": "kimura"
+        ]
+
+        let body: [String: String] = [
+            "email": "kimura",
+            "password": "kimura"
+        ]
+        
+        print("function = \(#function)") //kimuranow
+        print("url = \(url)") //kimuranow
+        print("header = \(header.description)") //kimuranow
+        print("body = \(body.description)") //kimuranow
+
+        Alamofire.request( url, method: .post, parameters: body, encoding: URLEncoding.default, headers: header)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+                    print("value = \(value)") //kimuranow
+//                    completion()
+                }
+        }
+        
+    }
     static func fetchRankingList(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
 //        let url = "http://taxibye.oddesign.expert/api/v1/taxis/ranking?number="

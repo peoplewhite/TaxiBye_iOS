@@ -26,6 +26,15 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         SVProgressHUD.setMinimumDismissTimeInterval(2)
+
+
+        API.authenticate(completion: {
+            print("ok") //kimuranow
+            
+        }) { (errorMessage) in
+            
+        }
+        
     }
 
     var currentTrip: Trip!
