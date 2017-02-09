@@ -67,7 +67,8 @@ extension API {
 
                 if let value: AnyObject = response.result.value as AnyObject? {
                     print("value = \(value)") //kimuranow
-//                    completion()
+                    MyUser.shared.authToken = JSON(value)["data", "authToken"].stringValue
+                    print("authToken = \(MyUser.shared.authToken)") //kimuranow
                 }
         }
         
