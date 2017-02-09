@@ -25,6 +25,7 @@
 		1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED521E3742F600962E58 /* RatingViewController.swift */; };
 		1448ED551E3744A200962E58 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED541E3744A200962E58 /* AppConfig.swift */; };
 		1448EDE41E375F2500962E58 /* KMLMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448EDE31E375F2500962E58 /* KMLMachine.swift */; };
+		1485ED9D1E4C629600F45290 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485ED9C1E4C629600F45290 /* User.swift */; };
 		1495D0EE1E4B03B100298CD6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1495D0ED1E4B03B100298CD6 /* CoreData.framework */; };
 		14AF1CCA1E37703F005F4BE2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CC91E37703F005F4BE2 /* API.swift */; };
 		14AF1CCC1E3786BD005F4BE2 /* TraceRouteMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */; };
@@ -82,6 +83,7 @@
 		1448ED541E3744A200962E58 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		1448EDE21E37563400962E58 /* TraceMyRoutes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TraceMyRoutes-Bridging-Header.h"; sourceTree = "<group>"; };
 		1448EDE31E375F2500962E58 /* KMLMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLMachine.swift; sourceTree = "<group>"; };
+		1485ED9C1E4C629600F45290 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1495D0ED1E4B03B100298CD6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		14AF1CC91E37703F005F4BE2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceRouteMachine.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				143D45E71E45B41C000AF402 /* GPXMachine.swift */,
 				1448EDE31E375F2500962E58 /* KMLMachine.swift */,
 				14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */,
+				1485ED9C1E4C629600F45290 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				14AF1CCE1E3794B3005F4BE2 /* FirstViewController.swift in Sources */,
 				1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */,
 				1448ED511E3742E900962E58 /* TracingViewController.swift in Sources */,
+				1485ED9D1E4C629600F45290 /* User.swift in Sources */,
 				14AF1CCA1E37703F005F4BE2 /* API.swift in Sources */,
 				14C012BF1E488F3E0018A37A /* BlackListCell.swift in Sources */,
 				1448ED1C1E373FE700962E58 /* AppDelegate.swift in Sources */,

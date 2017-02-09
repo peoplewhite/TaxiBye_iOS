@@ -26,6 +26,15 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         SVProgressHUD.setMinimumDismissTimeInterval(2)
+
+
+        API.authenticate(completion: {
+            print("ok") //kimuranow
+
+        }) { (errorMessage) in
+
+        }
+        
     }
 
     var currentTrip: Trip!
@@ -82,8 +91,8 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     func settingUIForSearchButtonHeight() {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
+    
     @IBAction func trackButtonPressed(_ sender: UIButton) {
-        
         
         let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
 
