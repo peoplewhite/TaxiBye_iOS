@@ -32,6 +32,7 @@ class WarningScene: UIView {
     @IBOutlet weak var warningDescription: UILabel!
 
 
+    var taxi = Taxi()
     let screenSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
 
 
@@ -75,6 +76,9 @@ class WarningScene: UIView {
         button.layer.borderWidth = 2.0
     }
 
+    func setupTaxiData(with taxiModel: Taxi) {
+        starNumberLabel.text = taxiModel.avg_rating?.description
+    }
     func exitScene() {
 
         let kAnimationDuration: Double = 0.3
