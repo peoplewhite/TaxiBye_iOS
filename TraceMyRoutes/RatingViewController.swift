@@ -50,12 +50,37 @@ class RatingViewController: UIViewController {
         }
 
         initUI()
-        //kimuranowmodel
-//        currentRating.message = TraceRouteMachine.shared.comment
+
+        settingFeelingOption(with: TraceRouteMachine.shared.traceFeelingID)
     }
 
     func backToInitFirstScene() {
         _ = navigationController?.popToRootViewController(animated: true)
+    }
+
+    func settingFeelingOption(with feelingID: Int) {
+        
+        guard TraceRouteMachine.shared.traceFeelingID != 0 else {
+            return
+        }
+        
+        switch feelingID {
+        case 1:
+            option1ButtonPressed(option1)
+            break
+        case 2:
+            option1ButtonPressed(option2)
+            break
+        case 3:
+            option1ButtonPressed(option3)
+            break
+        case 4:
+            option1ButtonPressed(option4)
+            break
+        default:
+            //
+            break
+        }
     }
 
     
@@ -186,7 +211,7 @@ extension RatingViewController {
 
     }
     @IBAction func option1ButtonPressed(_ sender: UIButton) {
-        TraceRouteMachine.shared.traceFeelingID = 0
+        TraceRouteMachine.shared.traceFeelingID = 1
         settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
@@ -198,7 +223,7 @@ extension RatingViewController {
     }
     @IBAction func option2ButtonPressed(_ sender: UIButton) {
 
-        TraceRouteMachine.shared.traceFeelingID = 1
+        TraceRouteMachine.shared.traceFeelingID = 2
         settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
@@ -210,7 +235,7 @@ extension RatingViewController {
     }
     @IBAction func option3ButtonPressed(_ sender: UIButton) {
 
-        TraceRouteMachine.shared.traceFeelingID = 2
+        TraceRouteMachine.shared.traceFeelingID = 3
         settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
@@ -223,7 +248,7 @@ extension RatingViewController {
     }
     @IBAction func option4ButtonPressed(_ sender: UIButton) {
 
-        TraceRouteMachine.shared.traceFeelingID = 3
+        TraceRouteMachine.shared.traceFeelingID = 4
 
         settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
