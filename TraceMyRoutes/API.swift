@@ -153,23 +153,30 @@ extension API {
     }
 
 
-    static func createTripRecord(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+    static func createTripRecord(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
         var url = ""
         if let carPlateNumberByURLEncoded = TraceRouteMachine.shared.carPlateNumber.stringByAddingPercentEncodingForRFC3986() {
             url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)/trips"
         }
 
-        let body = [
-            "startedAt": TraceRouteMachine.shared.traceStartTime,
-            "endedAt": TraceRouteMachine.shared.traceEndTime,
-            "route": GPXMachine.shared.gpxString,
-            "ratingAttributes": [
-                "score": TraceRouteMachine.shared.ratingNumber,
-                "message": TraceRouteMachine.shared.comment,
-                "tripFeelingId": TraceRouteMachine.shared.traceFeelingID
+
+        let _header = [
+            "Content-Type":"application/json; charset=utf-8",
             ]
-        ] as [String : Any]
+
+        let body: Parameters = [
+            "data": [
+                "startedAt": Int(TraceRouteMachine.shared.traceStartTime)!,
+                "endedAt": Int(TraceRouteMachine.shared.traceEndTime)!,
+                "route": GPXMachine.shared.gpxString,
+                "ratingAttributes": [
+                    "score": TraceRouteMachine.shared.ratingNumber,
+                    "message": TraceRouteMachine.shared.comment,
+                    "tripFeelingId": TraceRouteMachine.shared.traceFeelingID
+                ]
+            ]
+        ]
 
 
         print("url = \(url)")
@@ -178,7 +185,7 @@ extension API {
         print("body = \(body.description)") //kimuranow
         
 
-        Alamofire.request( url, method: .post, parameters: body, encoding: URLEncoding.default, headers: self.headers)
+        Alamofire.request( url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: _header)
             .responseJSON { response in
 
                 guard response.result.error == nil else {
@@ -187,8 +194,8 @@ extension API {
                 }
 
                 if let value: AnyObject = response.result.value as AnyObject? {
-                    print("value = \(value)") //kimuranow
-                    //                    completion()
+                    ResponseDecorator.createTripRecord(JSON(value))
+                    completion()
                 }
         }
 

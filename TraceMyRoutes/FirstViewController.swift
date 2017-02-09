@@ -76,6 +76,10 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
             print("taxi = \(taxi.plate_number)\(taxi.driver)") //kimuranow
         }
 
+        let feelings = Feeling.mr_findAll() as! [Feeling]
+        feelings.forEach { feeling in
+            print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
+        }
 
         
         

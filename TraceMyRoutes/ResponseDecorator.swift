@@ -37,7 +37,7 @@ class ResponseDecorator {
 
         response["data"].arrayValue.forEach { feeling in
 
-            let feelingID = feeling["attributes", "id"].intValue
+            let feelingID = feeling["id"].intValue
 
             if let _feelingModel = Feeling.mr_findFirst(byAttribute: "id", withValue: feelingID) {
 
@@ -54,7 +54,7 @@ class ResponseDecorator {
 
             NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
         }
-        
+
         completion()
         
     }

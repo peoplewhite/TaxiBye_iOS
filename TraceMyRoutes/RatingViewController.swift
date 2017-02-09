@@ -93,10 +93,12 @@ extension RatingViewController {
         settingButton(option3)
         settingButton(option4)
 
-        option1.setTitle("還好", for: .normal)
-        option2.setTitle("車速過快", for: .normal)
-        option3.setTitle("態度不佳", for: .normal)
-        option4.setTitle("爛透了", for: .normal)
+        let feelings = Feeling.mr_findAll() as! [Feeling]
+
+        option1.setTitle(feelings[0].title, for: .normal)
+        option2.setTitle(feelings[1].title, for: .normal)
+        option3.setTitle(feelings[2].title, for: .normal)
+        option4.setTitle(feelings[3].title, for: .normal)
     }
     func settingUIForSubmitButton() {
         submitButtonHeightConstraint.constant = AppConfig.buttonHeight
@@ -109,6 +111,7 @@ extension RatingViewController {
         //kimuranowmodel
 //        currentRating.score = Double(ratingNumber)
 //        print("currentRating.score = \(currentRating.score)") //kimuranow
+        TraceRouteMachine.shared.ratingNumber = ratingNumber
         
         star1.setImage(AppConfig.blackEmptyStarImage, for: .normal)
         star2.setImage(AppConfig.blackEmptyStarImage, for: .normal)
@@ -164,13 +167,7 @@ extension RatingViewController {
     // MARK: =================> button
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
-
-        //kimuranowmodel
-//        TraceRouteMachine.shared.ratingNumber = Int(currentRating.score)
-
         callAPIToPostTraceRoutes()
-//        saveTraceRoutesToDatabase()
-//        print("gpxString = \(GPXMachine.shared.gpxString)") //kimuranow
     }
 }
 extension RatingViewController {
@@ -189,6 +186,7 @@ extension RatingViewController {
 
     }
     @IBAction func option1ButtonPressed(_ sender: UIButton) {
+        TraceRouteMachine.shared.traceFeelingID = 0
         settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
@@ -199,6 +197,8 @@ extension RatingViewController {
         }
     }
     @IBAction func option2ButtonPressed(_ sender: UIButton) {
+
+        TraceRouteMachine.shared.traceFeelingID = 1
         settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
@@ -209,6 +209,8 @@ extension RatingViewController {
         }
     }
     @IBAction func option3ButtonPressed(_ sender: UIButton) {
+
+        TraceRouteMachine.shared.traceFeelingID = 2
         settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
@@ -220,6 +222,9 @@ extension RatingViewController {
 
     }
     @IBAction func option4ButtonPressed(_ sender: UIButton) {
+
+        TraceRouteMachine.shared.traceFeelingID = 3
+
         settingAllOptionDefaultStatus()
         if sender.backgroundColor == UIColor.clear {
             sender.backgroundColor = UIColor.black
@@ -256,24 +261,13 @@ extension RatingViewController {
 
     func callAPIToPostTraceRoutes() {
 
-        API.createTripRecord(completion: {
 
+
+        API.createTripRecord(completion: {
+            _ = self.navigationController?.popToRootViewController(animated: true)
         }) { (errorMessage) in
 
         }
-//        API.postTraceRoutes(withKML: KMLMachine.shared.kmlFile,
-//                            andCarPlateNumber: TraceRouteMachine.shared.carPlateNumber,
-//                            andRatingNumber: TraceRouteMachine.shared.ratingNumber,
-//                            success: { (message) in backToInitFirstScene()
-//                                backToInitFirstScene()
-//                                SVProgressHUD.showSuccess(withStatus: "Submit 成功")
-//                                
-//
-//        },
-//                            fail: { (errorMessage) in
-//                                print("fail") //kimuranow
-//
-//        })
     }
 
 }
