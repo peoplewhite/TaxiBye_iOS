@@ -21,6 +21,10 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         "0分", "1分", "2分", "3分","4分", "5分"
     ]
 
+    var ratingTaxis = [
+        [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]()
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -44,11 +48,21 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
 
         API.fetchRankingList(completion: {
 
-//            let realm = try Realm()
-//            var taxis = realm.objects(Taxi.self)
 
+            let taxis = Taxi.mr_findAll()
+
+            taxis?.forEach { taxi in
+                let taxiModel: Taxi = taxi as! Taxi
+                if let avgRating = taxiModel.avg_rating?.doubleValue {
+                    let ratingLevelInteger = Int(floor(avgRating))
+                    self.ratingTaxis[ratingLevelInteger].append(taxiModel)
+                }
+
+            }
+
+            self.tableView.reloadData()
             
-
+            
         }) { (errorMessage) in
 
         }
@@ -80,7 +94,7 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         return ratingLavelTitle.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return ratingTaxis[section].count
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -102,8 +116,13 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifierForTableView, for: indexPath as IndexPath)
+        let cell: BlackListCell  = tableView.dequeueReusableCell(withIdentifier: kCellIdentifierForTableView, for: indexPath as IndexPath) as! BlackListCell
         cell.selectionStyle = .none
+
+
+        cell.carPlateNumber.text = ratingTaxis[indexPath.section][indexPath.row].plate_number
+        cell.ratingNumber.text = ratingTaxis[indexPath.section][indexPath.row].avg_rating?.description
+
 
         return cell
 

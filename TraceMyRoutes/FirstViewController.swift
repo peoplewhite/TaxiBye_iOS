@@ -8,8 +8,6 @@
 
 import UIKit
 import SVProgressHUD
-import RealmSwift
-import Realm
 import JSONAPI
 
 class FirstViewController: UIViewController, WarningSceneDelegate {
@@ -28,75 +26,47 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         SVProgressHUD.setMinimumDismissTimeInterval(2)
+
+
+        API.authenticate(completion: {
+            print("ok") //kimuranow
+
+        }) { (errorMessage) in
+
+        }
+        
     }
+
+    var currentTrip: Trip!
 
     override func viewWillAppear(_ animated: Bool) {
         initUI()
-
-        let realm = try! Realm()
-        print("feeling = \(realm.objects(Feeling.self))") //kimuranow
-        print("taxi = \(realm.objects(Taxi.self))") //kimuranow
-        print("rating = \(realm.objects(Rating.self))") //kimuranow
-        print("trip = \(realm.objects(Trip.self))") //kimuranow
-
+        
         let root = GPXRoot()
 
 
 
-        /*
-       let json = [
 
-        "data": [
-            "id": "24",
-            "type": "trips",
-            "attributes": [
-                "startedAt": 1486453039,
-                "endedAt": 1486453039,
-                "route": "abcdefg",
-                "updatedAt": 1486453039
-            ],
-            "relationships": [
-                "rating": [
-                    "data": [
-                        "id": "24",
-                        "type": "ratings"
-                    ]
-                ],
-                "taxi": [
-                    "data": [
-                        "id": "1234-XD",
-                        "type": "taxis"
-                    ]]]
-        ],
-        "included": [
-            [
-                "id": "24",
-                "type": "ratings",
-                "attributes": [
-                    "score": "5.0",
-                    "message": "還可以",
-                    "tripFeeling": "fine",
-                    "updatedAt": 1486453039
-                ]
-            ],
-            [
-                "id": "1234-XD",
-                "type": "taxis",
-                "attributes": [
-                    "plateNumber": "1234-XD",
-                    "driver": "",
-                    "avgRating": "4.6",
-                    "updatedAt": 1486453018
-                ]]
-        ]
-        ] as [String : Any]
+//        if let trip = currentTrip {
+//
+//        } else {
+//
+//            currentTrip = Trip.mr_createEntity()! as Trip
+//            currentTrip.route = "route"
+//            NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+//        }
 
-        let jsonAPI = JSONAPI(dictionary: json)
-        print("jsonAPI = \(jsonAPI?.resource)") //kimuranow
+//        Taxi.mr_truncateAll()
 
-         */
+        let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
+        print("taxis = \(taxis)") //kimuranow
+        taxis.forEach { taxi in
+            print("taxi = \(taxi.plate_number)\(taxi.driver)") //kimuranow
+        }
 
 
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -121,8 +91,8 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     func settingUIForSearchButtonHeight() {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
+    
     @IBAction func trackButtonPressed(_ sender: UIButton) {
-        
         
         let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
 
