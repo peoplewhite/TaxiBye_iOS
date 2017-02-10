@@ -29,9 +29,10 @@ class API {
 
     let version = "/v1"
 
-    var headers: [String: String] {
+    static var headers: [String: String] {
         return [
-            "Authorization": MyUser.shared.authToken
+            "Authorization": MyUser.shared.authToken,
+            "DeviceID": UIDevice.current.identifierForVendor!.uuidString
         ]
     }
 
@@ -41,6 +42,31 @@ class API {
 extension API {
     // MARK: =================>
 
+    static func fetchFeelingList(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+
+        let url = "http://taxibye.oddesign.expert/api/v1/trips/feelings"
+
+
+        print("function = \(#function)") //kimuranow
+        print("url = \(url)") //kimuranow
+
+        Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+
+
+                    ResponseDecorator.fetchFeelingList(JSON(value), completion: {
+                        completion()
+                    })
+
+                }
+        }
+    }
     static func authenticate(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
         let url = "http://taxibye.oddesign.expert/api/v1/authenticate"
@@ -127,53 +153,51 @@ extension API {
     }
 
 
-    static func createTripRecord(completion: (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+    static func createTripRecord(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
         var url = ""
         if let carPlateNumberByURLEncoded = TraceRouteMachine.shared.carPlateNumber.stringByAddingPercentEncodingForRFC3986() {
             url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)/trips"
         }
 
-        let header = [
-//            "Authorization": "",
-            "DeviceID": UIDevice.current.identifierForVendor!.uuidString
-        ]
-        let body = [
-            "startedAt": TraceRouteMachine.shared.traceStartTime,
-            "endedAt": TraceRouteMachine.shared.traceEndTime,
-            "route": GPXMachine.shared.gpxString,
-            "ratingAttributes": [
-                "score": TraceRouteMachine.shared.ratingNumber,
-                "message": TraceRouteMachine.shared.comment,
-                "tripFeelingId": TraceRouteMachine.shared.traceFeelingID
+
+        let _header = [
+            "Content-Type":"application/json; charset=utf-8",
             ]
-        ] as [String : Any]
 
-        print("url = \(url)") //kimuranow
-        print("header = \(header.description)") //kimuranow
+        let body: Parameters = [
+            "data": [
+                "startedAt": Int(TraceRouteMachine.shared.traceStartTime)!,
+                "endedAt": Int(TraceRouteMachine.shared.traceEndTime)!,
+                "route": GPXMachine.shared.gpxString,
+                "ratingAttributes": [
+                    "score": TraceRouteMachine.shared.ratingNumber,
+                    "message": TraceRouteMachine.shared.comment,
+                    "tripFeelingId": TraceRouteMachine.shared.traceFeelingID
+                ]
+            ]
+        ]
+
+
+        print("url = \(url)")
+        print("function = \(#function)") //kimuranow
+        print("header = \(self.headers.description)") //kimuranow
         print("body = \(body.description)") //kimuranow
-//        printParams(
-//            withParameter: body.description,
-//            andHeader: "",
-//            andURL: url,
-//            andFunctionName: #function
-//        )
+        
 
-        return
+        Alamofire.request( url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: _header)
+            .responseJSON { response in
 
-//        Alamofire.request( url, method: .post, parameters: body, encoding: URLEncoding.default, headers: header)
-//            .responseJSON { response in
-//
-//                guard response.result.error == nil else {
-//                    fail(response.result.error.debugDescription)
-//                    return
-//                }
-//
-//                if let value: AnyObject = response.result.value as AnyObject? {
-//                    print("value = \(value)") //kimuranow
-//                    //                    completion()
-//                }
-//        }
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+                    ResponseDecorator.createTripRecord(JSON(value))
+                    completion()
+                }
+        }
 
     }
     

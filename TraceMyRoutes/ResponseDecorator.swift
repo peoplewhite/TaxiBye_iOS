@@ -13,28 +13,13 @@ import UIKit
 
 class ResponseDecorator {
 
-
     static func createTripRecord(_ response: JSON) {
-        
+        print("[\(#function)] response = \(response)") //kimuranow
+
 
     }
     
-//    static func queryTaxiByLicensePlateNumber(_ response: JSON) -> Taxi {
     static func queryTaxiByLicensePlateNumber(_ response: JSON) -> Taxi {
-        /*
-         [queryTaxiByLicensePlateNumber] response = {
-         "data" : {
-         "id" : "t",
-         "type" : "taxis",
-         "attributes" : {
-         "plateNumber" : "t",
-         "avgRating" : "0.0",
-         "updatedAt" : 1486636484,
-         "driver" : ""
-         }
-         }
-         }
-         */
 
         print("[\(#function)] response = \(response)") //kimuranow
 
@@ -44,6 +29,33 @@ class ResponseDecorator {
         taxi?.avg_rating = NSDecimalNumber(floatLiteral: response["data", "attributes", "avgRating"].doubleValue)
 
         return taxi!
+        
+    }
+
+    static func fetchFeelingList(_ response: JSON, completion: (() -> Void)) -> Void {
+        print("[\(#function)] response = \(response)") //kimuranow
+
+        response["data"].arrayValue.forEach { feeling in
+
+            let feelingID = feeling["id"].intValue
+
+            if let _feelingModel = Feeling.mr_findFirst(byAttribute: "id", withValue: feelingID) {
+
+                _feelingModel.id = Int32(feelingID)
+                _feelingModel.title = feeling["attributes", "title"].stringValue
+
+            } else {
+
+                let feelingModel = Feeling.mr_createEntity()
+                feelingModel?.id = Int32(feelingID)
+                feelingModel?.title = feeling["attributes", "title"].stringValue
+            }
+
+
+            NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+        }
+
+        completion()
         
     }
     static func fetchRankingList(_ response: JSON, completion: (() -> Void)) -> Void {
@@ -78,7 +90,4 @@ class ResponseDecorator {
         completion()
 
     }
-    
-    
-    
 }

@@ -33,7 +33,20 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         }) { (errorMessage) in
 
         }
-        
+
+
+        API.fetchFeelingList(completion: { 
+            //
+
+            let feelings: [Feeling] = Feeling.mr_findAll() as! [Feeling]
+            print("feelings = \(feelings)") //kimuranow
+            feelings.forEach { feeling in
+                print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
+            }
+
+        }) { (errorMessage) in
+            //
+        }
     }
 
     var currentTrip: Trip!
@@ -44,28 +57,18 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         let root = GPXRoot()
 
 
-
-
-//        if let trip = currentTrip {
-//
-//        } else {
-//
-//            currentTrip = Trip.mr_createEntity()! as Trip
-//            currentTrip.route = "route"
-//            NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
-//        }
-
-//        Taxi.mr_truncateAll()
-
         let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
         print("taxis = \(taxis)") //kimuranow
         taxis.forEach { taxi in
             print("taxi = \(taxi.plate_number)\(taxi.driver)") //kimuranow
         }
 
+        let feelings = Feeling.mr_findAll() as! [Feeling]
+        feelings.forEach { feeling in
+            print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
+        }
 
-        
-        
+        plateNumberTextfield.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,15 +103,18 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
             return
         }
 
+        // TODO: check valid plate number format
+        // ref: https://zh.wikipedia.org/wiki/臺灣車輛牌照
+        
+
         callAPIToQueryTaxiRating(withPlateNumber: trimmedString)
-//        showWarningScene()
-//        goTraceScene()
     }
     
     func callAPIToQueryTaxiRating(withPlateNumber plateNumber: String) {
+        SVProgressHUD.show()
         API.queryTaxi(by: plateNumber, completion: { (taxi) in
-            print("rating = \(taxi.avg_rating)") //kimuranow
 
+            SVProgressHUD.dismiss()
 
             let isNeedToShowWarning = ((taxi.avg_rating?.doubleValue)! < AppConfig.lowerRatingForWarning)
 
@@ -117,17 +123,17 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
             } else {
                 self.goTraceScene()
             }
-
             
-            //
         }) { (errorMessage) in
-            //
+            
+            SVProgressHUD.dismiss()
+            self.showAlertViewWith(msg: errorMessage)
+            
         }
     }
     
     func showAlertViewWith(msg: String) {
 
-        // swift 3.0
         let alert:UIAlertController = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             alert.dismiss(animated: false, completion: nil)
