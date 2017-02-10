@@ -25,6 +25,7 @@
 		1448ED531E3742F600962E58 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED521E3742F600962E58 /* RatingViewController.swift */; };
 		1448ED551E3744A200962E58 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448ED541E3744A200962E58 /* AppConfig.swift */; };
 		1448EDE41E375F2500962E58 /* KMLMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1448EDE31E375F2500962E58 /* KMLMachine.swift */; };
+		147875D61E4DBAE600D6A826 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 147875D81E4DBAE600D6A826 /* Localizable.strings */; };
 		1485ED9D1E4C629600F45290 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485ED9C1E4C629600F45290 /* User.swift */; };
 		1495D0EE1E4B03B100298CD6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1495D0ED1E4B03B100298CD6 /* CoreData.framework */; };
 		14AF1CCA1E37703F005F4BE2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CC91E37703F005F4BE2 /* API.swift */; };
@@ -83,6 +84,8 @@
 		1448ED541E3744A200962E58 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		1448EDE21E37563400962E58 /* TraceMyRoutes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TraceMyRoutes-Bridging-Header.h"; sourceTree = "<group>"; };
 		1448EDE31E375F2500962E58 /* KMLMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLMachine.swift; sourceTree = "<group>"; };
+		147875D71E4DBAE600D6A826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		147875D91E4DBAF600D6A826 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1485ED9C1E4C629600F45290 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1495D0ED1E4B03B100298CD6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		14AF1CC91E37703F005F4BE2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -230,6 +233,7 @@
 				1448ED2A1E373FE700962E58 /* Info.plist */,
 				1448ED221E373FE700962E58 /* TraceMyRoutes.xcdatamodeld */,
 				1448EDE21E37563400962E58 /* TraceMyRoutes-Bridging-Header.h */,
+				147875D81E4DBAE600D6A826 /* Localizable.strings */,
 			);
 			path = TraceMyRoutes;
 			sourceTree = "<group>";
@@ -399,6 +403,7 @@
 				1448ED291E373FE700962E58 /* LaunchScreen.storyboard in Resources */,
 				14C012BD1E488F220018A37A /* BlackListCell.xib in Resources */,
 				141025291E42DD1A002856B9 /* WarningScene.xib in Resources */,
+				147875D61E4DBAE600D6A826 /* Localizable.strings in Resources */,
 				1448ED261E373FE700962E58 /* Assets.xcassets in Resources */,
 				1448ED211E373FE700962E58 /* Main.storyboard in Resources */,
 				14015E491E48851F004EADC4 /* ConfirmEmergencyPhoneCallScene.xib in Resources */,
@@ -644,6 +649,15 @@
 				1448ED281E373FE700962E58 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		147875D81E4DBAE600D6A826 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				147875D71E4DBAE600D6A826 /* Base */,
+				147875D91E4DBAF600D6A826 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
