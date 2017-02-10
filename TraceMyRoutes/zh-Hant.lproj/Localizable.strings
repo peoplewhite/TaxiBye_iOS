@@ -10,3 +10,8 @@
 "FirstSceneTrackButtonTitle" = "開始追蹤";
 "FirstSceneCarPlateNumberTextfieldPlaceholder" = "請輸入車牌";
 "FirstSceneTitle" = "TaxiBye";
+
+
+// MARK: - WarningScene
+"WarningSceneWarningTitle" = "警告";
+"WarningSceneWarningDescription" = "此車輛的評價低於\n平均分數！";

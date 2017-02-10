@@ -17,7 +17,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     @IBOutlet weak var line: UIView!
     @IBOutlet weak var plateNumberTextfield: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
-    
+
     @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchButtonHeightConstraint: NSLayoutConstraint!
     
@@ -53,7 +53,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     var currentTrip: Trip!
 
     override func viewWillAppear(_ animated: Bool) {
-        
+
         initUI()
 
         let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]

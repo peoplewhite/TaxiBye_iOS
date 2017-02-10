@@ -13,50 +13,46 @@ protocol WarningSceneDelegate {
 
 class WarningScene: UIView {
 
-    var delegate:WarningSceneDelegate?
-    
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
-
-    @IBOutlet weak var actionButtonWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var actionButtonHeightConstraint: NSLayoutConstraint!
-
     @IBOutlet weak var star1: UIImageView!
     @IBOutlet weak var star2: UIImageView!
     @IBOutlet weak var star3: UIImageView!
     @IBOutlet weak var star4: UIImageView!
     @IBOutlet weak var star5: UIImageView!
-
     @IBOutlet weak var starNumberLabel: UILabel!
-
     @IBOutlet weak var warningDescription: UILabel!
+    @IBOutlet weak var warningTitleLabel: UILabel!
+    
+    @IBOutlet weak var actionButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var actionButtonHeightConstraint: NSLayoutConstraint!
 
-
-    var taxi = Taxi()
+    var delegate:WarningSceneDelegate?
     let screenSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-
-
-    // MARK: - setting zone
-
-
+    var taxi = Taxi()
 
     override func awakeFromNib() {
-
-        initValue()
-
         initUI()
-
-        warningDescription.text = "此車輛的評價低於\n平均分數！"
-
     }
 
-    func initValue() {
+}
 
-    }
+extension WarningScene {
 
     func initUI() {
+
+        setupWarningLabel()
+        setupWarningDescriptionLabel()
+
         settingUIForActionButton()
         settingStar(2.5)
+    }
+
+    func setupWarningLabel() {
+        warningTitleLabel.text = NSLocalizedString("WarningSceneWarningTitle", comment: "")
+    }
+    func setupWarningDescriptionLabel() {
+        warningDescription.text = NSLocalizedString("WarningSceneWarningDescription", comment: "")
     }
 
     func settingUIForActionButton() {
@@ -64,7 +60,7 @@ class WarningScene: UIView {
         actionButtonWidthConstraint.constant = AppConfig.buttonInWarningSceneSize.width
         actionButtonHeightConstraint.constant = AppConfig.buttonInWarningSceneSize.height
         layoutIfNeeded()
-        
+
         settingButtonUI(yesButton)
         settingButtonUI(noButton)
     }
@@ -88,17 +84,9 @@ class WarningScene: UIView {
 
         }, completion: {(finished: Bool) -> Void in
             self.removeFromSuperview()
-            
+
         })
     }
-
-
-    // MARK: - set UI
-    
-
-    // MARK: - set value
-
-
 
     func goTraceScene() {
         delegate?.goTraceScene()
@@ -185,4 +173,5 @@ class WarningScene: UIView {
         }
         
     }
+    
 }
