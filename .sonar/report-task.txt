@@ -1,0 +1,5 @@
+projectKey=my:TaxiBye
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/my:TaxiBye
+ceTaskId=AVomtdUBaFp5B0ZfAslE
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVomtdUBaFp5B0ZfAslE
