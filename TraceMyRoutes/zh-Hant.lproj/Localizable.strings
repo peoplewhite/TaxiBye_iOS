@@ -5,3 +5,8 @@
   Created by sean on 2017/2/10.
   Copyright © 2017年 oddesign. All rights reserved.
 */
+
+// MARK: - FirstViewController
+"FirstSceneTrackButtonTitle" = "開始追蹤";
+"FirstSceneCarPlateNumberTextfieldPlaceholder" = "請輸入車牌";
+"FirstSceneTitle" = "TaxiBye";

@@ -16,9 +16,10 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var line: UIView!
     @IBOutlet weak var plateNumberTextfield: UITextField!
-
     @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchButtonHeightConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,12 +78,22 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     }
 
     func initUI() {
-        settingUIForTrackButton()
+        setupTitleLabel()
+        setupTrackButton()
+        setupCarPlateNumberTextfield()
         settingUIForSearchButtonHeight()
     }
-    func settingUIForTrackButton() {
+
+    func setupCarPlateNumberTextfield() {
+        plateNumberTextfield.placeholder = NSLocalizedString("FirstSceneCarPlateNumberTextfieldPlaceholder", comment: "")
+    }
+    func setupTitleLabel() {
+        titleLabel.text = NSLocalizedString("FirstSceneTitle", comment: "")
+    }
+    func setupTrackButton() {
         trackButtonHeightConstraint.constant = AppConfig.buttonHeight
         trackButton.layer.cornerRadius = AppConfig.buttonHeight / 2.0
+        trackButton.setTitle(NSLocalizedString("FirstSceneTrackButtonTitle", comment: ""), for: .normal)
     }
 
     func goTraceScene() {
