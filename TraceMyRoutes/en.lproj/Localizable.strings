@@ -5,3 +5,9 @@
   Created by sean on 2017/2/10.
   Copyright © 2017年 oddesign. All rights reserved.
 */
+
+
+// MARK: - FirstViewController
+"FirstSceneTrackButtonTitle" = "Start Track";
+"FirstSceneCarPlateNumberTextfieldPlaceholder" = "Please Type Car Plate Number";
+"FirstSceneTitle" = "TaxiBye";

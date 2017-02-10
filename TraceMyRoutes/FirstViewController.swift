@@ -16,10 +16,10 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var line: UIView!
     @IBOutlet weak var plateNumberTextfield: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchButtonHeightConstraint: NSLayoutConstraint!
-
-    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +53,8 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     var currentTrip: Trip!
 
     override func viewWillAppear(_ animated: Bool) {
-        initUI()
         
-        let root = GPXRoot()
-
+        initUI()
 
         let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
         print("taxis = \(taxis)") //kimuranow
@@ -81,7 +79,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         setupTitleLabel()
         setupTrackButton()
         setupCarPlateNumberTextfield()
-        settingUIForSearchButtonHeight()
+        setupSearchButton()
     }
 
     func setupCarPlateNumberTextfield() {
@@ -101,7 +99,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
     }
     
-    func settingUIForSearchButtonHeight() {
+    func setupSearchButton() {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
     
@@ -110,7 +108,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
 
         guard trimmedString.characters.count > 0 else {
-            showAlertViewWith(msg: "請輸入車牌號碼")
+            showAlertViewWith(msg: NSLocalizedString("FirstSceneCarPlateNumberTextfieldPlaceholder", comment: ""))
             return
         }
 
