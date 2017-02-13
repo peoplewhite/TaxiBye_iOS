@@ -116,6 +116,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         // ref: https://zh.wikipedia.org/wiki/臺灣車輛牌照
         
 
+        TraceRouteMachine.shared.initMachine()
         callAPIToQueryTaxiRating(withPlateNumber: trimmedString)
     }
     

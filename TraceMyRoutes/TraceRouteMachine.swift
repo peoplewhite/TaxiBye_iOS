@@ -33,6 +33,7 @@ class TraceRouteMachine {
         carPlateNumber = ""
         ratingNumber = 0 //default
         comment = ""
+        traceFeelingID = 0
     }
     func startTraceLocation() {
         isLocationTraceDone = false
