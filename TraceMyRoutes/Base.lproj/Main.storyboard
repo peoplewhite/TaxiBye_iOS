@@ -206,7 +206,7 @@
         <!--RatingDetailScene-->
         <scene sceneID="V9D-ZD-tRL">
             <objects>
-                <viewController title="RatingDetailScene" id="fmG-FU-umo" sceneMemberID="viewController">
+                <viewController title="RatingDetailScene" id="fmG-FU-umo" customClass="RatingDetailViewController" customModule="TraceMyRoutes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xo5-QB-k5O"/>
                         <viewControllerLayoutGuide type="bottom" id="YNv-qF-90d"/>

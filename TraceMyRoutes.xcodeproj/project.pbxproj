@@ -36,6 +36,7 @@
 		14C012C31E48A5200018A37A /* ResponseDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C012C21E48A5200018A37A /* ResponseDecorator.swift */; };
 		14E6F89D1E4300B600ED3A06 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */; };
 		14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6F89E1E4316FB00ED3A06 /* Utils.swift */; };
+		14F9791D1E52E063009DB0D6 /* RatingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9791C1E52E063009DB0D6 /* RatingDetailViewController.swift */; };
 		1915D083331B58255CFF461A /* Pods_TraceMyRoutesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA027445141768B33870049 /* Pods_TraceMyRoutesTests.framework */; };
 		7104F1618724CABD3911A21A /* Pods_TraceMyRoutesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F11F26A93E017698662454D /* Pods_TraceMyRoutesUITests.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		14C012C21E48A5200018A37A /* ResponseDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDecorator.swift; sourceTree = "<group>"; };
 		14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		14E6F89E1E4316FB00ED3A06 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		14F9791C1E52E063009DB0D6 /* RatingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDetailViewController.swift; sourceTree = "<group>"; };
 		28E8A01E28F7C4D4B0E8E78A /* Pods-TraceMyRoutesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2F11F26A93E017698662454D /* Pods_TraceMyRoutesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraceMyRoutesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4638FFEA84464068CC030735 /* Pods-TraceMyRoutesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesTests/Pods-TraceMyRoutesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				141FFFBD1E444B7E00F0FD92 /* 3. Rating */,
 				14E6F89E1E4316FB00ED3A06 /* Utils.swift */,
 				14015E4C1E488B4E004EADC4 /* BlackListViewController.swift */,
+				14F9791C1E52E063009DB0D6 /* RatingDetailViewController.swift */,
 				14C012BC1E488F220018A37A /* BlackListCell.xib */,
 				14C012BE1E488F3E0018A37A /* BlackListCell.swift */,
 				14AF1CC91E37703F005F4BE2 /* API.swift */,
@@ -602,6 +605,7 @@
 				14AF1CCA1E37703F005F4BE2 /* API.swift in Sources */,
 				14C012BF1E488F3E0018A37A /* BlackListCell.swift in Sources */,
 				1448ED1C1E373FE700962E58 /* AppDelegate.swift in Sources */,
+				14F9791D1E52E063009DB0D6 /* RatingDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,9 +25,11 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]()
     ]
 
+    func setupDefaultForRatingTaxis() {
+        ratingTaxis = [ [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]() ]
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
 
     }
 
@@ -41,10 +43,12 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
 
     override func viewWillAppear(_ animated: Bool) {
 
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
         setupTitleLabel()
         setupTableview()
         callAPIToGetBlackList()
-        
+
     }
     func callAPIToGetBlackList() {
 
@@ -52,7 +56,8 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
 
 
             let taxis = Taxi.mr_findAll()
-
+            self.setupDefaultForRatingTaxis()
+            
             taxis?.forEach { taxi in
                 let taxiModel: Taxi = taxi as! Taxi
                 if let avgRating = taxiModel.avg_rating?.doubleValue {
@@ -133,7 +138,6 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         return 44.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("didSelectRowAtIndexPath") //kimuranow
         performSegue(withIdentifier: "goRatingDetailScene", sender: nil)
     }
     
