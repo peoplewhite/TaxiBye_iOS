@@ -27,6 +27,8 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -127,14 +129,15 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
 
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didSelectRowAtIndexPath") //kimuranow
+        performSegue(withIdentifier: "goRatingDetailScene", sender: nil)
     }
     
-    
+
 
 
 
