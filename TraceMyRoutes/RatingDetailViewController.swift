@@ -75,17 +75,25 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
         carPlateNumberLabel.textColor = UIColor.white
         carPlateNumberLabel.textAlignment = .center
         carPlateNumberLabel.text = "BMW-888"
-        
-        let fontSize = carPlateNumberLabel.font.pointSize;
+
 //        carPlateNumberLabel.font = UIFont(name: "Ariel Rounded MT Bold", size: fontSize)
         carPlateNumberLabel.font = UIFont(name: "Ariel Rounded MT Bold", size: 29.0)
         carPlateNumberLabel.font = carPlateNumberLabel.font.withSize(29)
-        
+
+        let icon = UIImageView(image: UIImage(named: "list_white"))
+        icon.contentMode = .scaleAspectFit
+        icon.frame = CGRect(
+            x: titleView.frame.size.width / 2.0 - icon.frame.size.width / 2.0 - 100.0,
+            y: titleView.frame.size.height / 2.0 - icon.frame.size.height / 2.0,
+            width: icon.frame.size.width,
+            height: icon.frame.size.height
+        )
         
 
 
 
         titleView.addSubview(carPlateNumberLabel)
+        titleView.addSubview(icon)
         self.navigationItem.titleView = titleView
 
         navigationController?.navigationBar.tintColor = UIColor(red: 255/255, green: 198/255, blue: 27/255, alpha: 1.0)
