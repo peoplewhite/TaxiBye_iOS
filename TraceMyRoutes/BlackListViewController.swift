@@ -16,6 +16,7 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
 
     let kCellIdentifierForTableView = "BlackListCell"
     var taxi = Taxi()
+    var tempCarPlatenumberUserSelect = ""
 
     let ratingLavelTitle = [
         "0分", "1分", "2分", "3分","4分", "5分"
@@ -136,14 +137,22 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         return 44.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tempCarPlatenumberUserSelect = ratingTaxis[indexPath.section][indexPath.row].plate_number!
         performSegue(withIdentifier: "goRatingDetailScene", sender: nil)
     }
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let backItem = UIBarButtonItem()
-        backItem.title = ""
-        navigationItem.backBarButtonItem = backItem
+        if segue.identifier == "goRatingDetailScene" {
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
+
+
+            let ratingDetailViewController = segue.destination as! RatingDetailViewController
+            ratingDetailViewController.carPlateNumber = tempCarPlatenumberUserSelect
+
+        }
     }
 
 

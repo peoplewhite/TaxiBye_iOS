@@ -25,6 +25,7 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
     let kCellIdentifier = "RatingDetailCell"
 
     var ratings = [Rating]()
+    var carPlateNumber = ""
     
 
     override func viewDidLoad() {
@@ -74,7 +75,7 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
         carPlateNumberLabel.backgroundColor = UIColor.clear
         carPlateNumberLabel.textColor = UIColor.white
         carPlateNumberLabel.textAlignment = .center
-        carPlateNumberLabel.text = "BMW-888"
+        carPlateNumberLabel.text = carPlateNumber
 
 //        carPlateNumberLabel.font = UIFont(name: "Ariel Rounded MT Bold", size: fontSize)
         carPlateNumberLabel.font = UIFont(name: "Ariel Rounded MT Bold", size: 29.0)
@@ -216,14 +217,14 @@ extension RatingDetailViewController {
 
     func callAPIToFetchTaxiDetailInfo() {
 
-        API.fetchTaxiDetailInfo(withTaxiPlateNumber: "t", completion: {
+        API.fetchTaxiDetailInfo(withTaxiPlateNumber: carPlateNumber, completion: {
             self.fetchTaxiInfoFromCoreDataForTableviewDataSource()
         }, fail: { (error) in
             //
         })
     }
     func fetchTaxiInfoFromCoreDataForTableviewDataSource() {
-        let taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: "t")
+        let taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: carPlateNumber)
         self.ratings = (taxiModel?.ratings?.allObjects as? [Rating])!
         self.tableView.reloadData()
 
