@@ -260,7 +260,7 @@
                                                 <rect key="frame" x="182" y="11" width="28" height="28"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="oUG-cH-Fkx" firstAttribute="width" secondItem="4TE-wG-jOR" secondAttribute="width" id="0NT-1k-tMb"/>
                                             <constraint firstItem="4TE-wG-jOR" firstAttribute="centerY" secondItem="yNH-cH-ZQw" secondAttribute="centerY" id="5T8-su-t0b"/>
@@ -286,7 +286,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="30a-xs-YJl"/>
                                     <constraint firstItem="fod-4B-DIo" firstAttribute="width" secondItem="ONj-IC-9Pp" secondAttribute="width" id="3m6-JQ-mYi"/>
@@ -300,9 +300,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-l5-QB2" userLabel="tableView">
                                 <rect key="frame" x="0.0" y="264" width="320" height="304"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.82352941176470584" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fb9-l5-QB2" firstAttribute="top" secondItem="ONj-IC-9Pp" secondAttribute="bottom" id="0nK-39-nCL"/>
                             <constraint firstItem="YNv-qF-90d" firstAttribute="top" secondItem="fb9-l5-QB2" secondAttribute="bottom" id="7Ui-sv-VTm"/>

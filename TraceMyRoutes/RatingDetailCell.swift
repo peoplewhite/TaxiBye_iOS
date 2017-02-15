@@ -20,14 +20,43 @@ class RatingDetailCell: UITableViewCell {
     @IBOutlet weak var ratingMessageLabel: UILabel!
     @IBOutlet weak var allView: UIView!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-    }
+    let screenSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
     }
+
+
+    // MARK: - setting zone
+
+
+
+    override func awakeFromNib() {
+
+        initUI()
+
+    }
+
+    func initUI() {
+        setAllViewAppearance()
+
+    }
+
+    func setAllViewAppearance() {
+        allView.clipsToBounds = true
+        allView.layer.borderColor = UIColor.black.cgColor
+        allView.layer.borderWidth = 1.0
+        allView.layer.cornerRadius = 6.0
+        
+    }
+
+
+    
+    
+    // MARK: - set UI
+    
+    
+    // MARK: - set value
 
 }

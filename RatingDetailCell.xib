@@ -24,7 +24,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gZ-BQ-Jft" userLabel="middleLine">
                                 <rect key="frame" x="30" y="40.666666666666664" width="355" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="qO7-PR-pOl"/>
                                 </constraints>
@@ -114,6 +114,7 @@
                     <constraint firstAttribute="trailing" secondItem="0qi-BO-Bip" secondAttribute="trailing" constant="5" id="sGS-xL-pxH"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="allView" destination="0qi-BO-Bip" id="lZN-Lm-7Bl"/>
                 <outlet property="feelingTitleLabel" destination="b8P-DE-Dyd" id="zEB-ga-dFu"/>

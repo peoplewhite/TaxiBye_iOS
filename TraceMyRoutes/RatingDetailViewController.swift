@@ -50,6 +50,7 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = UIColor.clear
 
     }
 
