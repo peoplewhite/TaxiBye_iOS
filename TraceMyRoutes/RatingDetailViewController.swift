@@ -32,25 +32,27 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
 
         setTableview()
 
+        callAPIToFetchTaxiDetailInfo()
+    }
+
+    func callAPIToFetchTaxiDetailInfo() {
+
         API.fetchTaxiDetailInfo(withTaxiPlateNumber: "t", completion: {
-            //
-            
-            let taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: "t")
-            print("kimura check count 1  = \(taxiModel?.ratings?.count)") //kimuranow
-
-            self.ratings = (taxiModel?.ratings?.allObjects as? [Rating])!
-
-            print("kimura check count = \(self.ratings.count)") //kimuranow
-            
-            self.tableView.reloadData()
-
-
-            
+            self.fetchTaxiInfoFromCoreDataForTableviewDataSource()
         }, fail: { (error) in
             //
         })
     }
+    func fetchTaxiInfoFromCoreDataForTableviewDataSource() {
+        let taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: "t")
+        self.ratings = (taxiModel?.ratings?.allObjects as? [Rating])!
+        self.tableView.reloadData()
 
+
+        averageRatingLabel.text = taxiModel?.avg_rating?.description
+        setRatingValue((taxiModel?.avg_rating?.doubleValue)!)
+
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -92,4 +94,95 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
 
     }
 
+    func setRatingValue(_ rating: Double) {
+
+        let halfStarImage = UIImage(named: "blackHalfStar")
+        let fullStarImage = UIImage(named: "blackFullStar")
+        let emptyStarImage = UIImage(named: "blackEmptyStar")
+
+        star1.image = emptyStarImage
+        star2.image = emptyStarImage
+        star3.image = emptyStarImage
+        star4.image = emptyStarImage
+        star5.image = emptyStarImage
+
+        switch rating {
+        case 0.0:
+            break
+        case 0.5:
+            star1.image = halfStarImage
+            break
+        case 1.0:
+            star1.image = fullStarImage
+            break
+        case 1.5:
+            star1.image = fullStarImage
+            star2.image = halfStarImage
+            break
+        case 2.0:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            break
+        case 2.5:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = halfStarImage
+            break
+        case 3.0:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = fullStarImage
+            break
+        case 3.5:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = fullStarImage
+            star4.image = halfStarImage
+            break
+        case 4.0:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = fullStarImage
+            star4.image = fullStarImage
+            break
+        case 4.5:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = fullStarImage
+            star4.image = fullStarImage
+            star5.image = halfStarImage
+            break
+        case 5.0:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = fullStarImage
+            star4.image = fullStarImage
+            star5.image = fullStarImage
+            break
+        default:
+            if rating > 0.0 && rating < 0.9 {
+                star1.image = halfStarImage
+            } else if rating > 1.0 && rating < 1.9 {
+                star1.image = fullStarImage
+                star2.image = halfStarImage
+            } else if rating > 2.0 && rating < 2.9 {
+                star1.image = fullStarImage
+                star2.image = fullStarImage
+                star3.image = halfStarImage
+            } else if rating > 3.0 && rating < 3.9 {
+                star1.image = fullStarImage
+                star2.image = fullStarImage
+                star3.image = fullStarImage
+                star4.image = halfStarImage
+            } else if rating > 4.0 && rating < 4.9 {
+                star1.image = fullStarImage
+                star2.image = fullStarImage
+                star3.image = fullStarImage
+                star4.image = fullStarImage
+                star5.image = halfStarImage
+            }
+            break
+        }
+
+    }
 }
