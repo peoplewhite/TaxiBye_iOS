@@ -38,9 +38,12 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
         super.viewWillAppear(true)
         
         navigationController?.setNavigationBarHidden(false, animated: false)
-        
+
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.isTranslucent = false
+
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +60,26 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.clear
+
+        let titleView = UIView()
+        titleView.frame = CGRect(
+            x: 0.0,
+            y: 0.0,
+//            width: UIScreen.main.bounds.width - 50.0 * 2.0,
+            width: UIScreen.main.bounds.width,
+            height: 44
+        )
+        
+        let carPlateNumberLabel = UILabel()
+        carPlateNumberLabel.frame = titleView.frame
+        carPlateNumberLabel.backgroundColor = UIColor.clear
+        carPlateNumberLabel.textColor = UIColor.white
+        carPlateNumberLabel.textAlignment = .center
+        carPlateNumberLabel.text = "BMW-888"
+        titleView.addSubview(carPlateNumberLabel)
+        self.navigationItem.titleView = titleView
+
+        navigationController?.navigationBar.tintColor = UIColor(red: 255/255, green: 198/255, blue: 27/255, alpha: 1.0)
 
     }
 

@@ -143,6 +143,11 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+    }
 
 
 
