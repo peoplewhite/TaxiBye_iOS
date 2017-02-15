@@ -22,6 +22,10 @@ class RatingDetailCell: UITableViewCell {
 
     let screenSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
 
+    let halfStarImage = UIImage(named: "blackHalfStar")
+    let fullStarImage = UIImage(named: "blackFullStar")
+    let emptyStarImage = UIImage(named: "blackEmptyStar")
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -54,8 +58,75 @@ class RatingDetailCell: UITableViewCell {
     func setRatingModel(_ rating: Rating) {
         feelingTitleLabel.text = rating.trip_feeling
         ratingMessageLabel.text = rating.message
+        setRatingValue(rating.score)
     }
 
+    func setRatingValue(_ rating: Double) {
+
+        star1.image = emptyStarImage
+        star2.image = emptyStarImage
+        star3.image = emptyStarImage
+        star4.image = emptyStarImage
+        star5.image = emptyStarImage
+
+        switch rating {
+        case 0.0:
+            break
+        case 0.5:
+            star1.image = halfStarImage
+            break
+        case 1.0:
+            star1.image = fullStarImage
+            break
+        case 1.5:
+            star1.image = fullStarImage
+            star2.image = halfStarImage
+            break
+        case 2.0:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            break
+        case 2.5:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = halfStarImage
+            break
+        case 3.0:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = fullStarImage
+            break
+        case 3.5:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = fullStarImage
+            star4.image = halfStarImage
+            break
+        case 4.0:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = fullStarImage
+            star4.image = fullStarImage
+            break
+        case 4.5:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = fullStarImage
+            star4.image = fullStarImage
+            star5.image = halfStarImage
+            break
+        case 5.0:
+            star1.image = fullStarImage
+            star2.image = fullStarImage
+            star3.image = fullStarImage
+            star4.image = fullStarImage
+            star5.image = fullStarImage
+            break
+        default:
+            break
+        }
+
+    }
 
     
     
