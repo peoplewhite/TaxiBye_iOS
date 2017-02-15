@@ -71,6 +71,7 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
             
             
         }) { (errorMessage) in
+            print("\(#function) Fail: errorMessage = \(errorMessage)") //kimuranow
 
         }
         

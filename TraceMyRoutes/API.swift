@@ -42,6 +42,10 @@ class API {
 extension API {
     // MARK: =================>
 
+    static func fetchTaxiDetailInfo(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+
+    }
+
     static func fetchFeelingList(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
         let url = "http://taxibye.oddesign.expert/api/v1/trips/feelings"
@@ -110,13 +114,12 @@ extension API {
 //        printParams(andURL: url, andFunctionName: #function)
 
 
-        print("function = \(#function)") //kimuranow
+        print("\n[API][\(#function)]") //kimuranow
         print("url = \(url)") //kimuranow
-//        print("header = \(header.description)") //kimuranow
-//        print("body = \(body.description)") //kimuranow
         
         Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .responseJSON { response in
+                print("response = \(response)") //kimuranow
                 guard response.result.error == nil else {
                     fail(response.result.error.debugDescription)
                     return

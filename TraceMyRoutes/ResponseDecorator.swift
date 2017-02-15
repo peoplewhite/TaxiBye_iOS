@@ -65,15 +65,46 @@ class ResponseDecorator {
         response["data"].arrayValue.forEach { taxi in
 
             let plateNumber = taxi["attributes", "plateNumber"].stringValue
+            print("plateNumber = \(plateNumber)") //kimuranow
+                    print("VVV===============") //kimuranow
+                    print("find, edit") //kimuranow
+//                    print(" = \(taxi.plate_number)") //kimuranow
+//                    print(" = \(taxi.driver)") //kimuranow
+//                    print(" = \(taxi.avg_rating)") //kimuranow
+//                    print(" = \(taxi.updated_at)") //kimuranow
+                    print("^^^===============") //kimuranow
 
             if let _taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: plateNumber) {
 
+                if _taxiModel.plate_number == "t" {
+                    print("VVV===============") //kimuranow
+                    print("find, edit") //kimuranow
+                    print(" = \(_taxiModel.plate_number)") //kimuranow
+                    print(" = \(_taxiModel.driver)") //kimuranow
+                    print(" = \(_taxiModel.avg_rating)") //kimuranow
+                    print(" = \(_taxiModel.updated_at)") //kimuranow
+                    print("^^^===============") //kimuranow
+                }
+                
                 _taxiModel.plate_number = plateNumber
                 _taxiModel.driver = taxi["attributes", "driver"].stringValue 
                 _taxiModel.avg_rating = NSDecimalNumber(floatLiteral: taxi["attributes", "avgRating"].doubleValue)
                 _taxiModel.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
 
+
+                if _taxiModel.plate_number == "t" {
+                    print("VVV===============") //kimuranow
+                    print("after update") //kimuranow
+                    print(" = \(_taxiModel.plate_number)") //kimuranow
+                    print(" = \(_taxiModel.driver)") //kimuranow
+                    print(" = \(_taxiModel.avg_rating)") //kimuranow
+                    print(" = \(_taxiModel.updated_at)") //kimuranow
+                    print("^^^===============") //kimuranow
+                }
+                // Taxi.updateOrCreate()
+
             } else {
+                print("can't find, create") //kimuranow
 
                 let taxiModel = Taxi.mr_createEntity()
                 taxiModel?.plate_number = plateNumber
@@ -81,7 +112,6 @@ class ResponseDecorator {
                 taxiModel?.avg_rating = NSDecimalNumber(floatLiteral: taxi["attributes", "avgRating"].doubleValue)
                 taxiModel?.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
             }
-            
 
             NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
 
