@@ -42,8 +42,32 @@ class API {
 extension API {
     // MARK: =================>
 
-    static func fetchTaxiDetailInfo(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
+    static func fetchTaxiDetailInfo(withTaxiPlateNumber carPlateNumber: String,completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
 
+
+        var url = ""
+        if let carPlateNumberByURLEncoded = carPlateNumber.stringByAddingPercentEncodingForRFC3986() {
+            url = "http://taxibye.oddesign.expert/api/v1/taxis/\(carPlateNumberByURLEncoded)?ratingsCount=30"
+        }
+
+        print("function = \(#function)") //kimuranow
+        print("url = \(url)") //kimuranow
+
+        Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    fail(response.result.error.debugDescription)
+                    return
+                }
+
+                if let value: AnyObject = response.result.value as AnyObject? {
+
+                    ResponseDecorator.fetchTaxiDetailInfo(JSON(value), completion: {
+                        completion()
+                    })
+
+                }
+        }
     }
 
     static func fetchFeelingList(completion: @escaping (()-> Void), fail: @escaping ((_ errorMessage: String) -> Void)) {
@@ -116,7 +140,7 @@ extension API {
 
         print("\n[API][\(#function)]") //kimuranow
         print("url = \(url)") //kimuranow
-        
+
         Alamofire.request( url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .responseJSON { response in
                 print("response = \(response)") //kimuranow

@@ -50,12 +50,16 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
         print("taxis = \(taxis)") //kimuranow
         taxis.forEach { taxi in
-            print("taxi = \(taxi.plate_number!): \(taxi.driver!): \(taxi.avg_rating!)") //kimuranow
+            print("taxi = \(taxi.plate_number!): \(taxi.driver!): \(taxi.avg_rating!): \(taxi.ratings?.description)") //kimuranow
         }
 
         let feelings = Feeling.mr_findAll() as! [Feeling]
         feelings.forEach { feeling in
             print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
+        }
+        let ratings = Rating.mr_findAll() as! [Rating]
+        ratings.forEach { rating in
+            print("rating = \(rating.id)\(rating.message)\(rating.trip_feeling)") //kimuranow
         }
     }
 

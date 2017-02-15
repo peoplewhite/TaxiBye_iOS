@@ -28,6 +28,7 @@ class RatingDetailCell: UITableViewCell {
     }
 
 
+
     // MARK: - setting zone
 
 
@@ -49,6 +50,10 @@ class RatingDetailCell: UITableViewCell {
         allView.layer.borderWidth = 1.0
         allView.layer.cornerRadius = 6.0
         
+    }
+    func setRatingModel(_ rating: Rating) {
+        feelingTitleLabel.text = rating.trip_feeling
+        ratingMessageLabel.text = rating.message
     }
 
 

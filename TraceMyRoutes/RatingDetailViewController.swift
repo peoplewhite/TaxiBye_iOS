@@ -24,12 +24,31 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
 
     let kCellIdentifier = "RatingDetailCell"
 
+    var ratings = [Rating]()
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
         setTableview()
-        // Do any additional setup after loading the view.
+
+        API.fetchTaxiDetailInfo(withTaxiPlateNumber: "t", completion: {
+            //
+            
+            let taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: "t")
+            print("kimura check count 1  = \(taxiModel?.ratings?.count)") //kimuranow
+
+            self.ratings = (taxiModel?.ratings?.allObjects as? [Rating])!
+
+            print("kimura check count = \(self.ratings.count)") //kimuranow
+            
+            self.tableView.reloadData()
+
+
+            
+        }, fail: { (error) in
+            //
+        })
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,11 +74,12 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return ratings.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier, for: indexPath as IndexPath)
+        let cell: RatingDetailCell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier, for: indexPath as IndexPath) as! RatingDetailCell
         cell.selectionStyle = .none
+        cell.setRatingModel(ratings[indexPath.row])
 
         return cell
 
