@@ -31,33 +31,18 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
 
         setTableview()
-
         callAPIToFetchTaxiDetailInfo()
     }
 
-    func callAPIToFetchTaxiDetailInfo() {
-
-        API.fetchTaxiDetailInfo(withTaxiPlateNumber: "t", completion: {
-            self.fetchTaxiInfoFromCoreDataForTableviewDataSource()
-        }, fail: { (error) in
-            //
-        })
-    }
-    func fetchTaxiInfoFromCoreDataForTableviewDataSource() {
-        let taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: "t")
-        self.ratings = (taxiModel?.ratings?.allObjects as? [Rating])!
-        self.tableView.reloadData()
-
-
-        averageRatingLabel.text = taxiModel?.avg_rating?.description
-        setRatingValue((taxiModel?.avg_rating?.doubleValue)!)
-
-    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.isTranslucent = false
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -185,4 +170,27 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
         }
 
     }
+}
+extension RatingDetailViewController {
+    // MARK: =================> API
+
+    func callAPIToFetchTaxiDetailInfo() {
+
+        API.fetchTaxiDetailInfo(withTaxiPlateNumber: "t", completion: {
+            self.fetchTaxiInfoFromCoreDataForTableviewDataSource()
+        }, fail: { (error) in
+            //
+        })
+    }
+    func fetchTaxiInfoFromCoreDataForTableviewDataSource() {
+        let taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: "t")
+        self.ratings = (taxiModel?.ratings?.allObjects as? [Rating])!
+        self.tableView.reloadData()
+
+
+        averageRatingLabel.text = taxiModel?.avg_rating?.description
+        setRatingValue((taxiModel?.avg_rating?.doubleValue)!)
+
+    }
+    
 }
