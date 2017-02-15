@@ -287,7 +287,6 @@ extension RatingViewController {
     func callAPIToPostTraceRoutes() {
 
 
-
         API.createTripRecord(completion: {
             _ = self.navigationController?.popToRootViewController(animated: true)
         }) { (errorMessage) in

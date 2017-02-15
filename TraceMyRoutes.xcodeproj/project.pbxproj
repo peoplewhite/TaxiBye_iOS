@@ -31,11 +31,14 @@
 		14AF1CCA1E37703F005F4BE2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CC91E37703F005F4BE2 /* API.swift */; };
 		14AF1CCC1E3786BD005F4BE2 /* TraceRouteMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */; };
 		14AF1CCE1E3794B3005F4BE2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AF1CCD1E3794B3005F4BE2 /* FirstViewController.swift */; };
+		14B45B871E54451700F77204 /* RatingDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B45B861E54451700F77204 /* RatingDetailCell.xib */; };
+		14B45B891E54486400F77204 /* RatingDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B45B881E54486400F77204 /* RatingDetailCell.swift */; };
 		14C012BD1E488F220018A37A /* BlackListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C012BC1E488F220018A37A /* BlackListCell.xib */; };
 		14C012BF1E488F3E0018A37A /* BlackListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C012BE1E488F3E0018A37A /* BlackListCell.swift */; };
 		14C012C31E48A5200018A37A /* ResponseDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C012C21E48A5200018A37A /* ResponseDecorator.swift */; };
 		14E6F89D1E4300B600ED3A06 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */; };
 		14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6F89E1E4316FB00ED3A06 /* Utils.swift */; };
+		14F9791D1E52E063009DB0D6 /* RatingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9791C1E52E063009DB0D6 /* RatingDetailViewController.swift */; };
 		1915D083331B58255CFF461A /* Pods_TraceMyRoutesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA027445141768B33870049 /* Pods_TraceMyRoutesTests.framework */; };
 		7104F1618724CABD3911A21A /* Pods_TraceMyRoutesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F11F26A93E017698662454D /* Pods_TraceMyRoutesUITests.framework */; };
 /* End PBXBuildFile section */
@@ -92,11 +95,14 @@
 		14AF1CC91E37703F005F4BE2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		14AF1CCB1E3786BD005F4BE2 /* TraceRouteMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraceRouteMachine.swift; sourceTree = "<group>"; };
 		14AF1CCD1E3794B3005F4BE2 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		14B45B861E54451700F77204 /* RatingDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RatingDetailCell.xib; path = ../RatingDetailCell.xib; sourceTree = "<group>"; };
+		14B45B881E54486400F77204 /* RatingDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDetailCell.swift; sourceTree = "<group>"; };
 		14C012BC1E488F220018A37A /* BlackListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlackListCell.xib; sourceTree = "<group>"; };
 		14C012BE1E488F3E0018A37A /* BlackListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackListCell.swift; sourceTree = "<group>"; };
 		14C012C21E48A5200018A37A /* ResponseDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDecorator.swift; sourceTree = "<group>"; };
 		14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		14E6F89E1E4316FB00ED3A06 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		14F9791C1E52E063009DB0D6 /* RatingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDetailViewController.swift; sourceTree = "<group>"; };
 		28E8A01E28F7C4D4B0E8E78A /* Pods-TraceMyRoutesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesUITests/Pods-TraceMyRoutesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2F11F26A93E017698662454D /* Pods_TraceMyRoutesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TraceMyRoutesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4638FFEA84464068CC030735 /* Pods-TraceMyRoutesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TraceMyRoutesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TraceMyRoutesTests/Pods-TraceMyRoutesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 				141FFFBD1E444B7E00F0FD92 /* 3. Rating */,
 				14E6F89E1E4316FB00ED3A06 /* Utils.swift */,
 				14015E4C1E488B4E004EADC4 /* BlackListViewController.swift */,
+				14B45B8A1E54496400F77204 /* RatingDetailScene */,
 				14C012BC1E488F220018A37A /* BlackListCell.xib */,
 				14C012BE1E488F3E0018A37A /* BlackListCell.swift */,
 				14AF1CC91E37703F005F4BE2 /* API.swift */,
@@ -255,6 +262,16 @@
 				1448ED401E373FE700962E58 /* Info.plist */,
 			);
 			path = TraceMyRoutesUITests;
+			sourceTree = "<group>";
+		};
+		14B45B8A1E54496400F77204 /* RatingDetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				14F9791C1E52E063009DB0D6 /* RatingDetailViewController.swift */,
+				14B45B861E54451700F77204 /* RatingDetailCell.xib */,
+				14B45B881E54486400F77204 /* RatingDetailCell.swift */,
+			);
+			name = RatingDetailScene;
 			sourceTree = "<group>";
 		};
 		BAF21C100A58C20AF657C86A /* Pods */ = {
@@ -407,6 +424,7 @@
 				141025291E42DD1A002856B9 /* WarningScene.xib in Resources */,
 				147875D61E4DBAE600D6A826 /* Localizable.strings in Resources */,
 				1448ED261E373FE700962E58 /* Assets.xcassets in Resources */,
+				14B45B871E54451700F77204 /* RatingDetailCell.xib in Resources */,
 				1448ED211E373FE700962E58 /* Main.storyboard in Resources */,
 				14015E491E48851F004EADC4 /* ConfirmEmergencyPhoneCallScene.xib in Resources */,
 			);
@@ -593,6 +611,7 @@
 				14015E4B1E488532004EADC4 /* ConfirmEmergencyPhoneCallScene.swift in Sources */,
 				14E6F89F1E4316FC00ED3A06 /* Utils.swift in Sources */,
 				1448ED241E373FE700962E58 /* TraceMyRoutes.xcdatamodeld in Sources */,
+				14B45B891E54486400F77204 /* RatingDetailCell.swift in Sources */,
 				1448ED551E3744A200962E58 /* AppConfig.swift in Sources */,
 				1448EDE41E375F2500962E58 /* KMLMachine.swift in Sources */,
 				14AF1CCE1E3794B3005F4BE2 /* FirstViewController.swift in Sources */,
@@ -602,6 +621,7 @@
 				14AF1CCA1E37703F005F4BE2 /* API.swift in Sources */,
 				14C012BF1E488F3E0018A37A /* BlackListCell.swift in Sources */,
 				1448ED1C1E373FE700962E58 /* AppDelegate.swift in Sources */,
+				14F9791D1E52E063009DB0D6 /* RatingDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

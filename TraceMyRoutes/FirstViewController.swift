@@ -36,16 +36,30 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
 
         API.fetchFeelingList(completion: { 
-            //
 
             let feelings: [Feeling] = Feeling.mr_findAll() as! [Feeling]
             print("feelings = \(feelings)") //kimuranow
             feelings.forEach { feeling in
-                print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
+                print("feeling = \(feeling.id): \(feeling.title)") //kimuranow
             }
 
         }) { (errorMessage) in
-            //
+            
+        }
+        
+        let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
+        print("taxis = \(taxis)") //kimuranow
+        taxis.forEach { taxi in
+            print("taxi = \(taxi.plate_number!): \(taxi.driver!): \(taxi.avg_rating!): \(taxi.ratings?.description)") //kimuranow
+        }
+
+        let feelings = Feeling.mr_findAll() as! [Feeling]
+        feelings.forEach { feeling in
+            print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
+        }
+        let ratings = Rating.mr_findAll() as! [Rating]
+        ratings.forEach { rating in
+            print("rating = \(rating.id)\(rating.message)\(rating.trip_feeling)") //kimuranow
         }
     }
 
@@ -57,16 +71,6 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         let root = GPXRoot()
 
 
-        let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
-        print("taxis = \(taxis)") //kimuranow
-        taxis.forEach { taxi in
-            print("taxi = \(taxi.plate_number)\(taxi.driver)") //kimuranow
-        }
-
-        let feelings = Feeling.mr_findAll() as! [Feeling]
-        feelings.forEach { feeling in
-            print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
-        }
 
         plateNumberTextfield.text = ""
     }

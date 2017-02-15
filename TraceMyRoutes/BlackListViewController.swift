@@ -16,6 +16,7 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
 
     let kCellIdentifierForTableView = "BlackListCell"
     var taxi = Taxi()
+    var tempCarPlatenumberUserSelect = ""
 
     let ratingLavelTitle = [
         "0分", "1分", "2分", "3分","4分", "5分"
@@ -25,8 +26,12 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]()
     ]
 
+    func setupDefaultForRatingTaxis() {
+        ratingTaxis = [ [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]() ]
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,10 +44,12 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
 
     override func viewWillAppear(_ animated: Bool) {
 
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
         setupTitleLabel()
         setupTableview()
         callAPIToGetBlackList()
-        
+
     }
     func callAPIToGetBlackList() {
 
@@ -50,7 +57,8 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
 
 
             let taxis = Taxi.mr_findAll()
-
+            self.setupDefaultForRatingTaxis()
+            
             taxis?.forEach { taxi in
                 let taxiModel: Taxi = taxi as! Taxi
                 if let avgRating = taxiModel.avg_rating?.doubleValue {
@@ -64,6 +72,7 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
             
             
         }) { (errorMessage) in
+            print("\(#function) Fail: errorMessage = \(errorMessage)") //kimuranow
 
         }
         
@@ -119,22 +128,32 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell: BlackListCell  = tableView.dequeueReusableCell(withIdentifier: kCellIdentifierForTableView, for: indexPath as IndexPath) as! BlackListCell
         cell.selectionStyle = .none
 
-
         cell.carPlateNumber.text = ratingTaxis[indexPath.section][indexPath.row].plate_number
         cell.ratingNumber.text = ratingTaxis[indexPath.section][indexPath.row].avg_rating?.description
 
-
         return cell
-
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tempCarPlatenumberUserSelect = ratingTaxis[indexPath.section][indexPath.row].plate_number!
+        performSegue(withIdentifier: "goRatingDetailScene", sender: nil)
     }
     
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goRatingDetailScene" {
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
+
+
+            let ratingDetailViewController = segue.destination as! RatingDetailViewController
+            ratingDetailViewController.carPlateNumber = tempCarPlatenumberUserSelect
+
+        }
+    }
 
 
 
