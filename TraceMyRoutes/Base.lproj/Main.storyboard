@@ -297,7 +297,7 @@
                                     <constraint firstItem="yNH-cH-ZQw" firstAttribute="centerX" secondItem="ONj-IC-9Pp" secondAttribute="centerX" id="xq3-dm-Xhe"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-l5-QB2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-l5-QB2" userLabel="tableView">
                                 <rect key="frame" x="0.0" y="264" width="320" height="304"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -316,6 +316,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mer-qB-qwY"/>
+                    <connections>
+                        <outlet property="averageRatingLabel" destination="47g-By-Kbw" id="hW1-LO-kLo"/>
+                        <outlet property="star1" destination="4TE-wG-jOR" id="KJp-AW-7hJ"/>
+                        <outlet property="star2" destination="lrb-vE-u0O" id="8Yh-s6-5Ud"/>
+                        <outlet property="star3" destination="dzT-9O-LoV" id="IvE-yr-G3P"/>
+                        <outlet property="star4" destination="oUG-cH-Fkx" id="PDu-RC-JCm"/>
+                        <outlet property="star5" destination="vp2-C2-gIB" id="qNH-nc-5ef"/>
+                        <outlet property="tableView" destination="fb9-l5-QB2" id="mI3-h1-oj6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtL-tM-vVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
