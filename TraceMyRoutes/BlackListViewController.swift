@@ -127,13 +127,10 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell: BlackListCell  = tableView.dequeueReusableCell(withIdentifier: kCellIdentifierForTableView, for: indexPath as IndexPath) as! BlackListCell
         cell.selectionStyle = .none
 
-
         cell.carPlateNumber.text = ratingTaxis[indexPath.section][indexPath.row].plate_number
         cell.ratingNumber.text = ratingTaxis[indexPath.section][indexPath.row].avg_rating?.description
 
-
         return cell
-
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0

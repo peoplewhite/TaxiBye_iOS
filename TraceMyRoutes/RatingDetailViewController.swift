@@ -65,8 +65,7 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
         titleView.frame = CGRect(
             x: 0.0,
             y: 0.0,
-//            width: UIScreen.main.bounds.width - 50.0 * 2.0,
-            width: UIScreen.main.bounds.width,
+            width: UIScreen.main.bounds.width - 50.0 * 2.0,
             height: 44
         )
         
@@ -76,6 +75,16 @@ class RatingDetailViewController: UIViewController, UITableViewDelegate, UITable
         carPlateNumberLabel.textColor = UIColor.white
         carPlateNumberLabel.textAlignment = .center
         carPlateNumberLabel.text = "BMW-888"
+        
+        let fontSize = carPlateNumberLabel.font.pointSize;
+//        carPlateNumberLabel.font = UIFont(name: "Ariel Rounded MT Bold", size: fontSize)
+        carPlateNumberLabel.font = UIFont(name: "Ariel Rounded MT Bold", size: 29.0)
+        carPlateNumberLabel.font = carPlateNumberLabel.font.withSize(29)
+        
+        
+
+
+
         titleView.addSubview(carPlateNumberLabel)
         self.navigationItem.titleView = titleView
 
