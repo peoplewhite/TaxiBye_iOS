@@ -231,11 +231,9 @@
 				141FFFBD1E444B7E00F0FD92 /* 3. Rating */,
 				14E6F89E1E4316FB00ED3A06 /* Utils.swift */,
 				14015E4C1E488B4E004EADC4 /* BlackListViewController.swift */,
-				14F9791C1E52E063009DB0D6 /* RatingDetailViewController.swift */,
+				14B45B8A1E54496400F77204 /* RatingDetailScene */,
 				14C012BC1E488F220018A37A /* BlackListCell.xib */,
 				14C012BE1E488F3E0018A37A /* BlackListCell.swift */,
-				14B45B861E54451700F77204 /* RatingDetailCell.xib */,
-				14B45B881E54486400F77204 /* RatingDetailCell.swift */,
 				14AF1CC91E37703F005F4BE2 /* API.swift */,
 				14C012C21E48A5200018A37A /* ResponseDecorator.swift */,
 				141FFFBF1E444C9B00F0FD92 /* Model */,
@@ -264,6 +262,16 @@
 				1448ED401E373FE700962E58 /* Info.plist */,
 			);
 			path = TraceMyRoutesUITests;
+			sourceTree = "<group>";
+		};
+		14B45B8A1E54496400F77204 /* RatingDetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				14F9791C1E52E063009DB0D6 /* RatingDetailViewController.swift */,
+				14B45B861E54451700F77204 /* RatingDetailCell.xib */,
+				14B45B881E54486400F77204 /* RatingDetailCell.swift */,
+			);
+			name = RatingDetailScene;
 			sourceTree = "<group>";
 		};
 		BAF21C100A58C20AF657C86A /* Pods */ = {
