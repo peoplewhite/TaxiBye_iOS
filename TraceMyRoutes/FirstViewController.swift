@@ -97,19 +97,57 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     func settingUIForSearchButtonHeight() {
         searchButtonHeightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
     }
-    
-    @IBAction func trackButtonPressed(_ sender: UIButton) {
-        
-        let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
 
-        guard trimmedString.characters.count > 0 else {
+    func isCarPlateNumberValid(_ carPlateNumber: String) -> Bool {
+
+        guard carPlateNumber.characters.count > 0 else {
             showAlertViewWith(msg: "請輸入車牌號碼")
-            return
+            return false
         }
+
+
+        /*
+        NSCharacterSet *s = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_"];
+        NSRange r = [string rangeOfCharacterFromSet:s];
+        if (r.location != NSNotFound) {
+            NSLog(@"the string contains illegal characters");
+        }
+         */
+
+//        NSString *str = @"aA09";
+//        NSCharacterSet *alphaSet = [NSCharacterSet alphanumericCharacterSet];
+//        BOOL valid = [[str stringByTrimmingCharactersInSet:alphaSet] isEqualToString:@""];
+
+//        let alphaSet = NSCharacterSet.alphanumerics
+//        let alphaSet = NSCharacterSet.letters
+//        let valid = carPlateNumber.trimmingCharacters(in: alphaSet) == ""
+//        let valid = carPlateNumber.regex
+//        NSCharacterSet* tSet = [NSCharacterSet characterSetWithCharactersInString:
+//        @"abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+//        NSCharacterSet* invSet = [tSet invertedSet];
+
+        let tSet = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        let invSet = tSet.inverted
+
+        if (carPlateNumber.rangeOfCharacter(from: invSet) == nil) {
+            //Do the deal
+        } else {
+            showAlertViewWith(msg: "車牌號碼無效")
+            return false
+        }
+
 
         // TODO: check valid plate number format
         // ref: https://zh.wikipedia.org/wiki/臺灣車輛牌照
-        
+
+        return true
+    }
+
+    @IBAction func trackButtonPressed(_ sender: UIButton) {
+
+        let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
+
+        guard isCarPlateNumberValid(trimmedString) else { return }
 
         callAPIToQueryTaxiRating(withPlateNumber: trimmedString)
     }
