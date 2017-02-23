@@ -22,24 +22,43 @@ class FirstViewController: UIViewController, WarningSceneDelegate, TypeCarPlateN
 
 
 
-    @IBAction func enterTypePlateNumberSceneButtonPressed(_ sender: UIButton) {
+//    @IBAction func enterTypePlateNumberSceneButtonPressed(_ sender: UIButton) {
+//
+//        let typeCarPlateNumberScene: TypeCarPlateNumberScene = Bundle.main.loadNibNamed("TypeCarPlateNumberScene", owner: self, options: nil)![0] as! TypeCarPlateNumberScene
+//        typeCarPlateNumberScene.frame = UIScreen.main.bounds
+//        typeCarPlateNumberScene.delegate = self
+//        view.addSubview(typeCarPlateNumberScene)
+//    }
 
-        let typeCarPlateNumberScene: TypeCarPlateNumberScene = Bundle.main.loadNibNamed("TypeCarPlateNumberScene", owner: self, options: nil)![0] as! TypeCarPlateNumberScene
-        typeCarPlateNumberScene.frame = UIScreen.main.bounds
-        typeCarPlateNumberScene.delegate = self
-        UIApplication.shared.keyWindow?.addSubview(typeCarPlateNumberScene)
 
-        
+
+    @IBAction func closeKeyboardButtonPressed(_ sender: UIButton) {
+        view.endEditing(true)
     }
+    
 
     func setupCarPlateNumber(_ carPlateNumber: String) {
-//       請輸入車牌 
         plateNumberTextfield.text = carPlateNumber
     }
 
+    func showAlertViewToAsk(msg: String, selectGiveup: @escaping (() -> Void), selectKeepTyping: @escaping (() -> Void)) {
 
-    
-    
+        let alert:UIAlertController = UIAlertController(title: "輸入車牌錯誤", message: msg, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "放棄", style: .default, handler: { action in
+            alert.dismiss(animated: false, completion: nil)
+            selectGiveup()
+        }))
+        alert.addAction(UIAlertAction(title: "繼續編輯", style: .default, handler: { action in
+            alert.dismiss(animated: false, completion: nil)
+            selectKeepTyping()
+        }))
+
+        present(alert, animated: true, completion: nil)
+
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

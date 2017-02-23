@@ -11,6 +11,7 @@ import UIKit
 //1
 protocol TypeCarPlateNumberSceneDelegate {
     func setupCarPlateNumber(_ carPlateNumber: String)
+    func showAlertViewToAsk(msg: String, selectGiveup: @escaping (() -> Void), selectKeepTyping: @escaping (() -> Void))
 }
 
 class TypeCarPlateNumberScene: UIView {
@@ -23,15 +24,6 @@ class TypeCarPlateNumberScene: UIView {
     var delegate:TypeCarPlateNumberSceneDelegate?
 
 
-//    let tSet = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-//    let invSet = tSet.inverted
-//
-//    if (carPlateNumber.rangeOfCharacter(from: invSet) == nil) {
-//    //Do the deal
-//    } else {
-//    showAlertViewWith(msg: "車牌號碼無效")
-//    return false
-//    }
 
     var carPlateNumber: String {
 
@@ -48,7 +40,65 @@ class TypeCarPlateNumberScene: UIView {
         return "\(firstPlateNumberBytrimmedString.uppercased())-\(secondPlateNumberBytrimmedString.uppercased())"
 
     }
+
+    func isCarPlateNumberValid(_ carPlateNumber: String) -> Bool {
+
+        let trimmedString = carPlateNumber.trimmingCharacters(in: .whitespaces)
+
+        guard trimmedString.characters.count > 0 else {
+
+            delegate?.showAlertViewToAsk(msg: "未輸入車牌號碼", selectGiveup: {
+                //
+                self.exitScene()
+            }, selectKeepTyping: {
+                //
+            })
+            return false
+        }
+
+        guard trimmedString.characters.count < 5 && trimmedString.characters.count > 1 else {
+            delegate?.showAlertViewToAsk(msg: "車牌號碼數目錯誤", selectGiveup: {
+                //
+                self.exitScene()
+            }, selectKeepTyping: {
+                //
+            })
+            return false
+        }
+
+        let tSet = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        let invSet = tSet.inverted
+
+        if (carPlateNumber.rangeOfCharacter(from: invSet) == nil) {
+            return true
+        } else {
+            delegate?.showAlertViewToAsk(msg: "車牌號碼無效", selectGiveup: {
+                //
+                self.exitScene()
+            }, selectKeepTyping: {
+                //
+            })
+            return false
+        }
+    }
+
+    
+
+
+
+    
     @IBAction func exitButtonPressed(_ sender: UIButton) {
+        endEditing(true)
+
+        guard isCarPlateNumberValid(firstPartTextfield.text!) else {
+            return
+        }
+
+        guard isCarPlateNumberValid(secondPartTextfield.text!) else {
+
+            return
+        }
+
         print("carPlateNumber = \(carPlateNumber)") //kimuranow
         delegate?.setupCarPlateNumber(carPlateNumber)
         exitScene()
