@@ -182,7 +182,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
         print("carPlateNumber = \(carPlateNumber)") //kimuranow
 
-//        callAPIToQueryTaxiRating(withPlateNumber: carPlateNumber)
+        callAPIToQueryTaxiRating(withPlateNumber: carPlateNumber)
     }
     
     func callAPIToQueryTaxiRating(withPlateNumber plateNumber: String) {
@@ -241,7 +241,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goTraceScene" {
             let vc: TracingViewController = segue.destination as! TracingViewController
-            vc.carPlateNumber = plateNumberTextfield.text!
+            vc.carPlateNumber = self.carPlateNumber
         }
     }
 }
