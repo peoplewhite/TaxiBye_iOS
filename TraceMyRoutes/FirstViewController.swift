@@ -19,7 +19,36 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
     @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchButtonHeightConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var firstCarPlateNumberTextfield: UITextField!
+    @IBOutlet weak var secondCarPlateNumberTextfield: UITextField!
+
+
+//    @IBAction func enterTypePlateNumberSceneButtonPressed(_ sender: UIButton) {
+//
+//        let typeCarPlateNumberScene: TypeCarPlateNumberScene = Bundle.main.loadNibNamed("TypeCarPlateNumberScene", owner: self, options: nil)![0] as! TypeCarPlateNumberScene
+//        typeCarPlateNumberScene.frame = UIScreen.main.bounds
+//        typeCarPlateNumberScene.delegate = self
+//        view.addSubview(typeCarPlateNumberScene)
+//    }
+
+    @IBAction func firstCarPlateNumberEditingChanged(_ sender: UITextField) {
+        sender.text = sender.text?.uppercased()
+    }
+    @IBAction func secondCarPlateNumberEditingChanged(_ sender: UITextField) {
+        sender.text = sender.text?.uppercased()
+    }
+
+
+    @IBAction func closeKeyboardButtonPressed(_ sender: UIButton) {
+        view.endEditing(true)
+    }
     
+
+    func setupCarPlateNumber(_ carPlateNumber: String) {
+        plateNumberTextfield.text = carPlateNumber
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -100,56 +129,60 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
     func isCarPlateNumberValid(_ carPlateNumber: String) -> Bool {
 
-        guard carPlateNumber.characters.count > 0 else {
-            showAlertViewWith(msg: "請輸入車牌號碼")
+        let trimmedString = carPlateNumber.trimmingCharacters(in: .whitespaces)
+
+        guard trimmedString.characters.count > 0 else {
+            showAlertViewWith(msg: "未輸入車牌號碼")
             return false
         }
 
-
-        /*
-        NSCharacterSet *s = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_"];
-        NSRange r = [string rangeOfCharacterFromSet:s];
-        if (r.location != NSNotFound) {
-            NSLog(@"the string contains illegal characters");
+        guard trimmedString.characters.count < 5 && trimmedString.characters.count > 1 else {
+            showAlertViewWith(msg: "車牌號碼數目錯誤")
+            return false
         }
-         */
-
-//        NSString *str = @"aA09";
-//        NSCharacterSet *alphaSet = [NSCharacterSet alphanumericCharacterSet];
-//        BOOL valid = [[str stringByTrimmingCharactersInSet:alphaSet] isEqualToString:@""];
-
-//        let alphaSet = NSCharacterSet.alphanumerics
-//        let alphaSet = NSCharacterSet.letters
-//        let valid = carPlateNumber.trimmingCharacters(in: alphaSet) == ""
-//        let valid = carPlateNumber.regex
-//        NSCharacterSet* tSet = [NSCharacterSet characterSetWithCharactersInString:
-//        @"abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-//        NSCharacterSet* invSet = [tSet invertedSet];
 
         let tSet = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ")
         let invSet = tSet.inverted
 
         if (carPlateNumber.rangeOfCharacter(from: invSet) == nil) {
-            //Do the deal
+            return true
         } else {
             showAlertViewWith(msg: "車牌號碼無效")
             return false
         }
-
-
-        // TODO: check valid plate number format
-        // ref: https://zh.wikipedia.org/wiki/臺灣車輛牌照
-
-        return true
     }
+    
+    var carPlateNumber: String {
+        let firstPlateNumberBytrimmedString = firstCarPlateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
+        let secondPlateNumberBytrimmedString = secondCarPlateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
 
+        if firstPlateNumberBytrimmedString == "" && secondPlateNumberBytrimmedString == "" {
+
+            return ""
+        }
+
+        return "\(firstPlateNumberBytrimmedString.uppercased())-\(secondPlateNumberBytrimmedString.uppercased())"
+        
+    }
     @IBAction func trackButtonPressed(_ sender: UIButton) {
 
-        let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
+//        let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
+//
+//        guard isCarPlateNumberValid(trimmedString) else { return }
 
-        guard isCarPlateNumberValid(trimmedString) else { return }
+        guard isCarPlateNumberValid(firstCarPlateNumberTextfield.text!) else {
+            return
+        }
 
-        callAPIToQueryTaxiRating(withPlateNumber: trimmedString)
+        guard isCarPlateNumberValid(secondCarPlateNumberTextfield.text!) else {
+
+            return
+        }
+
+
+        print("carPlateNumber = \(carPlateNumber)") //kimuranow
+
+        callAPIToQueryTaxiRating(withPlateNumber: carPlateNumber)
     }
     
     func callAPIToQueryTaxiRating(withPlateNumber plateNumber: String) {
@@ -208,7 +241,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goTraceScene" {
             let vc: TracingViewController = segue.destination as! TracingViewController
-            vc.carPlateNumber = plateNumberTextfield.text!
+            vc.carPlateNumber = self.carPlateNumber
         }
     }
 }
