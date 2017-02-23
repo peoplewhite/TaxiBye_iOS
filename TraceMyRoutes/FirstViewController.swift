@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 import JSONAPI
 
-class FirstViewController: UIViewController, WarningSceneDelegate {
+class FirstViewController: UIViewController, WarningSceneDelegate, TypeCarPlateNumberSceneDelegate {
 
     @IBOutlet weak var trackButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
@@ -24,13 +24,18 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
     @IBAction func enterTypePlateNumberSceneButtonPressed(_ sender: UIButton) {
 
-        let chooseTagBrandScene: TypeCarPlateNumberScene = Bundle.main.loadNibNamed("TypeCarPlateNumberScene", owner: self, options: nil)![0] as! TypeCarPlateNumberScene
-        chooseTagBrandScene.frame = UIScreen.main.bounds
-        UIApplication.shared.keyWindow?.addSubview(chooseTagBrandScene)
+        let typeCarPlateNumberScene: TypeCarPlateNumberScene = Bundle.main.loadNibNamed("TypeCarPlateNumberScene", owner: self, options: nil)![0] as! TypeCarPlateNumberScene
+        typeCarPlateNumberScene.frame = UIScreen.main.bounds
+        typeCarPlateNumberScene.delegate = self
+        UIApplication.shared.keyWindow?.addSubview(typeCarPlateNumberScene)
 
         
     }
 
+    func setupCarPlateNumber(_ carPlateNumber: String) {
+//       請輸入車牌 
+        plateNumberTextfield.text = carPlateNumber
+    }
 
 
     
