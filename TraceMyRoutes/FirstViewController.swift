@@ -102,6 +102,9 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
 
         plateNumberTextfield.text = ""
+
+        UIApplication.shared.statusBarView?.backgroundColor = nil
+        
     }
 
     override func didReceiveMemoryWarning() {

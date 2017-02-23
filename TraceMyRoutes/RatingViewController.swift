@@ -52,6 +52,8 @@ class RatingViewController: UIViewController {
         initUI()
 
         settingFeelingOption(with: TraceRouteMachine.shared.traceFeelingID)
+        
+        UIApplication.shared.statusBarView?.backgroundColor = nil
     }
 
     func backToInitFirstScene() {

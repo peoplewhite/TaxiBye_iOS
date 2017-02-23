@@ -65,6 +65,7 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
     func initUI() {
         settingEndButtonUI()
         settingEmergencyButtonUI()
+        UIApplication.shared.statusBarView?.backgroundColor = .black
     }
 
     func settingEmergencyButtonUI() {
@@ -181,3 +182,9 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
 
     }
 }
+extension UIApplication {
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
+    }
+}
+
