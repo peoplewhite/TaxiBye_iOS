@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 import JSONAPI
 
-class FirstViewController: UIViewController, WarningSceneDelegate, TypeCarPlateNumberSceneDelegate {
+class FirstViewController: UIViewController, WarningSceneDelegate {
 
     @IBOutlet weak var trackButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
@@ -20,6 +20,8 @@ class FirstViewController: UIViewController, WarningSceneDelegate, TypeCarPlateN
     @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchButtonHeightConstraint: NSLayoutConstraint!
 
+    @IBOutlet weak var firstCarPlateNumberTextfield: UITextField!
+    @IBOutlet weak var secondCarPlateNumberTextfield: UITextField!
 
 
 //    @IBAction func enterTypePlateNumberSceneButtonPressed(_ sender: UIButton) {
@@ -30,6 +32,12 @@ class FirstViewController: UIViewController, WarningSceneDelegate, TypeCarPlateN
 //        view.addSubview(typeCarPlateNumberScene)
 //    }
 
+    @IBAction func firstCarPlateNumberEditingChanged(_ sender: UITextField) {
+        sender.text = sender.text?.uppercased()
+    }
+    @IBAction func secondCarPlateNumberEditingChanged(_ sender: UITextField) {
+        sender.text = sender.text?.uppercased()
+    }
 
 
     @IBAction func closeKeyboardButtonPressed(_ sender: UIButton) {
@@ -40,24 +48,6 @@ class FirstViewController: UIViewController, WarningSceneDelegate, TypeCarPlateN
     func setupCarPlateNumber(_ carPlateNumber: String) {
         plateNumberTextfield.text = carPlateNumber
     }
-
-    func showAlertViewToAsk(msg: String, selectGiveup: @escaping (() -> Void), selectKeepTyping: @escaping (() -> Void)) {
-
-        let alert:UIAlertController = UIAlertController(title: "輸入車牌錯誤", message: msg, preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "放棄", style: .default, handler: { action in
-            alert.dismiss(animated: false, completion: nil)
-            selectGiveup()
-        }))
-        alert.addAction(UIAlertAction(title: "繼續編輯", style: .default, handler: { action in
-            alert.dismiss(animated: false, completion: nil)
-            selectKeepTyping()
-        }))
-
-        present(alert, animated: true, completion: nil)
-
-    }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,56 +129,60 @@ class FirstViewController: UIViewController, WarningSceneDelegate, TypeCarPlateN
 
     func isCarPlateNumberValid(_ carPlateNumber: String) -> Bool {
 
-        guard carPlateNumber.characters.count > 0 else {
-            showAlertViewWith(msg: "請輸入車牌號碼")
+        let trimmedString = carPlateNumber.trimmingCharacters(in: .whitespaces)
+
+        guard trimmedString.characters.count > 0 else {
+            showAlertViewWith(msg: "未輸入車牌號碼")
             return false
         }
 
-
-        /*
-        NSCharacterSet *s = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_"];
-        NSRange r = [string rangeOfCharacterFromSet:s];
-        if (r.location != NSNotFound) {
-            NSLog(@"the string contains illegal characters");
+        guard trimmedString.characters.count < 5 && trimmedString.characters.count > 1 else {
+            showAlertViewWith(msg: "車牌號碼數目錯誤")
+            return false
         }
-         */
-
-//        NSString *str = @"aA09";
-//        NSCharacterSet *alphaSet = [NSCharacterSet alphanumericCharacterSet];
-//        BOOL valid = [[str stringByTrimmingCharactersInSet:alphaSet] isEqualToString:@""];
-
-//        let alphaSet = NSCharacterSet.alphanumerics
-//        let alphaSet = NSCharacterSet.letters
-//        let valid = carPlateNumber.trimmingCharacters(in: alphaSet) == ""
-//        let valid = carPlateNumber.regex
-//        NSCharacterSet* tSet = [NSCharacterSet characterSetWithCharactersInString:
-//        @"abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-//        NSCharacterSet* invSet = [tSet invertedSet];
 
         let tSet = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ")
         let invSet = tSet.inverted
 
         if (carPlateNumber.rangeOfCharacter(from: invSet) == nil) {
-            //Do the deal
+            return true
         } else {
             showAlertViewWith(msg: "車牌號碼無效")
             return false
         }
-
-
-        // TODO: check valid plate number format
-        // ref: https://zh.wikipedia.org/wiki/臺灣車輛牌照
-
-        return true
     }
+    
+    var carPlateNumber: String {
+        let firstPlateNumberBytrimmedString = firstCarPlateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
+        let secondPlateNumberBytrimmedString = secondCarPlateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
 
+        if firstPlateNumberBytrimmedString == "" && secondPlateNumberBytrimmedString == "" {
+
+            return ""
+        }
+
+        return "\(firstPlateNumberBytrimmedString.uppercased())-\(secondPlateNumberBytrimmedString.uppercased())"
+        
+    }
     @IBAction func trackButtonPressed(_ sender: UIButton) {
 
-        let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
+//        let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
+//
+//        guard isCarPlateNumberValid(trimmedString) else { return }
 
-        guard isCarPlateNumberValid(trimmedString) else { return }
+        guard isCarPlateNumberValid(firstCarPlateNumberTextfield.text!) else {
+            return
+        }
 
-        callAPIToQueryTaxiRating(withPlateNumber: trimmedString)
+        guard isCarPlateNumberValid(secondCarPlateNumberTextfield.text!) else {
+
+            return
+        }
+
+
+        print("carPlateNumber = \(carPlateNumber)") //kimuranow
+
+//        callAPIToQueryTaxiRating(withPlateNumber: carPlateNumber)
     }
     
     func callAPIToQueryTaxiRating(withPlateNumber plateNumber: String) {
