@@ -19,8 +19,21 @@ class TypeCarPlateNumberScene: UIView {
     // MARK: - setting zone
 
 
+
+    var carPlateNumber: String {
+
+        let firstPlateNumberBytrimmedString = firstPartTextfield.text!.trimmingCharacters(in: .whitespaces)
+        let secondPlateNumberBytrimmedString = secondPartTextfield.text!.trimmingCharacters(in: .whitespaces)
+
+        return "\(firstPlateNumberBytrimmedString)-\(secondPlateNumberBytrimmedString)"
+        
+    }
     @IBAction func exitButtonPressed(_ sender: UIButton) {
         exitScene()
+
+        print("carPlateNumber = \(carPlateNumber)") //kimuranow
+
+        
     }
 
     override func awakeFromNib() {
@@ -45,7 +58,7 @@ class TypeCarPlateNumberScene: UIView {
     func exitScene() {
 
         endEditing(true)
-        
+
         let kDoubleAnimationDuration: Double = 0.3
 
         UIView.animate(withDuration: kDoubleAnimationDuration, animations: {() -> Void in
