@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TypeCarPlateNumberScene" customModule="TraceMyRoutes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pw-MF-NpZ" userLabel="dashMark">
+                    <rect key="frame" x="139" y="174" width="43" height="120"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-wY-FzK" userLabel="exitButton">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="exitButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="DRU-9Z-YO0"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ABCD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8eM-wC-XoE" userLabel="firstPart">
+                    <rect key="frame" x="0.0" y="192" width="139" height="84"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IcY-kF-y6E" userLabel="secondPart">
+                    <rect key="frame" x="182" y="192" width="138" height="84"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closeButtonIcon" translatesAutoresizingMaskIntoConstraints="NO" id="F0B-wg-2t1">
+                    <rect key="frame" x="274" y="30" width="16" height="16"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8eM-wC-XoE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2qa-rB-kHB"/>
+                <constraint firstItem="9pw-MF-NpZ" firstAttribute="leading" secondItem="8eM-wC-XoE" secondAttribute="trailing" id="4sY-C0-c8w"/>
+                <constraint firstItem="IcY-kF-y6E" firstAttribute="centerY" secondItem="8eM-wC-XoE" secondAttribute="centerY" id="5hh-kt-wdX"/>
+                <constraint firstItem="F0B-wg-2t1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="ByD-wI-Z4S"/>
+                <constraint firstItem="z4m-wY-FzK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EHG-Cu-s54"/>
+                <constraint firstItem="IcY-kF-y6E" firstAttribute="leading" secondItem="9pw-MF-NpZ" secondAttribute="trailing" id="FEu-LV-028"/>
+                <constraint firstItem="z4m-wY-FzK" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="LKW-lH-9kb"/>
+                <constraint firstAttribute="trailing" secondItem="F0B-wg-2t1" secondAttribute="trailing" constant="30" id="Q8Y-ei-1bT"/>
+                <constraint firstItem="9pw-MF-NpZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tx9-Ht-e3s"/>
+                <constraint firstItem="8eM-wC-XoE" firstAttribute="centerY" secondItem="9pw-MF-NpZ" secondAttribute="centerY" id="p69-Sz-491"/>
+                <constraint firstItem="z4m-wY-FzK" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="soo-E6-xSD"/>
+                <constraint firstItem="z4m-wY-FzK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tUj-3f-Vse"/>
+                <constraint firstAttribute="trailing" secondItem="IcY-kF-y6E" secondAttribute="trailing" id="wVp-O0-sD7"/>
+                <constraint firstItem="9pw-MF-NpZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-50" id="zts-Qc-Qw2"/>
+            </constraints>
+            <connections>
+                <outlet property="firstPartTextfield" destination="8eM-wC-XoE" id="w2d-uH-3FD"/>
+                <outlet property="secondPartTextfield" destination="IcY-kF-y6E" id="GBR-qp-OBq"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="closeButtonIcon" width="16" height="16"/>
+    </resources>
+</document>

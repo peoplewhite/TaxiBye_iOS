@@ -19,6 +19,21 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
     @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchButtonHeightConstraint: NSLayoutConstraint!
+
+
+
+    @IBAction func enterTypePlateNumberSceneButtonPressed(_ sender: UIButton) {
+
+        let chooseTagBrandScene: TypeCarPlateNumberScene = Bundle.main.loadNibNamed("TypeCarPlateNumberScene", owner: self, options: nil)![0] as! TypeCarPlateNumberScene
+        chooseTagBrandScene.frame = UIScreen.main.bounds
+        UIApplication.shared.keyWindow?.addSubview(chooseTagBrandScene)
+
+        
+    }
+
+
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

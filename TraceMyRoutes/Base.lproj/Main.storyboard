@@ -75,6 +75,12 @@
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuM-8Z-SId" userLabel="enterTypePlateNumberSceneButton">
+                                        <rect key="frame" x="0.0" y="83" width="320" height="50"/>
+                                        <connections>
+                                            <action selector="enterTypePlateNumberSceneButtonPressed:" destination="1Dz-fb-muQ" eventType="touchUpInside" id="VQy-Z5-dyd"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyE-Ac-15t" userLabel="line">
                                         <rect key="frame" x="30" y="133" width="260" height="2"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,12 +94,16 @@
                                     <constraint firstItem="fnO-CO-uSy" firstAttribute="width" secondItem="OHa-as-PBJ" secondAttribute="width" id="1rl-Wt-qFV"/>
                                     <constraint firstItem="IZi-LZ-qRZ" firstAttribute="centerX" secondItem="OHa-as-PBJ" secondAttribute="centerX" id="5Y3-Gj-Ub2"/>
                                     <constraint firstAttribute="trailing" secondItem="rAv-57-klq" secondAttribute="trailing" constant="30" id="AdY-Ce-wf3"/>
+                                    <constraint firstItem="KuM-8Z-SId" firstAttribute="centerX" secondItem="IZi-LZ-qRZ" secondAttribute="centerX" id="Dvp-Ta-qzh"/>
                                     <constraint firstItem="rAv-57-klq" firstAttribute="top" secondItem="QyE-Ac-15t" secondAttribute="bottom" constant="20" id="E6E-zG-kEE"/>
                                     <constraint firstItem="fnO-CO-uSy" firstAttribute="top" secondItem="OHa-as-PBJ" secondAttribute="top" constant="40" id="Gbb-UX-S3K"/>
                                     <constraint firstItem="QyE-Ac-15t" firstAttribute="centerY" secondItem="OHa-as-PBJ" secondAttribute="centerY" id="PRS-8n-ffG"/>
                                     <constraint firstItem="QyE-Ac-15t" firstAttribute="width" secondItem="rAv-57-klq" secondAttribute="width" id="Pex-qX-O6B"/>
+                                    <constraint firstItem="KuM-8Z-SId" firstAttribute="bottom" secondItem="IZi-LZ-qRZ" secondAttribute="bottom" id="X91-eA-NOl"/>
                                     <constraint firstItem="rAv-57-klq" firstAttribute="leading" secondItem="OHa-as-PBJ" secondAttribute="leading" constant="30" id="flr-Xh-1sv"/>
                                     <constraint firstItem="IZi-LZ-qRZ" firstAttribute="width" secondItem="OHa-as-PBJ" secondAttribute="width" id="hQY-Is-Met"/>
+                                    <constraint firstItem="KuM-8Z-SId" firstAttribute="height" secondItem="IZi-LZ-qRZ" secondAttribute="height" constant="20" id="kSC-D4-nVa"/>
+                                    <constraint firstItem="KuM-8Z-SId" firstAttribute="width" secondItem="IZi-LZ-qRZ" secondAttribute="width" id="oag-6n-NX8"/>
                                     <constraint firstItem="QyE-Ac-15t" firstAttribute="centerX" secondItem="OHa-as-PBJ" secondAttribute="centerX" id="r8P-W1-wxr"/>
                                     <constraint firstItem="fnO-CO-uSy" firstAttribute="centerX" secondItem="OHa-as-PBJ" secondAttribute="centerX" id="t1i-Md-Ry3"/>
                                     <constraint firstItem="QyE-Ac-15t" firstAttribute="top" secondItem="IZi-LZ-qRZ" secondAttribute="bottom" id="twX-EZ-acF"/>
