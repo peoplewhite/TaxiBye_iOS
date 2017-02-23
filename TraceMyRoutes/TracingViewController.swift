@@ -68,6 +68,14 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
         UIApplication.shared.statusBarView?.backgroundColor = .black
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+//    - (UIStatusBarStyle)preferredStatusBarStyle
+//    {
+//    return UIStatusBarStyleLightContent;
+//    }
     func settingEmergencyButtonUI() {
 
         emergencyButtonheightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight
