@@ -25,13 +25,13 @@ class BlackListViewController: UIViewController {
     var ratingTaxis = [
         [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]()
     ]
-    
+
     func setupDefaultForRatingTaxis() {
         ratingTaxis = [ [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]() ]
     }
 
 
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -76,7 +76,7 @@ class BlackListViewController: UIViewController {
 }
 extension BlackListViewController {
     // MARK: =================> button
-    
+
     @IBAction func exitButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -97,13 +97,14 @@ extension BlackListViewController {
                 if let avgRating = taxiModel.avg_rating?.doubleValue {
                     let ratingLevelInteger = Int(floor(avgRating))
                     self.ratingTaxis[ratingLevelInteger].append(taxiModel)
+                    print(" = \(ratingLevelInteger) <- \(taxiModel.plate_number)") //kimuranow
                 }
 
             }
 
             self.tableView.reloadData()
             
-            
+
         }) { (errorMessage) in
             print("\(#function) Fail: errorMessage = \(errorMessage)") //kimuranow
 

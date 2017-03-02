@@ -67,13 +67,30 @@ class ResponseDecorator {
 
         print("[\(#function)] response = \(response)") //kimuranow
 
-        let taxi = Taxi.mr_createEntity()
-        taxi?.plate_number = response["data", "attributes", "plateNumber"].stringValue
-        taxi?.driver = response["data", "attributes", "driver"].stringValue
-        taxi?.avg_rating = NSDecimalNumber(floatLiteral: response["data", "attributes", "avgRating"].doubleValue)
+        let plateNumber = response["data", "attributes", "plateNumber"].stringValue
+        let driver = response["data", "attributes", "driver"].stringValue
+        let avgRating = NSDecimalNumber(floatLiteral: response["data", "attributes", "avgRating"].doubleValue)
 
-        return taxi!
-        
+        if let _taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: plateNumber) {
+
+            _taxiModel.plate_number = plateNumber
+            _taxiModel.driver = driver
+            _taxiModel.avg_rating = avgRating
+
+//            _taxiModel.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
+
+            return _taxiModel
+
+        } else {
+            
+            let taxiModel = Taxi.mr_createEntity()
+            taxiModel?.plate_number = plateNumber
+            taxiModel?.driver = driver
+            taxiModel?.avg_rating = avgRating
+            
+//            taxiModel?.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
+            return taxiModel!
+        }
     }
 
     static func fetchFeelingList(_ response: JSON, completion: (() -> Void)) -> Void {
@@ -96,9 +113,9 @@ class ResponseDecorator {
             }
 
 
-            NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
         }
 
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
         completion()
         
     }
@@ -110,17 +127,10 @@ class ResponseDecorator {
 
             let plateNumber = taxi["attributes", "plateNumber"].stringValue
             print("plateNumber = \(plateNumber)") //kimuranow
-                    print("VVV===============") //kimuranow
-                    print("find, edit") //kimuranow
-//                    print(" = \(taxi.plate_number)") //kimuranow
-//                    print(" = \(taxi.driver)") //kimuranow
-//                    print(" = \(taxi.avg_rating)") //kimuranow
-//                    print(" = \(taxi.updated_at)") //kimuranow
-                    print("^^^===============") //kimuranow
 
             if let _taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: plateNumber) {
 
-                if _taxiModel.plate_number == "t" {
+                if _taxiModel.plate_number == "QQQ-PPP" {
                     print("VVV===============") //kimuranow
                     print("find, edit") //kimuranow
                     print(" = \(_taxiModel.plate_number)") //kimuranow
@@ -136,7 +146,7 @@ class ResponseDecorator {
                 _taxiModel.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
 
 
-                if _taxiModel.plate_number == "t" {
+                if _taxiModel.plate_number == "QQQ-PPP" {
                     print("VVV===============") //kimuranow
                     print("after update") //kimuranow
                     print(" = \(_taxiModel.plate_number)") //kimuranow
@@ -146,10 +156,11 @@ class ResponseDecorator {
                     print("^^^===============") //kimuranow
                 }
                 // Taxi.updateOrCreate()
+//                user.MR_deleteEntity
+//                _taxiModel.mr_deleteEntity()
 
             } else {
                 print("can't find, create") //kimuranow
-
                 let taxiModel = Taxi.mr_createEntity()
                 taxiModel?.plate_number = plateNumber
                 taxiModel?.driver = taxi["attributes", "driver"].stringValue
@@ -157,10 +168,11 @@ class ResponseDecorator {
                 taxiModel?.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
             }
 
-            NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
 
         }
 
+        
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
         completion()
 
     }
