@@ -70,14 +70,14 @@ class ResponseDecorator {
         let plateNumber = response["data", "attributes", "plateNumber"].stringValue
         let driver = response["data", "attributes", "driver"].stringValue
         let avgRating = NSDecimalNumber(floatLiteral: response["data", "attributes", "avgRating"].doubleValue)
+        let updatedAt = NSDate(timeIntervalSince1970: response["data", "attributes", "updatedAt"].doubleValue)
 
         if let _taxiModel = Taxi.mr_findFirst(byAttribute: "plate_number", withValue: plateNumber) {
 
             _taxiModel.plate_number = plateNumber
             _taxiModel.driver = driver
             _taxiModel.avg_rating = avgRating
-
-//            _taxiModel.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
+            _taxiModel.updated_at = updatedAt
 
             return _taxiModel
 
@@ -87,8 +87,8 @@ class ResponseDecorator {
             taxiModel?.plate_number = plateNumber
             taxiModel?.driver = driver
             taxiModel?.avg_rating = avgRating
+            taxiModel?.updated_at = updatedAt
             
-//            taxiModel?.updated_at = NSDate(timeIntervalSince1970: taxi["attributes", "updatedAt"].doubleValue)
             return taxiModel!
         }
     }
