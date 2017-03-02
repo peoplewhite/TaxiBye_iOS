@@ -76,11 +76,6 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
             
         }
         
-        let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
-        print("taxis = \(taxis)") //kimuranow
-        taxis.forEach { taxi in
-            print("taxi = \(taxi.plate_number!): \(taxi.driver!): \(taxi.avg_rating!): \(taxi.ratings?.description)") //kimuranow
-        }
 
         let feelings = Feeling.mr_findAll() as! [Feeling]
         feelings.forEach { feeling in
@@ -97,14 +92,20 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     override func viewWillAppear(_ animated: Bool) {
         initUI()
         
-        let root = GPXRoot()
-
-
-
-        plateNumberTextfield.text = ""
+        firstCarPlateNumberTextfield.text = ""
+        secondCarPlateNumberTextfield.text = ""
 
         UIApplication.shared.statusBarView?.backgroundColor = nil
-        
+
+        let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
+        //        print("taxis = \(taxis)") //kimuranow
+        taxis.forEach { taxi in
+            if taxi.plate_number == "QQQ-PPP" {
+                //                print("taxi = \(taxi.plate_number!): \(taxi.driver!): \(taxi.avg_rating!): \(taxi.ratings?.description)") //kimuranow
+                print("taxi = \(taxi.plate_number!): \(taxi.avg_rating!)") //kimuranow
+            }
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -167,49 +168,8 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         return "\(firstPlateNumberBytrimmedString.uppercased())-\(secondPlateNumberBytrimmedString.uppercased())"
         
     }
-    @IBAction func trackButtonPressed(_ sender: UIButton) {
-
-//        let trimmedString = plateNumberTextfield.text!.trimmingCharacters(in: .whitespaces)
-//
-//        guard isCarPlateNumberValid(trimmedString) else { return }
-
-        guard isCarPlateNumberValid(firstCarPlateNumberTextfield.text!) else {
-            return
-        }
-
-        guard isCarPlateNumberValid(secondCarPlateNumberTextfield.text!) else {
-
-            return
-        }
 
 
-        print("carPlateNumber = \(carPlateNumber)") //kimuranow
-
-        callAPIToQueryTaxiRating(withPlateNumber: carPlateNumber)
-    }
-    
-    func callAPIToQueryTaxiRating(withPlateNumber plateNumber: String) {
-        SVProgressHUD.show()
-        API.queryTaxi(by: plateNumber, completion: { (taxi) in
-
-            SVProgressHUD.dismiss()
-
-            let isNeedToShowWarning = ((taxi.avg_rating?.doubleValue)! < AppConfig.lowerRatingForWarning)
-
-            if isNeedToShowWarning {
-                self.showWarningScene(withTaxi: taxi)
-            } else {
-                self.goTraceScene()
-            }
-            
-        }) { (errorMessage) in
-            
-            SVProgressHUD.dismiss()
-            self.showAlertViewWith(msg: errorMessage)
-            
-        }
-    }
-    
     func showAlertViewWith(msg: String) {
 
         let alert:UIAlertController = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
@@ -245,6 +205,49 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         if segue.identifier == "goTraceScene" {
             let vc: TracingViewController = segue.destination as! TracingViewController
             vc.carPlateNumber = self.carPlateNumber
+        }
+    }
+}
+extension FirstViewController {
+    // MARK: =================> button
+
+    @IBAction func trackButtonPressed(_ sender: UIButton) {
+
+        guard isCarPlateNumberValid(firstCarPlateNumberTextfield.text!) else {
+            return
+        }
+
+        guard isCarPlateNumberValid(secondCarPlateNumberTextfield.text!) else {
+
+            return
+        }
+
+        callAPIToQueryTaxiRating(withPlateNumber: carPlateNumber)
+    }
+}
+extension FirstViewController {
+    // MARK: =================> API
+
+    func callAPIToQueryTaxiRating(withPlateNumber plateNumber: String) {
+        SVProgressHUD.show()
+        API.queryTaxi(by: plateNumber, completion: { (taxi) in
+
+            SVProgressHUD.dismiss()
+
+            let isNeedToShowWarning = ((taxi.avg_rating?.doubleValue)! < AppConfig.lowerRatingForWarning)
+
+            if isNeedToShowWarning {
+                self.showWarningScene(withTaxi: taxi)
+            } else {
+                self.goTraceScene()
+            }
+
+
+        }) { (errorMessage) in
+            
+            SVProgressHUD.dismiss()
+            self.showAlertViewWith(msg: errorMessage)
+            
         }
     }
 }

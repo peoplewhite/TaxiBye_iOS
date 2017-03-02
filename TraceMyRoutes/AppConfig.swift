@@ -12,15 +12,10 @@ import UIKit
 
 struct AppConfig {
 
-
     static let isShowAPILog = false
     static let isUsingGPX = true
-
     static let emergencyPhoneNumber = "0932123456"
     static let lowerRatingForWarning: Double = 3.0
-
-
-
     static let blackFullStarImage = UIImage(named: "blackFullStar")
     static let blackEmptyStarImage = UIImage(named: "blackEmptyStar")
     static let fullStarImage = UIImage(named: "fullStar")
