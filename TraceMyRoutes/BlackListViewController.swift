@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BlackListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BlackListViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -25,10 +25,13 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
     var ratingTaxis = [
         [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]()
     ]
-
+    
     func setupDefaultForRatingTaxis() {
         ratingTaxis = [ [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]() ]
     }
+
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +54,36 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         callAPIToGetBlackList()
 
     }
+    func setupTitleLabel() {
+        titleLabel.font = titleLabel.font.withSize(AppConfig.titleInBlackListSceneFontSize)
+    }
+    
+
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goRatingDetailScene" {
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
+
+
+            let ratingDetailViewController = segue.destination as! RatingDetailViewController
+            ratingDetailViewController.carPlateNumber = tempCarPlatenumberUserSelect
+
+        }
+    }
+}
+extension BlackListViewController {
+    // MARK: =================> button
+    
+    @IBAction func exitButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+extension BlackListViewController {
+    // MARK: =================> API
+    
     func callAPIToGetBlackList() {
 
         API.fetchRankingList(completion: {
@@ -77,38 +110,11 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
     }
-    func setupTitleLabel() {
-        titleLabel.font = titleLabel.font.withSize(AppConfig.titleInBlackListSceneFontSize)
-    }
     
-    @IBAction func exitButtonPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-
-
-
-    func setupTableview() {
-
-        tableView.register(UINib(nibName: kCellIdentifierForTableView, bundle: nil), forCellReuseIdentifier: kCellIdentifierForTableView)
-        tableView.tableFooterView = UIView()
-        tableView.separatorStyle = .none
-        tableView.delegate = self
-        tableView.dataSource = self
-
-    }
-
-    // swift 3.0
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return ratingLavelTitle.count
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ratingTaxis[section].count
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20.0
-    }
+}
+extension BlackListViewController {
+    // MARK: =================> tableview (render)
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let header = UIView()
@@ -133,6 +139,26 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
 
         return cell
     }
+}
+extension BlackListViewController: UITableViewDelegate, UITableViewDataSource {
+    // MARK: =================> tableview
+
+    func setupTableview() {
+        tableView.register(UINib(nibName: kCellIdentifierForTableView, bundle: nil), forCellReuseIdentifier: kCellIdentifierForTableView)
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return ratingLavelTitle.count
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ratingTaxis[section].count
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20.0
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
@@ -140,21 +166,4 @@ class BlackListViewController: UIViewController, UITableViewDelegate, UITableVie
         tempCarPlatenumberUserSelect = ratingTaxis[indexPath.section][indexPath.row].plate_number!
         performSegue(withIdentifier: "goRatingDetailScene", sender: nil)
     }
-    
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goRatingDetailScene" {
-            let backItem = UIBarButtonItem()
-            backItem.title = ""
-            navigationItem.backBarButtonItem = backItem
-
-
-            let ratingDetailViewController = segue.destination as! RatingDetailViewController
-            ratingDetailViewController.carPlateNumber = tempCarPlatenumberUserSelect
-
-        }
-    }
-
-
-
 }
