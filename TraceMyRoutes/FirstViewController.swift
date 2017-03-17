@@ -16,34 +16,12 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var line: UIView!
     @IBOutlet weak var plateNumberTextfield: UITextField!
-
+    @IBOutlet weak var firstCarPlateNumberTextfield: UITextField!
+    @IBOutlet weak var secondCarPlateNumberTextfield: UITextField!
     @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchButtonHeightConstraint: NSLayoutConstraint!
 
-    @IBOutlet weak var firstCarPlateNumberTextfield: UITextField!
-    @IBOutlet weak var secondCarPlateNumberTextfield: UITextField!
 
-
-//    @IBAction func enterTypePlateNumberSceneButtonPressed(_ sender: UIButton) {
-//
-//        let typeCarPlateNumberScene: TypeCarPlateNumberScene = Bundle.main.loadNibNamed("TypeCarPlateNumberScene", owner: self, options: nil)![0] as! TypeCarPlateNumberScene
-//        typeCarPlateNumberScene.frame = UIScreen.main.bounds
-//        typeCarPlateNumberScene.delegate = self
-//        view.addSubview(typeCarPlateNumberScene)
-//    }
-
-    @IBAction func firstCarPlateNumberEditingChanged(_ sender: UITextField) {
-        sender.text = sender.text?.uppercased()
-    }
-    @IBAction func secondCarPlateNumberEditingChanged(_ sender: UITextField) {
-        sender.text = sender.text?.uppercased()
-    }
-
-
-    @IBAction func closeKeyboardButtonPressed(_ sender: UIButton) {
-        view.endEditing(true)
-    }
-    
 
     func setupCarPlateNumber(_ carPlateNumber: String) {
         plateNumberTextfield.text = carPlateNumber
@@ -66,24 +44,8 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
 
         API.fetchFeelingList(completion: { 
 
-            let feelings: [Feeling] = Feeling.mr_findAll() as! [Feeling]
-            print("feelings = \(feelings)") //kimuranow
-            feelings.forEach { feeling in
-                print("feeling = \(feeling.id): \(feeling.title)") //kimuranow
-            }
-
         }) { (errorMessage) in
             
-        }
-        
-
-        let feelings = Feeling.mr_findAll() as! [Feeling]
-        feelings.forEach { feeling in
-            print("feeling = \(feeling.id)\(feeling.title)") //kimuranow
-        }
-        let ratings = Rating.mr_findAll() as! [Rating]
-        ratings.forEach { rating in
-            print("rating = \(rating.id)\(rating.message)\(rating.trip_feeling)") //kimuranow
         }
     }
 
@@ -96,22 +58,12 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         secondCarPlateNumberTextfield.text = ""
 
         UIApplication.shared.statusBarView?.backgroundColor = nil
-
-        let taxis: [Taxi] = Taxi.mr_findAll() as! [Taxi]
-        //        print("taxis = \(taxis)") //kimuranow
-        taxis.forEach { taxi in
-            if taxi.plate_number == "QQQ-PPP" {
-                //                print("taxi = \(taxi.plate_number!): \(taxi.driver!): \(taxi.avg_rating!): \(taxi.ratings?.description)") //kimuranow
-                print("taxi = \(taxi.plate_number!): \(taxi.avg_rating!)") //kimuranow
-            }
-        }
-
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }  
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     func initUI() {
         settingUIForTrackButton()
@@ -209,8 +161,21 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     }
 }
 extension FirstViewController {
+    // MARK: =================> textfield
+
+    @IBAction func firstCarPlateNumberEditingChanged(_ sender: UITextField) {
+        sender.text = sender.text?.uppercased()
+    }
+    @IBAction func secondCarPlateNumberEditingChanged(_ sender: UITextField) {
+        sender.text = sender.text?.uppercased()
+    }
+}
+extension FirstViewController {
     // MARK: =================> button
 
+    @IBAction func closeKeyboardButtonPressed(_ sender: UIButton) {
+        view.endEditing(true)
+    }
     @IBAction func trackButtonPressed(_ sender: UIButton) {
 
         guard isCarPlateNumberValid(firstCarPlateNumberTextfield.text!) else {

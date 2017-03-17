@@ -67,6 +67,11 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
         settingEmergencyButtonUI()
         UIApplication.shared.statusBarView?.backgroundColor = .black
     }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
