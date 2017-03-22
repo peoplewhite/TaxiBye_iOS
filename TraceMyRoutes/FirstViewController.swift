@@ -199,7 +199,9 @@ extension FirstViewController {
     // MARK: =================> API
 
     func callAPIToQueryTaxiRating(withPlateNumber plateNumber: String) {
+        
         SVProgressHUD.show()
+        
         API.queryTaxi(by: plateNumber, completion: { (taxi) in
 
             SVProgressHUD.dismiss()
@@ -211,13 +213,8 @@ extension FirstViewController {
             } else {
                 self.goTraceScene()
             }
-
-
         }) { (errorMessage) in
-            
             SVProgressHUD.dismiss()
-            self.showAlertViewWith(msg: errorMessage)
-            
         }
     }
 }
