@@ -58,8 +58,13 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         secondCarPlateNumberTextfield.text = ""
 
         UIApplication.shared.statusBarView?.backgroundColor = nil
+
+        setupTrackButton()
     }
-    
+
+    func setupTrackButton() {
+        trackButton.setTitle(NSLocalizedString("homeScenetarckButtonTitle", comment: ""), for: .normal)
+    }
     override var prefersStatusBarHidden: Bool {
         return true
     }  
