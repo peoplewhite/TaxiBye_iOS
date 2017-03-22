@@ -24,3 +24,7 @@
 "ratingSceneOptionTitle" = "評論";
 "ratingSceneCommentTitle" = "留言";
 "ratingSceneSubmitButtonTitle" = "送出";
+
+
+// MARK - RatingComment
+"ratingCommentSceneFakePlacehoder" = "最多輸入120個字";

@@ -23,12 +23,18 @@ class CommentViewController: UIViewController, UITextViewDelegate {
 
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+        setupFakePlaceholderLabel()
+        
         if TraceRouteMachine.shared.comment != "" {
             textview.text = TraceRouteMachine.shared.comment
             fakePlaceholder.isHidden = true
         }
         
         initUI()
+    }
+    func setupFakePlaceholderLabel() {
+        fakePlaceholder.text = NSLocalizedString("ratingCommentSceneFakePlacehoder", comment: "")
     }
 
     override func didReceiveMemoryWarning() {
