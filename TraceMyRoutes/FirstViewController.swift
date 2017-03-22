@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import JSONAPI
+import ReachabilitySwift
 
 class FirstViewController: UIViewController, WarningSceneDelegate {
 
@@ -21,6 +22,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchButtonHeightConstraint: NSLayoutConstraint!
 
+    var reachability: Reachability!
 
 
     func setupCarPlateNumber(_ carPlateNumber: String) {
@@ -28,12 +30,45 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     }
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         SVProgressHUD.setMinimumDismissTimeInterval(2)
 
+                
+        do {
+            //            reachability = try Reachability.reachabilityForInternetConnection()
+            reachability = try Reachability.init()
+        } catch {
+            print("Unable to create Reachability")
+        }
+
+        // 檢測網絡連接狀態
+        if reachability.isReachable {
+            print("網絡連接：可用")
+        } else {
+            print("網絡連接：不可用")
+
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let noNetworkView = appDelegate.noNetworkView
+
+            noNetworkView.frame = UIScreen.main.bounds
+            noNetworkView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+
+            let titleLabel = UILabel()
+            titleLabel.frame = CGRect(x: 0.0, y: 200.0, width: UIScreen.main.bounds.width, height: 200.0)
+            titleLabel.text = NSLocalizedString("noNetworkTip", comment: "")
+            titleLabel.numberOfLines = 0
+            titleLabel.backgroundColor = UIColor.clear
+            titleLabel.textColor = UIColor.white
+            titleLabel.textAlignment = .center
+            titleLabel.font = titleLabel.font.withSize(25)
+            noNetworkView.addSubview(titleLabel)
+            UIApplication.shared.keyWindow?.addSubview(noNetworkView)
+
+        }
 
         API.authenticate(completion: {
 

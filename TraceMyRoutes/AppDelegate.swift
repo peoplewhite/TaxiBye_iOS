@@ -14,7 +14,7 @@ import GoogleMaps
 import IQKeyboardManagerSwift
 import CoreData
 import MagicalRecord
-//import ReachabilitySwift
+import ReachabilitySwift
 
 
 
@@ -22,6 +22,9 @@ import MagicalRecord
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var reachability: Reachability!
+    var noNetworkView = UIView()
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -40,8 +43,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MagicalRecord.setupAutoMigratingCoreDataStack()
 
 
+        do {
+//            reachability = try Reachability.reachabilityForInternetConnection()
+            reachability = try Reachability.init()
+        } catch {
+            print("Unable to create Reachability")
+        }
+        // 網絡可用或切換網絡類型時執行
+        reachability.whenReachable = { reachability in
 
-        
+
+            self.noNetworkView.removeFromSuperview()
+            print("remove") //kimuranow
+
+            // 判斷網絡狀態及類型
+
+            if reachability.isReachableViaWiFi {
+                print("網絡類型：Wifi")
+            } else if reachability.isReachableViaWWAN {
+                print("網絡類型：移動網絡")
+            } else {
+                print("網絡類型：無網絡連接1")
+            }
+        }
+
+        // 網絡不可用時執行
+        reachability.whenUnreachable = { reachability in
+
+            print("網絡類型：無網絡連接")
+
+            self.noNetworkView.frame = UIScreen.main.bounds
+            self.noNetworkView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+
+            let titleLabel = UILabel()
+            titleLabel.frame = CGRect(x: 0.0, y: 200.0, width: UIScreen.main.bounds.width, height: 200.0)
+            titleLabel.text = NSLocalizedString("noNetworkTip", comment: "")
+            titleLabel.numberOfLines = 0
+            titleLabel.backgroundColor = UIColor.clear
+            titleLabel.textColor = UIColor.white
+            titleLabel.textAlignment = .center
+            titleLabel.font = titleLabel.font.withSize(25)
+            self.noNetworkView.addSubview(titleLabel)
+            UIApplication.shared.keyWindow?.addSubview(self.noNetworkView)
+
+
+
+            print("add no network view") //kimuranow
+        }
+
+        do {
+            // 開始監聽
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+
         return true
     }
 
