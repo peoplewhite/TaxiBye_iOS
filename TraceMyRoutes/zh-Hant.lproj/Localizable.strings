@@ -11,3 +11,7 @@
 "homeScenetarckButtonTitle" = "開始追蹤";
 "homeSceneErrorMessageNoCarPlateNumber" = "未輸入車牌號碼";
 "homeSceneErrorMessageCarPlateNumberFormatWrong" = "車牌號碼無效";
+
+// MARK - Waring
+"warningSceneErrorMessageRatingUnderAvarge" = "此車輛的評價低於\n平均分數！";
+"warningSceneTitle" = "警告";

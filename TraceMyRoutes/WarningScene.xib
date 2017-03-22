@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -65,14 +65,14 @@
                         <constraint firstItem="mfz-35-ir2" firstAttribute="centerY" secondItem="0nH-wp-IaF" secondAttribute="centerY" id="yhj-NR-ntN"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="警告" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVF-sE-onz" userLabel="warningTitle">
-                    <rect key="frame" x="143" y="307" width="89" height="53"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVF-sE-onz" userLabel="warningTitle">
+                    <rect key="frame" x="187.5" y="307" width="0.0" height="53"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="44"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="此車輛的評價低於平均分數！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm1-rL-lca" userLabel="warningDescription">
-                    <rect key="frame" x="67.5" y="382" width="240" height="26.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm1-rL-lca" userLabel="warningDescription">
+                    <rect key="frame" x="67.5" y="382" width="240" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="240" id="Taj-Gi-Sqm"/>
                     </constraints>
@@ -105,10 +105,10 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Exclamation" translatesAutoresizingMaskIntoConstraints="NO" id="Evz-td-Bbq">
-                    <rect key="frame" x="73" y="311" width="47" height="46"/>
+                    <rect key="frame" x="117.5" y="311" width="47" height="46"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7w-Vb-ASt">
-                    <rect key="frame" x="255" y="307" width="26" height="53"/>
+                    <rect key="frame" x="210.5" y="307" width="26" height="53"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="44"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -155,6 +155,7 @@
                 <outlet property="star5" destination="mfz-35-ir2" id="bSZ-Bz-6XK"/>
                 <outlet property="starNumberLabel" destination="gSJ-pV-7Y8" id="6Op-j5-pBh"/>
                 <outlet property="warningDescription" destination="Qm1-rL-lca" id="oYd-Af-ycX"/>
+                <outlet property="warningTitleLabel" destination="CVF-sE-onz" id="0zd-CH-yoe"/>
                 <outlet property="yesButton" destination="dP7-fY-MU4" id="TOZ-fn-emD"/>
             </connections>
         </view>

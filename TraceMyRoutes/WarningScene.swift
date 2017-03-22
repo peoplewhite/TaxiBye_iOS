@@ -18,6 +18,7 @@ class WarningScene: UIView {
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
 
+    @IBOutlet weak var warningTitleLabel: UILabel!
     @IBOutlet weak var actionButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var actionButtonHeightConstraint: NSLayoutConstraint!
 
@@ -46,7 +47,8 @@ class WarningScene: UIView {
 
         initUI()
 
-        warningDescription.text = "此車輛的評價低於\n平均分數！"
+        warningDescription.text = NSLocalizedString("warningSceneErrorMessageRatingUnderAvarge", comment: "")
+        warningTitleLabel.text = NSLocalizedString("warningSceneTitle", comment: "")
 
     }
 
