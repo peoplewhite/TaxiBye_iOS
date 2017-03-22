@@ -33,3 +33,7 @@
 // MARK - BlackList
 "blackListSceneTitle" = "黑名單";
 "blackListSceneRatingUnit" = "分";
+
+
+// MARK - Common
+"noNetworkTip" = "您的手機偵測不到網路\n Taxibye 需要網路才能執行功能";

@@ -18,6 +18,9 @@ target 'TraceMyRoutes' do
   pod 'iOS-GPX-Framework', git: ‘http://github.com/merlos/iOS-GPX-Framework’
   pod 'JSONAPI', '~> 1.0.7'
   pod "MagicalRecord"
+  pod 'ReachabilitySwift', '~> 3'
+
+
 
   target 'TraceMyRoutesTests' do
     inherit! :search_paths
