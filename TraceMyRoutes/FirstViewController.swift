@@ -93,12 +93,12 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         let trimmedString = carPlateNumber.trimmingCharacters(in: .whitespaces)
 
         guard trimmedString.characters.count > 0 else {
-            showAlertViewWith(msg: "")
+            showAlertViewWith(msg: NSLocalizedString("homeSceneErrorMessageNoCarPlateNumber", comment: ""))
             return false
         }
 
         guard trimmedString.characters.count < 5 && trimmedString.characters.count > 1 else {
-            showAlertViewWith(msg: NSLocalizedString("homeSceneErrorMessageNoCarPlateNumber", comment: ""))
+            showAlertViewWith(msg: NSLocalizedString("homeSceneErrorMessageCarPlateNumberFormatWrong", comment: ""))
             return false
         }
 
