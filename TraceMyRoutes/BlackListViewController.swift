@@ -17,10 +17,21 @@ class BlackListViewController: UIViewController {
     let kCellIdentifierForTableView = "BlackListCell"
     var taxi = Taxi()
     var tempCarPlatenumberUserSelect = ""
+    var ratingUnit: String {
+        return NSLocalizedString("blackListSceneRatingUnit", comment: "")
+    }
 
-    let ratingLavelTitle = [
-        "0分", "1分", "2分", "3分","4分", "5分"
-    ]
+    var ratingLavelTitle: [String] {
+        return [
+            "0\(ratingUnit)",
+            "1\(ratingUnit)",
+            "2\(ratingUnit)",
+            "3\(ratingUnit)",
+            "4\(ratingUnit)",
+            "5\(ratingUnit)"
+        ]
+    }
+    
 
     var ratingTaxis = [
         [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi](), [Taxi]()
@@ -56,6 +67,7 @@ class BlackListViewController: UIViewController {
     }
     func setupTitleLabel() {
         titleLabel.font = titleLabel.font.withSize(AppConfig.titleInBlackListSceneFontSize)
+        titleLabel.text = NSLocalizedString("blackListSceneTitle", comment: "")
     }
     
 

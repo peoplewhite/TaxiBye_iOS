@@ -28,3 +28,8 @@
 
 // MARK - RatingComment
 "ratingCommentSceneFakePlacehoder" = "最多輸入120個字";
+
+
+// MARK - BlackList
+"blackListSceneTitle" = "黑名單";
+"blackListSceneRatingUnit" = "分";
