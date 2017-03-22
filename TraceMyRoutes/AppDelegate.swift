@@ -12,9 +12,9 @@ import Fabric
 import Crashlytics
 import GoogleMaps
 import IQKeyboardManagerSwift
-
 import CoreData
 import MagicalRecord
+//import ReachabilitySwift
 
 
 

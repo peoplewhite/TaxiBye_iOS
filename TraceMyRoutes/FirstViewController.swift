@@ -199,9 +199,9 @@ extension FirstViewController {
     // MARK: =================> API
 
     func callAPIToQueryTaxiRating(withPlateNumber plateNumber: String) {
-        
+
         SVProgressHUD.show()
-        
+
         API.queryTaxi(by: plateNumber, completion: { (taxi) in
 
             SVProgressHUD.dismiss()
