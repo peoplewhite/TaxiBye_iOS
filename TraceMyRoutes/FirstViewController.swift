@@ -16,18 +16,12 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
     @IBOutlet weak var trackButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var line: UIView!
-    @IBOutlet weak var plateNumberTextfield: UITextField!
     @IBOutlet weak var firstCarPlateNumberTextfield: UITextField!
     @IBOutlet weak var secondCarPlateNumberTextfield: UITextField!
     @IBOutlet weak var trackButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchButtonHeightConstraint: NSLayoutConstraint!
 
     var reachability: Reachability!
-
-
-    func setupCarPlateNumber(_ carPlateNumber: String) {
-        plateNumberTextfield.text = carPlateNumber
-    }
 
     override func viewDidLoad() {
 

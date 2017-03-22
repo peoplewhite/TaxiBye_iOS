@@ -49,28 +49,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print("Unable to create Reachability")
         }
-        // 網絡可用或切換網絡類型時執行
         reachability.whenReachable = { reachability in
-
-
             self.noNetworkView.removeFromSuperview()
-            print("remove") //kimuranow
-
-            // 判斷網絡狀態及類型
-
-            if reachability.isReachableViaWiFi {
-                print("網絡類型：Wifi")
-            } else if reachability.isReachableViaWWAN {
-                print("網絡類型：移動網絡")
-            } else {
-                print("網絡類型：無網絡連接1")
-            }
         }
 
-        // 網絡不可用時執行
         reachability.whenUnreachable = { reachability in
-
-            print("網絡類型：無網絡連接")
 
             self.noNetworkView.frame = UIScreen.main.bounds
             self.noNetworkView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
@@ -86,9 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.noNetworkView.addSubview(titleLabel)
             UIApplication.shared.keyWindow?.addSubview(self.noNetworkView)
 
-
-
-            print("add no network view") //kimuranow
         }
 
         do {

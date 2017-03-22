@@ -5,3 +5,35 @@
   Created by sean on 2017/2/10.
   Copyright © 2017年 oddesign. All rights reserved.
 */
+
+
+// MARK - Home
+"homeScenetarckButtonTitle" = "Start";
+"homeSceneErrorMessageNoCarPlateNumber" = "No Car Plate Number";
+"homeSceneErrorMessageCarPlateNumberFormatWrong" = "Invalid Car Plate Number";
+
+// MARK - Waring
+"warningSceneErrorMessageRatingUnderAvarge" = "The Rating of This Car\n is Under Average Rating";
+"warningSceneTitle" = "Warning";
+
+// MARK - Tracking
+"trackingSceneEmergencyButtonTitle" = "Emergency Call";
+
+// MARK - Rating
+"ratingSceneRatingTitle" = "Rating";
+"ratingSceneOptionTitle" = "Rating Option";
+"ratingSceneCommentTitle" = "Comment";
+"ratingSceneSubmitButtonTitle" = "Send";
+
+
+// MARK - RatingComment
+"ratingCommentSceneFakePlacehoder" = "最多輸入120個字";
+
+
+// MARK - BlackList
+"blackListSceneTitle" = "Black List";
+"blackListSceneRatingUnit" = "";
+
+
+// MARK - Common
+"noNetworkTip" = "Can't Detect Internet in This Device\n TaxiBye Must Work in Internet";
