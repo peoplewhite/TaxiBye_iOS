@@ -58,8 +58,13 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         secondCarPlateNumberTextfield.text = ""
 
         UIApplication.shared.statusBarView?.backgroundColor = nil
+
+        setupTrackButton()
     }
-    
+
+    func setupTrackButton() {
+        trackButton.setTitle(NSLocalizedString("homeScenetarckButtonTitle", comment: ""), for: .normal)
+    }
     override var prefersStatusBarHidden: Bool {
         return true
     }  
@@ -88,12 +93,12 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         let trimmedString = carPlateNumber.trimmingCharacters(in: .whitespaces)
 
         guard trimmedString.characters.count > 0 else {
-            showAlertViewWith(msg: "未輸入車牌號碼")
+            showAlertViewWith(msg: "")
             return false
         }
 
         guard trimmedString.characters.count < 5 && trimmedString.characters.count > 1 else {
-            showAlertViewWith(msg: "車牌號碼數目錯誤")
+            showAlertViewWith(msg: NSLocalizedString("homeSceneErrorMessageNoCarPlateNumber", comment: ""))
             return false
         }
 
@@ -103,7 +108,7 @@ class FirstViewController: UIViewController, WarningSceneDelegate {
         if (carPlateNumber.rangeOfCharacter(from: invSet) == nil) {
             return true
         } else {
-            showAlertViewWith(msg: "車牌號碼無效")
+            showAlertViewWith(msg: NSLocalizedString("homeSceneErrorMessageCarPlateNumberFormatWrong", comment: ""))
             return false
         }
     }

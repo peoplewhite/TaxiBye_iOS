@@ -12,6 +12,11 @@ import SVProgressHUD
 class RatingViewController: UIViewController {
 
 
+
+    @IBOutlet weak var ratingTitleLabel: UILabel!
+    @IBOutlet weak var optionTitleLabel: UILabel!
+    @IBOutlet weak var commentTitleLabel: UILabel!
+
     @IBOutlet weak var commentTextView: UITextView!
 
     @IBOutlet weak var submitButton: UIButton!
@@ -54,6 +59,16 @@ class RatingViewController: UIViewController {
         settingFeelingOption(with: TraceRouteMachine.shared.traceFeelingID)
         
         UIApplication.shared.statusBarView?.backgroundColor = nil
+        setupTitleLabel()
+        setupSubmitButton()
+    }
+    func setupTitleLabel() {
+        ratingTitleLabel.text = NSLocalizedString("ratingSceneRatingTitle", comment: "")
+        optionTitleLabel.text = NSLocalizedString("ratingSceneOptionTitle", comment: "")
+        commentTitleLabel.text = NSLocalizedString("ratingSceneCommentTitle", comment: "")
+    }
+    func setupSubmitButton() {
+        submitButton.setTitle(NSLocalizedString("ratingSceneSubmitButtonTitle", comment: ""), for: .normal)
     }
 
     func backToInitFirstScene() {

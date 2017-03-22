@@ -5,3 +5,31 @@
   Created by sean on 2017/2/10.
   Copyright © 2017年 oddesign. All rights reserved.
 */
+
+
+// MARK - Home
+"homeScenetarckButtonTitle" = "開始追蹤";
+"homeSceneErrorMessageNoCarPlateNumber" = "未輸入車牌號碼";
+"homeSceneErrorMessageCarPlateNumberFormatWrong" = "車牌號碼無效";
+
+// MARK - Waring
+"warningSceneErrorMessageRatingUnderAvarge" = "此車輛的評價低於\n平均分數！";
+"warningSceneTitle" = "警告";
+
+// MARK - Tracking
+"trackingSceneEmergencyButtonTitle" = "緊急求救電話";
+
+// MARK - Rating
+"ratingSceneRatingTitle" = "評分";
+"ratingSceneOptionTitle" = "評論";
+"ratingSceneCommentTitle" = "留言";
+"ratingSceneSubmitButtonTitle" = "送出";
+
+
+// MARK - RatingComment
+"ratingCommentSceneFakePlacehoder" = "最多輸入120個字";
+
+
+// MARK - BlackList
+"blackListSceneTitle" = "黑名單";
+"blackListSceneRatingUnit" = "分";

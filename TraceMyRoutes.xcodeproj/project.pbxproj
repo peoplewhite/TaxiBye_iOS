@@ -172,7 +172,6 @@
 		141FFFBD1E444B7E00F0FD92 /* 3. Rating */ = {
 			isa = PBXGroup;
 			children = (
-				14B45B8A1E54496400F77204 /* RatingDetailScene */,
 				1448ED521E3742F600962E58 /* RatingViewController.swift */,
 				14E6F89C1E4300B600ED3A06 /* CommentViewController.swift */,
 			);
@@ -275,6 +274,7 @@
 		14C8A53E1E681C4600511109 /* 4. BlackList */ = {
 			isa = PBXGroup;
 			children = (
+				14B45B8A1E54496400F77204 /* RatingDetailScene */,
 				14015E4C1E488B4E004EADC4 /* BlackListViewController.swift */,
 				14C012BC1E488F220018A37A /* BlackListCell.xib */,
 				14C012BE1E488F3E0018A37A /* BlackListCell.swift */,
@@ -806,6 +806,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TraceMyRoutes/TraceMyRoutes-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -822,6 +823,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TraceMyRoutes/TraceMyRoutes-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

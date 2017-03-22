@@ -16,6 +16,7 @@ class ConfirmEmergencyPhoneCallScene: UIView {
     let screenSize = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
     var delegate:ConfirmEmergencyPhoneCallSceneDelegate?
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var noButtonHeightConstraint: NSLayoutConstraint!
 
 
@@ -40,6 +41,11 @@ class ConfirmEmergencyPhoneCallScene: UIView {
     func initUI() {
         setupEmergencyNumberLabel()
         setupNoButton()
+        setupTitleLabel()
+        
+    }
+    func setupTitleLabel() {
+        titleLabel.text = NSLocalizedString("trackingSceneEmergencyButtonTitle", comment: "")
     }
     func setupNoButton() {
         noButtonHeightConstraint.constant = AppConfig.noButtonInConfirmEmergencyPhoneCallSceneHeight

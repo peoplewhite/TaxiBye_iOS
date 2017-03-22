@@ -24,14 +24,14 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="緊急求救電話" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tN9-fB-uxk" userLabel="title">
-                    <rect key="frame" x="0.0" y="321" width="375" height="26"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tN9-fB-uxk" userLabel="title">
+                    <rect key="frame" x="0.0" y="334" width="375" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iY-P8-eNi">
-                    <rect key="frame" x="0.0" y="417" width="375" height="44"/>
+                    <rect key="frame" x="0.0" y="404" width="375" height="44"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="A7f-T4-TUT"/>
@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ5-wb-rHi" userLabel="YES">
-                    <rect key="frame" x="0.0" y="461" width="375" height="206"/>
+                    <rect key="frame" x="0.0" y="448" width="375" height="219"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="56"/>
                     <state key="normal" title="YES">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,6 +75,7 @@
             <connections>
                 <outlet property="noButtonHeightConstraint" destination="A7f-T4-TUT" id="15T-57-Lpm"/>
                 <outlet property="phoneNumberLabel" destination="tWb-0c-VMe" id="dIK-ir-XTp"/>
+                <outlet property="titleLabel" destination="tN9-fB-uxk" id="Z7N-Ra-Uec"/>
             </connections>
         </view>
     </objects>
