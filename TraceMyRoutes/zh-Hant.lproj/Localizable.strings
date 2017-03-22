@@ -9,3 +9,5 @@
 
 // MARK - Home
 "homeScenetarckButtonTitle" = "開始追蹤";
+"homeSceneErrorMessageNoCarPlateNumber" = "未輸入車牌號碼";
+"homeSceneErrorMessageCarPlateNumberFormatWrong" = "車牌號碼無效";
