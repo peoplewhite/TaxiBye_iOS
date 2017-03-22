@@ -18,3 +18,9 @@
 
 // MARK - Tracking
 "trackingSceneEmergencyButtonTitle" = "緊急求救電話";
+
+// MARK - Rating
+"ratingSceneRatingTitle" = "評分";
+"ratingSceneOptionTitle" = "評論";
+"ratingSceneCommentTitle" = "留言";
+"ratingSceneSubmitButtonTitle" = "送出";

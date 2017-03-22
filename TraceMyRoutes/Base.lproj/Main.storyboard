@@ -511,7 +511,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFC-Nh-lF4" userLabel="starContainer">
                                 <rect key="frame" x="30" y="84" width="260" height="78"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tty-vT-3Gw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tty-vT-3Gw">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="axN-kO-0Wh"/>
@@ -577,7 +577,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vh-WK-0TM" userLabel="selectionContainer">
                                 <rect key="frame" x="30" y="162" width="260" height="230"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評論" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5A-Am-oL0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5A-Am-oL0">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="vK0-Pq-ra5"/>
@@ -648,7 +648,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQE-Sl-d7i" userLabel="commentContainer">
                                 <rect key="frame" x="30" y="392" width="260" height="130"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="留言" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-Q4-bXy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-Q4-bXy">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="WEg-cu-I7g"/>
@@ -695,7 +695,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="pCY-Em-51T"/>
                                 </constraints>
-                                <state key="normal" title="送出">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -723,11 +723,14 @@
                     <connections>
                         <outlet property="commentTextView" destination="p4n-zk-lH7" id="GVy-FT-4E2"/>
                         <outlet property="commentTextViewHeightConstraint" destination="cHo-o1-eZW" id="0ae-Wg-mwc"/>
+                        <outlet property="commentTitleLabel" destination="b8J-Q4-bXy" id="hVC-tD-A4s"/>
                         <outlet property="option1" destination="Fmy-JQ-Tyr" id="QPv-mV-Xgs"/>
                         <outlet property="option2" destination="TMU-Ly-OUG" id="Vj6-ka-xBF"/>
                         <outlet property="option3" destination="O5P-QP-Jck" id="okL-1a-hi0"/>
                         <outlet property="option4" destination="PvU-f9-kG1" id="PgY-zQ-rQN"/>
                         <outlet property="optionButtonHeightConstraint" destination="5sV-eJ-2EQ" id="QTb-Gl-AQ4"/>
+                        <outlet property="optionTitleLabel" destination="K5A-Am-oL0" id="msT-Yj-KLO"/>
+                        <outlet property="ratingTitleLabel" destination="Tty-vT-3Gw" id="ufS-Xu-LWp"/>
                         <outlet property="star1" destination="utY-mD-4kY" id="cw7-bY-ve5"/>
                         <outlet property="star2" destination="Iav-Tp-9v9" id="TVm-EH-QcT"/>
                         <outlet property="star3" destination="u6n-w5-mac" id="c71-Du-7kf"/>
