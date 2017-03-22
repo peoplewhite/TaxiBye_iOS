@@ -13,6 +13,7 @@ import GoogleMaps
 
 class TracingViewController: UIViewController, CLLocationManagerDelegate, ConfirmEmergencyPhoneCallSceneDelegate {
 
+    @IBOutlet weak var emergencyButton: UIButton!
     @IBOutlet weak var carPlateNumberLabel: UILabel!
     @IBOutlet weak var endButton: UIButton!
     @IBOutlet weak var endButtonWidthConstraint: NSLayoutConstraint!
@@ -66,21 +67,19 @@ class TracingViewController: UIViewController, CLLocationManagerDelegate, Confir
         settingEndButtonUI()
         settingEmergencyButtonUI()
         UIApplication.shared.statusBarView?.backgroundColor = .black
+        setupEmergencyButton()
+    }
+    func setupEmergencyButton() {
+        emergencyButton.setTitle(NSLocalizedString("trackingSceneEmergencyButtonTitle", comment: ""), for: .normal)
     }
     override var prefersStatusBarHidden: Bool {
         return true
     }
 
-    
-
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
-//    - (UIStatusBarStyle)preferredStatusBarStyle
-//    {
-//    return UIStatusBarStyleLightContent;
-//    }
+    
     func settingEmergencyButtonUI() {
 
         emergencyButtonheightConstraint.constant = AppConfig.searchbuttonInFirstSceneHeight

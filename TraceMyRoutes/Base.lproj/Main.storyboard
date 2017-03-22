@@ -444,7 +444,7 @@
                                     <constraint firstAttribute="height" constant="44" id="9xg-8t-5kR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <state key="normal" title="緊急求救電話">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -484,6 +484,7 @@
                     <navigationItem key="navigationItem" id="jHa-Gf-ssb"/>
                     <connections>
                         <outlet property="carPlateNumberLabel" destination="Tcw-zp-l1j" id="vSp-tu-ivi"/>
+                        <outlet property="emergencyButton" destination="8hw-Fa-uvV" id="7BP-uo-hvx"/>
                         <outlet property="emergencyButtonheightConstraint" destination="9xg-8t-5kR" id="DU1-Xe-YFV"/>
                         <outlet property="endButton" destination="6RA-FM-2Ks" id="mYR-9I-GJh"/>
                         <outlet property="endButtonShadowContainer" destination="PSl-gm-Bj5" id="i3y-xB-QvF"/>

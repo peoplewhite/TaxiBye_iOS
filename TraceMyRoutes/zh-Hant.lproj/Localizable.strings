@@ -15,3 +15,6 @@
 // MARK - Waring
 "warningSceneErrorMessageRatingUnderAvarge" = "此車輛的評價低於\n平均分數！";
 "warningSceneTitle" = "警告";
+
+// MARK - Tracking
+"trackingSceneEmergencyButtonTitle" = "緊急求救電話";
