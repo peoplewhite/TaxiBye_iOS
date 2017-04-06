@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "End"; ObjectID = "6RA-FM-2Ks"; */
+"6RA-FM-2Ks.normalTitle" = "End";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "9Wn-fC-T9Q"; */
+"9Wn-fC-T9Q.text" = "-";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Fmy-JQ-Tyr"; */
+"Fmy-JQ-Tyr.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "O5P-QP-Jck"; */
+"O5P-QP-Jck.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "PvU-f9-kG1"; */
+"PvU-f9-kG1.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "TMU-Ly-OUG"; */
+"TMU-Ly-OUG.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "BMW-888"; ObjectID = "Tcw-zp-l1j"; */
+"Tcw-zp-l1j.text" = "BMW-888";
+
+/* Class = "UILabel"; text = "..."; ObjectID = "Xcs-Nx-rVR"; */
+"Xcs-Nx-rVR.text" = "...";
+
+/* Class = "UIViewController"; title = "RatingDetailScene"; ObjectID = "fmG-FU-umo"; */
+"fmG-FU-umo.title" = "RatingDetailScene";
+
+/* Class = "UILabel"; text = "TaxiBye"; ObjectID = "fnO-CO-uSy"; */
+"fnO-CO-uSy.text" = "TaxiBye";
