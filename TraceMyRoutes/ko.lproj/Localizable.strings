@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  TraceMyRoutes
+
+  Created by sean on 2017/2/10.
+  Copyright © 2017年 oddesign. All rights reserved.
+*/
+
+// MARK - Home
+"homeScenetarckButtonTitle" = "추적을 시작입니다";
+"homeSceneErrorMessageNoCarPlateNumber" = "자동차번호를 입력하지 않음";
+"homeSceneErrorMessageCarPlateNumberFormatWrong" = "자동차번호를 무효입니다";
+
+// MARK - Waring
+"warningSceneErrorMessageRatingUnderAvarge" = "이 평가 차량의 평균 점수 보다 낮습니다";
+"warningSceneTitle" = "경고";
+
+// MARK - Tracking
+"trackingSceneEmergencyButtonTitle" = "긴급전화번호";
+
+// MARK - Rating
+"ratingSceneRatingTitle" = "점수";
+"ratingSceneOptionTitle" = "평론";
+"ratingSceneCommentTitle" = "메시지";
+"ratingSceneSubmitButtonTitle" = "보내기";
+
+
+// MARK - RatingComment
+"ratingCommentSceneFakePlacehoder" = "최대 120 문자 입력";
+
+
+// MARK - BlackList
+"blackListSceneTitle" = "블랙리스트";
+"blackListSceneRatingUnit" = "몇점";
